@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 {
+    srand(time(NULL));
     QApplication a(argc, argv);
 
     // Set the app stylesheet
@@ -22,7 +23,6 @@ int main(int argc, char *argv[])
     AuthDialog authdialog;
     authdialog.setModal(true);
     authdialog.exec();
-
 
     return a.exec();
 }
