@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/hompageIcons/accountDetails.png</file>
+        <file>images/hompageIcons/laptopSearch.png</file>
+        <file>images/hompageIcons/QRCodeEdited.png</file>
+        <file>images/hompageIcons/QRCodePoster.png</file>
+        <file>images/hompageIcons/RATtest.png</file>
+        <file>images/hompageIcons/test-swab_icon.png</file>
+        <file>images/hompageIcons/vaccinationHistory.png</file>
+        <file>images/hompageIcons/vaccinePass.png</file>
+        <file>images/profilePics/lukeSky.jpg</file>
+        <file>images/radioBtns/radioChecked.png</file>
+        <file>images/radioBtns/radioHover.png</file>
+        <file>images/radioBtns/radioPressed.png</file>
+        <file>images/radioBtns/radioUnchecked.png</file>
+        <file>images/radioBtns/radioUncheckedPressed.png</file>
+        <file>images/appBanner.png</file>
+        <file>images/uniteAgainstc19.png</file>
+        <file>images/hompageIcons/menu_collapsed.png</file>
+        <file>images/hompageIcons/menu_normal.png</file>
+        <file>images/hompageIcons/reportRat-02.png</file>
+        <file>images/hompageIcons/accountDeetsBtn.png</file>
+        <file>images/hompageIcons/requestQR.png</file>
+        <file>images/hompageIcons/vaxHistoryBtn.png</file>
+    </qresource>
+</RCC>
