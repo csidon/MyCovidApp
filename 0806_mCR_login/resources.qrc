@@ -19,5 +19,8 @@
         <file>images/hompageIcons/menu_collapsed.png</file>
         <file>images/hompageIcons/menu_normal.png</file>
         <file>images/hompageIcons/reportRat-02.png</file>
+        <file>images/hompageIcons/accountDeetsBtn.png</file>
+        <file>images/hompageIcons/requestQR.png</file>
+        <file>images/hompageIcons/vaxHistoryBtn.png</file>
     </qresource>
 </RCC>
