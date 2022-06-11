@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "authdialog.h"
-
+#include "useraccount.h"
+#include "test.h"
+#include "dose.h"
+#include "readcsv.h"
+#include <QDebug>
 #include <QApplication>
 #include <QFile>
 
@@ -15,6 +19,15 @@ int main(int argc, char *argv[])
     QString tooleryFile = QLatin1String(file.readAll());
 
     qApp->setStyleSheet(tooleryFile);
+
+    ReadCSV readTest;
+    UserAccount extractedTestUser;
+    QStringList answer = readTest.getSpecificCell("userLastName");
+    qDebug() << answer;
+    extractedTestUser = extractedTestUser.getRowData(readTest.searchRowValue(answer,"Skywalker"));
+    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail());
+
+
 
 
     MainWindow w;

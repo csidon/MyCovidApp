@@ -22,5 +22,6 @@
         <file>images/hompageIcons/accountDeetsBtn.png</file>
         <file>images/hompageIcons/requestQR.png</file>
         <file>images/hompageIcons/vaxHistoryBtn.png</file>
+        <file>database/dummyPID.csv</file>
     </qresource>
 </RCC>
