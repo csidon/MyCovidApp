@@ -1,4 +1,7 @@
 #include "useraccount.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
 //Getters
 int UserAccount::getUserIDNumber()
@@ -31,7 +34,7 @@ std::string UserAccount::getUserPreferredName()
     return this->userPreferredName;
 }
 
-int UserAccount::getUserNHINumber()
+std::string UserAccount::getUserNHINumber()
 {
     return this->userNHINumber;
 }
@@ -41,7 +44,7 @@ int UserAccount::getUserPhoneNumber()
     return this->userPhoneNumber;
 }
 
-bool UserAccount::getUserVaccinationStatus()
+int UserAccount::getUserVaccinationStatus()
 {
     return this->userVaccinationStatus;
 }
@@ -86,7 +89,7 @@ void UserAccount::setUserPreferredName(std::string preferredName)
    this->userPreferredName = preferredName;
 }
 
-void UserAccount::setUserNHINumber(int NHINumber)
+void UserAccount::setUserNHINumber(std::string NHINumber)
 {
     this->userNHINumber = NHINumber;
 }
@@ -96,7 +99,7 @@ void UserAccount::setUserPhoneNumber(int phoneNumber)
     this->userPhoneNumber = phoneNumber;
 }
 
-void UserAccount::setUserVaccinationStatus(bool vaccinationStatus)
+void UserAccount::setUserVaccinationStatus(int vaccinationStatus)
 {
     this->userVaccinationStatus = vaccinationStatus;
 }
@@ -104,6 +107,8 @@ void UserAccount::setUserVaccinationStatus(bool vaccinationStatus)
 void UserAccount::setUserQRStatus(int QRStatus)
 {
     this->userQRStatus = QRStatus;
+
+    // UserQRStatus codes are 0 for not requested, 1 for requested but not uploaded, 2 for uploaded
 }
 
 void UserAccount::setUserQRCodeAddress(std::string QRCodeAddress){
@@ -175,6 +180,33 @@ UserAccount UserAccount::initialAccountSetup()
    return newAccount;
 }
 
+UserAccount UserAccount::getRowData(int row)
+{
+    UserAccount extractedUser;
+
+    QFile file(":/database/dummyPID.csv");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "File did not open";
+        return extractedUser;
+    }
+    int i = 0;
+    do
+    {
+        file.readLine();
+        i++;
+    } while (i < row);
+    QString extractedRow = file.readLine().trimmed();
+    QStringList rowValues = extractedRow.split(',');
+
+
+    extractedUser = UserAccount(rowValues[0].toInt(), rowValues[1].toStdString(), rowValues[2].toStdString(), rowValues[3].toStdString(),
+                rowValues[4].toStdString(), rowValues[5].toStdString(), rowValues[6].toStdString(), rowValues[7].toInt(), rowValues[8].toInt(),
+                rowValues[9].toInt(), rowValues[10].toStdString());
+
+    return extractedUser;
+}
+
 void UserAccount::assignID()
 {
     int ID = 0;
@@ -192,11 +224,18 @@ void UserAccount::assignID()
 void UserAccount::requestQR()
 {
     //BUILD THIS - Send a QR code requet to the admin side
+    // --- PSEUDOCODE/commenting---
+    // UserQRStatus is changed from 0 to 1
 }
 
 void UserAccount::assignQR()
 {
     //BUILD THIS - Associate a QR code with a user
+    // --- PSEUDOCODE/commenting---
+    // Function grabs a random QR code JPEG in "QR Code Generator" folder
+    // Moves JPEG from "QR Code Generator" folder to "Active User Data" folder
+    // Renames JPEG to [UID]+[YYMMDD].jpg
+    // Adds new JPEG path to the respective userID's QRCodeAddress
 }
 
 void UserAccount::addTest(Test newTest)
@@ -223,9 +262,26 @@ UserAccount::UserAccount()
     userFirstName = "";
     userLastName = "";
     userPreferredName = "";
-    userNHINumber = 0;
+    userNHINumber = "";
     userPhoneNumber = 0;
     userVaccinationStatus = 0;
     userQRStatus = 0;
     userQRCodeAddress = "";
+}
+
+UserAccount::UserAccount(int uid = 0, std::string email = "", std::string pswd = "",
+                         std::string fn = "", std::string ln = "", std::string pn = "",
+                         std::string nhi ="", int phone = 0, int vaxstat = 0, int qrstat = 0, std::string qraddress = "")
+{
+    userIDNumber = uid;
+    userEmail = email;
+    userPassword = pswd;
+    userFirstName = fn;
+    userLastName = ln;
+    userPreferredName = pn;
+    userNHINumber = nhi;
+    userPhoneNumber = phone;
+    userVaccinationStatus = vaxstat;
+    userQRStatus = qrstat;
+    userQRCodeAddress = qraddress;
 }

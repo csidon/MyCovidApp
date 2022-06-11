@@ -1,0 +1,3 @@
+userIDNumber,userEmail,userPassword,userFirstName,userLastName,userPreferredName,userNHINumber,userPhoneNumber,userVaccinationStatus,userQRStatus,userQRCodeAddress
+1089,woo@kie.com,1234,Woo,Kie,Wooks,WK1289,0220220222,0,0,
+0019,luke@sky.com,test,Luciano,Skywalker,Luke,LS2314,0220220333,0,1,

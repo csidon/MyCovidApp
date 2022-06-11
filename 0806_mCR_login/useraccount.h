@@ -3,7 +3,8 @@
 #include <QVector>
 #include "test.h"
 #include "dose.h"
-
+#include <QStringList>
+#include "readcsv.h"
 
 class UserAccount
 {
@@ -14,10 +15,10 @@ private:
     std::string userFirstName;
     std::string userLastName;
     std::string userPreferredName;
-    int userNHINumber;
+    std::string userNHINumber;
     int userPhoneNumber;
-    bool userVaccinationStatus;
-    int userQRStatus;
+    int userVaccinationStatus;      // 0 = Unvaccinated, 1 = Partially vaccinated, 2 = Fully vaccinated
+    int userQRStatus;               // 0 = Not requested, 1 = Requested but not uploaded, 2 = Uploaded
     std::string userQRCodeAddress;
 
 public:
@@ -28,9 +29,9 @@ public:
     std::string getUserFirstName();
     std::string getUserLastName();
     std::string getUserPreferredName();
-    int getUserNHINumber();
+    std::string getUserNHINumber();
     int getUserPhoneNumber();
-    bool getUserVaccinationStatus();
+    int getUserVaccinationStatus();
     int getUserQRStatus();
     std::string getUserQRCodeAddress();
 
@@ -41,9 +42,9 @@ public:
     void setUserFirstName(std::string firstName);
     void setUserLastName(std::string lastName);
     void setUserPreferredName(std::string preferredName);
-    void setUserNHINumber(int NHINumber);
+    void setUserNHINumber(std::string NHINumber);
     void setUserPhoneNumber(int PhoneNumber);
-    void setUserVaccinationStatus(bool VaccinationStatus);
+    void setUserVaccinationStatus(int VaccinationStatus);
     void setUserQRStatus(int QRStatus);
     void setUserQRCodeAddress(std::string QRCodeAddress);
 
@@ -54,6 +55,8 @@ public:
 
     //Functions
     UserAccount initialAccountSetup();
+    UserAccount getRowData(int row);
+
     void assignID();
     void requestQR();
     void assignQR();
@@ -61,8 +64,14 @@ public:
     void addDose(Dose newDose);
     void reportError();
 
+
     //Constructor
     UserAccount();
+    UserAccount(int uid, std::string email, std::string pswd, std::string fn,
+                std::string ln, std::string pn, std::string nhi, int phone, int vaxstat,
+                int qrstat, std::string qraddress);
+
+
 };
 
 #endif // USERACCOUNT_H

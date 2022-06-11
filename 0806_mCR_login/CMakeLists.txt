@@ -24,12 +24,15 @@ set(PROJECT_SOURCES
         authdialog.ui
         Toolery.qss
         resources.qrc
+        readcsv.h
+        readcsv.cpp
         useraccount.h
         useraccount.cpp
         test.h
         test.cpp
         dose.h
         dose.cpp
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
