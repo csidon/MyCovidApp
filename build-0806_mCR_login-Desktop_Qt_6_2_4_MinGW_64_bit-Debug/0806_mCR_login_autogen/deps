@@ -4,9 +4,13 @@
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.cpp \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.cpp \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/main.cpp \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.cpp \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/readcsv.cpp \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/readcsv.h \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/resources.qrc \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.cpp \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h \

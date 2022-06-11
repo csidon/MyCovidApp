@@ -12,7 +12,7 @@ public:
 
 
     ReadCSV();
-    QStringList getSpecificCell(std::string searchString);
+    QStringList getSpecificCell(std::string searchString, QString fileAddress);
     int searchRowValue(QStringList listToSearch, std::string searchValue);
 
 

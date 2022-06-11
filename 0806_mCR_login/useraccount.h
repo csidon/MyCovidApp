@@ -1,6 +1,7 @@
 #ifndef USERACCOUNT_H
 #define USERACCOUNT_H
 #include <QVector>
+#include "errorreport.h"
 #include "test.h"
 #include "dose.h"
 #include <QStringList>
@@ -55,14 +56,14 @@ public:
 
     //Functions
     UserAccount initialAccountSetup();
-    UserAccount getRowData(int row);
+    UserAccount getUserData(int row);
 
     void assignID();
     void requestQR();
     void assignQR();
-    void addTest(Test newTest);
-    void addDose(Dose newDose);
-    void reportError();
+    void addTest(Test testToStore);
+    void addDose(Dose doseToStore);
+    void reportError(ErrorReport reportToStore);
 
 
     //Constructor

@@ -1,4 +1,5 @@
 #include "readcsv.h"
+#include "qdebug.h"
 #include <QMessageBox>
 #include <QMap>
 #include <QStringList>
@@ -9,14 +10,14 @@ ReadCSV::ReadCSV()
 }
 
 
-QStringList ReadCSV::getSpecificCell(std::string searchHeaderValue)
+QStringList ReadCSV::getSpecificCell(std::string searchHeaderValue, QString fileAddress)
 {
     QStringList data;
 
-    QFile file(":/database/dummyPID.csv");
+    QFile file(fileAddress);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qDebug() << "File did not open";
+       // qDebug() << "File did not open";
         return data;
     }
 
@@ -45,6 +46,7 @@ QStringList ReadCSV::getSpecificCell(std::string searchHeaderValue)
         QStringList rowValues = row.split(',');
         data << rowValues[headerIndex];
     }
+    file.close();
     return data;
 }
 
@@ -54,7 +56,7 @@ int ReadCSV::searchRowValue(QStringList listToSearch, std::string searchValue)
     {
         if(listToSearch[i] == QString::fromStdString(searchValue))
         {
-            return i;
+            return ++i;
         }
     }
     return -1;

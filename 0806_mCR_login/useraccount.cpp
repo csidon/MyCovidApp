@@ -1,4 +1,5 @@
 #include "useraccount.h"
+#include "errorreport.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
@@ -118,8 +119,14 @@ void UserAccount::setUserQRCodeAddress(std::string QRCodeAddress){
 //Validators
 bool UserAccount::validateEmailInUse(std::string email)
 {
-    //BUILD THIS - Check email against all emails in use for exact matches
-    return true;
+    ReadCSV readEmails;
+    QStringList answer = readEmails.getSpecificCell("userEmail", ":/database/dummyPID.csv");
+    if (readEmails.searchRowValue(answer, email) == -1){
+        return false;
+    }
+    else{
+        return true;
+    };
 }
 
 bool UserAccount::validateEmailIsEmail(std::string email)
@@ -139,7 +146,6 @@ bool UserAccount::validateEmailIsEmail(std::string email)
                 }
             }
         }
-
     }
     return false;
 }
@@ -163,7 +169,7 @@ bool UserAccount::validatePasswordIsSecure(std::string password)
                 numberFlag = true;
             }
             if(!std::isdigit(password[i]) && !std::isalpha(password[i])){
-                symbolFlag = false;
+                symbolFlag = true;
             }
         }
         if(upperFlag == true && lowerFlag == true && numberFlag == true && symbolFlag == true){
@@ -177,10 +183,11 @@ UserAccount UserAccount::initialAccountSetup()
 {
    UserAccount newAccount;
    //BUILD THIS store values in new account, then append the account to the account files
+   //Probably this should be a void with a UserAccount as an argument; will rebuild once the communication with frontend is clear
    return newAccount;
 }
 
-UserAccount UserAccount::getRowData(int row)
+UserAccount UserAccount::getUserData(int row)
 {
     UserAccount extractedUser;
 
@@ -210,12 +217,16 @@ UserAccount UserAccount::getRowData(int row)
 void UserAccount::assignID()
 {
     int ID = 0;
-    while(bool freshID = false){
+    bool freshID = false;
+    while(freshID == false){
         ID = rand();
-        //BUILD THIS - check id against IDs currently in use
-        //randomized IDs helps with anonymity
-        if(/*ID not in use, 1==1 as a stand-in for now*/ 1==1){
-            freshID = true;
+        freshID = true;
+        ReadCSV checkID;
+        QStringList allIDs = checkID.getSpecificCell("userIDNumber", ":/database/dummyPID.csv");
+        for(int i = 0; i < allIDs.size(); i++){
+            if(allIDs.at(i) == QString::number(ID)){
+                freshID = false;
+            }
         }
     }
     this->setUserIDNumber(ID);
@@ -223,9 +234,12 @@ void UserAccount::assignID()
 
 void UserAccount::requestQR()
 {
-    //BUILD THIS - Send a QR code requet to the admin side
-    // --- PSEUDOCODE/commenting---
-    // UserQRStatus is changed from 0 to 1
+    QFile QRCodeRequests(":/database/QRCodeRequests.csv");
+    if(QRCodeRequests.open(QIODevice::ReadWrite| QIODevice::Append)){
+        QTextStream stream(&QRCodeRequests);
+        stream << this->getUserIDNumber();
+    }
+    QRCodeRequests.close();
 }
 
 void UserAccount::assignQR()
@@ -238,19 +252,49 @@ void UserAccount::assignQR()
     // Adds new JPEG path to the respective userID's QRCodeAddress
 }
 
-void UserAccount::addTest(Test newTest)
+void UserAccount::addTest(Test testToStore)
 {
-    //BUILD THIS - add a test into the user's test vector and overwrite their test file with their current test vector;
+    testToStore.setTestUserID(this->getUserIDNumber());
+    QFile doses(":/database/UserTests" + QString::number(this->getUserIDNumber()) + ".csv");
+    if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
+        QTextStream stream(&doses);
+        stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
+    }
+    doses.close();
+    QFile masterTests(":/database/MasterTests.csv");
+    if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append)){
+        QTextStream stream(&masterTests);
+        stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
+    }
+    masterTests.close();
 }
 
-void UserAccount::addDose (Dose newDose)
+void UserAccount::addDose (Dose doseToStore)
 {
-    //BUILD THIS - add a dose into the user's dose vector and overwrite their dose file with their current dose vector;
+    doseToStore.setDoseUserID(this->getUserIDNumber());
+    QFile doses(":/database/UserDoses" + QString::number(this->getUserIDNumber()) + ".csv");
+    if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
+        QTextStream stream(&doses);
+        stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+    }
+    doses.close();
+    QFile masterDoses(":/database/MasterDoses.csv");
+    if(masterDoses.open(QIODevice::ReadWrite| QIODevice::Append)){
+        QTextStream stream(&masterDoses);
+        stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+    }
+    masterDoses.close();
 }
 
-void UserAccount::reportError()
+void UserAccount::reportError(ErrorReport reportToStore)
 {
-    //BUILD THIS - report an error, notify admin side, log report etc
+    reportToStore.setSender(this->getUserIDNumber());
+    QFile reports(":/database/ErrorReports.csv");
+    if(reports.open(QIODevice::ReadWrite| QIODevice::Append)){
+        QTextStream stream(&reports);
+        stream << QString::fromStdString(reportToStore.getTitle()) << "," << QString::fromStdString(reportToStore.getText()) << "," << reportToStore.getDate() << "," << reportToStore.getSender() << "," << reportToStore.getIsNew();
+    };
+    reports.close();
 }
 
 //Constructor
