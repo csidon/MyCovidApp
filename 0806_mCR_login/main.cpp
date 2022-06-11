@@ -14,18 +14,19 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     // Set the app stylesheet
-    QFile file("../0806_mCR_login/Toolery.qss");
-    file.open(QFile::ReadOnly);
-    QString tooleryFile = QLatin1String(file.readAll());
+    QFile styleFile("../0806_mCR_login/Toolery.qss");
+    styleFile.open(QFile::ReadOnly);
+    QString tooleryFile = QLatin1String(styleFile.readAll());
 
     qApp->setStyleSheet(tooleryFile);
 
     ReadCSV readTest;
     UserAccount extractedTestUser;
-    QStringList answer = readTest.getSpecificCell("userLastName");
+    QStringList answer = readTest.getSpecificCell("userLastName", ":/database/dummyPID.csv");
     qDebug() << answer;
-    extractedTestUser = extractedTestUser.getRowData(readTest.searchRowValue(answer,"Skywalker"));
-    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail());
+    extractedTestUser = extractedTestUser.getUserData(readTest.searchRowValue(answer,"Skywalker"));
+    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail()) << extractedTestUser.validateEmailInUse(extractedTestUser.getUserEmail());
+    extractedTestUser.assignID();
 
 
 

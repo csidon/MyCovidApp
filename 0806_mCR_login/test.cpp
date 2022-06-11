@@ -16,6 +16,11 @@ bool Test::getTestResult()
     return this->testResult;
 }
 
+bool Test::getTestIsNew()
+{
+    return this->testIsNew;
+}
+
 //Setters
 void Test::setTestUserID(int userID)
 {
@@ -32,10 +37,16 @@ void Test::setTestResult(bool result)
     this->testResult = result;
 }
 
+void Test::setTestIsNew(bool isNew)
+{
+    this->testIsNew = isNew;
+}
+
 //Constructor
 Test::Test()
 {
     testUserID = 0;
     testDate = 0;
     testResult = false;
+    testIsNew = true;
 }

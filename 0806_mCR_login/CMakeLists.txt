@@ -32,6 +32,8 @@ set(PROJECT_SOURCES
         test.cpp
         dose.h
         dose.cpp
+        errorreport.h
+        errorreport.cpp
 
 )
 
