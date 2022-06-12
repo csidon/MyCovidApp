@@ -24,8 +24,6 @@ set(PROJECT_SOURCES
         authdialog.ui
         Toolery.qss
         resources.qrc
-        readcsv.h
-        readcsv.cpp
         useraccount.h
         useraccount.cpp
         test.h
@@ -34,6 +32,8 @@ set(PROJECT_SOURCES
         dose.cpp
         errorreport.h
         errorreport.cpp
+        handlecsv.cpp
+        handlecsv.h
 
 )
 

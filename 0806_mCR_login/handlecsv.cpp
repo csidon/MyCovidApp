@@ -1,48 +1,49 @@
-#include "readcsv.h"
-#include "qdebug.h"
-#include <QMessageBox>
-#include <QMap>
-#include <QStringList>
+#include "handlecsv.h"
 
-ReadCSV::ReadCSV()
+
+HandleCSV::HandleCSV()
 {
 
 }
 
 //-----------------------------------------------------------
 // Returning the database path based on shortname
-QString ReadCSV::returnCSVFilePath(QString dbName)
+QString HandleCSV::returnCSVFilePath(QString dbName)
 {
     QString filePath;
+    filePath.resize(30);
     if (dbName == "dbPID")
     {
-        filePath = ":/database/dummyPID.csv";
+        filePath = "/database/dummyPID.csv";
+//        qDebug() << "You have found dbPID with filepath " << filePath;
     }
     else if (dbName == "dbTest")
     {
-        filePath = ":/database/MasterTests.csv";
+        filePath = "/database/MasterTests.csv";
     }
-    else if (dbName == "dbDose")
+//    else if (dbName == "dbDose")
+    else
     {
-        filePath = ":/database/MasterDoses.csv";
+        filePath = "/database/MasterDoses.csv";
     }
     // ** Add any other database/path here
-    return filePath;
+    return ":" + filePath;
 }
 
 //-----------------------------------------------------------
 // Mapping database header fields to specific indexes
-int ReadCSV::returnHeaderIndex(QString dbName, QString headerName)
+int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
 {
     int headerIndex = -1;
 
     QString filePath = returnCSVFilePath(dbName);
+    qDebug() << "File path is " <<  filePath;
 
     // Open CSV filepath retrieved from associated dbName
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-       // qDebug() << "File did not open";
+        qDebug() << "File did not open";
         return headerIndex;
     }
 
@@ -54,7 +55,8 @@ int ReadCSV::returnHeaderIndex(QString dbName, QString headerName)
     // and grab the column index that we are retrieving
     for(int i = 0; i < headerRowValues.length(); i++)
     {
-        if(headerRowValues[i] == colHeader)
+        qDebug() << "Comparing colHeaders...";
+        if(headerRowValues[i] == headerName)
         {
             headerIndex = i;
             break;
@@ -65,10 +67,12 @@ int ReadCSV::returnHeaderIndex(QString dbName, QString headerName)
 
 //-----------------------------------------------------------
 // Get all data in a column for a specified header for a CSV file
-QStringList ReadCSV::getColData(int headerIndex, QString dbName)
+QStringList HandleCSV::getColData(QString headerName, QString dbName)
 {
     QStringList data;
     QString filePath = returnCSVFilePath(dbName);
+
+    int headerIndex = returnHeaderIndex(dbName,headerName);
 
     // Open CSV filepath retrieved from associated dbName
     QFile file(filePath);
@@ -93,7 +97,7 @@ QStringList ReadCSV::getColData(int headerIndex, QString dbName)
 //-----------------------------------------------------------
 // Validates if any of the values in the column exist
 // and returns the row index if yes
-int ReadCSV::rowIndexOfCellMatchingSearch(QStringList colData, QString searchValue)
+int HandleCSV::rowIndexOfCellMatchingSearch(QStringList colData, QString searchValue)
 {
     for(int i = 0; i < colData.length(); i++)
     {
@@ -108,33 +112,37 @@ int ReadCSV::rowIndexOfCellMatchingSearch(QStringList colData, QString searchVal
 
 //-------------------------------------------------------------
 // Gets a specific cell's value based on header and row index
-QString ReadCSV::getCellValue(QString dbName, int headerIn, int rowIn)
+QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
 {
     QString cellValue;
     QString filePath = returnCSVFilePath(dbName);
+    qDebug() << "Filepath for getCellVal = "<< filePath;
 
     // Open CSV filepath retrieved from associated dbName
     QFile file(filePath);
+
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-       // qDebug() << "File did not open";
+        qDebug() << "File did not open";
         return cellValue;
     }
 
     // Retrieve all of the values in that headerIndex's column
     while(!file.atEnd())
     {
+
         // Skip the number of rows that are inapplicable
         int rowNum = 0;
         do
         {
-            file.readLine().trimmed;
+            file.readLine();
             rowNum++;
         } while(rowNum < rowIn);
 
         QString row = file.readLine().trimmed();
         QStringList rowValues = row.split(',');
         cellValue = rowValues[headerIn];
+        qDebug() << "You made it here but not further";
     }
     file.close();
     return cellValue;
