@@ -1,11 +1,17 @@
 #ifndef USERACCOUNT_H
 #define USERACCOUNT_H
 #include <QVector>
+#include <QStringList>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QString>
+
+#include "handlecsv.h"
+#include "errorreport.h"
 #include "errorreport.h"
 #include "test.h"
 #include "dose.h"
-#include <QStringList>
-#include "readcsv.h"
 
 class UserAccount
 {
@@ -50,7 +56,7 @@ public:
     void setUserQRCodeAddress(std::string QRCodeAddress);
 
     //Validators
-    bool validateEmailInUse(std::string email);
+    bool validateEmailInUse(QString email);
     bool validateEmailIsEmail(std::string email);
     bool validatePasswordIsSecure(std::string password);
 

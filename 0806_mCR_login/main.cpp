@@ -3,7 +3,7 @@
 #include "useraccount.h"
 #include "test.h"
 #include "dose.h"
-#include "readcsv.h"
+#include "handlecsv.h"
 #include <QDebug>
 #include <QApplication>
 #include <QFile>
@@ -20,13 +20,24 @@ int main(int argc, char *argv[])
 
     qApp->setStyleSheet(tooleryFile);
 
-    ReadCSV readTest;
-    UserAccount extractedTestUser;
-    QStringList answer = readTest.getSpecificCell("userLastName", ":/database/dummyPID.csv");
-    qDebug() << answer;
-    extractedTestUser = extractedTestUser.getUserData(readTest.searchRowValue(answer,"Skywalker"));
-    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail()) << extractedTestUser.validateEmailInUse(extractedTestUser.getUserEmail());
-    extractedTestUser.assignID();
+    HandleCSV testCSVFunctions;
+    testCSVFunctions.returnCSVFilePath("dbTest");
+    qDebug() << "You have finished returning CSV file path";
+    int headerIn = testCSVFunctions.returnHeaderIndex("dbPID","userEmail");
+    qDebug() << "Header int for userEmail is " << headerIn;
+    testCSVFunctions.getColData("userLastName","dbPID");
+    int rowInTest = testCSVFunctions.rowIndexOfCellMatchingSearch(testCSVFunctions.getColData("userFirstName","dbPID"),"Luciano");
+    qDebug() << "Row index for Luciano is " << rowInTest;   // is row index correct..??
+    QString cellValTest = testCSVFunctions.getCellValue("dbPID",6,1);
+    qDebug() << "Cell value retrieved is " << cellValTest;
+
+
+//    UserAccount extractedTestUser;
+//    QStringList answer = readTest.getSpecificCell("userLastName", ":/database/dummyPID.csv");
+//    qDebug() << answer;
+//    extractedTestUser = extractedTestUser.getUserData(readTest.searchRowValue(answer,"Skywalker"));
+//    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail()) << extractedTestUser.validateEmailInUse(extractedTestUser.getUserEmail());
+//    extractedTestUser.assignID();
 
 
 

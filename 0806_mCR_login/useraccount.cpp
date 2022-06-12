@@ -1,8 +1,4 @@
 #include "useraccount.h"
-#include "errorreport.h"
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
 
 //Getters
 int UserAccount::getUserIDNumber()
@@ -117,11 +113,13 @@ void UserAccount::setUserQRCodeAddress(std::string QRCodeAddress){
 }
 
 //Validators
-bool UserAccount::validateEmailInUse(std::string email)
+bool UserAccount::validateEmailInUse(QString email)
 {
-    ReadCSV readEmails;
-    QStringList answer = readEmails.getSpecificCell("userEmail", ":/database/dummyPID.csv");
-    if (readEmails.searchRowValue(answer, email) == -1){
+    HandleCSV readEmails;
+    // Getting index header for "userEmail"
+    QStringList getAllEmails = readEmails.getColData("userEmail", "dbPID");
+    // Check if email already exists in "dbPID"
+    if (readEmails.rowIndexOfCellMatchingSearch(getAllEmails, email) < 0){
         return false;
     }
     else{
@@ -187,33 +185,36 @@ UserAccount UserAccount::initialAccountSetup()
    return newAccount;
 }
 
-UserAccount UserAccount::getUserData(int row)
-{
-    UserAccount extractedUser;
+//UserAccount UserAccount::getUserData(int row)
+//{
+//    UserAccount extractedUser;
 
-    QFile file(":/database/dummyPID.csv");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        qDebug() << "File did not open";
-        return extractedUser;
-    }
-    int i = 0;
-    do
-    {
-        file.readLine();
-        i++;
-    } while (i < row);
-    QString extractedRow = file.readLine().trimmed();
-    QStringList rowValues = extractedRow.split(',');
+//    QFile file(":/database/dummyPID.csv");
+//    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+//    {
+//        qDebug() << "File did not open";
+//        return extractedUser;
+//    }
+//    int i = 0;
+//    do
+//    {
+//        file.readLine();
+//        i++;
+//    } while (i < row);
+//    QString extractedRow = file.readLine().trimmed();
+//    QStringList rowValues = extractedRow.split(',');
 
 
-    extractedUser = UserAccount(rowValues[0].toInt(), rowValues[1].toStdString(), rowValues[2].toStdString(), rowValues[3].toStdString(),
-                rowValues[4].toStdString(), rowValues[5].toStdString(), rowValues[6].toStdString(), rowValues[7].toInt(), rowValues[8].toInt(),
-                rowValues[9].toInt(), rowValues[10].toStdString());
+//    extractedUser = UserAccount(rowValues[0].toInt(), rowValues[1].toStdString(), rowValues[2].toStdString(), rowValues[3].toStdString(),
+//                rowValues[4].toStdString(), rowValues[5].toStdString(), rowValues[6].toStdString(), rowValues[7].toInt(), rowValues[8].toInt(),
+//                rowValues[9].toInt(), rowValues[10].toStdString());
 
-    return extractedUser;
-}
+//    return extractedUser;
+//}
 
+
+// ******* MOVE TO AUTHDIALOG FILE
+// Assigns a new user a unique random UID
 void UserAccount::assignID()
 {
     int ID = 0;
@@ -221,8 +222,8 @@ void UserAccount::assignID()
     while(freshID == false){
         ID = rand();
         freshID = true;
-        ReadCSV checkID;
-        QStringList allIDs = checkID.getSpecificCell("userIDNumber", ":/database/dummyPID.csv");
+        HandleCSV checkID;
+        QStringList allIDs = checkID.getColData("userIDNumber", ":/database/dummyPID.csv");
         for(int i = 0; i < allIDs.size(); i++){
             if(allIDs.at(i) == QString::number(ID)){
                 freshID = false;
@@ -297,7 +298,10 @@ void UserAccount::reportError(ErrorReport reportToStore)
     reports.close();
 }
 
-//Constructor
+
+//###############################################
+// Constructors
+//----------------------------------------------
 UserAccount::UserAccount()
 {
     userIDNumber = 0;
