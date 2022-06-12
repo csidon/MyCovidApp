@@ -142,8 +142,11 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
         QString row = file.readLine().trimmed();
         QStringList rowValues = row.split(',');
         cellValue = rowValues[headerIn];
-        qDebug() << "You made it here but not further";
+//        qDebug() << "You made it here!";
+        file.close();
+        return cellValue;
     }
-    file.close();
+
     return cellValue;
+
 }
