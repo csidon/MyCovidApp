@@ -6,32 +6,32 @@ int UserAccount::getUserIDNumber()
     return this->userIDNumber;
 }
 
-std::string UserAccount::getUserEmail()
+QString UserAccount::getUserEmail()
 {
     return this->userEmail;
 }
 
-std::string UserAccount::getUserPassword()
+QString UserAccount::getUserPassword()
 {
     return this->userPassword;
 }
 
-std::string UserAccount::getUserFirstName()
+QString UserAccount::getUserFirstName()
 {
     return this->userFirstName;
 }
 
-std::string UserAccount::getUserLastName()
+QString UserAccount::getUserLastName()
 {
     return this->userLastName;
 }
 
-std::string UserAccount::getUserPreferredName()
+QString UserAccount::getUserPreferredName()
 {
     return this->userPreferredName;
 }
 
-std::string UserAccount::getUserNHINumber()
+QString UserAccount::getUserNHINumber()
 {
     return this->userNHINumber;
 }
@@ -51,7 +51,7 @@ int UserAccount::getUserQRStatus()
     return this->userQRStatus;
 }
 
-std::string UserAccount::getUserQRCodeAddress(){
+QString UserAccount::getUserQRCodeAddress(){
     return this->userQRCodeAddress;
 }
 
@@ -61,32 +61,32 @@ void UserAccount::setUserIDNumber(int IDNumber)
     this->userIDNumber = IDNumber;
 }
 
-void UserAccount::setUserEmail(std::string email)
+void UserAccount::setUserEmail(QString email)
 {
    this->userEmail = email;
 }
 
-void UserAccount::setUserPassword(std::string password)
+void UserAccount::setUserPassword(QString password)
 {
    this->userPassword = password;
 }
 
-void UserAccount::setUserFirstName(std::string firstName)
+void UserAccount::setUserFirstName(QString firstName)
 {
    this->userFirstName = firstName;
 }
 
-void UserAccount::setUserLastName(std::string lastName)
+void UserAccount::setUserLastName(QString lastName)
 {
    this->userLastName = lastName;
 }
 
-void UserAccount::setUserPreferredName(std::string preferredName)
+void UserAccount::setUserPreferredName(QString preferredName)
 {
    this->userPreferredName = preferredName;
 }
 
-void UserAccount::setUserNHINumber(std::string NHINumber)
+void UserAccount::setUserNHINumber(QString NHINumber)
 {
     this->userNHINumber = NHINumber;
 }
@@ -108,7 +108,7 @@ void UserAccount::setUserQRStatus(int QRStatus)
     // UserQRStatus codes are 0 for not requested, 1 for requested but not uploaded, 2 for uploaded
 }
 
-void UserAccount::setUserQRCodeAddress(std::string QRCodeAddress){
+void UserAccount::setUserQRCodeAddress(QString QRCodeAddress){
     this->userQRCodeAddress = QRCodeAddress;
 }
 
@@ -127,7 +127,7 @@ bool UserAccount::validateEmailInUse(QString email)
     };
 }
 
-bool UserAccount::validateEmailIsEmail(std::string email)
+bool UserAccount::validateEmailIsEmail(QString email)
 {
     //Check that email has an @ symbol followed at some point by a dot, followed by more characters
     //Check for @ Symbol
@@ -148,25 +148,27 @@ bool UserAccount::validateEmailIsEmail(std::string email)
     return false;
 }
 
-bool UserAccount::validatePasswordIsSecure(std::string password)
+bool UserAccount::validatePasswordIsSecure(QString password)
 {
     //Check password length and character inclusions
     bool upperFlag = false;
     bool lowerFlag = false;
     bool numberFlag = false;
     bool symbolFlag = false;
-    if(sizeof(password) > 7){
+    //Convert to std::string for isUpper, isAlpha etc
+    std::string stringPassword = password.toStdString();
+    if(sizeof(stringPassword) > 7){
         for(int i = 0; i > sizeof(password); i++){
-            if(std::isupper(password[i])){
+            if(std::isupper(stringPassword[i])){
                 upperFlag = true;
             }
-            if(std::islower(password[i])){
+            if(std::islower(stringPassword[i])){
                 lowerFlag = true;
             }
-            if(std::isdigit(password[i])){
+            if(std::isdigit(stringPassword[i])){
                 numberFlag = true;
             }
-            if(!std::isdigit(password[i]) && !std::isalpha(password[i])){
+            if(!std::isdigit(stringPassword[i]) && !std::isalpha(stringPassword[i])){
                 symbolFlag = true;
             }
         }

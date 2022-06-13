@@ -8,7 +8,7 @@
 #include <QMap>
 
 #include <QDebug>
-#include "useraccount.h"
+class UserAccount;
 
 
 class HandleCSV

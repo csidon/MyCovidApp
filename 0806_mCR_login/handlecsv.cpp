@@ -1,5 +1,5 @@
 #include "handlecsv.h"
-
+#include "useraccount.h"
 
 HandleCSV::HandleCSV()
 {
@@ -158,8 +158,8 @@ void HandleCSV::writeToPIDCSV(UserAccount userConstructor)
     qDebug() << "File path is " <<  filePath;
 
     // Mapping info in userConstructor to cells
-    QString uid, email, pass, fn, ln, pn, nhi, qrAdd;
-    int ph, vaxstat,qrstat;
+    QString email, pass, fn, ln, pn, nhi, qrAdd;
+    int uid, ph, vaxstat,qrstat;
     uid = userConstructor.getUserIDNumber();
     email = userConstructor.getUserEmail();
     pass = userConstructor.getUserPassword();
