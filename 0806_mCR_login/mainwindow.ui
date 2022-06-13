@@ -53,7 +53,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       <x>10</x>
       <y>190</y>
       <width>351</width>
-      <height>431</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -205,12 +205,26 @@ font: 8pt &quot;Arial&quot;;</string>
      <string>Please book in by 4 June. May the 4th be with you.</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>600</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>btn_menu</zorder>
    <zorder>groupBox</zorder>
    <zorder>lbl_welcomeMsg</zorder>
    <zorder>lbl_reminderMsgLn1</zorder>
    <zorder>lbl_reminderMsgLn1_2</zorder>
+   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

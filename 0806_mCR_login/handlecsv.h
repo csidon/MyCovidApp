@@ -33,6 +33,9 @@ public:
     // Gets a specific cell's value based on header and row index
     QString getCellValue(QString dbName, int headerIn, int rowIn);
 
+    // Writing data to db
+    void writeToPIDCSV(UserAccount userConstructor);
+
 };
 
 #endif // HANDLECSV_H

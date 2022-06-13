@@ -317,9 +317,9 @@ UserAccount::UserAccount()
     userQRCodeAddress = "";
 }
 
-UserAccount::UserAccount(int uid = 0, std::string email = "", std::string pswd = "",
-                         std::string fn = "", std::string ln = "", std::string pn = "",
-                         std::string nhi ="", int phone = 0, int vaxstat = 0, int qrstat = 0, std::string qraddress = "")
+UserAccount::UserAccount(int uid = 0, QString email = "", QString pswd = "",
+                         QString fn = "", QString ln = "", QString pn = "",
+                         QString nhi ="", int phone = 0, int vaxstat = 0, int qrstat = 0, QString qraddress = "")
 {
     userIDNumber = uid;
     userEmail = email;

@@ -74,9 +74,9 @@ public:
 
     //Constructor
     UserAccount();
-    UserAccount(int uid, std::string email, std::string pswd, std::string fn,
-                std::string ln, std::string pn, std::string nhi, int phone, int vaxstat,
-                int qrstat, std::string qraddress);
+    UserAccount(int uid, QString email, QString pswd, QString fn,
+                QString ln, QString pn, QString nhi, int phone, int vaxstat,
+                int qrstat, QString qraddress);
 
 
 };
