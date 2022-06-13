@@ -35,6 +35,7 @@ public:
     QLabel *lbl_welcomeMsg;
     QLabel *lbl_reminderMsgLn1;
     QLabel *lbl_reminderMsgLn1_2;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -56,7 +57,7 @@ public:
         label->setStyleSheet(QString::fromUtf8("border-image: url(:/images/appBanner.png);"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(10, 190, 351, 431));
+        groupBox->setGeometry(QRect(10, 190, 351, 411));
         groupBox->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);"));
         btn_requestQR = new QPushButton(groupBox);
         btn_requestQR->setObjectName(QString::fromUtf8("btn_requestQR"));
@@ -106,6 +107,9 @@ public:
         lbl_reminderMsgLn1_2->setGeometry(QRect(35, 160, 311, 21));
         lbl_reminderMsgLn1_2->setStyleSheet(QString::fromUtf8("font: 16pt \"Arial\";\n"
 "font: 8pt \"Arial\";"));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(140, 600, 83, 29));
         MainWindow->setCentralWidget(centralwidget);
         label->raise();
         btn_menu->raise();
@@ -113,6 +117,7 @@ public:
         lbl_welcomeMsg->raise();
         lbl_reminderMsgLn1->raise();
         lbl_reminderMsgLn1_2->raise();
+        pushButton->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 375, 25));
@@ -139,6 +144,7 @@ public:
         lbl_welcomeMsg->setText(QCoreApplication::translate("MainWindow", "Kia Ora Darth Vader", nullptr));
         lbl_reminderMsgLn1->setText(QCoreApplication::translate("MainWindow", "Reminder - You have a booster shot coming up.  ", nullptr));
         lbl_reminderMsgLn1_2->setText(QCoreApplication::translate("MainWindow", "Please book in by 4 June. May the 4th be with you.", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

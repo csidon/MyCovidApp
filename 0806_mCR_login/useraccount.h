@@ -17,48 +17,48 @@ class UserAccount
 {
 private:
     int userIDNumber;
-    std::string userEmail;
-    std::string userPassword;
-    std::string userFirstName;
-    std::string userLastName;
-    std::string userPreferredName;
-    std::string userNHINumber;
+    QString userEmail;
+    QString userPassword;
+    QString userFirstName;
+    QString userLastName;
+    QString userPreferredName;
+    QString userNHINumber;
     int userPhoneNumber;
     int userVaccinationStatus;      // 0 = Unvaccinated, 1 = Partially vaccinated, 2 = Fully vaccinated
     int userQRStatus;               // 0 = Not requested, 1 = Requested but not uploaded, 2 = Uploaded
-    std::string userQRCodeAddress;
+    QString userQRCodeAddress;
 
 public:
     //Getters
     int getUserIDNumber();
-    std::string getUserEmail();
-    std::string getUserPassword();
-    std::string getUserFirstName();
-    std::string getUserLastName();
-    std::string getUserPreferredName();
-    std::string getUserNHINumber();
+    QString getUserEmail();
+    QString getUserPassword();
+    QString getUserFirstName();
+    QString getUserLastName();
+    QString getUserPreferredName();
+    QString getUserNHINumber();
     int getUserPhoneNumber();
     int getUserVaccinationStatus();
     int getUserQRStatus();
-    std::string getUserQRCodeAddress();
+    QString getUserQRCodeAddress();
 
     //Setters
     void setUserIDNumber(int IDNumber);
-    void setUserEmail(std::string email);
-    void setUserPassword(std::string password);
-    void setUserFirstName(std::string firstName);
-    void setUserLastName(std::string lastName);
-    void setUserPreferredName(std::string preferredName);
-    void setUserNHINumber(std::string NHINumber);
+    void setUserEmail(QString email);
+    void setUserPassword(QString password);
+    void setUserFirstName(QString firstName);
+    void setUserLastName(QString lastName);
+    void setUserPreferredName(QString preferredName);
+    void setUserNHINumber(QString NHINumber);
     void setUserPhoneNumber(int PhoneNumber);
     void setUserVaccinationStatus(int VaccinationStatus);
     void setUserQRStatus(int QRStatus);
-    void setUserQRCodeAddress(std::string QRCodeAddress);
+    void setUserQRCodeAddress(QString QRCodeAddress);
 
     //Validators
     bool validateEmailInUse(QString email);
-    bool validateEmailIsEmail(std::string email);
-    bool validatePasswordIsSecure(std::string password);
+    bool validateEmailIsEmail(QString email);
+    bool validatePasswordIsSecure(QString password);
 
     //Functions
     UserAccount initialAccountSetup();
