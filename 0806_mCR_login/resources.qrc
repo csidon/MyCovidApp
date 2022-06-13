@@ -27,5 +27,13 @@
         <file>database/MasterDoses.csv</file>
         <file>database/MasterTests.csv</file>
         <file>database/QRCodeRequests.csv</file>
+        <file>images/check.png</file>
+        <file>images/close.png</file>
+        <file>images/check_small.png</file>
+        <file>images/check.ico</file>
+        <file>images/greenCheck.ico</file>
+        <file>images/greenCheck.png</file>
+        <file>images/redClose.ico</file>
+        <file>images/redClose.png</file>
     </qresource>
 </RCC>

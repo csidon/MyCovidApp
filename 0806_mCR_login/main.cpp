@@ -8,13 +8,14 @@
 #include <QApplication>
 #include <QFile>
 
+
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
     QApplication a(argc, argv);
 
     // Set the app stylesheet
-    QFile styleFile("../0806_mCR_login/Toolery.qss");
+    QFile styleFile("C:/Users/Chris/Desktop/Yoobee/Jan2022_Yoobee/1_CS106/1 MyCovidApp Project/MyCovidApp/0806_mCR_login/Toolery.qss");
     styleFile.open(QFile::ReadOnly);
     QString tooleryFile = QLatin1String(styleFile.readAll());
 

@@ -150,3 +150,39 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
     return cellValue;
 
 }
+
+void HandleCSV::writeToPIDCSV(UserAccount userConstructor)
+{
+    // Storing in userPID db
+    QString filePath = returnCSVFilePath("dbPID");
+    qDebug() << "File path is " <<  filePath;
+
+    // Mapping info in userConstructor to cells
+    QString uid, email, pass, fn, ln, pn, nhi, qrAdd;
+    int ph, vaxstat,qrstat;
+    uid = userConstructor.getUserIDNumber();
+    email = userConstructor.getUserEmail();
+    pass = userConstructor.getUserPassword();
+    fn = userConstructor.getUserFirstName();
+    ln = userConstructor.getUserLastName();
+    pn = userConstructor.getUserPreferredName();
+    nhi = userConstructor.getUserNHINumber();
+    qrAdd = userConstructor.getUserQRCodeAddress();
+    ph = userConstructor.getUserPhoneNumber();
+    vaxstat = userConstructor.getUserVaccinationStatus();
+    qrstat = userConstructor.getUserQRStatus();
+
+    // Open CSV filepath retrieved from associated dbName
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadWrite | QIODevice::Append))
+    {
+        qDebug() << "File did not open";
+    }
+    // Streaming info back into db
+    QTextStream stream(&file);
+    stream << uid << "," << email << "," << pass << "," << fn << ","
+           << ln << "," << pn << "," << nhi << "," << ph << ","
+           << vaxstat << "," << qrstat << "," << qrAdd;
+
+    file.close();
+}
