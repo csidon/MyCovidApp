@@ -1,5 +1,5 @@
 #include "handlecsv.h"
-
+#include "useraccount.h"
 HandleCSV::HandleCSV()
 {
 
@@ -35,7 +35,8 @@ QString HandleCSV::returnCSVFilePath(QString dbName)
     // ** Add any other database/path here
     else
     {
-        qDebug() << "Error with the file path you passed";
+        qDebug() << "Error with the file path you passed, returning entire string";
+        return dbName;
     }
     return filePath;
 }
