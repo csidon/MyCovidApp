@@ -1,6 +1,5 @@
 #include "handlecsv.h"
 
-
 HandleCSV::HandleCSV()
 {
 
@@ -10,7 +9,7 @@ HandleCSV::HandleCSV()
 // Returning the database path based on shortname
 QString HandleCSV::returnCSVFilePath(QString dbName)
 {
-    QDir dbDir("../MyCovidApp/0806_mCR_login/database");
+    QDir dbDir("database");
     QString dummyPath = dbDir.filePath("dummyPID.csv");
     QString testPath = dbDir.filePath("MasterTests.csv");
     QString dosePath = dbDir.filePath("MasterDoses.csv");
@@ -29,12 +28,15 @@ QString HandleCSV::returnCSVFilePath(QString dbName)
     {
         filePath = testPath;
     }
-//    else if (dbName == "dbDose")
-    else
+    else if (dbName == "dbDose")
     {
         filePath = dosePath;
     }
     // ** Add any other database/path here
+    else
+    {
+        qDebug() << "Error with the file path you passed";
+    }
     return filePath;
 }
 
@@ -64,7 +66,7 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
     for(int i = 0; i < headerRowValues.length(); i++)
     {
         qDebug() << "Comparing colHeaders...";
-        if(headerRowValues[i] == headerName)
+        if(headerRowValues.at(i) == headerName)
         {
             headerIndex = i;
             break;

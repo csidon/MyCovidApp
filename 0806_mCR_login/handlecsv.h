@@ -9,9 +9,8 @@
 #include <QMap>
 #include <QTextStream>
 
-#include "useraccount.h"
-
 #include <QDebug>
+#include "useraccount.h"
 class UserAccount;
 
 

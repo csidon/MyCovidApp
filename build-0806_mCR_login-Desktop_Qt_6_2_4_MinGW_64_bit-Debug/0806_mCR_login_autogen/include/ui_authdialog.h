@@ -49,13 +49,14 @@ public:
     QSpacerItem *verticalSpacer;
     QWidget *page_reg;
     QGridLayout *gridLayout;
-    QVBoxLayout *verticalLayout_8;
-    QLabel *lbl_mycovidrec_reg;
-    QLabel *lbl_nz_reg;
     QLabel *lbl_regEmail;
+    QLabel *lbl_regPass;
+    QLineEdit *lineEdit_inputRegPass;
+    QSpacerItem *verticalSpacer_5;
+    QLabel *lbl_register;
     QVBoxLayout *verticalLayout_7;
     QPushButton *btn_regForgotPass;
-    QLabel *label;
+    QLabel *lbl_passCriteria;
     QVBoxLayout *verticalLayout_9;
     QHBoxLayout *horizontalLayout_6;
     QLabel *lbl_passCheck_charIcon;
@@ -69,11 +70,11 @@ public:
     QPushButton *btn_createAccount;
     QPushButton *btn_switchToLogin;
     QSpacerItem *verticalSpacer_6;
-    QLabel *lbl_register;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *lbl_mycovidrec_reg;
+    QLabel *lbl_nz_reg;
     QLineEdit *lineEdit_inputRegEmail;
-    QLineEdit *lineEdit_inputRegPass;
-    QSpacerItem *verticalSpacer_5;
-    QLabel *lbl_regPass;
+    QLabel *lbl_emailExistsErr;
     QWidget *page_2;
 
     void setupUi(QDialog *AuthDialog)
@@ -237,33 +238,36 @@ public:
         page_reg->setObjectName(QString::fromUtf8("page_reg"));
         gridLayout = new QGridLayout(page_reg);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        verticalLayout_8 = new QVBoxLayout();
-        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        lbl_mycovidrec_reg = new QLabel(page_reg);
-        lbl_mycovidrec_reg->setObjectName(QString::fromUtf8("lbl_mycovidrec_reg"));
-        lbl_mycovidrec_reg->setMaximumSize(QSize(16777215, 30));
-        lbl_mycovidrec_reg->setFont(font);
-        lbl_mycovidrec_reg->setStyleSheet(QString::fromUtf8("font: 700 20pt \"Arial\";"));
-        lbl_mycovidrec_reg->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_8->addWidget(lbl_mycovidrec_reg);
-
-        lbl_nz_reg = new QLabel(page_reg);
-        lbl_nz_reg->setObjectName(QString::fromUtf8("lbl_nz_reg"));
-        lbl_nz_reg->setFont(font1);
-        lbl_nz_reg->setStyleSheet(QString::fromUtf8("font: 14pt \"Arial\";"));
-        lbl_nz_reg->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_8->addWidget(lbl_nz_reg);
-
-
-        gridLayout->addLayout(verticalLayout_8, 1, 0, 1, 3);
-
         lbl_regEmail = new QLabel(page_reg);
         lbl_regEmail->setObjectName(QString::fromUtf8("lbl_regEmail"));
         lbl_regEmail->setFont(font3);
 
         gridLayout->addWidget(lbl_regEmail, 3, 0, 1, 2);
+
+        lbl_regPass = new QLabel(page_reg);
+        lbl_regPass->setObjectName(QString::fromUtf8("lbl_regPass"));
+        lbl_regPass->setFont(font3);
+
+        gridLayout->addWidget(lbl_regPass, 6, 0, 1, 2);
+
+        lineEdit_inputRegPass = new QLineEdit(page_reg);
+        lineEdit_inputRegPass->setObjectName(QString::fromUtf8("lineEdit_inputRegPass"));
+        sizePolicy.setHeightForWidth(lineEdit_inputRegPass->sizePolicy().hasHeightForWidth());
+        lineEdit_inputRegPass->setSizePolicy(sizePolicy);
+        lineEdit_inputRegPass->setMaximumSize(QSize(16777215, 40));
+        lineEdit_inputRegPass->setFont(font4);
+
+        gridLayout->addWidget(lineEdit_inputRegPass, 7, 0, 2, 3);
+
+        verticalSpacer_5 = new QSpacerItem(20, 36, QSizePolicy::Minimum, QSizePolicy::Preferred);
+
+        gridLayout->addItem(verticalSpacer_5, 0, 2, 1, 1);
+
+        lbl_register = new QLabel(page_reg);
+        lbl_register->setObjectName(QString::fromUtf8("lbl_register"));
+        lbl_register->setFont(font2);
+
+        gridLayout->addWidget(lbl_register, 2, 0, 1, 2);
 
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
@@ -279,10 +283,10 @@ public:
 
         verticalLayout_7->addWidget(btn_regForgotPass, 0, Qt::AlignLeft);
 
-        label = new QLabel(page_reg);
-        label->setObjectName(QString::fromUtf8("label"));
+        lbl_passCriteria = new QLabel(page_reg);
+        lbl_passCriteria->setObjectName(QString::fromUtf8("lbl_passCriteria"));
 
-        verticalLayout_7->addWidget(label);
+        verticalLayout_7->addWidget(lbl_passCriteria);
 
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
@@ -375,13 +379,29 @@ public:
         verticalLayout_7->addItem(verticalSpacer_6);
 
 
-        gridLayout->addLayout(verticalLayout_7, 9, 0, 1, 3);
+        gridLayout->addLayout(verticalLayout_7, 10, 0, 1, 3);
 
-        lbl_register = new QLabel(page_reg);
-        lbl_register->setObjectName(QString::fromUtf8("lbl_register"));
-        lbl_register->setFont(font2);
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        lbl_mycovidrec_reg = new QLabel(page_reg);
+        lbl_mycovidrec_reg->setObjectName(QString::fromUtf8("lbl_mycovidrec_reg"));
+        lbl_mycovidrec_reg->setMaximumSize(QSize(16777215, 30));
+        lbl_mycovidrec_reg->setFont(font);
+        lbl_mycovidrec_reg->setStyleSheet(QString::fromUtf8("font: 700 20pt \"Arial\";"));
+        lbl_mycovidrec_reg->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(lbl_register, 2, 0, 1, 2);
+        verticalLayout_8->addWidget(lbl_mycovidrec_reg);
+
+        lbl_nz_reg = new QLabel(page_reg);
+        lbl_nz_reg->setObjectName(QString::fromUtf8("lbl_nz_reg"));
+        lbl_nz_reg->setFont(font1);
+        lbl_nz_reg->setStyleSheet(QString::fromUtf8("font: 14pt \"Arial\";"));
+        lbl_nz_reg->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_8->addWidget(lbl_nz_reg);
+
+
+        gridLayout->addLayout(verticalLayout_8, 1, 0, 1, 3);
 
         lineEdit_inputRegEmail = new QLineEdit(page_reg);
         lineEdit_inputRegEmail->setObjectName(QString::fromUtf8("lineEdit_inputRegEmail"));
@@ -393,24 +413,13 @@ public:
 
         gridLayout->addWidget(lineEdit_inputRegEmail, 4, 0, 1, 3);
 
-        lineEdit_inputRegPass = new QLineEdit(page_reg);
-        lineEdit_inputRegPass->setObjectName(QString::fromUtf8("lineEdit_inputRegPass"));
-        sizePolicy.setHeightForWidth(lineEdit_inputRegPass->sizePolicy().hasHeightForWidth());
-        lineEdit_inputRegPass->setSizePolicy(sizePolicy);
-        lineEdit_inputRegPass->setMaximumSize(QSize(16777215, 40));
-        lineEdit_inputRegPass->setFont(font4);
+        lbl_emailExistsErr = new QLabel(page_reg);
+        lbl_emailExistsErr->setObjectName(QString::fromUtf8("lbl_emailExistsErr"));
+        QFont font7;
+        font7.setFamilies({QString::fromUtf8("Arial")});
+        lbl_emailExistsErr->setFont(font7);
 
-        gridLayout->addWidget(lineEdit_inputRegPass, 6, 0, 2, 3);
-
-        verticalSpacer_5 = new QSpacerItem(20, 36, QSizePolicy::Minimum, QSizePolicy::Preferred);
-
-        gridLayout->addItem(verticalSpacer_5, 0, 2, 1, 1);
-
-        lbl_regPass = new QLabel(page_reg);
-        lbl_regPass->setObjectName(QString::fromUtf8("lbl_regPass"));
-        lbl_regPass->setFont(font3);
-
-        gridLayout->addWidget(lbl_regPass, 5, 0, 1, 2);
+        gridLayout->addWidget(lbl_emailExistsErr, 5, 0, 1, 3);
 
         stackedWidget->addWidget(page_reg);
         page_2 = new QWidget();
@@ -423,6 +432,11 @@ public:
         QWidget::setTabOrder(lineEdit_inputPass, btn_login);
         QWidget::setTabOrder(btn_login, btn_forgotPass);
         QWidget::setTabOrder(btn_forgotPass, btn_switchToSignup);
+        QWidget::setTabOrder(btn_switchToSignup, lineEdit_inputRegEmail);
+        QWidget::setTabOrder(lineEdit_inputRegEmail, lineEdit_inputRegPass);
+        QWidget::setTabOrder(lineEdit_inputRegPass, btn_createAccount);
+        QWidget::setTabOrder(btn_createAccount, btn_regForgotPass);
+        QWidget::setTabOrder(btn_regForgotPass, btn_switchToLogin);
 
         retranslateUi(AuthDialog);
 
@@ -454,14 +468,16 @@ public:
 #if QT_CONFIG(shortcut)
         btn_switchToSignup->setShortcut(QString());
 #endif // QT_CONFIG(shortcut)
-        lbl_mycovidrec_reg->setText(QCoreApplication::translate("AuthDialog", "MyCovidRecord", nullptr));
-        lbl_nz_reg->setText(QCoreApplication::translate("AuthDialog", "New Zealand", nullptr));
         lbl_regEmail->setText(QCoreApplication::translate("AuthDialog", "Email", nullptr));
+        lbl_regPass->setText(QCoreApplication::translate("AuthDialog", "Password", nullptr));
+        lineEdit_inputRegPass->setText(QString());
+        lineEdit_inputRegPass->setPlaceholderText(QString());
+        lbl_register->setText(QCoreApplication::translate("AuthDialog", "REGISTER", nullptr));
         btn_regForgotPass->setText(QCoreApplication::translate("AuthDialog", "Forgot Password?", nullptr));
 #if QT_CONFIG(shortcut)
         btn_regForgotPass->setShortcut(QString());
 #endif // QT_CONFIG(shortcut)
-        label->setText(QCoreApplication::translate("AuthDialog", "Password criteria:", nullptr));
+        lbl_passCriteria->setText(QCoreApplication::translate("AuthDialog", "Password criteria:", nullptr));
         lbl_passCheck_charIcon->setText(QString());
         lbl_passCheck_char_2->setText(QCoreApplication::translate("AuthDialog", "8 - 20 characters", nullptr));
         lbl_passCheck_UppLowIcon->setText(QString());
@@ -473,12 +489,11 @@ public:
 #if QT_CONFIG(shortcut)
         btn_switchToLogin->setShortcut(QString());
 #endif // QT_CONFIG(shortcut)
-        lbl_register->setText(QCoreApplication::translate("AuthDialog", "REGISTER", nullptr));
+        lbl_mycovidrec_reg->setText(QCoreApplication::translate("AuthDialog", "MyCovidRecord", nullptr));
+        lbl_nz_reg->setText(QCoreApplication::translate("AuthDialog", "New Zealand", nullptr));
         lineEdit_inputRegEmail->setText(QString());
         lineEdit_inputRegEmail->setPlaceholderText(QString());
-        lineEdit_inputRegPass->setText(QString());
-        lineEdit_inputRegPass->setPlaceholderText(QString());
-        lbl_regPass->setText(QCoreApplication::translate("AuthDialog", "Password", nullptr));
+        lbl_emailExistsErr->setText(QCoreApplication::translate("AuthDialog", "Email exists. Please enter a different email.", nullptr));
     } // retranslateUi
 
 };

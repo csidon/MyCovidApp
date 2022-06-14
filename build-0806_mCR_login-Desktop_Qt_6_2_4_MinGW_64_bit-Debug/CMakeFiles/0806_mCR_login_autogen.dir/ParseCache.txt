@@ -9,6 +9,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDir
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QFile
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QMap
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QString
@@ -28,6 +29,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearraylist.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayview.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qchar.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qcompare.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qcompilerdetection.h
@@ -37,9 +39,12 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qcontainertools_impl.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qcontiguouscache.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdatastream.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdebug.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdir.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qfile.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qfiledevice.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qfileinfo.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qflags.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qgenericatomic.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qglobal.h
@@ -52,6 +57,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qiterator.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qline.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qlist.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qlocale.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qlogging.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qmap.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qmargins.h
@@ -93,9 +99,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qtmetamacros.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qtypeinfo.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qutf8stringview.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvariant.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/QPixmap
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h
