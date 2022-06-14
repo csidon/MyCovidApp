@@ -225,7 +225,7 @@ void UserAccount::assignID()
         ID = rand();
         freshID = true;
         HandleCSV checkID;
-        QStringList allIDs = checkID.getColData("userIDNumber", ":/database/dummyPID.csv");
+        QStringList allIDs = checkID.getColData("userIDNumber", "dbPID");
         for(int i = 0; i < allIDs.size(); i++){
             if(allIDs.at(i) == QString::number(ID)){
                 freshID = false;
@@ -237,10 +237,10 @@ void UserAccount::assignID()
 
 void UserAccount::requestQR()
 {
-    QFile QRCodeRequests(":/database/QRCodeRequests.csv");
+    QFile QRCodeRequests("database/QRCodeRequests.csv");
     if(QRCodeRequests.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&QRCodeRequests);
-        stream << this->getUserIDNumber();
+        stream << "\n" << this->getUserIDNumber();
     }
     QRCodeRequests.close();
 }
@@ -251,23 +251,23 @@ void UserAccount::assignQR()
     // --- PSEUDOCODE/commenting---
     // Function grabs a random QR code JPEG in "QR Code Generator" folder
     // Moves JPEG from "QR Code Generator" folder to "Active User Data" folder
-    // Renames JPEG to [UID]+[YYMMDD].jpg
+    // Renames JPEG to [UID]+[YYMMDD].jpg // I think we should just use the UID; that way we can write a function to call it by uid and lose the QRAddress variable
     // Adds new JPEG path to the respective userID's QRCodeAddress
 }
 
 void UserAccount::addTest(Test testToStore)
 {
     testToStore.setTestUserID(this->getUserIDNumber());
-    QFile doses(":/database/UserTests" + QString::number(this->getUserIDNumber()) + ".csv");
+    QFile doses("database/UserTests/" + QString::number(this->getUserIDNumber()) + ".csv");
     if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&doses);
-        stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
+        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
     }
     doses.close();
-    QFile masterTests(":/database/MasterTests.csv");
+    QFile masterTests("database/MasterTests.csv");
     if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&masterTests);
-        stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
+        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
     }
     masterTests.close();
 }
@@ -275,16 +275,16 @@ void UserAccount::addTest(Test testToStore)
 void UserAccount::addDose (Dose doseToStore)
 {
     doseToStore.setDoseUserID(this->getUserIDNumber());
-    QFile doses(":/database/UserDoses" + QString::number(this->getUserIDNumber()) + ".csv");
+    QFile doses("database/UserDoses/" + QString::number(this->getUserIDNumber()) + ".csv");
     if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&doses);
-        stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+        stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
     }
     doses.close();
-    QFile masterDoses(":/database/MasterDoses.csv");
+    QFile masterDoses("database/MasterDoses.csv");
     if(masterDoses.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&masterDoses);
-        stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+        stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
     }
     masterDoses.close();
 }
@@ -293,9 +293,9 @@ void UserAccount::reportError(ErrorReport reportToStore)
 {
     reportToStore.setSender(this->getUserIDNumber());
     QFile reports(":/database/ErrorReports.csv");
-    if(reports.open(QIODevice::ReadWrite| QIODevice::Append)){
+    if(!reports.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&reports);
-        stream << QString::fromStdString(reportToStore.getTitle()) << "," << QString::fromStdString(reportToStore.getText()) << "," << reportToStore.getDate() << "," << reportToStore.getSender() << "," << reportToStore.getIsNew();
+        stream << "\n" << reportToStore.getTitle() << "," << reportToStore.getText() << "," << reportToStore.getDate() << "," << reportToStore.getSender() << "," << reportToStore.getIsNew();
     };
     reports.close();
 }

@@ -1,11 +1,11 @@
 #include "errorreport.h"
 
-std::string ErrorReport::getTitle()
+QString ErrorReport::getTitle()
 {
     return title;
 }
 
-std::string ErrorReport::getText()
+QString ErrorReport::getText()
 {
     return text;
 }
@@ -25,12 +25,12 @@ bool ErrorReport::getIsNew()
     return isNew;
 }
 
-void ErrorReport::setTitle(std::string &newTitle)
+void ErrorReport::setTitle(QString newTitle)
 {
     title = newTitle;
 }
 
-void ErrorReport::setText(std::string &newText)
+void ErrorReport::setText(QString newText)
 {
     text = newText;
 }

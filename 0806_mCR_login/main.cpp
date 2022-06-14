@@ -45,8 +45,13 @@ int main(int argc, char *argv[])
 //    dumFile = ":/database/dummyPID.csv";
 
 
-//    qDebug() << "Homepath magic? " << dumFile.a
-
+//    qDebug() << "Homepath magic? " << dumFile.
+    Dose testDose;
+    testDose.setDoseDate(220614);
+    testDose.setDoseManufacturer(1);
+    UserAccount testUser;
+    testUser.setUserIDNumber(484);
+    testUser.addDose(testDose);
 
 
     MainWindow w;

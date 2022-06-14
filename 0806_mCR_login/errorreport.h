@@ -2,27 +2,27 @@
 #define ERRORREPORT_H
 
 
-#include <string>
+#include <QString>
 class ErrorReport
 {
 private:
-    std::string title;
-    std::string text;
+    QString title;
+    QString text;
     int date;
     int sender;
     bool isNew;
 
 public:
     //Getters
-    std::string getTitle();
-    std::string getText();
+    QString getTitle();
+    QString getText();
     int getDate();
     int getSender();
     bool getIsNew();
 
     //Setters
-    void setTitle(std::string &newTitle);
-    void setText(std::string &newText);
+    void setTitle(QString newTitle);
+    void setText(QString newText);
     void setDate(int newDate);
     void setSender(int newSender);
     void setIsNew(bool newIsNew);
