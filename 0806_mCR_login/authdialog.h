@@ -4,6 +4,10 @@
 #include <QDialog>
 #include <QString>
 #include <QMessageBox>
+#include <QPixmap>
+#include <QStringList>
+#include <QFile>
+#include <QTextStream>
 
 #include "useraccount.h"
 #include "handlecsv.h"
@@ -26,6 +30,9 @@ public:
 
 
     // Account creation & validation functions
+    //-- User Error messages--
+    void hidePassCriteria();
+    void showPassCriteria();
     bool validateEmailInUse(QString email);
     bool validateEmailIsEmail(QString email);
     bool validatePasswordIsSecure(QString password);
@@ -41,6 +48,8 @@ private slots:
     void on_btn_switchToLogin_clicked();
 
     void on_btn_createAccount_clicked();
+
+    void on_lineEdit_inputRegEmail_inputRejected();
 
 private:
     Ui::AuthDialog *ui;

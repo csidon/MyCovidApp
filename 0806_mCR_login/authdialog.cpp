@@ -1,43 +1,17 @@
 // Tick/Close icons created by Pixel perfect - Flaticon
-
-
 #include "authdialog.h"
 #include "ui_authdialog.h"
-#include <QPixmap>
+
 
 AuthDialog::AuthDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AuthDialog)
 {
     ui->setupUi(this);
+    hidePassCriteria();
+    ui->lbl_emailExistsErr->hide();
 
 
-//    ui->lbl_passCheck_charIcon->setPixmap(QPixmap(":/images/greenCheck.ico").scaled(16, 16, Qt::IgnoreAspectRatio, Qt::FastTransformation));
-//    ui->lbl_passCheck_charIcon->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
-//    ui->lbl_passCheck_charIcon->show();
-
-
-// CODE FOR REFERENCE IN CASE OF PALETTE STYLESHEET STYLING!
-//    // Lets extract the palette property of our text label
-//    QPalette labelPalette = ui->label->palette();
-
-//    // To enable the background color of the widget to be updated,
-//    // I need to set its autoFill Background property to be true
-//    ui->label->setAutoFillBackground(true);
-
-//    // Next set the background and text color of this label
-//    labelPalette.setColor(QPalette::Window, Qt::yellow); // Set label widget's background color
-//    labelPalette.setColor(QPalette::WindowText, Qt::darkRed); // Set label widget's text color
-
-//    // Update or reset the palette of our text label widget with the above changes to color
-//    ui->label->setPalette(labelPalette);
-
-//    // Then in the respective active/disabled buttons
-//    QPalette::ColorGroup activeButtonColorGroup = ui->activeButton->palette().currentColorGroup();
-//    QPalette::ColorGroup disabledButtonColorGroup = ui->disabledButton->palette().currentColorGroup();
-
-//    qDebug() << "Active button color group: " << activeButtonColorGroup;
-//    qDebug() << "Disable button color group: " << disabledButtonColorGroup;
 }
 
 AuthDialog::~AuthDialog()
@@ -162,15 +136,22 @@ void AuthDialog::on_btn_switchToLogin_clicked()
 
 void AuthDialog::on_btn_createAccount_clicked()
 {
+    showPassCriteria();
     QString inputEmail = ui->lineEdit_inputRegEmail->text();
-    QString inputPass = ui->lineEdit_inputRegEmail->text();
+    QString inputPass = ui->lineEdit_inputRegPass->text();
 
     bool emailInDB = validateEmailInUse(inputEmail);
     bool emailValid = validateEmailIsEmail(inputEmail);
     qDebug() << "Email in database? " << emailInDB << "\nEmail valid? " << emailValid;
     bool passValidated = validatePasswordIsSecure(inputPass);
     qDebug() << "Are you authenticated?? " << passValidated;
-    if (emailInDB == false && emailValid == true && passValidated == true)
+    if(emailInDB == true)
+    {
+        ui->lineEdit_inputRegEmail->inputRejected();
+        qDebug() << "Email exists in database. Let user know";
+
+    }
+    else if (emailInDB == false && emailValid == true && passValidated == true)
     {
         // User has met all criteria. Assign user a random userID
         int newID = assignID();
@@ -187,7 +168,10 @@ void AuthDialog::on_btn_createAccount_clicked()
 
         // Redirect user to Login Page
         ui->stackedWidget->setCurrentIndex(0);
-
+    }
+    else
+    {
+        qDebug() << "Something went wrong in the authentication process.";
     }
 }
 
@@ -253,7 +237,7 @@ bool AuthDialog::validatePasswordIsSecure(QString password)
 
     for(int i = 0; i < passSize; i++)
     {
-        qDebug() << "you are in the LOOP";
+//        qDebug() << "you are in the LOOP";
         if(password.at(i).isUpper())
         {
             qDebug() << "Your password has an Upper Let!";
@@ -344,7 +328,7 @@ int AuthDialog::assignID()
         ID = rand();
         freshID = true;
         HandleCSV checkID;
-        QStringList allIDs = checkID.getColData("userIDNumber", ":/database/dummyPID.csv");
+        QStringList allIDs = checkID.getColData("userIDNumber", "dbPID");
         for(int i = 0; i < allIDs.size(); i++){
             if(allIDs.at(i) == QString::number(ID)){
                 freshID = false;
@@ -353,4 +337,36 @@ int AuthDialog::assignID()
     }
 //    this->setUserIDNumber(ID);
     return ID;
+}
+
+void AuthDialog::on_lineEdit_inputRegEmail_inputRejected()
+{
+    // Note: Use #17A81A for green approvals and #C00000 for red rejects
+    ui->lineEdit_inputRegEmail->setStyleSheet("border-style: solid; border-color: #C00000; border-width: 1px; color: #C00000");
+    ui->lbl_emailExistsErr->setStyleSheet("color: #C00000");
+    ui->lbl_emailExistsErr->show();
+
+
+}
+
+void AuthDialog::hidePassCriteria()
+{
+    ui->lbl_passCriteria->hide();
+    ui->lbl_passCheck_charIcon->hide();
+    ui->lbl_passCheck_char_2->hide();
+    ui->lbl_passCheck_num->hide();
+    ui->lbl_passCheck_numIcon->hide();
+    ui->lbl_passCheck_uppLow->hide();
+    ui->lbl_passCheck_UppLowIcon->hide();
+}
+
+void AuthDialog::showPassCriteria()
+{
+    ui->lbl_passCriteria->show();
+    ui->lbl_passCheck_charIcon->show();
+    ui->lbl_passCheck_char_2->show();
+    ui->lbl_passCheck_num->show();
+    ui->lbl_passCheck_numIcon->show();
+    ui->lbl_passCheck_uppLow->show();
+    ui->lbl_passCheck_UppLowIcon->show();
 }

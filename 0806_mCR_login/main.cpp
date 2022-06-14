@@ -7,7 +7,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QFile>
-
+#include <QDir>
 
 int main(int argc, char *argv[])
 {
@@ -15,22 +15,22 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     // Set the app stylesheet
-    QFile styleFile("C:/Users/Chris/Desktop/Yoobee/Jan2022_Yoobee/1_CS106/1 MyCovidApp Project/MyCovidApp/0806_mCR_login/Toolery.qss");
+    QFile styleFile(":/Toolery.qss");
     styleFile.open(QFile::ReadOnly);
     QString tooleryFile = QLatin1String(styleFile.readAll());
 
     qApp->setStyleSheet(tooleryFile);
 
-    HandleCSV testCSVFunctions;
-    testCSVFunctions.returnCSVFilePath("dbTest");
-    qDebug() << "You have finished returning CSV file path";
-    int headerIn = testCSVFunctions.returnHeaderIndex("dbPID","userEmail");
-    qDebug() << "Header int for userEmail is " << headerIn;
-    testCSVFunctions.getColData("userLastName","dbPID");
-    int rowInTest = testCSVFunctions.rowIndexOfCellMatchingSearch(testCSVFunctions.getColData("userFirstName","dbPID"),"Luciano");
-    qDebug() << "Row index for Luciano is " << rowInTest;   // is row index correct..??
-    QString cellValTest = testCSVFunctions.getCellValue("dbPID",6,1);
-    qDebug() << "Cell value retrieved is " << cellValTest;
+//    HandleCSV testCSVFunctions;
+//    testCSVFunctions.returnCSVFilePath("dbTest");
+//    qDebug() << "You have finished returning CSV file path";
+//    int headerIn = testCSVFunctions.returnHeaderIndex("dbPID","userEmail");
+//    qDebug() << "Header int for userEmail is " << headerIn;
+//    testCSVFunctions.getColData("userLastName","dbPID");
+//    int rowInTest = testCSVFunctions.rowIndexOfCellMatchingSearch(testCSVFunctions.getColData("userFirstName","dbPID"),"Luciano");
+//    qDebug() << "Row index for Luciano is " << rowInTest;   // is row index correct..??
+//    QString cellValTest = testCSVFunctions.getCellValue("dbPID",6,1);
+//    qDebug() << "Cell value retrieved is " << cellValTest;
 
 
 //    UserAccount extractedTestUser;
@@ -39,7 +39,13 @@ int main(int argc, char *argv[])
 //    extractedTestUser = extractedTestUser.getUserData(readTest.searchRowValue(answer,"Skywalker"));
 //    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail()) << extractedTestUser.validateEmailInUse(extractedTestUser.getUserEmail());
 //    extractedTestUser.assignID();
+//    HandleCSV testFile;
+//    QString retFile = testFile.returnCSVFilePath("dbPID");
+//    QFile dumFile;
+//    dumFile = ":/database/dummyPID.csv";
 
+
+//    qDebug() << "Homepath magic? " << dumFile.a
 
 
 

@@ -34,7 +34,7 @@ set(PROJECT_SOURCES
         errorreport.cpp
         handlecsv.cpp
         handlecsv.h
-        authdialog_copy.ui
+#        authdialog_copy.ui
 
 )
 

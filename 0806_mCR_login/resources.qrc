@@ -35,5 +35,6 @@
         <file>images/greenCheck.png</file>
         <file>images/redClose.ico</file>
         <file>images/redClose.png</file>
+        <file>Toolery.qss</file>
     </qresource>
 </RCC>

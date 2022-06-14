@@ -296,58 +296,6 @@ background-color: rgba(255, 255, 255, 0);</string>
      </widget>
      <widget class="QWidget" name="page_reg">
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0" colspan="3">
-        <layout class="QVBoxLayout" name="verticalLayout_8">
-         <item>
-          <widget class="QLabel" name="lbl_mycovidrec_reg">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Arial</family>
-             <pointsize>20</pointsize>
-             <italic>false</italic>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 700 20pt &quot;Arial&quot;;</string>
-           </property>
-           <property name="text">
-            <string>MyCovidRecord</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lbl_nz_reg">
-           <property name="font">
-            <font>
-             <family>Arial</family>
-             <pointsize>14</pointsize>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;Arial&quot;;</string>
-           </property>
-           <property name="text">
-            <string>New Zealand</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
        <item row="3" column="0" colspan="2">
         <widget class="QLabel" name="lbl_regEmail">
          <property name="font">
@@ -362,7 +310,79 @@ background-color: rgba(255, 255, 255, 0);</string>
          </property>
         </widget>
        </item>
-       <item row="9" column="0" colspan="3">
+       <item row="6" column="0" colspan="2">
+        <widget class="QLabel" name="lbl_regPass">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" rowspan="2" colspan="3">
+        <widget class="QLineEdit" name="lineEdit_inputRegPass">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>36</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="lbl_register">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>REGISTER</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="3">
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <item alignment="Qt::AlignLeft">
           <widget class="QPushButton" name="btn_regForgotPass">
@@ -399,7 +419,7 @@ background-color: rgba(255, 255, 255, 0);</string>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="lbl_passCriteria">
            <property name="text">
             <string>Password criteria:</string>
            </property>
@@ -436,7 +456,7 @@ background-color: rgba(255, 255, 255, 0);</string>
                 </size>
                </property>
                <property name="text">
-                <string> </string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -478,7 +498,7 @@ background-color: rgba(255, 255, 255, 0);</string>
                 </size>
                </property>
                <property name="text">
-                <string> </string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -520,7 +540,7 @@ background-color: rgba(255, 255, 255, 0);</string>
                 </size>
                </property>
                <property name="text">
-                <string> </string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -601,19 +621,57 @@ background-color: rgba(255, 255, 255, 0);</string>
          </item>
         </layout>
        </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="QLabel" name="lbl_register">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>10</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>REGISTER</string>
-         </property>
-        </widget>
+       <item row="1" column="0" colspan="3">
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="lbl_mycovidrec_reg">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>20</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 700 20pt &quot;Arial&quot;;</string>
+           </property>
+           <property name="text">
+            <string>MyCovidRecord</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lbl_nz_reg">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>14</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 14pt &quot;Arial&quot;;</string>
+           </property>
+           <property name="text">
+            <string>New Zealand</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item row="4" column="0" colspan="3">
         <widget class="QLineEdit" name="lineEdit_inputRegEmail">
@@ -646,61 +704,15 @@ background-color: rgba(255, 255, 255, 0);</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="0" rowspan="2" colspan="3">
-        <widget class="QLineEdit" name="lineEdit_inputRegPass">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>40</height>
-          </size>
-         </property>
+       <item row="5" column="0" colspan="3">
+        <widget class="QLabel" name="lbl_emailExistsErr">
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="text">
-          <string/>
-         </property>
-         <property name="placeholderText">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <spacer name="verticalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>36</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="QLabel" name="lbl_regPass">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Password</string>
+          <string>Email exists. Please enter a different email.</string>
          </property>
         </widget>
        </item>
@@ -726,6 +738,11 @@ background-color: rgba(255, 255, 255, 0);</string>
   <tabstop>btn_login</tabstop>
   <tabstop>btn_forgotPass</tabstop>
   <tabstop>btn_switchToSignup</tabstop>
+  <tabstop>lineEdit_inputRegEmail</tabstop>
+  <tabstop>lineEdit_inputRegPass</tabstop>
+  <tabstop>btn_createAccount</tabstop>
+  <tabstop>btn_regForgotPass</tabstop>
+  <tabstop>btn_switchToLogin</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>
