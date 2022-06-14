@@ -1,5 +1,5 @@
 #include "handlecsv.h"
-#include "useraccount.h"
+
 
 HandleCSV::HandleCSV()
 {
@@ -10,24 +10,32 @@ HandleCSV::HandleCSV()
 // Returning the database path based on shortname
 QString HandleCSV::returnCSVFilePath(QString dbName)
 {
+    QDir dbDir("../MyCovidApp/0806_mCR_login/database");
+    QString dummyPath = dbDir.filePath("dummyPID.csv");
+    QString testPath = dbDir.filePath("MasterTests.csv");
+    QString dosePath = dbDir.filePath("MasterDoses.csv");
+
+//    qDebug() << "The Path of dumDir is " << dummyPath;
+
     QString filePath;
     filePath.resize(30);
+    qDebug() << "dbName passed is " << dbName;
     if (dbName == "dbPID")
     {
-        filePath = "/database/dummyPID.csv";
+        filePath = dummyPath;
 //        qDebug() << "You have found dbPID with filepath " << filePath;
     }
     else if (dbName == "dbTest")
     {
-        filePath = "/database/MasterTests.csv";
+        filePath = testPath;
     }
 //    else if (dbName == "dbDose")
     else
     {
-        filePath = "/database/MasterDoses.csv";
+        filePath = dosePath;
     }
     // ** Add any other database/path here
-    return ":" + filePath;
+    return filePath;
 }
 
 //-----------------------------------------------------------
@@ -71,6 +79,7 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
 {
     QStringList data;
     QString filePath = returnCSVFilePath(dbName);
+    qDebug() << "You are in getColData and your filepath is " << filePath;
 
     int headerIndex = returnHeaderIndex(dbName,headerName);
 
@@ -155,7 +164,7 @@ void HandleCSV::writeToPIDCSV(UserAccount userConstructor)
 {
     // Storing in userPID db
     QString filePath = returnCSVFilePath("dbPID");
-    qDebug() << "File path is " <<  filePath;
+    qDebug() << "File path passsed to writeToPIDCSV is " <<  filePath;
 
     // Mapping info in userConstructor to cells
     QString email, pass, fn, ln, pn, nhi, qrAdd;
@@ -172,17 +181,29 @@ void HandleCSV::writeToPIDCSV(UserAccount userConstructor)
     vaxstat = userConstructor.getUserVaccinationStatus();
     qrstat = userConstructor.getUserQRStatus();
 
+
     // Open CSV filepath retrieved from associated dbName
     QFile file(filePath);
     if (!file.open(QIODevice::ReadWrite | QIODevice::Append))
     {
-        qDebug() << "File did not open";
+
+        qDebug() << file.isOpen() << "error " << file.errorString();
+
     }
-    // Streaming info back into db
-    QTextStream stream(&file);
-    stream << uid << "," << email << "," << pass << "," << fn << ","
-           << ln << "," << pn << "," << nhi << "," << ph << ","
-           << vaxstat << "," << qrstat << "," << qrAdd;
+//    if (file.open(QIODevice::ReadWrite | QIODevice::Append))
+
+    else
+    {
+        qDebug() << "Is the file open?" << file.isOpen();
+
+        // Streaming info back into db
+        QTextStream stream(&file);
+        stream << uid << "," << email << "," << pass << "," << fn << ","
+               << ln << "," << pn << "," << nhi << "," << ph << ","
+               << vaxstat << "," << qrstat << "," << qrAdd << "\n";
+
+    }
+
 
     file.close();
 }

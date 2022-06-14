@@ -2,10 +2,14 @@
 #define HANDLECSV_H
 
 #include <QStringList>
+#include <QDir>
 #include <QFile>
 #include <QString>
 #include <QMessageBox>
 #include <QMap>
+#include <QTextStream>
+
+#include "useraccount.h"
 
 #include <QDebug>
 class UserAccount;
