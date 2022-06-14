@@ -22,11 +22,6 @@
         <file>images/hompageIcons/accountDeetsBtn.png</file>
         <file>images/hompageIcons/requestQR.png</file>
         <file>images/hompageIcons/vaxHistoryBtn.png</file>
-        <file>database/dummyPID.csv</file>
-        <file>database/ErrorReports.csv</file>
-        <file>database/MasterDoses.csv</file>
-        <file>database/MasterTests.csv</file>
-        <file>database/QRCodeRequests.csv</file>
         <file>images/check.png</file>
         <file>images/close.png</file>
         <file>images/check_small.png</file>
@@ -36,5 +31,8 @@
         <file>images/redClose.ico</file>
         <file>images/redClose.png</file>
         <file>Toolery.qss</file>
+        <file>images/hompageIcons/adminSearchUsers.png</file>
+        <file>images/hompageIcons/adminErrorReports.png</file>
+        <file>images/hompageIcons/adminQRCodeRequests.png</file>
     </qresource>
 </RCC>

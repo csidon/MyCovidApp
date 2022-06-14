@@ -1,3 +1,4 @@
+#include "adminhome.h"
 #include "mainwindow.h"
 #include "authdialog.h"
 #include "useraccount.h"
@@ -46,20 +47,26 @@ int main(int argc, char *argv[])
 
 
 //    qDebug() << "Homepath magic? " << dumFile.
-    Dose testDose;
-    testDose.setDoseDate(220614);
-    testDose.setDoseManufacturer(1);
-    UserAccount testUser;
-    testUser.setUserIDNumber(484);
-    testUser.addDose(testDose);
+
+    //Test Dose Storage
+//    Dose testDose;
+//    testDose.setDoseDate(220614);
+//    testDose.setDoseManufacturer(1);
+//    UserAccount testUser;
+//    testUser.setUserIDNumber(484);
+//    testUser.addDose(testDose);
 
 
-    MainWindow w;
-    w.show();
+    //MainWindow w;
+    //w.show();
 
-    AuthDialog authdialog;
-    authdialog.setModal(true);
-    authdialog.exec();
+    //AuthDialog authdialog;
+    //authdialog.setModal(true);
+    //authdialog.exec();
+
+    AdminHome adminHome;
+    adminHome.show();
+
 
     return a.exec();
 }
