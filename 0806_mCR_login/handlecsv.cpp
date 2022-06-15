@@ -9,28 +9,20 @@ HandleCSV::HandleCSV()
 // Returning the database path based on shortname
 QString HandleCSV::returnCSVFilePath(QString dbName)
 {
-    QDir dbDir("database");
-    QString dummyPath = dbDir.filePath("dummyPID.csv");
-    QString testPath = dbDir.filePath("MasterTests.csv");
-    QString dosePath = dbDir.filePath("MasterDoses.csv");
-
-//    qDebug() << "The Path of dumDir is " << dummyPath;
-
     QString filePath;
-    filePath.resize(30);
     qDebug() << "dbName passed is " << dbName;
     if (dbName == "dbPID")
     {
-        filePath = dummyPath;
+        filePath = "database/dummyPID.csv";
 //        qDebug() << "You have found dbPID with filepath " << filePath;
     }
     else if (dbName == "dbTest")
     {
-        filePath = testPath;
+        filePath = "database/MasterTests.csv";
     }
     else if (dbName == "dbDose")
     {
-        filePath = dosePath;
+        filePath = "database/MasterDoses.csv";
     }
     // ** Add any other database/path here
     else
