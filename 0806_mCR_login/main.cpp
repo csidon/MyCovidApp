@@ -57,12 +57,12 @@ int main(int argc, char *argv[])
 //    testUser.addDose(testDose);
 
 
-    //MainWindow w;
-    //w.show();
+    MainWindow w;
+    w.show();
 
-    //AuthDialog authdialog;
-    //authdialog.setModal(true);
-    //authdialog.exec();
+//    AuthDialog authdialog;
+//    authdialog.setModal(true);
+//    authdialog.exec();
 
     AdminHome adminHome;
     adminHome.show();
