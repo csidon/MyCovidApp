@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>AdminHome</class>
  <widget class="QWidget" name="AdminHome">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,6 +12,11 @@
     <width>375</width>
     <height>667</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Form</string>

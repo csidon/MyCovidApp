@@ -154,6 +154,29 @@ background-color: rgba(255, 255, 255, 0);</string>
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_QRrequested">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>10</y>
+       <width>149</width>
+       <height>189</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/hompageIcons/QRrequested.png);
+background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="lbl_welcomeMsg">
     <property name="geometry">
@@ -205,26 +228,12 @@ font: 8pt &quot;Arial&quot;;</string>
      <string>Please book in by 4 June. May the 4th be with you.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>600</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
    <zorder>label</zorder>
    <zorder>btn_menu</zorder>
    <zorder>groupBox</zorder>
    <zorder>lbl_welcomeMsg</zorder>
    <zorder>lbl_reminderMsgLn1</zorder>
    <zorder>lbl_reminderMsgLn1_2</zorder>
-   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -232,7 +241,7 @@ font: 8pt &quot;Arial&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>375</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

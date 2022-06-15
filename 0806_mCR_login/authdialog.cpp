@@ -1,4 +1,3 @@
-// Tick/Close icons created by Pixel perfect - Flaticon
 #include "authdialog.h"
 #include "ui_authdialog.h"
 
@@ -29,6 +28,8 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
     // Getting the headerIndex for different headers
     int passHeaderIndex = checkUser.returnHeaderIndex(dbName,"userPassword");
     int uidHeaderIndex = checkUser.returnHeaderIndex(dbName,"userIDNumber");
+    qDebug() << "The pass header index is : " << passHeaderIndex;
+    qDebug() << "The uid header index is : " << uidHeaderIndex;
 
     // Getting all values in the "userEmail" column and storing it in a QStringList
     QStringList allUserEmailData = checkUser.getColData("userEmail", dbName);
@@ -39,17 +40,20 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
     int rowIndex = -1;
 
     rowIndex = checkUser.rowIndexOfCellMatchingSearch(allUserEmailData,usrn);
+    qDebug() << "Row Index for testing of woo@kie.com is " << rowIndex;
     if (rowIndex >=0)
     {
         // If username is found, check if password matches username
         // Getting the password for found username
         QString retrievedPass = checkUser.getCellValue(dbName,passHeaderIndex,rowIndex);
+        qDebug() << "The retrievedPassword from the db for woo@kie.com is " << retrievedPass;
         if (retrievedPass == pass)
         {
             // if the retrieved password for that username matches the password entered
             // Find the UID for that user who signed in
             // Return that UID
             int uid = checkUser.getCellValue(dbName,uidHeaderIndex,rowIndex).toInt();
+            qDebug() << "The uid returned is " << uid;
             return uid;
         }
     }

@@ -136,7 +136,7 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
     {
 
         // Skip the number of rows that are inapplicable
-        int rowNum = 0;
+        int rowNum = 1;
         do
         {
             file.readLine();

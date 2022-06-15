@@ -44,5 +44,7 @@
         <file>database/UserDoses/484.csv</file>
         <file>database/UserDoses/31427.csv</file>
         <file>database/UserDoses/32661.csv</file>
+        <file>images/hompageIcons/displayQR.png</file>
+        <file>images/hompageIcons/QRrequested.png</file>
     </qresource>
 </RCC>
