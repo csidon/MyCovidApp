@@ -13,16 +13,16 @@ QString HandleCSV::returnCSVFilePath(QString dbName)
     qDebug() << "dbName passed is " << dbName;
     if (dbName == "dbPID")
     {
-        filePath = "database/dummyPID.csv";
+        filePath = ":/database/dummyPID.csv";
 //        qDebug() << "You have found dbPID with filepath " << filePath;
     }
     else if (dbName == "dbTest")
     {
-        filePath = "database/MasterTests.csv";
+        filePath = ":/database/MasterTests.csv";
     }
     else if (dbName == "dbDose")
     {
-        filePath = "database/MasterDoses.csv";
+        filePath = ":/database/MasterDoses.csv";
     }
     // ** Add any other database/path here
     else

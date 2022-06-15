@@ -8,7 +8,7 @@ AdminHome::AdminHome(QWidget *parent) :
 {
     ui->setupUi(this);
     HandleCSV initialReadAdmin;
-    QStringList noOfNewReports = initialReadAdmin.getColData("isNew", "database/ErrorReports.csv");
+    QStringList noOfNewReports = initialReadAdmin.getColData("isNew", ":/database/ErrorReports.csv");
     int newReportCount = 0;
     for(int i = 0; i < noOfNewReports.size(); i++){
         if(noOfNewReports.at(i) == "TRUE"){
@@ -17,7 +17,7 @@ AdminHome::AdminHome(QWidget *parent) :
     }
     ui->lbl_numberOfIssuesReported->setText(QString::number(newReportCount));
 
-    QStringList noOfQRCodeRequests = initialReadAdmin.getColData("userIDNumber", "database/QRCodeRequests.csv");
+    QStringList noOfQRCodeRequests = initialReadAdmin.getColData("userIDNumber", ":/database/QRCodeRequests.csv");
     ui->lbl_numberOfQRCodeRequests->setText(QString::number(noOfQRCodeRequests.size()-1));
 }
 
