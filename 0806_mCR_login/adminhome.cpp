@@ -1,4 +1,5 @@
 #include "adminhome.h"
+#include "adminqrrequests.h"
 #include "handlecsv.h"
 #include "ui_adminhome.h"
 
@@ -25,3 +26,9 @@ AdminHome::~AdminHome()
 {
     delete ui;
 }
+
+void AdminHome::on_btn_QRCodeRequests_clicked()
+{
+
+}
+

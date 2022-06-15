@@ -46,5 +46,7 @@
         <file>database/UserDoses/32661.csv</file>
         <file>images/hompageIcons/displayQR.png</file>
         <file>images/hompageIcons/QRrequested.png</file>
+        <file>images/topBar.png</file>
+        <file>images/backArrow.png</file>
     </qresource>
 </RCC>

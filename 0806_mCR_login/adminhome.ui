@@ -38,7 +38,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lbl_headerBar">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -217,7 +217,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <string>Darth Vader</string>
    </property>
   </widget>
-  <zorder>label</zorder>
+  <zorder>lbl_headerBar</zorder>
   <zorder>btn_menu</zorder>
   <zorder>btn_issuesReported</zorder>
   <zorder>btn_QRCodeRequests</zorder>

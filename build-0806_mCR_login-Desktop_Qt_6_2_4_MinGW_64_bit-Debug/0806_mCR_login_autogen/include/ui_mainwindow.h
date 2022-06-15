@@ -32,10 +32,10 @@ public:
     QPushButton *btn_reportRat;
     QPushButton *btn_accountDetails;
     QPushButton *btn_vaxHistory;
+    QPushButton *btn_QRrequested;
     QLabel *lbl_welcomeMsg;
     QLabel *lbl_reminderMsgLn1;
     QLabel *lbl_reminderMsgLn1_2;
-    QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -93,6 +93,13 @@ public:
         btn_vaxHistory->setSizePolicy(sizePolicy1);
         btn_vaxHistory->setStyleSheet(QString::fromUtf8("image: url(:/images/hompageIcons/vaxHistoryBtn.png);\n"
 "background-color: rgba(255, 255, 255, 0);"));
+        btn_QRrequested = new QPushButton(groupBox);
+        btn_QRrequested->setObjectName(QString::fromUtf8("btn_QRrequested"));
+        btn_QRrequested->setGeometry(QRect(180, 10, 149, 189));
+        sizePolicy.setHeightForWidth(btn_QRrequested->sizePolicy().hasHeightForWidth());
+        btn_QRrequested->setSizePolicy(sizePolicy);
+        btn_QRrequested->setStyleSheet(QString::fromUtf8("image: url(:/images/hompageIcons/QRrequested.png);\n"
+"background-color: rgba(255, 255, 255, 0);"));
         lbl_welcomeMsg = new QLabel(centralwidget);
         lbl_welcomeMsg->setObjectName(QString::fromUtf8("lbl_welcomeMsg"));
         lbl_welcomeMsg->setGeometry(QRect(35, 80, 281, 41));
@@ -107,9 +114,6 @@ public:
         lbl_reminderMsgLn1_2->setGeometry(QRect(35, 160, 311, 21));
         lbl_reminderMsgLn1_2->setStyleSheet(QString::fromUtf8("font: 16pt \"Arial\";\n"
 "font: 8pt \"Arial\";"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(140, 600, 83, 29));
         MainWindow->setCentralWidget(centralwidget);
         label->raise();
         btn_menu->raise();
@@ -117,10 +121,9 @@ public:
         lbl_welcomeMsg->raise();
         lbl_reminderMsgLn1->raise();
         lbl_reminderMsgLn1_2->raise();
-        pushButton->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 375, 21));
+        menubar->setGeometry(QRect(0, 0, 375, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -141,10 +144,10 @@ public:
         btn_reportRat->setText(QString());
         btn_accountDetails->setText(QString());
         btn_vaxHistory->setText(QString());
+        btn_QRrequested->setText(QString());
         lbl_welcomeMsg->setText(QCoreApplication::translate("MainWindow", "Kia Ora Darth Vader", nullptr));
         lbl_reminderMsgLn1->setText(QCoreApplication::translate("MainWindow", "Reminder - You have a booster shot coming up.  ", nullptr));
         lbl_reminderMsgLn1_2->setText(QCoreApplication::translate("MainWindow", "Please book in by 4 June. May the 4th be with you.", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

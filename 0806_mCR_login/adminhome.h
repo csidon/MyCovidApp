@@ -15,6 +15,9 @@ public:
     explicit AdminHome(QWidget *parent = nullptr);
     ~AdminHome();
 
+private slots:
+    void on_btn_QRCodeRequests_clicked();
+
 private:
     Ui::AdminHome *ui;
 };

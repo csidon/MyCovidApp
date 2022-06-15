@@ -37,6 +37,9 @@ set(PROJECT_SOURCES
         adminhome.h
         adminhome.cpp
         adminhome.ui
+        adminqrrequests.h
+        adminqrrequests.cpp
+        adminqrrequests.ui
 #        authdialog_copy.ui
 
 )

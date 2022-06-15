@@ -1,4 +1,5 @@
 #include "adminhome.h"
+#include "adminqrrequests.h"
 #include "mainwindow.h"
 #include "authdialog.h"
 #include "useraccount.h"
@@ -64,8 +65,10 @@ int main(int argc, char *argv[])
 //    authdialog.setModal(true);
 //    authdialog.exec();
 
-    AdminHome adminHome;
-    adminHome.show();
+    //AdminHome adminHome;
+    //adminHome.show();
+    adminQRRequests viewQRRequests;
+    viewQRRequests.show();
 
 
 

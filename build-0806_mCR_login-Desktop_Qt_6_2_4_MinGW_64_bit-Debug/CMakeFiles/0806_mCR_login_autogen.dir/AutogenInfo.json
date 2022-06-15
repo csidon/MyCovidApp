@@ -266,6 +266,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h",
+			"MU",
+			"EWIEGA46WW/moc_adminqrrequests.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h",
 			"MU",
 			"EWIEGA46WW/moc_authdialog.cpp",
@@ -374,6 +380,11 @@
 	[
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.cpp",
 			"MU",
 			null
 		],
