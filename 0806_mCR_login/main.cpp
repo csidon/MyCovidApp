@@ -22,16 +22,16 @@ int main(int argc, char *argv[])
 
     qApp->setStyleSheet(tooleryFile);
 
-//    HandleCSV testCSVFunctions;
-//    testCSVFunctions.returnCSVFilePath("dbTest");
-//    qDebug() << "You have finished returning CSV file path";
-//    int headerIn = testCSVFunctions.returnHeaderIndex("dbPID","userEmail");
-//    qDebug() << "Header int for userEmail is " << headerIn;
-//    testCSVFunctions.getColData("userLastName","dbPID");
-//    int rowInTest = testCSVFunctions.rowIndexOfCellMatchingSearch(testCSVFunctions.getColData("userFirstName","dbPID"),"Luciano");
-//    qDebug() << "Row index for Luciano is " << rowInTest;   // is row index correct..??
-//    QString cellValTest = testCSVFunctions.getCellValue("dbPID",6,1);
-//    qDebug() << "Cell value retrieved is " << cellValTest;
+     HandleCSV testCSVFunctions;
+    qDebug() << testCSVFunctions.returnCSVFilePath("dbPID");
+   qDebug() << "You have finished returning CSV file path";
+    int headerIn = testCSVFunctions.returnHeaderIndex("dbPID","userEmail");
+    qDebug() << "Header int for userEmail is " << headerIn;
+    testCSVFunctions.getColData("userLastName","dbPID");
+    int rowInTest = testCSVFunctions.rowIndexOfCellMatchingSearch(testCSVFunctions.getColData("userFirstName","dbPID"),"Luciano");
+    qDebug() << "Row index for Luciano is " << rowInTest;   // is row index correct..??
+    QString cellValTest = testCSVFunctions.getCellValue("dbPID",6,1);
+    qDebug() << "Cell value retrieved is " << cellValTest;
 
 
 //    UserAccount extractedTestUser;
@@ -64,8 +64,9 @@ int main(int argc, char *argv[])
     //authdialog.setModal(true);
     //authdialog.exec();
 
-    AdminHome adminHome;
-    adminHome.show();
+    //AdminHome adminHome;
+    //adminHome.show();
+
 
 
     return a.exec();
