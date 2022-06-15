@@ -64,8 +64,8 @@ int main(int argc, char *argv[])
     //authdialog.setModal(true);
     //authdialog.exec();
 
-    //AdminHome adminHome;
-    //adminHome.show();
+    AdminHome adminHome;
+    adminHome.show();
 
 
 
