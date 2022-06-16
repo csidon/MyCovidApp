@@ -40,9 +40,9 @@ public:
     int assignID();
 
     QPushButton *pushLogin;
-    void passUID(int);
+//    void passUID(int uid);
 public slots:
-    int on_btn_login_clicked();
+    void on_btn_login_clicked();
 
 private slots:
 

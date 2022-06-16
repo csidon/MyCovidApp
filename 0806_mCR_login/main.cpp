@@ -10,6 +10,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QDir>
+#include <QObject>
 
 int main(int argc, char *argv[])
 {
@@ -23,6 +24,9 @@ int main(int argc, char *argv[])
 
     qApp->setStyleSheet(tooleryFile);
 
+
+
+
      HandleCSV testCSVFunctions;
     qDebug() << testCSVFunctions.returnCSVFilePath("dbPID");
    qDebug() << "You have finished returning CSV file path";
@@ -35,20 +39,6 @@ int main(int argc, char *argv[])
     qDebug() << "Cell value retrieved is " << cellValTest;
 
 
-//    UserAccount extractedTestUser;
-//    QStringList answer = readTest.getSpecificCell("userLastName", ":/database/dummyPID.csv");
-//    qDebug() << answer;
-//    extractedTestUser = extractedTestUser.getUserData(readTest.searchRowValue(answer,"Skywalker"));
-//    qDebug() << QString::fromStdString(extractedTestUser.getUserEmail()) << extractedTestUser.validateEmailInUse(extractedTestUser.getUserEmail());
-//    extractedTestUser.assignID();
-//    HandleCSV testFile;
-//    QString retFile = testFile.returnCSVFilePath("dbPID");
-//    QFile dumFile;
-//    dumFile = ":/database/dummyPID.csv";
-
-
-//    qDebug() << "Homepath magic? " << dumFile.
-
     //Test Dose Storage
 //    Dose testDose;
 //    testDose.setDoseDate(220614);
@@ -58,17 +48,22 @@ int main(int argc, char *argv[])
 //    testUser.addDose(testDose);
 
 
-    MainWindow w;
-    w.show();
-
     AuthDialog authdialog;
     authdialog.setModal(true);
     authdialog.exec();
 
+    AuthDialog loginWindow;
+    MainWindow mainEUWindow;
+    QObject::connect(&loginWindow, SIGNAL(sendUIDSignal(int)),
+                     &mainEUWindow, SLOT(receiveUID(int)));
+    MainWindow w;
+    w.show();
+
+
     //AdminHome adminHome;
     //adminHome.show();
-    adminQRRequests viewQRRequests;
-    viewQRRequests.show();
+//    adminQRRequests viewQRRequests;
+//    viewQRRequests.show();
 
 
 

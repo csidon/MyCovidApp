@@ -1,5 +1,6 @@
 #include "authdialog.h"
 #include "ui_authdialog.h"
+#include <QObject>
 
 
 AuthDialog::AuthDialog(QWidget *parent) :
@@ -69,13 +70,14 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
 
 
 
-int AuthDialog::on_btn_login_clicked()
+void AuthDialog::on_btn_login_clicked()
 {
     UserAccount grabbedUser; // To store user data if checkUser authenticates
 
     QString username = ui->lineEdit_inputEmail->text();
     QString pswd = ui->lineEdit_inputPass->text();
 
+    // Verify if user exists in database and if password matches
     int loginSuccessUID = authUser(username, pswd, "dbPID"); // returns 0, 1, or 2 (admin)
     // Note: dbPID is mapped to appropriate filepath in handleCSV.cpp
 
@@ -98,24 +100,17 @@ int AuthDialog::on_btn_login_clicked()
 
         grabbedUser = checkUser.getUserAccount(loginSuccessUID);
         qDebug() << "Login successful. Using getter gets firstName: " << grabbedUser.getUserFirstName();
-//        emit sendUIDSignal(loginSuccessUID);
-//        QObject::connect(ui->btn_login,&sendUIDSignal,
-//                         [](){
-//                        int uid = this->ui->lbl_uidToPass->text();
-//                        MainWindow::receiveUID(uid);});
-//        connect(ui->btn_login,SIGNAL(sendUIDSignal(int)),MainWindow::MainWindow,SLOT(receiveUID(int)));
+        emit sendUIDSignal(loginSuccessUID);
+        qDebug() << "sendUIDSignal executed";
 
-
-        // Set UID in ui->invisibleLabelOnEU->setText()
     }
     else        // Username||password not found in database
     {
         QMessageBox::warning(this, "Login Invalid", "Incorrect Username and Password - Please try again");
         this->setResult(QDialog::Rejected);
     }
-    return loginSuccessUID;
-}
 
+}
 
 
 
@@ -201,9 +196,10 @@ void AuthDialog::on_btn_createAccount_clicked()
 }
 
 
-//#############################################################
+//################################################################
 // Registration functions that validate username and password
-//------------------------------------------------------------
+// used in above functions
+//---------------------------------------------------------------
 bool AuthDialog::validateEmailInUse(QString email)
 {
     qDebug() << "Checking if Email " << email << " is unique";
@@ -365,15 +361,15 @@ int AuthDialog::assignID()
 }
 
 
-
+//--------------------------
+// User Error Messages
+//--------------------------
 void AuthDialog::on_lineEdit_inputRegEmail_inputRejected()
 {
     // Note: Use #17A81A for green approvals and #C00000 for red rejects
     ui->lineEdit_inputRegEmail->setStyleSheet("border-style: solid; border-color: #C00000; border-width: 1px; color: #C00000");
     ui->lbl_emailExistsErr->setStyleSheet("color: #C00000");
     ui->lbl_emailExistsErr->show();
-
-
 }
 
 void AuthDialog::hidePassCriteria()
