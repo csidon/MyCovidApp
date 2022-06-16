@@ -228,12 +228,26 @@ font: 8pt &quot;Arial&quot;;</string>
      <string>Please book in by 4 June. May the 4th be with you.</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_UID_toHide">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>70</y>
+      <width>62</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UID:</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>btn_menu</zorder>
    <zorder>groupBox</zorder>
    <zorder>lbl_welcomeMsg</zorder>
    <zorder>lbl_reminderMsgLn1</zorder>
    <zorder>lbl_reminderMsgLn1_2</zorder>
+   <zorder>lbl_UID_toHide</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

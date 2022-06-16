@@ -17,8 +17,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void receiveUID(int uid);
+
 private slots:
     void on_btn_requestQR_clicked();
+
 
 private:
     Ui::MainWindow *ui;

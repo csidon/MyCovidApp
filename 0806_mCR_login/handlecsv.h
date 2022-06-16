@@ -36,6 +36,11 @@ public:
     // Gets a specific cell's value based on header and row index
     QString getCellValue(QString dbName, int headerIn, int rowIn);
 
+    // Gets a specific cell's value based on header and row index
+    UserAccount getUserAccount(QString email);
+    //Overload the function to be able to call based on email add or UID
+    UserAccount getUserAccount(int uid);
+
     // Writing data to db
     void writeToPIDCSV(UserAccount userConstructor);
 

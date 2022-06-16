@@ -48,5 +48,6 @@
         <file>images/hompageIcons/QRrequested.png</file>
         <file>images/topBar.png</file>
         <file>images/backArrow.png</file>
+        <file>images/backArrow2.png</file>
     </qresource>
 </RCC>

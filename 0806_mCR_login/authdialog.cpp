@@ -9,6 +9,7 @@ AuthDialog::AuthDialog(QWidget *parent) :
     ui->setupUi(this);
     hidePassCriteria();
     ui->lbl_emailExistsErr->hide();
+//    pushLogin = ui->btn_login;
 
 
 }
@@ -21,6 +22,7 @@ AuthDialog::~AuthDialog()
 int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note db = dbName, not db's file path
 {
     HandleCSV checkUser;
+    UserAccount grabbedUser; // To store user data if checkUser authenticates
     if (usrn == "darth.vader@betrayal.com" && pass == "I'm Your Father")
     {
         return 42;      // User is immediately authenticated as admin
@@ -54,6 +56,8 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
             // Return that UID
             int uid = checkUser.getCellValue(dbName,uidHeaderIndex,rowIndex).toInt();
             qDebug() << "The uid returned is " << uid;
+//            grabbedUser = checkUser.getUserAccount(uid); // *****Change to UID after overloading and testing
+//            qDebug() << "Using getter gets firstName: " << grabbedUser.getUserFirstName();
             return uid;
         }
     }
@@ -63,8 +67,12 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
     return -1;
 }
 
-void AuthDialog::on_btn_login_clicked()
+
+
+int AuthDialog::on_btn_login_clicked()
 {
+    UserAccount grabbedUser; // To store user data if checkUser authenticates
+
     QString username = ui->lineEdit_inputEmail->text();
     QString pswd = ui->lineEdit_inputPass->text();
 
@@ -86,6 +94,17 @@ void AuthDialog::on_btn_login_clicked()
         this->hide();
         QMessageBox::information(this, "Login", "Correct username and password.\nWelcome to MyCovidRecord");
         this->setResult(QDialog::Accepted);
+        HandleCSV checkUser;
+
+        grabbedUser = checkUser.getUserAccount(loginSuccessUID);
+        qDebug() << "Login successful. Using getter gets firstName: " << grabbedUser.getUserFirstName();
+//        emit sendUIDSignal(loginSuccessUID);
+//        QObject::connect(ui->btn_login,&sendUIDSignal,
+//                         [](){
+//                        int uid = this->ui->lbl_uidToPass->text();
+//                        MainWindow::receiveUID(uid);});
+//        connect(ui->btn_login,SIGNAL(sendUIDSignal(int)),MainWindow::MainWindow,SLOT(receiveUID(int)));
+
 
         // Set UID in ui->invisibleLabelOnEU->setText()
     }
@@ -94,7 +113,9 @@ void AuthDialog::on_btn_login_clicked()
         QMessageBox::warning(this, "Login Invalid", "Incorrect Username and Password - Please try again");
         this->setResult(QDialog::Rejected);
     }
+    return loginSuccessUID;
 }
+
 
 
 
@@ -342,6 +363,8 @@ int AuthDialog::assignID()
 //    this->setUserIDNumber(ID);
     return ID;
 }
+
+
 
 void AuthDialog::on_lineEdit_inputRegEmail_inputRejected()
 {
