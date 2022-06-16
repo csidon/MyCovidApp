@@ -14,17 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
 //    hiddenUIDlabel->setGeometry(300,70,62,20);
 //    hiddenUIDlabel->setNum(uid);
 
-
-    AuthDialog getUID;
-
-
-
-//    connect(AuthDialog::AuthDialog.pushLogin,SIGNAL(sendUIDSignal(int)),
-//            this,SLOT(receiveUID(int)));
-
-
-//    connect(AuthDialog::on_btn_login_clicked(),
-//            SIGNAL(sendUIDSignal),this,SLOT(ui->lbl_welcomeMsg->setText()));
 }
 
 MainWindow::~MainWindow()
@@ -34,9 +23,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::receiveUID(int uid)
 {
-    QLabel* hiddenUIDlabel = new QLabel(this);
-    hiddenUIDlabel->setGeometry(300,70,62,20);
-    hiddenUIDlabel->setNum(uid);
+    qDebug() << "receiveUID has been triggered";
+    ui->lbl_UID_toHide->setNum(uid);
+
 }
 
 
