@@ -46,7 +46,8 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qDebug() << "File did not open";
+        qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
+                 << "Filepath for getUserAccount = " << filePath;
         return headerIndex;
     }
 
@@ -82,7 +83,8 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-       // qDebug() << "File did not open";
+        qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
+                 << "Filepath for getUserAccount = " << filePath;
         return data;
     }
 
@@ -97,6 +99,7 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
     file.close();
     return data;    // Returns all the data in that column as a QStringList
 }
+
 
 //-----------------------------------------------------------
 // Validates if any of the values in the column exist
@@ -127,7 +130,8 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qDebug() << "File did not open";
+        qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
+                 << "Filepath for getUserAccount = " << filePath;
         return cellValue;
     }
 
@@ -152,6 +156,106 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
     }
 
     return cellValue;
+
+}
+
+UserAccount HandleCSV::getUserAccount(QString email)
+{
+    UserAccount grabbedUser;
+
+    // Getting all the users from userEmail column of dbPID
+    // and storing it as a QStringList
+    QStringList allUserEmails = getColData("userEmail","dbPID");
+
+    // Searching all emails in retrieved QStringList for email
+    int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserEmails,email);
+    if (userFoundInRowIndex <0)
+    {
+        qDebug() << "User with email " << email << " not found";
+        return grabbedUser;
+    }
+    else
+    {
+        //Get all the data from that user based on row index
+
+        QString filePath = returnCSVFilePath("dbPID");
+
+        // Open CSV filepath retrieved from associated dbName
+        QFile file(filePath);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+            qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
+                     << "Filepath for getUserAccount = " << filePath;
+            return grabbedUser;
+        }
+
+        // Skip rows that are not applicable
+        int rowNum = 1;
+        do
+        {
+            file.readLine();
+            rowNum++;
+        } while(rowNum < userFoundInRowIndex);
+
+        QString row = file.readLine().trimmed();
+        QStringList rowValues = row.split(',');
+
+        grabbedUser = UserAccount(rowValues.at(0).toInt(),rowValues.at(1),rowValues.at(2),
+                                  rowValues.at(3),rowValues.at(4),rowValues.at(5),
+                                  rowValues.at(6),rowValues.at(7).toInt(),
+                                  rowValues.at(8).toInt(),rowValues.at(9).toInt(),rowValues.at(10));
+        file.close();
+        return grabbedUser;
+    }
+
+}
+
+UserAccount HandleCSV::getUserAccount(int uid)
+{
+    UserAccount grabbedUser;
+
+    // Getting all the users from userEmail column of dbPID
+    // and storing it as a QStringList
+    QStringList allUserIDs = getColData("userIDNumber","dbPID");
+
+    // Searching all emails in retrieved QStringList for email
+    int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
+    if (userFoundInRowIndex <0)
+    {
+        qDebug() << "User with uid " << uid << " not found";
+    }
+    else
+    {
+        //Get all the data from that user based on row index
+        QString filePath = returnCSVFilePath("dbPID");
+
+        // Open CSV filepath retrieved from associated dbName
+        QFile file(filePath);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+            qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
+                     << "Filepath for getUserAccount = " << filePath;
+        }
+
+        // Skip rows that are not applicable
+        int rowNum = 1;
+        do
+        {
+            file.readLine();
+            rowNum++;
+        } while(rowNum < userFoundInRowIndex);
+
+        QString row = file.readLine().trimmed();
+        QStringList rowValues = row.split(',');
+
+        grabbedUser = UserAccount(rowValues.at(0).toInt(),rowValues.at(1),rowValues.at(2),
+                                  rowValues.at(3),rowValues.at(4),rowValues.at(5),
+                                  rowValues.at(6),rowValues.at(7).toInt(),
+                                  rowValues.at(8).toInt(),rowValues.at(9).toInt(),rowValues.at(10));
+        file.close();
+
+    }
+    return grabbedUser;
 
 }
 

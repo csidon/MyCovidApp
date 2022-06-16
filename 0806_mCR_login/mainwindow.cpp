@@ -1,13 +1,30 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "authdialog.h"
+#include <QObject>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->btn_QRrequested->hide();
 
+    // Creating a hidden label for UID
+//    QLabel* hiddenUIDlabel = new QLabel(this);
+//    hiddenUIDlabel->setGeometry(300,70,62,20);
+//    hiddenUIDlabel->setNum(uid);
+
+
+    AuthDialog getUID;
+
+
+
+//    connect(AuthDialog::AuthDialog.pushLogin,SIGNAL(sendUIDSignal(int)),
+//            this,SLOT(receiveUID(int)));
+
+
+//    connect(AuthDialog::on_btn_login_clicked(),
+//            SIGNAL(sendUIDSignal),this,SLOT(ui->lbl_welcomeMsg->setText()));
 }
 
 MainWindow::~MainWindow()
@@ -15,10 +32,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::receiveUID(int uid)
+{
+    QLabel* hiddenUIDlabel = new QLabel(this);
+    hiddenUIDlabel->setGeometry(300,70,62,20);
+    hiddenUIDlabel->setNum(uid);
+}
+
 
 
 void MainWindow::on_btn_requestQR_clicked()
 {
+
     UserAccount loggedInUser;
     int ret = QMessageBox::warning(this,tr("Requesting QR code"),
              tr("QR codes (Vaccination certificates) can take "

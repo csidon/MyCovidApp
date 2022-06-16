@@ -6,9 +6,9 @@ adminQRRequests::adminQRRequests(QWidget *parent) :
     ui(new Ui::adminQRRequests)
 {
     ui->setupUi(this);
-    QPixmap backButton(":/images/backArrow.png");
-    QIcon adminHomeBack(backButton);
-    ui->btn_backToAdminHome->setIcon(adminHomeBack);
+//    QPixmap backButton(":/images/backArrow.png");
+//    QIcon adminHomeBack(backButton);
+//    ui->btn_backToAdminHome->setIcon(adminHomeBack);
 }
 
 adminQRRequests::~adminQRRequests()

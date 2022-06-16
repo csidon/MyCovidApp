@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QString>
+#include <QDateTime>
 
 #include "handlecsv.h"
 #include "errorreport.h"

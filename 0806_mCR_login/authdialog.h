@@ -11,6 +11,7 @@
 
 #include "useraccount.h"
 #include "handlecsv.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class AuthDialog;
@@ -36,12 +37,14 @@ public:
     bool validateEmailInUse(QString email);
     bool validateEmailIsEmail(QString email);
     bool validatePasswordIsSecure(QString password);
-
     int assignID();
 
+    QPushButton *pushLogin;
+    void passUID(int);
+public slots:
+    int on_btn_login_clicked();
 
 private slots:
-    void on_btn_login_clicked();
 
     void on_btn_switchToSignup_clicked();
 
@@ -53,6 +56,9 @@ private slots:
 
 private:
     Ui::AuthDialog *ui;
+
+signals:
+    void sendUIDSignal(int uid);
 };
 
 #endif // AUTHDIALOG_H

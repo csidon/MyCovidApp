@@ -241,6 +241,7 @@ void UserAccount::requestQR()
     if(QRCodeRequests.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&QRCodeRequests);
         stream << "\n" << this->getUserIDNumber();
+//        stream << "\n" << this->getUserIDNumber() << "," << QDateTime::currentDateTime();
     }
     QRCodeRequests.close();
 }
