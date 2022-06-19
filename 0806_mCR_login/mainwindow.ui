@@ -177,6 +177,35 @@ background-color: rgba(255, 255, 255, 0);</string>
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_displayQR">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>10</y>
+       <width>149</width>
+       <height>189</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/hompageIcons/displayQR.png);
+background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>btn_displayQR</zorder>
+    <zorder>btn_QRrequested</zorder>
+    <zorder>btn_reportRat</zorder>
+    <zorder>btn_accountDetails</zorder>
+    <zorder>btn_vaxHistory</zorder>
+    <zorder>btn_requestQR</zorder>
    </widget>
    <widget class="QLabel" name="lbl_welcomeMsg">
     <property name="geometry">

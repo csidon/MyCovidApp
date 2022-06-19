@@ -40,6 +40,7 @@ set(PROJECT_SOURCES
         adminqrrequests.h
         adminqrrequests.cpp
         adminqrrequests.ui
+        test.ui
 #        authdialog_copy.ui
 
 )

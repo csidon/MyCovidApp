@@ -13,6 +13,21 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
     ui->setupUi(this);
     UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
     ui->lbl_welcomeMsg->setText("Kia Ora " + loggedInUser.getUserPreferredName());
+    if(loggedInUser.getUserQRStatus()==0)
+    {
+        ui->btn_requestQR->show();
+        ui->btn_QRrequested->hide();
+    }
+    if(loggedInUser.getUserQRStatus()==1)
+    {
+        ui->btn_requestQR->hide();
+        ui->btn_QRrequested->show();
+    }
+    else
+    {
+        ui->btn_requestQR->hide();
+        ui->btn_QRrequested->hide();
+    }
 
     // Creating a hidden label for UID
 //    QLabel* hiddenUIDlabel = new QLabel(this);
