@@ -46,6 +46,7 @@ public:
     QPushButton *btn_forgotPass;
     QPushButton *btn_login;
     QPushButton *btn_switchToSignup;
+    QLabel *lbl_uidToPass;
     QSpacerItem *verticalSpacer;
     QWidget *page_reg;
     QGridLayout *gridLayout;
@@ -225,6 +226,11 @@ public:
         btn_switchToSignup->setFlat(true);
 
         verticalLayout_3->addWidget(btn_switchToSignup);
+
+        lbl_uidToPass = new QLabel(page);
+        lbl_uidToPass->setObjectName(QString::fromUtf8("lbl_uidToPass"));
+
+        verticalLayout_3->addWidget(lbl_uidToPass);
 
         verticalSpacer = new QSpacerItem(20, 200, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
@@ -468,6 +474,7 @@ public:
 #if QT_CONFIG(shortcut)
         btn_switchToSignup->setShortcut(QString());
 #endif // QT_CONFIG(shortcut)
+        lbl_uidToPass->setText(QCoreApplication::translate("AuthDialog", "000", nullptr));
         lbl_regEmail->setText(QCoreApplication::translate("AuthDialog", "Email", nullptr));
         lbl_regPass->setText(QCoreApplication::translate("AuthDialog", "Password", nullptr));
         lineEdit_inputRegPass->setText(QString());

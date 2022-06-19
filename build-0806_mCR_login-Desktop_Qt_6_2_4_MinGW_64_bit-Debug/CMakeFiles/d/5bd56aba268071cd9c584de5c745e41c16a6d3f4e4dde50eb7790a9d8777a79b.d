@@ -24,6 +24,7 @@
   CMakeFiles/3.21.1/CMakeCXXCompiler.cmake \
   CMakeFiles/3.21.1/CMakeRCCompiler.cmake \
   CMakeFiles/3.21.1/CMakeSystem.cmake \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDir \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QFile \

@@ -12,6 +12,7 @@
 #include <QDir>
 #include <QObject>
 
+
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
@@ -24,8 +25,7 @@ int main(int argc, char *argv[])
 
     qApp->setStyleSheet(tooleryFile);
 
-
-
+    int loggedInUserID = 0;
 
      HandleCSV testCSVFunctions;
     qDebug() << testCSVFunctions.returnCSVFilePath("dbPID");
@@ -49,15 +49,20 @@ int main(int argc, char *argv[])
 
 
     AuthDialog authdialog;
-    authdialog.setModal(true);
-    authdialog.exec();
 
-    AuthDialog loginWindow;
-    MainWindow mainEUWindow;
-    QObject::connect(&loginWindow, SIGNAL(sendUIDSignal(int)),
-                     &mainEUWindow, SLOT(receiveUID(int)));
-    MainWindow w;
+    authdialog.setModal(true);
+    qDebug() << " before exec";
+    authdialog.exec();
+    qDebug() << "after exec";
+    loggedInUserID = authdialog.getLoggedInUserID();
+       qDebug() << "authdialog getter used to get" << loggedInUserID;
+
+    //AuthDialog loginWindow;
+    //MainWindow mainEUWindow;
+    MainWindow w = MainWindow(nullptr, loggedInUserID);
+       qDebug() << loggedInUserID << " set as w's ID";
     w.show();
+    w.setLoggedInUserID(loggedInUserID);
 
 
     //AdminHome adminHome;
@@ -69,3 +74,4 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+

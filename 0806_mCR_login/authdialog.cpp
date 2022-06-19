@@ -1,7 +1,19 @@
 #include "authdialog.h"
 #include "ui_authdialog.h"
 #include <QObject>
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
+
+int AuthDialog::getLoggedInUserID()
+{
+    return loggedInUserID;
+}
+
+void AuthDialog::setLoggedInUserID(int newLoggedInUserID)
+{
+    loggedInUserID = newLoggedInUserID;
+}
 
 AuthDialog::AuthDialog(QWidget *parent) :
     QDialog(parent),
@@ -99,8 +111,11 @@ void AuthDialog::on_btn_login_clicked()
         HandleCSV checkUser;
 
         grabbedUser = checkUser.getUserAccount(loginSuccessUID);
-        qDebug() << "Login successful. Using getter gets firstName: " << grabbedUser.getUserFirstName();
-        emit sendUIDSignal(loginSuccessUID);
+
+        setLoggedInUserID(grabbedUser.getUserIDNumber());
+
+        qDebug() << loggedInUserID << "Login successful. Using getter gets firstName: " << grabbedUser.getUserFirstName();
+
         qDebug() << "sendUIDSignal executed";
 
     }
