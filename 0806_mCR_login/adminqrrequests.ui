@@ -65,8 +65,13 @@ background-color: rgba(255, 255, 255, 0);</string>
        <height>61</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color:black;
+font-size:28px;
+font-family:arial;</string>
+     </property>
      <property name="text">
-      <string>QR Code Requests</string>
+      <string>   QR Code Requests</string>
      </property>
     </widget>
    </widget>

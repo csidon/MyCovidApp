@@ -198,7 +198,7 @@ build 0806_mCR_login_autogen_timestamp_deps: phony CMakeFiles/0806_mCR_login_aut
 #############################################
 # Utility command for 0806_mCR_login_autogen
 
-build 0806_mCR_login_autogen: phony CMakeFiles/0806_mCR_login_autogen 0806_mCR_login_autogen/include/ui_mainwindow.h 0806_mCR_login_autogen/include/ui_adminhome.h 0806_mCR_login_autogen/include/ui_adminqrrequests.h 0806_mCR_login_autogen/include/ui_authdialog.h 0806_mCR_login_autogen/timestamp 0806_mCR_login_autogen/mocs_compilation.cpp 0806_mCR_login_autogen_timestamp_deps
+build 0806_mCR_login_autogen: phony CMakeFiles/0806_mCR_login_autogen 0806_mCR_login_autogen/include/ui_mainwindow.h 0806_mCR_login_autogen/include/ui_adminhome.h 0806_mCR_login_autogen/include/ui_adminqrrequests.h 0806_mCR_login_autogen/include/ui_authdialog.h 0806_mCR_login_autogen/include/ui_mainwindow.h 0806_mCR_login_autogen/timestamp 0806_mCR_login_autogen/mocs_compilation.cpp 0806_mCR_login_autogen_timestamp_deps
 
 
 #############################################
@@ -223,13 +223,13 @@ build 0806_mCR_login_autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdi
 #############################################
 # Phony custom command for CMakeFiles\0806_mCR_login_autogen_timestamp_deps
 
-build CMakeFiles/0806_mCR_login_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/0806_mCR_login_autogen_timestamp_deps: phony D$:/Qt/6.2.4/mingw_64/./bin/uic.exe D$:/Qt/6.2.4/mingw_64/./bin/moc.exe D$:/Qt/6.2.4/mingw_64/bin/Qt6Core.dll D$:/Qt/6.2.4/mingw_64/bin/Qt6Widgets.dll
+build CMakeFiles/0806_mCR_login_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/0806_mCR_login_autogen_timestamp_deps: phony D$:/Qt/6.2.4/mingw_64/bin/Qt6Core.dll D$:/Qt/6.2.4/mingw_64/./bin/moc.exe D$:/Qt/6.2.4/mingw_64/./bin/uic.exe D$:/Qt/6.2.4/mingw_64/bin/Qt6Widgets.dll
 
 
 #############################################
 # Phony custom command for CMakeFiles\0806_mCR_login_autogen
 
-build CMakeFiles/0806_mCR_login_autogen 0806_mCR_login_autogen/include/ui_mainwindow.h 0806_mCR_login_autogen/include/ui_adminhome.h 0806_mCR_login_autogen/include/ui_adminqrrequests.h 0806_mCR_login_autogen/include/ui_authdialog.h | ${cmake_ninja_workdir}CMakeFiles/0806_mCR_login_autogen ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_adminhome.h ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_adminqrrequests.h ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_authdialog.h: phony 0806_mCR_login_autogen/timestamp || 0806_mCR_login_autogen_timestamp_deps
+build CMakeFiles/0806_mCR_login_autogen 0806_mCR_login_autogen/include/ui_adminhome.h 0806_mCR_login_autogen/include/ui_adminqrrequests.h 0806_mCR_login_autogen/include/ui_authdialog.h 0806_mCR_login_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/0806_mCR_login_autogen ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_adminhome.h ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_adminqrrequests.h ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_authdialog.h ${cmake_ninja_workdir}0806_mCR_login_autogen/include/ui_mainwindow.h: phony 0806_mCR_login_autogen/timestamp || 0806_mCR_login_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
