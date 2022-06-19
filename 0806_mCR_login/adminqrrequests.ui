@@ -74,6 +74,180 @@ font-family:arial;</string>
       <string>   QR Code Requests</string>
      </property>
     </widget>
+    <widget class="QLabel" name="lbl_stripedBackground">
+     <property name="geometry">
+      <rect>
+       <x>-150</x>
+       <y>-70</y>
+       <width>671</width>
+       <height>841</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image:url(:/images/stripedBackground.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_name_1">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>90</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:24px;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_name_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>170</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:24px;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_name_3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>250</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:24px;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_name_4">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>330</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:24px;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_name_5">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>420</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:24px;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_name_6">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>500</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:24px;
+color: black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_pageRight">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>580</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/pageRight.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_pageLeft">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>580</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image:url(:/images/pageLeft.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>590</y>
+       <width>81</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:black;
+font-family:arial;
+font-size:18px;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_2"/>
   </widget>

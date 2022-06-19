@@ -49,5 +49,8 @@
         <file>images/topBar.png</file>
         <file>images/backArrow.png</file>
         <file>images/backArrow2.png</file>
+        <file>images/stripedBackground.png</file>
+        <file>images/pageLeft.png</file>
+        <file>images/pageRight.png</file>
     </qresource>
 </RCC>

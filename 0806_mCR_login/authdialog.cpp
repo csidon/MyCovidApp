@@ -2,7 +2,6 @@
 #include "ui_authdialog.h"
 #include <QObject>
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 
 
 int AuthDialog::getLoggedInUserID()
