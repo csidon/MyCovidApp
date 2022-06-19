@@ -45,11 +45,14 @@ public:
         btn_backToAdminHome = new QPushButton(page);
         btn_backToAdminHome->setObjectName(QString::fromUtf8("btn_backToAdminHome"));
         btn_backToAdminHome->setGeometry(QRect(0, 0, 71, 61));
-        btn_backToAdminHome->setStyleSheet(QString::fromUtf8("image: url(:/images/backArrow.png);\n"
+        btn_backToAdminHome->setStyleSheet(QString::fromUtf8("image: url(:/images/backArrow2.png);\n"
 "background-color: rgba(255, 255, 255, 0);"));
         lbl_QRRequests = new QLabel(page);
         lbl_QRRequests->setObjectName(QString::fromUtf8("lbl_QRRequests"));
         lbl_QRRequests->setGeometry(QRect(70, 0, 301, 61));
+        lbl_QRRequests->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font-size:28px;\n"
+"font-family:arial;"));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
@@ -65,7 +68,7 @@ public:
         adminQRRequests->setWindowTitle(QCoreApplication::translate("adminQRRequests", "Form", nullptr));
         lbl_topBar->setText(QString());
         btn_backToAdminHome->setText(QString());
-        lbl_QRRequests->setText(QCoreApplication::translate("adminQRRequests", "QR Code Requests", nullptr));
+        lbl_QRRequests->setText(QCoreApplication::translate("adminQRRequests", "   QR Code Requests", nullptr));
     } // retranslateUi
 
 };
