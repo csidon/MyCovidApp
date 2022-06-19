@@ -5,6 +5,7 @@
 #include "useraccount.h"
 #include <QMessageBox>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -12,13 +13,17 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
+private:
+    int loggedInUserID;
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr, int loggedInUserID = 0);
     ~MainWindow();
 
-public slots:
-    void receiveUID(int uid);
+    int getLoggedInUserID();
+    void setLoggedInUserID(int newLoggedInUserID);
+
+//public slots:
+    //void receiveUID(int uid);
 
 private slots:
     void on_btn_requestQR_clicked();

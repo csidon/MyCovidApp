@@ -106,9 +106,10 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
 // and returns the row index if yes
 int HandleCSV::rowIndexOfCellMatchingSearch(QStringList colData, QString searchValue)
 {
+    qDebug() << "checking list for " << searchValue;
     for(int i = 0; i < colData.length(); i++)
     {
-        if(colData[i] == searchValue)
+        if(colData.at(i) == searchValue)
         {
             return ++i; // Return rowIndex where search value (i.e. username) was found
         }
@@ -213,10 +214,11 @@ UserAccount HandleCSV::getUserAccount(QString email)
 UserAccount HandleCSV::getUserAccount(int uid)
 {
     UserAccount grabbedUser;
-
+    qDebug() << "getUserAccount received uid " << uid;
     // Getting all the users from userEmail column of dbPID
     // and storing it as a QStringList
     QStringList allUserIDs = getColData("userIDNumber","dbPID");
+    qDebug() << "Checking this list:" << allUserIDs;
 
     // Searching all emails in retrieved QStringList for email
     int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));

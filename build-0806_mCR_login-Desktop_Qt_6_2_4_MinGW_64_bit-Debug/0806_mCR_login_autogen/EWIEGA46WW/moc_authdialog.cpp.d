@@ -3,8 +3,10 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDir \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QFile \
@@ -108,6 +110,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qfont.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qfontinfo.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qfontmetrics.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qicon.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qimage.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
@@ -124,10 +127,13 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qwidget.h \

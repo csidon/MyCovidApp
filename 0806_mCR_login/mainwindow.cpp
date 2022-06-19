@@ -3,11 +3,16 @@
 #include "authdialog.h"
 #include <QObject>
 
-MainWindow::MainWindow(QWidget *parent)
+
+
+MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    HandleCSV accountReader;
     ui->setupUi(this);
+    UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
+    ui->lbl_welcomeMsg->setText("Kia Ora " + loggedInUser.getUserPreferredName());
 
     // Creating a hidden label for UID
 //    QLabel* hiddenUIDlabel = new QLabel(this);
@@ -16,17 +21,27 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+int MainWindow::getLoggedInUserID()
+{
+    return loggedInUserID;
+}
+
+void MainWindow::setLoggedInUserID(int newLoggedInUserID)
+{
+    loggedInUserID = newLoggedInUserID;
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void MainWindow::receiveUID(int uid)
-{
-    qDebug() << "receiveUID has been triggered";
-    ui->lbl_UID_toHide->setNum(uid);
-
-}
+//void MainWindow::receiveUID(int uid)
+//{
+//    qDebug() << "receiveUID has been triggered";
+//    ui->lbl_UID_toHide->setNum(uid);
+//
+//}
 
 
 

@@ -21,6 +21,8 @@ class AuthDialog : public QDialog
 {
     Q_OBJECT
 
+private:
+    int loggedInUserID = 0;
 public:
     explicit AuthDialog(QWidget *parent = nullptr);
     ~AuthDialog();
@@ -40,7 +42,10 @@ public:
     int assignID();
 
     QPushButton *pushLogin;
-//    void passUID(int uid);
+    //    void passUID(int uid);
+    int getLoggedInUserID();
+    void setLoggedInUserID(int newLoggedInUserID);
+
 public slots:
     void on_btn_login_clicked();
 
