@@ -30,6 +30,7 @@ QString HandleCSV::returnCSVFilePath(QString dbName)
         qDebug() << "Error with the file path you passed, returning entire string";
         return dbName;
     }
+    qDebug() << "about to return" << filePath;
     return filePath;
 }
 
@@ -57,13 +58,12 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
 
     // Compare that cell value to the colHeader search value
     // and grab the column index that we are retrieving
-    for(int i = 0; i < headerRowValues.length(); i++)
+    for(int i = 0; i < headerRowValues.size(); i++)
     {
         qDebug() << "Comparing colHeaders...";
         if(headerRowValues.at(i) == headerName)
         {
-            headerIndex = i;
-            break;
+            return i;
         }
     }
     return headerIndex;
@@ -74,6 +74,7 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
 QStringList HandleCSV::getColData(QString headerName, QString dbName)
 {
     QStringList data;
+    qDebug() << "getColData before the returnCSVfilepath";
     QString filePath = returnCSVFilePath(dbName);
     qDebug() << "You are in getColData and your filepath is " << filePath;
 
@@ -94,7 +95,8 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
         // Read the line and store it
         QString row = file.readLine().trimmed();
         QStringList rowValues = row.split(',');
-        data << rowValues[headerIndex];
+        qDebug() << "Bongo" << rowValues.size() << headerIndex;
+        data << rowValues.at(headerIndex);
     }
     file.close();
     return data;    // Returns all the data in that column as a QStringList
@@ -107,7 +109,7 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
 int HandleCSV::rowIndexOfCellMatchingSearch(QStringList colData, QString searchValue)
 {
     qDebug() << "checking list for " << searchValue;
-    for(int i = 0; i < colData.length(); i++)
+    for(int i = 0; i < colData.size(); i++)
     {
         if(colData.at(i) == searchValue)
         {
@@ -150,7 +152,7 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
 
         QString row = file.readLine().trimmed();
         QStringList rowValues = row.split(',');
-        cellValue = rowValues[headerIn];
+        cellValue = rowValues.at(headerIn);
 //        qDebug() << "You made it here!";
         file.close();
         return cellValue;
@@ -215,12 +217,12 @@ UserAccount HandleCSV::getUserAccount(int uid)
 {
     UserAccount grabbedUser;
     qDebug() << "getUserAccount received uid " << uid;
-    // Getting all the users from userEmail column of dbPID
+    // Getting all the users from userIDNumber column of dbPID
     // and storing it as a QStringList
     QStringList allUserIDs = getColData("userIDNumber","dbPID");
     qDebug() << "Checking this list:" << allUserIDs;
 
-    // Searching all emails in retrieved QStringList for email
+    // Searching all uids in retrieved QStringList for target uid
     int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
     if (userFoundInRowIndex <0)
     {

@@ -29,6 +29,7 @@
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDir \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QFile \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QMap \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QString \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream \

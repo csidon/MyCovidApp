@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 userIDNumber,userEmail,userPassword,userFirstName,userLastName,userPreferredName,userNHINumber,userPhoneNumber,userVaccinationStatus,userQRStatus,userQRCodeAddress
 42,darth.vader@betrayal.com,I'm Your Father,Darth,Vader,ADMIN AnVie,ADMIN,999,,,
 1089,woo@kie.com,1234,Woo,Kie,Wooks,WK1289,220220222,0,0,
 19,luke@sky.com,test,Luciano,Skywalker,Luke,LS2314,220220333,0,1,
 2387,artoo@d2.com,1111,Artoo,DeeToo,R2D2,RD2222,220222202,0,2,
 17201,leia@princess.com,9999,leila,The Princess,Leia,PL9969,226669922,0,0,
+=======
+userIDNumber,userEmail,userPassword,userFirstName,userLastName,userPreferredName,userNHINumber,userPhoneNumber,userVaccinationStatus,userQRStatus,userQRCodeAddress
+42,darth.vader@betrayal.com,I'm Your Father,Darth,Vader,ADMIN AnVie,ADMIN,999,,,notYetSet
+1089,woo@kie.com,1234,Woo,Kie,Wooks,WK1289,220220222,0,0,notYetSet
+19,luke@sky.com,test,Luciano,Skywalker,Luke,LS2314,220220333,0,1,notYetSet
+2387,t@t.com,sdqQWE123!,Glenda,Bryce,Glenda,LR7892,225686452,0,0,notYetSet
+17201,t@t.casdf,sdqQWE1##!,Thomas,Knives,Tommy,DF2346,44523636,0,0,notYetSet
+234523,sdfg@rwetr.com,ooooOOOO45%,William,Wade,William,GT2452,226548748,0,0,notYetSet
+78954,qw@tre.com,re!1AREA,Jonas,Cleft,Jonas,SD1452,221478454,0,0,notYetSet
+12324,fuls@cu.com,Hh1!2345,Amanda,Bubble,Mandy,EW4762,211197415,0,0,notYetSet
+547816,Hunn@ge.com,Deut@sdlj.com,Todd,Banjo,Todd,FR6452,278966654,0,0,notYetSet
+>>>>>>> ccb977ac505c312ce8d23be8aa8b8639613d58a1
