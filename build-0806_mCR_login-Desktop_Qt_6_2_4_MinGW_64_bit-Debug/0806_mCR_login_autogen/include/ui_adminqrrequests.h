@@ -33,9 +33,9 @@ public:
     QLabel *lbl_name_4;
     QLabel *lbl_name_5;
     QLabel *lbl_name_6;
-    QPushButton *btn_right;
-    QPushButton *pushButton_2;
-    QLabel *label;
+    QPushButton *btn_pageRight;
+    QPushButton *btn_pageLeft;
+    QLabel *lbl_currentPage;
     QWidget *page_2;
 
     void setupUi(QWidget *adminQRRequests)
@@ -69,53 +69,68 @@ public:
         lbl_stripedBackground->setStyleSheet(QString::fromUtf8("image:url(:/images/stripedBackground.png);"));
         lbl_name_1 = new QLabel(page);
         lbl_name_1->setObjectName(QString::fromUtf8("lbl_name_1"));
-        lbl_name_1->setGeometry(QRect(40, 90, 121, 31));
+        lbl_name_1->setGeometry(QRect(40, 90, 331, 31));
         lbl_name_1->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:24px;\n"
 "color: black;"));
         lbl_name_2 = new QLabel(page);
         lbl_name_2->setObjectName(QString::fromUtf8("lbl_name_2"));
-        lbl_name_2->setGeometry(QRect(40, 170, 121, 31));
+        lbl_name_2->setGeometry(QRect(40, 170, 331, 31));
         lbl_name_2->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:24px;\n"
 "color: black;"));
         lbl_name_3 = new QLabel(page);
         lbl_name_3->setObjectName(QString::fromUtf8("lbl_name_3"));
-        lbl_name_3->setGeometry(QRect(40, 250, 121, 31));
+        lbl_name_3->setGeometry(QRect(40, 250, 331, 31));
         lbl_name_3->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:24px;\n"
 "color: black;"));
         lbl_name_4 = new QLabel(page);
         lbl_name_4->setObjectName(QString::fromUtf8("lbl_name_4"));
-        lbl_name_4->setGeometry(QRect(40, 330, 121, 31));
+        lbl_name_4->setGeometry(QRect(40, 330, 331, 31));
         lbl_name_4->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:24px;\n"
 "color: black;"));
         lbl_name_5 = new QLabel(page);
         lbl_name_5->setObjectName(QString::fromUtf8("lbl_name_5"));
-        lbl_name_5->setGeometry(QRect(40, 420, 121, 31));
+        lbl_name_5->setGeometry(QRect(40, 420, 331, 31));
         lbl_name_5->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:24px;\n"
 "color: black;"));
         lbl_name_6 = new QLabel(page);
         lbl_name_6->setObjectName(QString::fromUtf8("lbl_name_6"));
-        lbl_name_6->setGeometry(QRect(40, 500, 121, 31));
+        lbl_name_6->setGeometry(QRect(40, 500, 331, 31));
         lbl_name_6->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:24px;\n"
 "color: black;"));
-        btn_right = new QPushButton(page);
-        btn_right->setObjectName(QString::fromUtf8("btn_right"));
-        btn_right->setGeometry(QRect(300, 580, 41, 41));
-        pushButton_2 = new QPushButton(page);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(240, 580, 41, 41));
-        label = new QLabel(page);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(110, 590, 81, 20));
-        label->setStyleSheet(QString::fromUtf8("color:black;\n"
+        btn_pageRight = new QPushButton(page);
+        btn_pageRight->setObjectName(QString::fromUtf8("btn_pageRight"));
+        btn_pageRight->setGeometry(QRect(300, 580, 41, 41));
+        btn_pageRight->setStyleSheet(QString::fromUtf8("image: url(:/images/pageRight.png);"));
+        btn_pageLeft = new QPushButton(page);
+        btn_pageLeft->setObjectName(QString::fromUtf8("btn_pageLeft"));
+        btn_pageLeft->setGeometry(QRect(240, 580, 41, 41));
+        btn_pageLeft->setStyleSheet(QString::fromUtf8("image:url(:/images/pageLeft.png);"));
+        lbl_currentPage = new QLabel(page);
+        lbl_currentPage->setObjectName(QString::fromUtf8("lbl_currentPage"));
+        lbl_currentPage->setGeometry(QRect(90, 590, 121, 20));
+        lbl_currentPage->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font-family:arial;\n"
 "font-size:18px;"));
         stackedWidget->addWidget(page);
+        lbl_topBar->raise();
+        lbl_QRRequests->raise();
+        lbl_stripedBackground->raise();
+        lbl_name_1->raise();
+        lbl_name_2->raise();
+        lbl_name_3->raise();
+        lbl_name_4->raise();
+        lbl_name_5->raise();
+        lbl_name_6->raise();
+        btn_pageRight->raise();
+        btn_pageLeft->raise();
+        lbl_currentPage->raise();
+        btn_backToAdminHome->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
         stackedWidget->addWidget(page_2);
@@ -138,9 +153,9 @@ public:
         lbl_name_4->setText(QCoreApplication::translate("adminQRRequests", "TextLabel", nullptr));
         lbl_name_5->setText(QCoreApplication::translate("adminQRRequests", "TextLabel", nullptr));
         lbl_name_6->setText(QCoreApplication::translate("adminQRRequests", "TextLabel", nullptr));
-        btn_right->setText(QCoreApplication::translate("adminQRRequests", "PushButton", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("adminQRRequests", "PushButton", nullptr));
-        label->setText(QCoreApplication::translate("adminQRRequests", "TextLabel", nullptr));
+        btn_pageRight->setText(QString());
+        btn_pageLeft->setText(QString());
+        lbl_currentPage->setText(QCoreApplication::translate("adminQRRequests", "TextLabel", nullptr));
     } // retranslateUi
 
 };

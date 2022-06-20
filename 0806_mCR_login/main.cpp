@@ -48,22 +48,17 @@ int main(int argc, char *argv[])
 //    testUser.addDose(testDose);
 
 
-    AuthDialog authdialog;
+    //AuthDialog authdialog;
+    //authdialog.setModal(true);
+    //authdialog.exec();
+    //loggedInUserID = authdialog.getLoggedInUserID();
 
-    authdialog.setModal(true);
-    qDebug() << " before exec";
-    authdialog.exec();
-    qDebug() << "after exec";
-    loggedInUserID = authdialog.getLoggedInUserID();
-       qDebug() << "authdialog getter used to get" << loggedInUserID;
+    //MainWindow w = MainWindow(nullptr, loggedInUserID);
+    //w.show();
+    //w.setLoggedInUserID(loggedInUserID);
 
-    //AuthDialog loginWindow;
-    //MainWindow mainEUWindow;
-    MainWindow w = MainWindow(nullptr, loggedInUserID);
-       qDebug() << loggedInUserID << " set as w's ID";
-    w.show();
-    w.setLoggedInUserID(loggedInUserID);
-
+    AdminQRRequests adminQRRequests;
+    adminQRRequests.show();
 
     //AdminHome adminHome;
     //adminHome.show();
