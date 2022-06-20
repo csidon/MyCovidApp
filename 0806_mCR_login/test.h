@@ -1,10 +1,16 @@
 #ifndef TEST_H
 #define TEST_H
+#include <QWidget>
 
+namespace Ui {
+class Test;
+}
 
-class Test
+class Test : public QWidget
 {
+    Q_OBJECT
 private:
+    Ui::Test *ui;
     int testUserID;
     int testDate;
     bool testResult;

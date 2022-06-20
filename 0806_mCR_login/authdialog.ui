@@ -731,7 +731,7 @@ background-color: rgba(255, 255, 255, 0);</string>
   </layout>
   <action name="actioncheck">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/images/check.png</normaloff>:/images/check.png</iconset>
    </property>
    <property name="text">
@@ -751,8 +751,6 @@ background-color: rgba(255, 255, 255, 0);</string>
   <tabstop>btn_regForgotPass</tabstop>
   <tabstop>btn_switchToLogin</tabstop>
  </tabstops>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
