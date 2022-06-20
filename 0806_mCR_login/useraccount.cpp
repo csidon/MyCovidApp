@@ -262,13 +262,13 @@ void UserAccount::addTest(Test testToStore)
     QFile doses("database/UserTests/" + QString::number(this->getUserIDNumber()) + ".csv");
     if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&doses);
-        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
+        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
     }
     doses.close();
     QFile masterTests("database/MasterTests.csv");
     if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append)){
         QTextStream stream(&masterTests);
-        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestIsNew();
+        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
     }
     masterTests.close();
 }

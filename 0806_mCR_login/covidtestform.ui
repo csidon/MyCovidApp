@@ -36,7 +36,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>:/images/topBar.png</pixmap>
+      <pixmap resource="resources.qrc">:/images/topBar.png</pixmap>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_backToAdminHome">
@@ -94,7 +94,7 @@ font-family:arial;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>46</y>
+       <y>36</y>
        <width>331</width>
        <height>17</height>
       </rect>
@@ -110,32 +110,17 @@ font-family:arial;</string>
       <set>Qt::ImhNone</set>
      </property>
      <property name="text">
-      <string>Date of test</string>
+      <string>Date of test (DD/MM/YY)</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_testDate">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
+    <widget class="QRadioButton" name="rBtn_testPos">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>70</y>
-       <width>331</width>
-       <height>34</height>
+       <x>30</x>
+       <y>137</y>
+       <width>171</width>
+       <height>26</height>
       </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>40</height>
-      </size>
      </property>
      <property name="font">
       <font>
@@ -143,59 +128,34 @@ font-family:arial;</string>
        <pointsize>14</pointsize>
       </font>
      </property>
-     <property name="inputMethodHints">
-      <set>Qt::ImhNone</set>
-     </property>
      <property name="text">
-      <string/>
-     </property>
-     <property name="placeholderText">
-      <string>YY/MM/DD</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="rBtn_testPos">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>130</y>
-       <width>112</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Positive</string>
+      <string>  Positive</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="rBtn_testNeg">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>170</y>
-       <width>112</width>
-       <height>26</height>
+       <x>30</x>
+       <y>183</y>
+       <width>161</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Arial</family>
-       <pointsize>12</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
-      <string>Negative</string>
+      <string>  Negative</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>370</y>
+       <y>410</y>
        <width>331</width>
        <height>41</height>
       </rect>
@@ -209,24 +169,26 @@ font-family:arial;</string>
       <string>SUBMIT</string>
      </property>
     </widget>
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="frame_affirm">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>210</y>
+       <y>260</y>
        <width>331</width>
        <height>141</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-radius:5px;
-</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+      <enum>QFrame::Box</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
      </property>
      <widget class="QCheckBox" name="checkBox_affirmAccuracy">
       <property name="geometry">
@@ -240,11 +202,12 @@ font-family:arial;</string>
       <property name="font">
        <font>
         <family>Arial</family>
+        <pointsize>11</pointsize>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>I affirm the accuracy of these results</string>
+       <string>I confirm my results are accurate</string>
       </property>
      </widget>
      <widget class="QPlainTextEdit" name="plainText_NoEdit_resultsAccuracy">
@@ -253,7 +216,7 @@ font-family:arial;</string>
         <x>30</x>
         <y>40</y>
         <width>291</width>
-        <height>90</height>
+        <height>91</height>
        </rect>
       </property>
       <property name="font">
@@ -262,7 +225,19 @@ font-family:arial;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -272,11 +247,149 @@ font-family:arial;</string>
 I understand that a false declaration can incur a fine of no more than NZ$5,000.</string>
       </property>
      </widget>
+     <widget class="QLabel" name="lbl_errSelectTerms">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>331</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(170, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Please confirm that your test results are accurate</string>
+      </property>
+     </widget>
     </widget>
+    <widget class="QSpinBox" name="spinBox_YY">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>70</y>
+       <width>61</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="minimum">
+      <number>21</number>
+     </property>
+     <property name="maximum">
+      <number>23</number>
+     </property>
+     <property name="value">
+      <number>21</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_MM">
+     <property name="geometry">
+      <rect>
+       <x>81</x>
+       <y>70</y>
+       <width>61</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>12</number>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_DD">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>61</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>31</number>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_errSelectResult">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>191</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lbl_errSelectResult">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>98</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(170, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Please select one</string>
+      </property>
+     </widget>
+    </widget>
+    <zorder>frame_errSelectResult</zorder>
+    <zorder>lbl_email</zorder>
+    <zorder>rBtn_testPos</zorder>
+    <zorder>rBtn_testNeg</zorder>
+    <zorder>pushButton</zorder>
+    <zorder>frame_affirm</zorder>
+    <zorder>spinBox_YY</zorder>
+    <zorder>spinBox_MM</zorder>
+    <zorder>spinBox_DD</zorder>
    </widget>
    <widget class="QWidget" name="page_4"/>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

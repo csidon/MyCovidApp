@@ -42,6 +42,7 @@ set(PROJECT_SOURCES
         adminqrrequests.ui
         covidtestform.cpp
         covidtestform.h
+        covidtestform.ui
 
 
 )

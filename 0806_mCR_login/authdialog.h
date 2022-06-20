@@ -41,8 +41,7 @@ public:
     bool validatePasswordIsSecure(QString password);
     int assignID();
 
-    QPushButton *pushLogin;
-    //    void passUID(int uid);
+//    QPushButton *pushLogin;
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
 

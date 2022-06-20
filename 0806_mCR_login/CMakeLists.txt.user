@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 7.0.2, 2022-06-20T10:36:11. -->
-=======
-<!-- Written by QtCreator 7.0.2, 2022-06-20T18:51:48. -->
->>>>>>> ccb977ac505c312ce8d23be8aa8b8639613d58a1
+<!-- Written by QtCreator 7.0.2, 2022-06-21T01:08:02. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -303,6 +299,7 @@
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/Chris/Desktop/Yoobee/Jan2022_Yoobee/1_CS106/1 MyCovidApp Project/build-0806_mCR_login-Desktop_Qt_6_3_0_MinGW_64_bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
