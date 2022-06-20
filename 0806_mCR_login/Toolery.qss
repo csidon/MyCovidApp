@@ -117,7 +117,7 @@ QCheckBox::indicator
 
 QCheckBox::indicator:checked
 {
-    image:url("./ressources/check.png");
+    image:url(":/images/check.png");
         background-color: #FFCC01;
     border: 1px solid #FFCC01;
 
@@ -495,28 +495,17 @@ QRadioButton::indicator {
 }
 
 QRadioButton::indicator::unchecked {
-    image: url(:/images/radioBtns/radioUnchecked.png);
+    image: url(:/images/radioBtns/cRadio.png);
 }
 
 QRadioButton::indicator:unchecked:hover {
-    image: url(:/images/radioBtns/radioHover.png);
-}
-
-QRadioButton::indicator:unchecked:pressed {
-    image: url(:/images/radioBtns/radioUncheckedPressed.png);
+    image: url(:/images/radioBtns/cRadioHover.png);
 }
 
 QRadioButton::indicator::checked {
-    image: url(:/images/radioBtns/radioChecked.png);
+    image: url(:/images/radioBtns/cRadioChecked.png);
 }
 
-QRadioButton::indicator:checked:hover {
-    image: url(:/images/radioBtns/radioHover.png);
-}
-
-QRadioButton::indicator:checked:pressed {
-    image: url(:/images/radioBtns/radioPressed.png);
-}
 
 
 /*-----QTextEdit box outlines--------*/
@@ -526,4 +515,48 @@ QTextEdit QLineEdit {
     selection-background-color: yellow;
     box-shadow: 0 0 10px #ffcc01;
  border: 1px solid #ffcc01;
+}
+
+
+/*-----QSpinBox outlines--------*/
+QSpinBox {
+
+    selection-color: #000;
+    background-color: #FFF1D1;
+    selection-background-color: #FFDE80;
+
+    border: 1px solid #ffcc01;
+}
+
+QSpinBox::up-button {
+    border-image: url(:/images/radioBtns/spinUp.png)
+}
+
+QSpinBox::up-button:hover {
+    border-image: url(:/images/radioBtns/spinUpHover.png);
+}
+
+QSpinBox::up-button:pressed {
+    border-image: url(:/images/radioBtns/spinUpPressed.png);
+}
+
+QSpinBox::down-button {
+    border-image: url(:/images/radioBtns/spinDown.png)
+}
+
+QSpinBox::down-button:hover {
+    border-image: url(:/images/radioBtns/spinDownHover.png);
+}
+
+QSpinBox::down-button:pressed {
+    border-image: url(:/images/radioBtns/spinDownPressed.png);
+}
+QSpinBox::up-arrow:disabled,
+QSpinBox::up-arrow:off { /* off state when value in min */
+   image: url(:/images/radioBtns/spinUpDisabled.png);
+}
+
+QSpinBox::down-arrow:disabled,
+QSpinBox::down-arrow:off { /* off state when value in min */
+   image: url(:/images/radioBtns/spinDownDisabled.png);
 }

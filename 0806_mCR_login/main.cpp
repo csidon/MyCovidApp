@@ -6,6 +6,7 @@
 #include "test.h"
 #include "dose.h"
 #include "handlecsv.h"
+#include "covidtestform.h"
 #include <QDebug>
 #include <QApplication>
 #include <QFile>
@@ -57,8 +58,14 @@ int main(int argc, char *argv[])
     //w.show();
     //w.setLoggedInUserID(loggedInUserID);
 
-    AdminQRRequests adminQRRequests;
-    adminQRRequests.show();
+
+    CovidTestForm covidTests;
+    covidTests.show();
+    covidTests.setLoggedInUserID(loggedInUserID);
+
+//    AdminQRRequests adminQRRequests;
+//    adminQRRequests.show();
+
 
     //AdminHome adminHome;
     //adminHome.show();

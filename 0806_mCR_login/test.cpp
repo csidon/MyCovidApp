@@ -1,12 +1,13 @@
 #include "test.h"
 
+
 //Getters
 int Test::getTestUserID()
 {
     return this->testUserID;
 }
 
-int Test::getTestDate()
+QString Test::getTestDate()
 {
     return this->testDate;
 }
@@ -16,9 +17,9 @@ bool Test::getTestResult()
     return this->testResult;
 }
 
-bool Test::getTestIsNew()
+QString Test::getTestRecDate()
 {
-    return this->testIsNew;
+    return this->testRecDate;
 }
 
 //Setters
@@ -27,7 +28,7 @@ void Test::setTestUserID(int userID)
     this->testUserID = userID;
 }
 
-void Test::setTestDate(int date)
+void Test::setTestDate(QString date)
 {
     this->testDate = date;
 }
@@ -37,16 +38,16 @@ void Test::setTestResult(bool result)
     this->testResult = result;
 }
 
-void Test::setTestIsNew(bool isNew)
+void Test::setTestRecDate(QString thisDate)
 {
-    this->testIsNew = isNew;
+    this->testRecDate = thisDate;
 }
 
 //Constructor
 Test::Test()
 {
     testUserID = 0;
-    testDate = 0;
+    testDate = "";
     testResult = false;
-    testIsNew = true;
+    testRecDate = "";
 }

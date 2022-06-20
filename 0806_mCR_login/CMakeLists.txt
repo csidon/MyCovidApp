@@ -40,7 +40,10 @@ set(PROJECT_SOURCES
         adminqrrequests.h
         adminqrrequests.cpp
         adminqrrequests.ui
-#        authdialog_copy.ui
+        covidtestform.cpp
+        covidtestform.h
+        covidtestform.ui
+
 
 )
 

@@ -1,26 +1,33 @@
 #ifndef TEST_H
 #define TEST_H
+#include <QWidget>
+#include <QDate>
 
+namespace Ui {
+class Test;
+}
 
-class Test
+class Test : public QWidget
 {
+    Q_OBJECT
 private:
+    Ui::Test *ui;
     int testUserID;
-    int testDate;
+    QString testDate;
     bool testResult;
-    bool testIsNew;
+    QString testRecDate;
 public:
     //Getters
     int getTestUserID();
-    int getTestDate();
+    QString getTestDate();
     bool getTestResult();
-    bool getTestIsNew();
+    QString getTestRecDate();
 
     //Setters
     void setTestUserID(int userID);
-    void setTestDate(int date);
+    void setTestDate(QString date);
     void setTestResult(bool result);
-    void setTestIsNew(bool isNew);
+    void setTestRecDate(QString recDate);
 
     //Constructor
     Test();

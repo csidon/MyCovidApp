@@ -52,5 +52,16 @@
         <file>images/stripedBackground.png</file>
         <file>images/pageLeft.png</file>
         <file>images/pageRight.png</file>
+        <file>images/radioBtns/cRadio.png</file>
+        <file>images/radioBtns/cRadioChecked.png</file>
+        <file>images/radioBtns/cRadioHover.png</file>
+        <file>images/radioBtns/spinDown.png</file>
+        <file>images/radioBtns/spinDownDisabled.png</file>
+        <file>images/radioBtns/spinUp.png</file>
+        <file>images/radioBtns/spinUpDisabled.png</file>
+        <file>images/radioBtns/spinDownHover.png</file>
+        <file>images/radioBtns/spinDownPressed.png</file>
+        <file>images/radioBtns/spinUpHover.png</file>
+        <file>images/radioBtns/spinUpPressed.png</file>
     </qresource>
 </RCC>
