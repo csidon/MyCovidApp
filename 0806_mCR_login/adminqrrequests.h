@@ -13,7 +13,8 @@ class AdminQRRequests : public QWidget
 {
     Q_OBJECT
 private:
-    int pageNumber = 0;
+    QLabel* nameLabels[6];
+    int pageNumber = 0, noOfPages = 0;
 public:
     explicit AdminQRRequests(QWidget *parent = nullptr);
     ~AdminQRRequests();
@@ -23,16 +24,16 @@ public:
     void setPageNumber(int newPageNumber);
     void updatePageNumberDisplay();
     QString formatNameForDisplay(UserAccount dataSource);
-signals:
-    void pageTurned(int);
+
+    int getNoOfPages();
+    void setNoOfPages(int newNoOfPages);
+
 private slots:
     void on_btn_pageRight_clicked();
 
     void on_btn_pageLeft_clicked();
 
     void on_btn_backToAdminHome_clicked();
-
-    void setDisplay(int topUser);
 
 private:
     Ui::adminQRRequests *ui;

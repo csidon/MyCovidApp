@@ -95,7 +95,6 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
         // Read the line and store it
         QString row = file.readLine().trimmed();
         QStringList rowValues = row.split(',');
-        qDebug() << "Bongo" << rowValues.size() << headerIndex;
         data << rowValues.at(headerIndex);
     }
     file.close();
