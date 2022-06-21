@@ -59,14 +59,19 @@ int main(int argc, char *argv[])
     //w.setLoggedInUserID(loggedInUserID);
 
 
-    CovidTestForm covidTests;
-    covidTests.show();
-    covidTests.setLoggedInUserID(loggedInUserID);
+//    CovidTestForm covidTests;
+//    covidTests.show();
+//    covidTests.setLoggedInUserID(loggedInUserID);
 
+<<<<<<< HEAD
 
 
 //    AdminQRRequests adminQRRequests;
 //    adminQRRequests.show();
+=======
+    AdminQRRequests adminQRRequests;
+    adminQRRequests.show();
+>>>>>>> 7ecfb2b0b1c8510de513fc2d2984ed4db3619a66
 
 
     //AdminHome adminHome;

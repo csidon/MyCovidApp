@@ -278,6 +278,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestform.h",
+			"MU",
+			"EWIEGA46WW/moc_covidtestform.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h",
 			"MU",
 			"EWIEGA46WW/moc_dose.cpp",
@@ -390,6 +396,11 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestform.cpp",
 			"MU",
 			null
 		],
