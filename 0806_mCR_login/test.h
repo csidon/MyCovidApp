@@ -2,16 +2,12 @@
 #define TEST_H
 #include <QWidget>
 #include <QDate>
+#include <QString>
 
-namespace Ui {
-class Test;
-}
 
-class Test : public QWidget
+class Test
 {
-    Q_OBJECT
 private:
-    Ui::Test *ui;
     int testUserID;
     QString testDate;
     bool testResult;
@@ -31,6 +27,7 @@ public:
 
     //Constructor
     Test();
+//    Test(QString testDate, bool testResult, int uid, QString testRecDate);
 };
 
 #endif // TEST_H

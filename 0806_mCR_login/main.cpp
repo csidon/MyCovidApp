@@ -40,13 +40,13 @@ int main(int argc, char *argv[])
     qDebug() << "Cell value retrieved is " << cellValTest;
 
 
-    //Test Dose Storage
-//    Dose testDose;
-//    testDose.setDoseDate(220614);
-//    testDose.setDoseManufacturer(1);
-//    UserAccount testUser;
-//    testUser.setUserIDNumber(484);
-//    testUser.addDose(testDose);
+//    Test Dose Storage
+    Dose testDose;
+    testDose.setDoseDate(220614);
+    testDose.setDoseManufacturer(1);
+    UserAccount testUser;
+    testUser.setUserIDNumber(4842);
+    testUser.addDose(testDose);
 
 
     //AuthDialog authdialog;
@@ -62,6 +62,8 @@ int main(int argc, char *argv[])
     CovidTestForm covidTests;
     covidTests.show();
     covidTests.setLoggedInUserID(loggedInUserID);
+
+
 
 //    AdminQRRequests adminQRRequests;
 //    adminQRRequests.show();

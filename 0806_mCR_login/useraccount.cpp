@@ -259,14 +259,25 @@ void UserAccount::assignQR()
 void UserAccount::addTest(Test testToStore)
 {
     testToStore.setTestUserID(this->getUserIDNumber());
+    qDebug() << "You have started adding a test with uid " << testToStore.getTestUserID();
     QFile doses("database/UserTests/" + QString::number(this->getUserIDNumber()) + ".csv");
-    if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
+    if(doses.open(QIODevice::ReadWrite| QIODevice::Append))
+    {
         QTextStream stream(&doses);
         stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
+        qDebug() << "You should have created a new file and added test data to it";
     }
     doses.close();
-    QFile masterTests("database/MasterTests.csv");
-    if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append)){
+
+
+    // Storing in MasterTests db
+    HandleCSV grabPath;
+    QString filePath = grabPath.returnCSVFilePath("dbTest");
+    qDebug() << "File path used is " <<  filePath;
+
+    QFile masterTests(filePath);
+    if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append))
+    {
         QTextStream stream(&masterTests);
         stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
     }
