@@ -2,6 +2,5 @@
 #include "EWIEGA46WW/moc_adminhome.cpp"
 #include "EWIEGA46WW/moc_adminqrrequests.cpp"
 #include "EWIEGA46WW/moc_authdialog.cpp"
-#include "EWIEGA46WW/moc_covidtestform.cpp"
+#include "EWIEGA46WW/moc_covidtestforms.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
-#include "EWIEGA46WW/moc_test.cpp"

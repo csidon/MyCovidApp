@@ -1,5 +1,6 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h \
@@ -11,10 +12,13 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDir \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QFile \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QMap \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QStandardPaths \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QString \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QVector \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qarraydata.h \
@@ -82,6 +86,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer_impl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsize.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qstandardpaths.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstring.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstringalgorithms.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h \
@@ -102,6 +107,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/QStandardItemModel \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h \
@@ -120,6 +126,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qstandarditemmodel.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
