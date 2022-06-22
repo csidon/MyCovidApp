@@ -51,3 +51,12 @@ Test::Test()
     testResult = false;
     testRecDate = "";
 }
+
+//Test::Test(QString testDate = "", bool testResult = false,
+//           int uid = 0, QString testRecDate = "")
+//{
+//    this->testUserID = uid;
+//    this->testDate = testDate;
+//    this->testResult = testResult;
+//    this->testRecDate = testRecDate;
+//}

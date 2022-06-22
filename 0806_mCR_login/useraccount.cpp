@@ -1,4 +1,6 @@
 #include "useraccount.h"
+#include <QStandardPaths>
+#include <QDir>
 
 //Getters
 int UserAccount::getUserIDNumber()
@@ -237,13 +239,24 @@ void UserAccount::assignID()
 
 void UserAccount::requestQR()
 {
-    QFile QRCodeRequests("database/QRCodeRequests.csv");
-    if(QRCodeRequests.open(QIODevice::ReadWrite| QIODevice::Append)){
-        QTextStream stream(&QRCodeRequests);
-        stream << "\n" << this->getUserIDNumber();
-//        stream << "\n" << this->getUserIDNumber() << "," << QDateTime::currentDateTime();
+    HandleCSV grabPath;
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QString filepath = grabPath.returnCSVFilePath("dbQRRequests");
+
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Reading from " << QDir::currentPath();
+        QFile QRCodeRequests{filepath};
+        if(QRCodeRequests.open(QIODevice::ReadWrite| QIODevice::Append))
+        {
+            QTextStream stream(&QRCodeRequests);
+            stream << "\n" << this->getUserIDNumber();
+    //        stream << "\n" << this->getUserIDNumber() << "," << QDateTime::currentDateTime();
+        }
+        QRCodeRequests.close();
     }
-    QRCodeRequests.close();
 }
 
 void UserAccount::assignQR()
@@ -259,46 +272,94 @@ void UserAccount::assignQR()
 void UserAccount::addTest(Test testToStore)
 {
     testToStore.setTestUserID(this->getUserIDNumber());
-    QFile doses("database/UserTests/" + QString::number(this->getUserIDNumber()) + ".csv");
-    if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
-        QTextStream stream(&doses);
-        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
+    qDebug() << "You have started adding a test with uid " << testToStore.getTestUserID();
+
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QString filepath = "database/UserTests/" + QString::number(this->getUserIDNumber()) + ".csv";
+
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Reading from " << QDir::currentPath();
+        QFile testFile{filepath};
+
+        if(testFile.open(QIODevice::ReadWrite| QIODevice::Append))
+        {
+            QTextStream stream(&testFile);
+            stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate() << "\n";
+            qDebug() << "You should have created a new file and added test data to it";
+        }
+        testFile.close();
+
     }
-    doses.close();
-    QFile masterTests("database/MasterTests.csv");
-    if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append)){
-        QTextStream stream(&masterTests);
-        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
-    }
-    masterTests.close();
+
+        // Storing in MasterTests db
+        HandleCSV grabPath;
+        QString switchFilePath = grabPath.returnCSVFilePath("dbTest");
+        qDebug() << "File path used is " <<  switchFilePath;
+
+        QFile masterTests(switchFilePath);
+        if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append))
+        {
+            QTextStream stream(&masterTests);
+            stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
+        }
+        masterTests.close();
 }
 
 void UserAccount::addDose (Dose doseToStore)
 {
     doseToStore.setDoseUserID(this->getUserIDNumber());
-    QFile doses("database/UserDoses/" + QString::number(this->getUserIDNumber()) + ".csv");
-    if(doses.open(QIODevice::ReadWrite| QIODevice::Append)){
-        QTextStream stream(&doses);
-        stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QString filepath = "database/UserDoses/" + QString::number(this->getUserIDNumber()) + ".csv";
+
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Reading from " << QDir::currentPath();
+        QFile doseFile{filepath};
+
+        if(doseFile.open(QIODevice::ReadWrite| QIODevice::Append)){
+            QTextStream stream(&doseFile);
+            stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+        }
+        doseFile.close();
+
+        HandleCSV grabPath;
+        QString switchFilePath = grabPath.returnCSVFilePath("dbDose");
+        qDebug() << "File path used is " <<  switchFilePath;
+        QFile masterDoses{switchFilePath};
+        if(masterDoses.open(QIODevice::ReadWrite| QIODevice::Append)){
+            QTextStream stream(&masterDoses);
+            stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+        }
+        masterDoses.close();
     }
-    doses.close();
-    QFile masterDoses("database/MasterDoses.csv");
-    if(masterDoses.open(QIODevice::ReadWrite| QIODevice::Append)){
-        QTextStream stream(&masterDoses);
-        stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
-    }
-    masterDoses.close();
 }
 
 void UserAccount::reportError(ErrorReport reportToStore)
 {
     reportToStore.setSender(this->getUserIDNumber());
-    QFile reports(":/database/ErrorReports.csv");
-    if(!reports.open(QIODevice::ReadWrite| QIODevice::Append)){
-        QTextStream stream(&reports);
-        stream << "\n" << reportToStore.getTitle() << "," << reportToStore.getText() << "," << reportToStore.getDate() << "," << reportToStore.getSender() << "," << reportToStore.getIsNew();
-    };
-    reports.close();
+
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    HandleCSV grabPath;
+    QString filepath = grabPath.returnCSVFilePath("dbReports");
+
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Reading from " << QDir::currentPath();
+        QFile reports{filepath};
+        if(!reports.open(QIODevice::ReadWrite| QIODevice::Append)){
+            QTextStream stream(&reports);
+            stream << "\n" << reportToStore.getTitle() << "," << reportToStore.getText() << "," << reportToStore.getDate() << "," << reportToStore.getSender() << "," << reportToStore.getIsNew();
+        };
+        reports.close();
+    }
 }
 
 
