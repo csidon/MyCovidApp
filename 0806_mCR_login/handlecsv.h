@@ -44,6 +44,9 @@ public:
     // Writing data to db
     void writeToPIDCSV(UserAccount userConstructor);
 
+//    // Updating a single row (user's details) in dbPID based on UID
+//    void updatePID(int uid, UserAccount updatedUser);
+
 };
 
 #endif // HANDLECSV_H

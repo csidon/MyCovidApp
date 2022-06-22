@@ -54,7 +54,7 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
     int rowIndex = -1;
 
     rowIndex = checkUser.rowIndexOfCellMatchingSearch(allUserEmailData,usrn);
-    qDebug() << "Row Index for testing of woo@kie.com is " << rowIndex;
+    qDebug() << "Row Index for username " << usrn << " is " << rowIndex;
     if (rowIndex >=0)
     {
         // If username is found, check if password matches username
@@ -407,3 +407,5 @@ void AuthDialog::showPassCriteria()
     ui->lbl_passCheck_uppLow->show();
     ui->lbl_passCheck_UppLowIcon->show();
 }
+
+

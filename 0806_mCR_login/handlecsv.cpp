@@ -2,6 +2,7 @@
 #include "useraccount.h"
 #include <QCoreApplication>
 #include <QStandardPaths>
+#include <QStandardItemModel>
 
 HandleCSV::HandleCSV()
 {
@@ -198,7 +199,7 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
         while(!file.atEnd())
         {
             // Skip the number of rows that are inapplicable
-            for (int i = 0; i < rowIn; i++)
+            for (int i = 1; i < rowIn; i++)
             {
                 file.readLine();
             }
@@ -374,3 +375,85 @@ void HandleCSV::writeToPIDCSV(UserAccount newUser)
     }
 
 }
+
+//void HandleCSV::updatePID(int uid, UserAccount updatedUser)
+//{
+//    //Open dbPID for reading and search for UID
+//    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+//    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+//    QDir d{path};
+//    QString filepath = returnCSVFilePath("dbPID");
+
+//    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+//    {
+//        qDebug() << "Writing to " << QDir::currentPath();
+//        QFile f{filepath};
+//        qDebug() << "Filepath is " << filepath;
+//        if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+//        {
+//            qDebug() << "Is the file open? " << f.isOpen();
+//            qDebug() << "File error: " << f.error();
+//            qDebug() << "Error string: " << f.errorString();
+//        }
+//        else
+//        {
+//            // Find the row with the UID
+//            QStringList allUserIDs = getColData("userIDNumber","dbPID");
+//            qDebug() << "Checking this list:" << allUserIDs;
+
+//            // Searching all uids in retrieved QStringList for target uid
+//            int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
+//            if (userFoundInRowIndex <0)
+//            {
+//                qDebug() << "User with uid " << uid << " not found";
+//            }
+//            else
+//            {
+////                qDebug() << "User " << uid << " has been found in rowIndex: " << userFoundInRowIndex;
+////                // Copy all of the lines in the db until the row that has been identified
+////                for (int i = 0; i < userFoundInRowIndex; i++)
+////                {
+////                    QString row(i) = f.readline();
+////                }
+////                qDebug()<< "Testing what row1 values are: " << row1;
+
+////                // Meanwhile create a temporary file to write to
+//////                QString tempfilepath = "database/tempfile.csv";
+//////                QFile tempFile{tempfilepath};}
+////                QTemporaryFile tempfile;
+////                if (!tempfile.open(QIODevice::ReadWrite | QIODevice::Append))
+////                {
+////                    qDebug() << "Is the file open? " << tempfile.isOpen();
+////                    qDebug() << "File error: " << tempfile.error();
+////                    qDebug() << "Error string: " << tempfile.errorString();
+////                }
+////                else
+////                {
+////                    QTextStream stream(&tempfile);
+////                    stream <<
+
+//                // Copy all the data from csv file to QTableView
+//                QStandardItemModel *model = new QStandardItemModel;
+//                int lineindex = 0;
+//                QTextStream in(&f);     // Read to text stream
+//                while (!in.atEnd())
+//                {
+//                    QString fileLine = in.readLine();
+//                    QStringList lineToken = fileLine.split(",", QString::SkipEmptyParts);
+//                    for (int j = 0; j < lineToken.size(); j++)
+//                    {
+//                        QString value = lineToken.at(j);
+//                        QStandardItem *item = new QStandardItem(value);
+//                        model->setItem(lineindex, j, item);
+//                    }
+//                    lineindex++;
+//                }
+//                file.close();
+//            }
+
+
+
+//        }
+//    }
+
+//}

@@ -9,27 +9,8 @@ CovidTestForm::CovidTestForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // This section retrieves the current date
-    // and sets this as the QSpinBox default
-    QDate date;
-    //*testing
-    QString yy = QString::number(ui->spinBox_YY->value() + 2000);
-    QString mm = QString::number(ui->spinBox_MM->value());
-    qDebug() << "Is this a string? " << yy + "-" + mm;
-    //*testing
 
-    auto thisDate = date.currentDate();
-    int year = date.currentDate().year() - 2000;
-    int month = date.currentDate().month();
-    int day = date.currentDate().day();
-    qDebug() << "The date retrieved is " << thisDate;
-    ui->spinBox_YY->setValue(year);
-    ui->spinBox_MM->setValue(month);
-    ui->spinBox_DD->setValue(day);
 
-    // Hides error labels to start
-    ui->lbl_errSelectResult->hide();
-    ui->lbl_errSelectTerms->hide();
 
 }
 
@@ -159,6 +140,7 @@ void CovidTestForm::on_pushButton_clicked()
 
         UserAccount newTest;
         newTest.addTest(collectTestInfo);
+        ui->stackedWidget->setCurrentIndex(1);
 
     }
 

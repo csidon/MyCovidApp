@@ -33,10 +33,12 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
         ui->btn_displayQR->show();
     }
 
+
     // Creating a hidden label for UID
 //    QLabel* hiddenUIDlabel = new QLabel(this);
 //    hiddenUIDlabel->setGeometry(300,70,62,20);
 //    hiddenUIDlabel->setNum(uid);
+    ui->lbl_UID_toHide->setNum(loggedInUserID);
 
 }
 
@@ -48,6 +50,13 @@ int MainWindow::getLoggedInUserID()
 void MainWindow::setLoggedInUserID(int newLoggedInUserID)
 {
     loggedInUserID = newLoggedInUserID;
+}
+
+void MainWindow::openCovidTestWindow()
+{
+    covidTestWindow = new CovidTestForms();
+    covidTestWindow->show();
+
 }
 
 MainWindow::~MainWindow()
@@ -81,9 +90,31 @@ void MainWindow::on_btn_requestQR_clicked()
         ui->btn_requestQR->hide();
         ui->btn_QRrequested->show();
         loggedInUser.requestQR();
+        loggedInUser.setUserQRStatus(1);
+
+        // Testing what's in LoggedInUser
+        qDebug() << "UID: " <<loggedInUser.getUserIDNumber();
+        qDebug() << "Email: " << loggedInUser.getUserEmail();
+        qDebug() << "Passwd: " << loggedInUser.getUserPassword();
+        qDebug() << "FirstName: " << loggedInUser.getUserFirstName();
+        qDebug() << "LastName: " << loggedInUser.getUserLastName();
+        qDebug() << "Pref Name: " << loggedInUser.getUserPreferredName();
+        qDebug() << "NHI: " << loggedInUser.getUserNHINumber();
+        qDebug() << "Phone: " << loggedInUser.getUserPhoneNumber();
+        qDebug() << "VaxStat: " << loggedInUser.getUserVaccinationStatus();
+        qDebug() << "QRStat: " << loggedInUser.getUserQRStatus();
+        qDebug() << "QRAdd: " << loggedInUser.getUserQRCodeAddress();
+
         // To implement actual write-to-QRCodeRequests.csv and write to
         // userPID file
 
     }
+}
+
+
+void MainWindow::on_btn_reportRat_clicked()
+{
+    openCovidTestWindow();
+
 }
 
