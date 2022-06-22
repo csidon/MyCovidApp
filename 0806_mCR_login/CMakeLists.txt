@@ -40,9 +40,12 @@ set(PROJECT_SOURCES
         adminqrrequests.h
         adminqrrequests.cpp
         adminqrrequests.ui
-        covidtestform.cpp
-        covidtestform.h
-        covidtestform.ui
+#        covidtestform.cpp
+#        covidtestform.h
+#        covidtestform.ui
+        covidtestforms.cpp
+        covidtestforms.h
+        covidtestforms.ui
 
 
 )

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "useraccount.h"
 #include <QMessageBox>
+#include "covidtestforms.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -15,6 +16,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 private:
     int loggedInUserID;
+    CovidTestForms *covidTestWindow;
 public:
     MainWindow(QWidget *parent = nullptr, int loggedInUserID = 0);
     ~MainWindow();
@@ -22,12 +24,12 @@ public:
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
 
-//public slots:
-    //void receiveUID(int uid);
+public slots:
+    void openCovidTestWindow();
 
 private slots:
     void on_btn_requestQR_clicked();
-
+    void on_btn_reportRat_clicked();
 
 private:
     Ui::MainWindow *ui;
