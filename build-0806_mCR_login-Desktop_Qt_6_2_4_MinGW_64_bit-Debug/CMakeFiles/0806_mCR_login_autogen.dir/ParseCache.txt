@@ -685,6 +685,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mmc:Q_OBJECT
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h
@@ -697,10 +698,13 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDir
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QFile
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QMap
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QObject
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QStandardPaths
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QString
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QVector
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qarraydata.h
@@ -768,6 +772,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer_impl.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsize.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstandardpaths.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstring.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstringalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h
@@ -789,6 +794,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/QPixmap
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/QStandardItemModel
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h
@@ -807,6 +813,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qstandarditemmodel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
@@ -1424,6 +1431,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mmc:Q_OBJECT
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h
@@ -1435,10 +1443,13 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDir
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QFile
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QMap
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QObject
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QStandardPaths
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QString
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QVector
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qarraydata.h
@@ -1506,6 +1517,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer_impl.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsize.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstandardpaths.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstring.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstringalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h
@@ -1526,6 +1538,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/QStandardItemModel
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h
@@ -1544,6 +1557,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qstandarditemmodel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
@@ -1792,10 +1806,42 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.cpp
+ uic:ui_adminhome.h
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.cpp
+ uic:ui_adminqrrequests.h
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.cpp
+ uic:ui_authdialog.h
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestform.cpp
+ uic:ui_covidtestform.h
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.cpp
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.cpp
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.cpp
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/main.cpp
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.cpp
+ uic:./ui_mainwindow.h
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h
  mmc:Q_OBJECT
- mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDate
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDir
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QFile
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QMap
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QObject
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QStandardPaths
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QString
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QVector
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qarraydata.h
@@ -1821,12 +1867,17 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdatastream.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdebug.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qdir.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qfile.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qfiledevice.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qfileinfo.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qflags.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qgenericatomic.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qglobal.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qglobalstatic.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qhash.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qhashfunctions.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qiodevice.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qiodevicebase.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qiterable.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qiterator.h
@@ -1858,6 +1909,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer_impl.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qsize.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstandardpaths.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstring.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstringalgorithms.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h
@@ -1876,7 +1928,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qutf8stringview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvariant.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/QStandardItemModel
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h
@@ -1884,6 +1938,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qfont.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qfontinfo.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qfontmetrics.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qicon.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qimage.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h
@@ -1894,12 +1949,16 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qstandarditemmodel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgetsglobal.h
@@ -1927,6 +1986,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/c++0x_warning.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/char_traits.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/charconv.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/concept_check.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/cpp_type_traits.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/cxxabi_forced.h
@@ -1936,6 +1996,10 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_defines.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/exception_ptr.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_dir.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_fwd.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_ops.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fs_path.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functexcept.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/functional_hash.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h
@@ -1945,8 +2009,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.tcc
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_conv.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets_nonio.tcc
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/localefwd.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/max_size_type.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/memoryfwd.h
@@ -1959,6 +2026,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/postypes.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/predefined_ops.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ptr_traits.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/quoted_string.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/range_access.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ranges_algo.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ranges_algobase.h
@@ -2005,14 +2073,17 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uses_allocator_args.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/vector.tcc
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cctype
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/chrono
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/clocale
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/codecvt
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/compare
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/concepts
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdint
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstdlib
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ctime
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwchar
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/debug/assertions.h
@@ -2026,13 +2097,16 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/numeric_traits.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/string_conversions.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/type_traits.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/filesystem
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iomanip
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/locale
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/map
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/memory
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/new
@@ -2049,6 +2123,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/streambuf
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string_view
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/bessel_function.tcc
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/beta_function.tcc
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/ell_integral.tcc
@@ -2077,7 +2152,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/gthr.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h
+ mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdarg.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stddef.h
  mdp:D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdint.h
@@ -2117,18 +2194,6 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.cpp
- uic:ui_adminhome.h
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.cpp
- uic:ui_adminqrrequests.h
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.cpp
- uic:ui_authdialog.h
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestform.cpp
- uic:ui_covidtestform.h
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.cpp
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.cpp
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.cpp
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/main.cpp
-C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.cpp
- uic:./ui_mainwindow.h
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.cpp
+C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.cpp
+ uic:ui_covidtestforms.h

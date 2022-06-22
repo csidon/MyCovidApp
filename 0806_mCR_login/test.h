@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QDate>
 #include <QString>
+#include <QObject>
 
 
 class Test

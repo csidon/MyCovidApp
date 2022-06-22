@@ -32,7 +32,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 48,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
@@ -56,7 +56,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 70,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
@@ -187,7 +187,8 @@
 				18,
 				21,
 				24,
-				31
+				26,
+				35
 			]
 		}
 	],
@@ -291,7 +292,8 @@
 				18,
 				21,
 				24,
-				31
+				26,
+				35
 			]
 		},
 		{
@@ -307,10 +309,12 @@
 				19,
 				20,
 				23,
-				26,
 				27,
-				28,
-				29
+				29,
+				30,
+				31,
+				32,
+				33
 			]
 		},
 		{
@@ -323,15 +327,16 @@
 				9,
 				22,
 				25,
-				30
+				28,
+				34
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				32,
-				33
+				36,
+				37
 			]
 		}
 	],
@@ -480,6 +485,22 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "covidtestforms.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "covidtestforms.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "covidtestforms.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_mainwindow.h",
@@ -501,6 +522,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_authdialog.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_covidtestforms.h",
 			"sourceGroupIndex" : 1
 		},
 		{

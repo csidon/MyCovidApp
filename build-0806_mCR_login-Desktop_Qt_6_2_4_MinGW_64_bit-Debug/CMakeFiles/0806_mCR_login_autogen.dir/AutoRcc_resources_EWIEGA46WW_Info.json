@@ -8,16 +8,6 @@
 	"INPUTS" : 
 	[
 		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/Toolery.qss",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/ErrorReports.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/QRCodeRequests.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/MasterTests.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/dummyPID.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/MasterDoses.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/UserDoses/32661.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/UserDoses/82.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/UserDoses/0.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/UserDoses/31427.csv",
-		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/database/UserDoses/484.csv",
 		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/images/backArrow.png",
 		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/images/stripedBackground.png",
 		"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/images/check_small.png",
