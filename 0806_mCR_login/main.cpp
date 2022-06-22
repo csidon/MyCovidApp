@@ -93,8 +93,8 @@ int main(int argc, char *argv[])
 
 
 
-//    AdminQRRequests adminQRRequests;
-//    adminQRRequests.show();
+    AdminQRRequests adminQRRequests;
+    adminQRRequests.show();
 
 
     //AdminHome adminHome;
