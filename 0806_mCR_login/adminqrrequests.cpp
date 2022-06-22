@@ -30,7 +30,7 @@ void AdminQRRequests::setNoOfPages(int newNoOfPages)
 void AdminQRRequests::updatePageNumberDisplay()
 {
     HandleCSV countQRRequests;
-    QStringList QRRequests = countQRRequests.getColData("userIDNumber", ":/database/QRCodeRequests.csv");
+    QStringList QRRequests = countQRRequests.getColData("userIDNumber", "dbQRRequests");
     QRRequests.takeFirst();//drops the header
 
     //How many pages do we need?
@@ -87,7 +87,7 @@ void AdminQRRequests::setDisplayedUsers(int currentPage)
 {
     int printUser = ((currentPage - 1) * 6) + 1;
     HandleCSV readQRRequests;//Access reading functions
-    QStringList requestingUsers = readQRRequests.getColData("userIDNumber", ":/database/QRCodeRequests.csv");
+    QStringList requestingUsers = readQRRequests.getColData("userIDNumber", "dbQRRequests");
     //This next part could be a loop if not for the need to change object name for the labels - maybe I make an array of pointers to them?
     int i=0;
     UserAccount dataSource;
