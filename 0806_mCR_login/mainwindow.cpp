@@ -56,8 +56,8 @@ void MainWindow::openCovidTestWindow()
 {
     covidTestWindow = new CovidTestForms();
     covidTestWindow->show();
-
 }
+
 
 MainWindow::~MainWindow()
 {

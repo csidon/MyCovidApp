@@ -12,6 +12,9 @@
 #include "useraccount.h"
 #include "handlecsv.h"
 #include "mainwindow.h"
+#include <QObject>
+#include "adminhome.h"
+
 
 namespace Ui {
 class AuthDialog;
@@ -23,13 +26,17 @@ class AuthDialog : public QDialog
 
 private:
     int loggedInUserID = 0;
+    Ui::AuthDialog *ui;
+    MainWindow *mainEUWindow;
+    AdminHome *mainAdminWindow;
+
+
 public:
     explicit AuthDialog(QWidget *parent = nullptr);
     ~AuthDialog();
 
     // Authentication functions
     int authUser(QString usrn, QString pass, QString dbName);
-
 
 
     // Account creation & validation functions
@@ -47,19 +54,15 @@ public:
 
 public slots:
     void on_btn_login_clicked();
+    void openMainEUWindow();
+    void openMainAdminWindow();
 
 private slots:
-
     void on_btn_switchToSignup_clicked();
-
     void on_btn_switchToLogin_clicked();
-
     void on_btn_createAccount_clicked();
-
     void on_lineEdit_inputRegEmail_inputRejected();
 
-private:
-    Ui::AuthDialog *ui;
 
 signals:
     void sendUIDSignal(int uid);

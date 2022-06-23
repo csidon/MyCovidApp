@@ -83,8 +83,8 @@ int main(int argc, char *argv[])
 
     MainWindow w = MainWindow(nullptr, loggedInUserID);
     w.setLoggedInUserID(loggedInUserID);
-    qDebug() << "The loggedInUserID that is being set is: " << loggedInUserID;
-    w.show();
+//    qDebug() << "The loggedInUserID that is being set is: " << loggedInUserID;
+//    w.show();
 
 
 
