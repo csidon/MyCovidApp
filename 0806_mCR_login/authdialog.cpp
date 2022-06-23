@@ -1,7 +1,6 @@
 #include "authdialog.h"
 #include "ui_authdialog.h"
-#include <QObject>
-#include "mainwindow.h"
+
 
 
 int AuthDialog::getLoggedInUserID()
@@ -101,8 +100,9 @@ void AuthDialog::on_btn_login_clicked()
         // Return userID 42 (reserved for admin)
         // userID 42 will SETWINDOW TO ADMIN PANEL *******
         // i.e. ui->invisibleLabelOnAdminPanel->setText("userID")
+        openMainAdminWindow();
     }
-    else if (loginSuccessUID > 0)     // End User recognised and authenticated
+    else if (loginSuccessUID > 0 && loginSuccessUID != 42)     // End User recognised and authenticated
     {
         this->hide();
         QMessageBox::information(this, "Login", "Correct username and password.\nWelcome to MyCovidRecord");
@@ -114,8 +114,7 @@ void AuthDialog::on_btn_login_clicked()
         setLoggedInUserID(grabbedUser.getUserIDNumber());
 
         qDebug() << loggedInUserID << "Login successful. Using getter gets firstName: " << grabbedUser.getUserFirstName();
-
-        qDebug() << "sendUIDSignal executed";
+        openMainEUWindow();
 
     }
     else        // Username||password not found in database
@@ -124,6 +123,18 @@ void AuthDialog::on_btn_login_clicked()
         this->setResult(QDialog::Rejected);
     }
 
+}
+
+void AuthDialog::openMainEUWindow()
+{
+    mainEUWindow = new MainWindow();
+    mainEUWindow->show();
+}
+
+void AuthDialog::openMainAdminWindow()
+{
+    mainAdminWindow = new AdminHome();
+    mainAdminWindow->show();
 }
 
 
