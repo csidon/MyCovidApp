@@ -1,5 +1,7 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_authdialog.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \

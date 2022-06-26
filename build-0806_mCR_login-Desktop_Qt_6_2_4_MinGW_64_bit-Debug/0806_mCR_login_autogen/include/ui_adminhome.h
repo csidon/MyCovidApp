@@ -74,7 +74,7 @@ public:
 "background-color: rgba(255, 255, 255, 0);"));
         lbl_numberOfQRCodeRequests = new QLabel(AdminHome);
         lbl_numberOfQRCodeRequests->setObjectName(QString::fromUtf8("lbl_numberOfQRCodeRequests"));
-        lbl_numberOfQRCodeRequests->setGeometry(QRect(30, 200, 141, 111));
+        lbl_numberOfQRCodeRequests->setGeometry(QRect(72, 200, 61, 111));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("arial")});
         lbl_numberOfQRCodeRequests->setFont(font1);
