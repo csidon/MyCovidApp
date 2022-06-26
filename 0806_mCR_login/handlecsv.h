@@ -44,6 +44,12 @@ public:
     // Writing data to db
     void writeToPIDCSV(UserAccount userConstructor);
 
+    //Update the PID with a single modified user
+    void updatePID(UserAccount modifiedUser);
+
+    //Write user to newPID file
+    void writeToNewPID(UserAccount userBeingWritten);
+
 //    // Updating a single row (user's details) in dbPID based on UID
 //    void updatePID(int uid, UserAccount updatedUser);
 

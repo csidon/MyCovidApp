@@ -114,7 +114,7 @@ void AuthDialog::on_btn_login_clicked()
         setLoggedInUserID(grabbedUser.getUserIDNumber());
 
         qDebug() << loggedInUserID << "Login successful. Using getter gets firstName: " << grabbedUser.getUserFirstName();
-        openMainEUWindow();
+        //openMainEUWindow();
 
     }
     else        // Username||password not found in database

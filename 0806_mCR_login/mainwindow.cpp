@@ -11,8 +11,10 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
 {
     HandleCSV accountReader;
     ui->setupUi(this);
+    qDebug() << "OI! MainWindow received uid: " << loggedInUserID;
     UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
     ui->lbl_welcomeMsg->setText("Kia Ora " + loggedInUser.getUserPreferredName());
+    this->setLoggedInUserID(loggedInUserID);
     if(loggedInUser.getUserQRStatus()==0)
     {
         qDebug() << "The logged In user QR status is 0";
@@ -39,6 +41,11 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
 //    hiddenUIDlabel->setGeometry(300,70,62,20);
 //    hiddenUIDlabel->setNum(uid);
     ui->lbl_UID_toHide->setNum(loggedInUserID);
+    if(loggedInUserID == 0){
+        this->hide();
+        qDebug() << "shoulda closed";
+    }
+   // ui->setupUi(this);
 
 }
 
@@ -75,8 +82,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_requestQR_clicked()
 {
-
-    UserAccount loggedInUser;
+    HandleCSV readWriteQRRequest;
+    UserAccount loggedInUser = readWriteQRRequest.getUserAccount(getLoggedInUserID());
     int ret = QMessageBox::warning(this,tr("Requesting QR code"),
              tr("QR codes (Vaccination certificates) can take "
                 "up to 48 hours to process. \nRequest a QR code?"),

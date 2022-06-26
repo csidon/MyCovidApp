@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     int loggedInUserID = 0;
 
-//     HandleCSV testCSVFunctions;
+    HandleCSV testCSVFunctions;
 //    qDebug() << testCSVFunctions.returnCSVFilePath("dbPID");
 //   qDebug() << "You have finished returning CSV file path";
 //    int headerIn = testCSVFunctions.returnHeaderIndex("dbPID","userEmail");
@@ -76,22 +76,25 @@ int main(int argc, char *argv[])
 //    testUser.addDose(testDose);
 
 
-    AuthDialog authdialog;
-    authdialog.setModal(true);
-    authdialog.exec();
-    loggedInUserID = authdialog.getLoggedInUserID();
-
-    MainWindow w = MainWindow(nullptr, loggedInUserID);
-    w.setLoggedInUserID(loggedInUserID);
-//    qDebug() << "The loggedInUserID that is being set is: " << loggedInUserID;
+//    AuthDialog authdialog;
+//    authdialog.setModal(true);
+//    authdialog.exec();
+//    loggedInUserID = authdialog.getLoggedInUserID();
+//    qDebug() << loggedInUserID;
+//
+//    MainWindow w = MainWindow(nullptr, loggedInUserID);
+//    //w.setLoggedInUserID(loggedInUserID);
 //    w.show();
+//    qDebug() << "The loggedInUserID that is being set is: " << loggedInUserID;
 
 
+//
+    UserAccount testingWriteToPID = UserAccount(17201, "leiachanges@email.com", "entropy9", "Hans",
+                                                "Bananas", "Hans", "HB546382", 03653245, 1,
+                                                1, "notYetSet");
 
-
-
-
-
+    //testCSVFunctions.writeToPIDCSV(testingWriteToPID);
+    testCSVFunctions.updatePID(testingWriteToPID);
 
 
 

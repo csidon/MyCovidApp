@@ -376,6 +376,115 @@ void HandleCSV::writeToPIDCSV(UserAccount newUser)
 
 }
 
+void HandleCSV::updatePID(UserAccount modifiedUser)
+{
+
+   //Find user's position in the file
+   QStringList allIDs = getColData("userIDNumber", "dbPID");
+   int modifiedIndex = 0;
+   for(int i = 0; i < allIDs.size(); i++){
+       if(allIDs.at(i) == QString::number(modifiedUser.getUserIDNumber())){
+           modifiedIndex = i;
+           qDebug() << "Modded index set to " << modifiedIndex;
+           break;
+       }
+   }
+   //Set up column headers in new file
+   auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+   if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+   QDir d{path};
+   QString filepath = returnCSVFilePath("./database/newPID.csv");
+
+   if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+   {
+       qDebug() << "Writing to " << QDir::currentPath();
+       QFile f{filepath};
+       qDebug() << "Filepath is " << filepath;
+       if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
+       {
+           qDebug() << "Is the file open? " << f.isOpen();
+           qDebug() << "File error: " << f.error();
+           qDebug() << "Error string: " << f.errorString();
+       }
+       else
+       {
+           QTextStream stream(&f);
+           stream << "userIDNumber" << "," << "userEmail" << "," << "userPassword" << "," << "userFirstName" << ","
+                  << "userLastName" << "," << "userPreferredName" << "," << "userNHINumber" << "," << "userPhoneNumber" << ","
+                  << "userVaccinationStatus" << "," << "userQRStatus" << "," << "userQRCodeAddress" << "\n";
+           qDebug() << "I have theoretically streamed data.";
+       }
+
+   }
+   //Write all positions before the user from the old file into the new file
+   UserAccount writingUser;
+   for(int i = 0; i < modifiedIndex; i++){
+       writingUser = getUserAccount(allIDs.at(i).toInt());
+       writeToNewPID(writingUser);
+   }
+
+
+   //Write the modified user from the argument
+   writeToNewPID(modifiedUser);
+
+   //Wrtite all the following positions from the old file
+   for( int i = modifiedIndex+1; i < allIDs.size(); i++){
+       writingUser = getUserAccount(allIDs.at(i).toInt());
+       writeToNewPID(writingUser);
+   }
+
+   //Delete the old file
+   remove("./database/dummyPID.csv");// NOTE this funtion wouldn't accpet a QString so I couldn't use the filepath function - we have to upadte this wil the final PID name
+
+   //Change the name of the new file
+   rename("./database/newPID.csv", "./database/dummyPID.csv");
+}
+
+void HandleCSV::writeToNewPID(UserAccount userBeingWritten)
+{
+    // Mapping info in userConstructor to cells
+    QString email, pass, fn, ln, pn, nhi, qrAdd;
+    int uid, ph, vaxstat,qrstat;
+    uid = userBeingWritten.getUserIDNumber();
+    email = userBeingWritten.getUserEmail();
+    pass = userBeingWritten.getUserPassword();
+    fn = userBeingWritten.getUserFirstName();
+    ln = userBeingWritten.getUserLastName();
+    pn = userBeingWritten.getUserPreferredName();
+    nhi = userBeingWritten.getUserNHINumber();
+    qrAdd = userBeingWritten.getUserQRCodeAddress();
+    ph = userBeingWritten.getUserPhoneNumber();
+    vaxstat = userBeingWritten.getUserVaccinationStatus();
+    qrstat = userBeingWritten.getUserQRStatus();
+
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QString filepath = returnCSVFilePath("./database/newPID.csv");
+
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Writing to " << QDir::currentPath();
+        QFile f{filepath};
+        qDebug() << "Filepath is " << filepath;
+        if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
+        {
+            qDebug() << "Is the file open? " << f.isOpen();
+            qDebug() << "File error: " << f.error();
+            qDebug() << "Error string: " << f.errorString();
+        }
+        else
+        {
+            QTextStream stream(&f);
+            stream << uid << "," << email << "," << pass << "," << fn << ","
+                   << ln << "," << pn << "," << nhi << "," << ph << ","
+                   << vaxstat << "," << qrstat << "," << qrAdd << "\n";
+            qDebug() << "I have theoretically streamed data.";
+        }
+//        f.close();
+    }
+}
+
 //void HandleCSV::updatePID(int uid, UserAccount updatedUser)
 //{
 //    //Open dbPID for reading and search for UID
