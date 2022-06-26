@@ -485,6 +485,41 @@ void HandleCSV::writeToNewPID(UserAccount userBeingWritten)
     }
 }
 
+void HandleCSV::removeQRRequest(QStringList newListOfRequestingUsers)
+{
+
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QString filepath = returnCSVFilePath("./database/newQRCodeRequests.csv");
+
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Writing to " << QDir::currentPath();
+        QFile f{filepath};
+        qDebug() << "Filepath is " << filepath;
+        if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
+        {
+            qDebug() << "Is the file open? " << f.isOpen();
+            qDebug() << "File error: " << f.error();
+            qDebug() << "Error string: " << f.errorString();
+        }
+        else
+        {
+            QTextStream stream(&f);
+            for(int i = 0; i < newListOfRequestingUsers.size(); i++){
+                stream << newListOfRequestingUsers.at(i) << "\n";
+            }
+            qDebug() << "I have theoretically streamed data.";
+        }
+    }
+    //Delete the old file
+    remove("./database/QRCodeRequests.csv");// NOTE this funtion wouldn't accpet a QString so I couldn't use the filepath function - we have to upadte this wil the final PID name
+
+    //Change the name of the new file
+    rename("./database/newQRCodeRequests.csv", "./database/QRCodeRequests.csv");
+}
+
 //void HandleCSV::updatePID(int uid, UserAccount updatedUser)
 //{
 //    //Open dbPID for reading and search for UID

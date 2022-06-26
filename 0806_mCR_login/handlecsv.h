@@ -50,6 +50,9 @@ public:
     //Write user to newPID file
     void writeToNewPID(UserAccount userBeingWritten);
 
+    //Remove user ID from QR requests file
+    void removeQRRequest(QStringList newListofRequestingUsers);
+
 //    // Updating a single row (user's details) in dbPID based on UID
 //    void updatePID(int uid, UserAccount updatedUser);
 

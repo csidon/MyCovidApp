@@ -248,6 +248,108 @@ font-size:18px;</string>
       <string>TextLabel</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_assign_1">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>60</y>
+       <width>381</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgba(255,255,255,0.1);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_assign_2">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>140</y>
+       <width>381</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgba(100,100,100,0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_assign_3">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>220</y>
+       <width>381</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgba(100,100,100,0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_assign_4">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>300</y>
+       <width>381</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgba(100,100,100,0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_assign_5">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>390</y>
+       <width>381</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgba(100,100,100,0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_assign_6">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>470</y>
+       <width>381</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgba(100,100,100,0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder>lbl_topBar</zorder>
     <zorder>lbl_QRRequests</zorder>
     <zorder>lbl_stripedBackground</zorder>
@@ -261,6 +363,12 @@ font-size:18px;</string>
     <zorder>btn_pageLeft</zorder>
     <zorder>lbl_currentPage</zorder>
     <zorder>btn_backToAdminHome</zorder>
+    <zorder>btn_assign_2</zorder>
+    <zorder>btn_assign_3</zorder>
+    <zorder>btn_assign_4</zorder>
+    <zorder>btn_assign_5</zorder>
+    <zorder>btn_assign_6</zorder>
+    <zorder>btn_assign_1</zorder>
    </widget>
    <widget class="QWidget" name="page_2"/>
   </widget>

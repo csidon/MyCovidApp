@@ -89,18 +89,19 @@ int main(int argc, char *argv[])
 
 
 //
-    UserAccount testingWriteToPID = UserAccount(17201, "leiachanges@email.com", "entropy9", "Hans",
-                                                "Bananas", "Hans", "HB546382", 03653245, 1,
-                                                1, "notYetSet");
-
-    //testCSVFunctions.writeToPIDCSV(testingWriteToPID);
-    testCSVFunctions.updatePID(testingWriteToPID);
-
-
+//    UserAccount testingWriteToPID = UserAccount(17201, "leiachanges@email.com", "entropy9", "Hans",
+//                                                "Bananas", "Hans", "HB546382", 03653245, 1,
+//                                                1, "notYetSet");
+//
+//    //testCSVFunctions.writeToPIDCSV(testingWriteToPID);
+//    testCSVFunctions.updatePID(testingWriteToPID);
 
 
-//    AdminQRRequests adminQRRequests;
-//    adminQRRequests.show();
+
+
+    AdminQRRequests adminQRRequests;
+    adminQRRequests.show();
+    adminQRRequests.assignmentButtonClicked(1);
 
 
     //AdminHome adminHome;

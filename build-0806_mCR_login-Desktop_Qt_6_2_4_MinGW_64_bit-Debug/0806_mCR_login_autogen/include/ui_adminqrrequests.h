@@ -36,6 +36,12 @@ public:
     QPushButton *btn_pageRight;
     QPushButton *btn_pageLeft;
     QLabel *lbl_currentPage;
+    QPushButton *btn_assign_1;
+    QPushButton *btn_assign_2;
+    QPushButton *btn_assign_3;
+    QPushButton *btn_assign_4;
+    QPushButton *btn_assign_5;
+    QPushButton *btn_assign_6;
     QWidget *page_2;
 
     void setupUi(QWidget *adminQRRequests)
@@ -117,6 +123,36 @@ public:
         lbl_currentPage->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font-family:arial;\n"
 "font-size:18px;"));
+        btn_assign_1 = new QPushButton(page);
+        btn_assign_1->setObjectName(QString::fromUtf8("btn_assign_1"));
+        btn_assign_1->setGeometry(QRect(-10, 60, 381, 81));
+        btn_assign_1->setStyleSheet(QString::fromUtf8("background-color:  rgba(255,255,255,0.1);\n"
+""));
+        btn_assign_2 = new QPushButton(page);
+        btn_assign_2->setObjectName(QString::fromUtf8("btn_assign_2"));
+        btn_assign_2->setGeometry(QRect(-10, 140, 381, 81));
+        btn_assign_2->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_assign_3 = new QPushButton(page);
+        btn_assign_3->setObjectName(QString::fromUtf8("btn_assign_3"));
+        btn_assign_3->setGeometry(QRect(-10, 220, 381, 81));
+        btn_assign_3->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_assign_4 = new QPushButton(page);
+        btn_assign_4->setObjectName(QString::fromUtf8("btn_assign_4"));
+        btn_assign_4->setGeometry(QRect(-10, 300, 381, 81));
+        btn_assign_4->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_assign_5 = new QPushButton(page);
+        btn_assign_5->setObjectName(QString::fromUtf8("btn_assign_5"));
+        btn_assign_5->setGeometry(QRect(-10, 390, 381, 81));
+        btn_assign_5->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_assign_6 = new QPushButton(page);
+        btn_assign_6->setObjectName(QString::fromUtf8("btn_assign_6"));
+        btn_assign_6->setGeometry(QRect(-10, 470, 381, 81));
+        btn_assign_6->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
         stackedWidget->addWidget(page);
         lbl_topBar->raise();
         lbl_QRRequests->raise();
@@ -131,6 +167,12 @@ public:
         btn_pageLeft->raise();
         lbl_currentPage->raise();
         btn_backToAdminHome->raise();
+        btn_assign_2->raise();
+        btn_assign_3->raise();
+        btn_assign_4->raise();
+        btn_assign_5->raise();
+        btn_assign_6->raise();
+        btn_assign_1->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
         stackedWidget->addWidget(page_2);
@@ -156,6 +198,12 @@ public:
         btn_pageRight->setText(QString());
         btn_pageLeft->setText(QString());
         lbl_currentPage->setText(QCoreApplication::translate("adminQRRequests", "TextLabel", nullptr));
+        btn_assign_1->setText(QString());
+        btn_assign_2->setText(QString());
+        btn_assign_3->setText(QString());
+        btn_assign_4->setText(QString());
+        btn_assign_5->setText(QString());
+        btn_assign_6->setText(QString());
     } // retranslateUi
 
 };

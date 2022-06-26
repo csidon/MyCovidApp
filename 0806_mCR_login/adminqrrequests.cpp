@@ -26,6 +26,29 @@ void AdminQRRequests::setNoOfPages(int newNoOfPages)
     noOfPages = newNoOfPages;
 }
 
+void AdminQRRequests::assignmentButtonClicked(int button)
+{
+    int userIndex = ((getPageNumber()-1)*6)+button;
+    HandleCSV readUsers;
+    QStringList allRequestingUsers = readUsers.getColData("userIDNumber", "dbQRRequests");
+    qDebug() << "button found list" << allRequestingUsers;
+    UserAccount assignedUser = readUsers.getUserAccount(allRequestingUsers.at(userIndex).toInt());
+    assignedUser.setUserQRStatus(2);
+    //BUILD THIS open a dialog to selectd a QR code, then save it in the assigned QR codes folder and remove it from the unassigned QR codes and pass its address to the next line
+    //assignedUser.setUserQRCodeAddress();
+    readUsers.updatePID(assignedUser);
+    allRequestingUsers.remove(userIndex);
+    qDebug() << "button list changed to" << allRequestingUsers;
+    readUsers.removeQRRequest(allRequestingUsers);
+    //Page display
+    if(button == 1 && allRequestingUsers.size() < userIndex){
+        setPageNumber(getPageNumber()-1);
+            updatePageNumberDisplay();
+    }
+    setDisplayedUsers(getPageNumber());
+}
+
+
 //This function make the page number display correct based on pageNumber() and noOfPages
 void AdminQRRequests::updatePageNumberDisplay()
 {
@@ -106,8 +129,6 @@ void AdminQRRequests::setDisplayedUsers(int currentPage)
 }
 
 
-//STILL NEEDED - the ability to upload a QR Code and associate it with a user that you click on, change their QRStatus, then overwrite the QRRequests file with the full list minus the person who just got their code
-
 void AdminQRRequests::on_btn_pageRight_clicked()
 {
     //increase page number and display more users
@@ -139,5 +160,12 @@ void AdminQRRequests::on_btn_pageLeft_clicked()
 void AdminQRRequests::on_btn_backToAdminHome_clicked()
 {
     this->close();
+}
+
+
+void AdminQRRequests::on_btn_assign_1_clicked()
+{
+    qDebug()<< "clicked button";
+    assignmentButtonClicked(1);
 }
 
