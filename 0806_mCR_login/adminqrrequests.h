@@ -28,12 +28,16 @@ public:
     int getNoOfPages();
     void setNoOfPages(int newNoOfPages);
 
+    void assignmentButtonClicked(int button);
+
 private slots:
     void on_btn_pageRight_clicked();
 
     void on_btn_pageLeft_clicked();
 
     void on_btn_backToAdminHome_clicked();
+
+    void on_btn_assign_1_clicked();
 
 private:
     Ui::adminQRRequests *ui;
