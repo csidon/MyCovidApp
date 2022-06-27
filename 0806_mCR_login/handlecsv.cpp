@@ -418,7 +418,7 @@ void HandleCSV::updatePID(UserAccount modifiedUser)
    }
    //Write all positions before the user from the old file into the new file
    UserAccount writingUser;
-   for(int i = 0; i < modifiedIndex; i++){
+   for(int i = 1; i < modifiedIndex; i++){
        writingUser = getUserAccount(allIDs.at(i).toInt());
        writeToNewPID(writingUser);
    }

@@ -12,6 +12,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/QFile \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QMap \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QStandardPaths \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QString \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream \
@@ -83,6 +84,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer_impl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsize.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qstandardpaths.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstring.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstringalgorithms.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h \
@@ -98,6 +100,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtextstream.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtmetamacros.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtypeinfo.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qurl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qutf8stringview.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -125,9 +128,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \
