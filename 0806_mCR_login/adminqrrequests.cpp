@@ -33,19 +33,34 @@ void AdminQRRequests::assignmentButtonClicked(int button)
     QStringList allRequestingUsers = readUsers.getColData("userIDNumber", "dbQRRequests");
     qDebug() << "button found list" << allRequestingUsers;
     UserAccount assignedUser = readUsers.getUserAccount(allRequestingUsers.at(userIndex).toInt());
-    assignedUser.setUserQRStatus(2);
     //BUILD THIS open a dialog to selectd a QR code, then save it in the assigned QR codes folder and remove it from the unassigned QR codes and pass its address to the next line
-    //assignedUser.setUserQRCodeAddress();
-    readUsers.updatePID(assignedUser);
-    allRequestingUsers.remove(userIndex);
-    qDebug() << "button list changed to" << allRequestingUsers;
-    readUsers.removeQRRequest(allRequestingUsers);
-    //Page display
-    if(button == 1 && allRequestingUsers.size() < userIndex){
-        setPageNumber(getPageNumber()-1);
-            updatePageNumberDisplay();
+    //User finds image
+    QString fileName = QFileDialog::getOpenFileName(this,
+        tr("Select QR Code"), "./database/UnassignedQRCodes", tr("Image Files (*.png)"));
+    if(QString::compare(fileName, QString()) !=0){
+        QImage image;
+        bool valid = image.load(fileName);
+        if(valid){
+            //Save image in new location with new name
+            image.save("./database/AssignedQRCodes/" + QString::number(assignedUser.getUserIDNumber()) + ".png", nullptr, -1);
+            //Set user's information
+            assignedUser.setUserQRCodeAddress("./database/AssignedQRCodes/" + QString::number(assignedUser.getUserIDNumber()) + ".png");
+            assignedUser.setUserQRStatus(2);
+            readUsers.updatePID(assignedUser);
+            //Page display
+            allRequestingUsers.remove(userIndex);
+            qDebug() << "button list changed to" << allRequestingUsers;
+            readUsers.removeQRRequest(allRequestingUsers);
+            if(button == 1 && allRequestingUsers.size() < userIndex){
+                setPageNumber(getPageNumber()-1);
+                updatePageNumberDisplay();
+            }
+            setDisplayedUsers(getPageNumber());
+            //Delete original image from unassigned folder
+            QFile deletee = fileName;
+            deletee.remove();
+        }
     }
-    setDisplayedUsers(getPageNumber());
 }
 
 
@@ -164,6 +179,41 @@ void AdminQRRequests::on_btn_backToAdminHome_clicked()
 
 
 void AdminQRRequests::on_btn_assign_1_clicked()
+{
+    qDebug()<< "clicked button";
+    assignmentButtonClicked(1);
+}
+
+
+void AdminQRRequests::on_btn_assign_2_clicked()
+{
+    qDebug()<< "clicked button";
+    assignmentButtonClicked(2);
+}
+
+
+void AdminQRRequests::on_btn_assign_3_clicked()
+{
+    qDebug()<< "clicked button";
+    assignmentButtonClicked(3);
+}
+
+
+void AdminQRRequests::on_btn_assign_4_clicked()
+{
+    qDebug()<< "clicked button";
+    assignmentButtonClicked(4);
+}
+
+
+void AdminQRRequests::on_btn_assign_5_clicked()
+{
+    qDebug()<< "clicked button";
+    assignmentButtonClicked(5);
+}
+
+
+void AdminQRRequests::on_btn_assign_6_clicked()
 {
     qDebug()<< "clicked button";
     assignmentButtonClicked(1);

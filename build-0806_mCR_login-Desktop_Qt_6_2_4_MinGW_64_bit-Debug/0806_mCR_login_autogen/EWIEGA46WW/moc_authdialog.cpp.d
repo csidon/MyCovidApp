@@ -105,6 +105,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtextstream.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtmetamacros.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtypeinfo.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qurl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qutf8stringview.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -137,10 +138,12 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \

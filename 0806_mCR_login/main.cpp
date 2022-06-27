@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 
     AdminQRRequests adminQRRequests;
     adminQRRequests.show();
-    adminQRRequests.assignmentButtonClicked(1);
+    //adminQRRequests.assignmentButtonClicked(1);
 
 
     //AdminHome adminHome;

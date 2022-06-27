@@ -4,6 +4,8 @@
 #include "useraccount.h"
 #include <QWidget>
 #include <QObject>
+#include <QFileDialog>
+#include <QStandardPaths>
 
 namespace Ui {
 class adminQRRequests;
@@ -38,6 +40,16 @@ private slots:
     void on_btn_backToAdminHome_clicked();
 
     void on_btn_assign_1_clicked();
+
+    void on_btn_assign_2_clicked();
+
+    void on_btn_assign_3_clicked();
+
+    void on_btn_assign_4_clicked();
+
+    void on_btn_assign_5_clicked();
+
+    void on_btn_assign_6_clicked();
 
 private:
     Ui::adminQRRequests *ui;
