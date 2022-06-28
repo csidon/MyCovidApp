@@ -1,13 +1,13 @@
 userIDNumber,userEmail,userPassword,userFirstName,userLastName,userPreferredName,userNHINumber,userPhoneNumber,userVaccinationStatus,userQRStatus,userQRCodeAddress
 42,darth.vader@betrayal.com,I'm Your Father,Darth,Vader,ADMINAnVie,ADMIN,999,0,0,notYetSet
 1089,woo@kie.com,1234,Woo,Kie,Wooks,WK1289,220220222,0,2,notYetSet
-19,luke@sky.com,test,Luciano,Skywalker,Luke,LS2314,220220333,0,2,notYetSet
-2387,artoo@d2.com,1111,Artoo,DeeToo,R2D2,RD2222,220222202,0,2,notYetSet
-17201,leiachanges@email.com,entropy9,Hans,Bananas,Hans,HB546382,1005221,1,2,notYetSet
+19,luke@sky.com,test,Luciano,Skywalker,Luke,LS2314,220220333,0,2,./database/AssignedQRCodes/19.png
+2387,artoo@d2.com,1111,Artoo,DeeToo,R2D2,RD2222,220222202,0,2,./database/AssignedQRCodes/2387.png
+17201,leiachanges@email.com,entropy9,Hans,Bananas,Hans,HB546382,1005221,1,2,./database/AssignedQRCodes/17201.png
 234523,sdfg@rwetr.com,ooooOOOO45%,William,Wade,William,GT2452,226548748,0,0,notYetSet
 78954,qw@tre.com,re!1AREA,Jonas,Cleft,Jonas,SD1452,221478454,0,2,notYetSet
 12324,fuls@cu.com,Hh1!2345,Amanda,Bubble,Mandy,EW4762,211197415,0,2,./database/AssignedQRCodes/12324.png
 547816,Hunn@ge.com,Deut@sdlj.com,Todd,Banjo,Todd,FR6452,278966654,0,2,notYetSet
 32055,naboo@galacticsenate.gov,UseYourAng3r!,Sheev,Palpatine,Darth Sidious,SP87452,6666666,0,2,notYetSet
 23456,tested@email.com,entropy9,Hans,Bananas,Hans,HB546982,1004709,1,2,notYetSet
-98989,please@work.com,asdQW123!,Pretty,Please,IcingSugar,PS1234,37794460,0,0,notYetSet
+98989,please@work.com,asdQW123!,Pretty,Please,IcingSugar,PS1234,37794460,0,2,./database/AssignedQRCodes/98989.png
