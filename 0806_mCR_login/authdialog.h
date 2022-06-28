@@ -8,6 +8,7 @@
 #include <QStringList>
 #include <QFile>
 #include <QTextStream>
+#include <QTimer>
 
 #include "useraccount.h"
 #include "handlecsv.h"
@@ -29,6 +30,13 @@ private:
     Ui::AuthDialog *ui;
 //    MainWindow *mainEUWindow;
     AdminHome *mainAdminWindow;
+    QString email = "";
+    QString pass = "";
+    QString fname = "";
+    QString lname = "";
+    QString pname = "";
+    QString nhi = "";
+    int ph = 0;
 
 
 public:
@@ -51,11 +59,29 @@ public:
 //    QPushButton *pushLogin;
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
+    QString getLoggedInUserEmail();
+    void setLoggedInUserEmail(QString email);
+    QString getLoggedInUserPass();
+    void setLoggedInUserPass(QString pass);
+    QString getLoggedInUserfName();
+    void setLoggedInUserfName(QString fname);
+    QString getLoggedInUserlName();
+    void setLoggedInUserlName(QString lname);
+    QString getLoggedInUserpName();
+    void setLoggedInUserpName(QString pname);
+    QString getLoggedInUserNHI();
+    void setLoggedInUserNHI(QString nhi);
+    int getLoggedInUserPhone();
+    void setLoggedInUserPhone(int phone);
 
 public slots:
     void on_btn_login_clicked();
 //    void openMainEUWindow();
     void openMainAdminWindow();
+    void setValueProgress();
+    void showAccountCreated();
+    void redirectToLogin();
+
 
 private slots:
     void on_btn_switchToSignup_clicked();
@@ -63,6 +89,16 @@ private slots:
     void on_btn_createAccount_clicked();
     void on_lineEdit_inputRegEmail_inputRejected();
 
+
+    void on_btn_nextTerms1_clicked();
+
+    void on_checkBox_agreeTerms2_stateChanged(int arg1);
+
+    void on_btn_nextTerms2_clicked();
+
+    void on_btn_nextDetails_clicked();
+
+    void on_btn_nextDetails_2_clicked();
 
 signals:
     void sendUIDSignal(int uid);
