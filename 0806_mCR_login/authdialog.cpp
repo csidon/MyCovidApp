@@ -36,42 +36,47 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
     UserAccount grabbedUser; // To store user data if checkUser authenticates
     if (usrn == "darth.vader@betrayal.com" && pass == "I'm Your Father")
     {
+        qDebug() << "You an ADMIN";
         return 42;      // User is immediately authenticated as admin
     }
-    // Getting the headerIndex for different headers
-    int passHeaderIndex = checkUser.returnHeaderIndex(dbName,"userPassword");
-    int uidHeaderIndex = checkUser.returnHeaderIndex(dbName,"userIDNumber");
-    qDebug() << "The pass header index is : " << passHeaderIndex;
-    qDebug() << "The uid header index is : " << uidHeaderIndex;
-
-    // Getting all values in the "userEmail" column and storing it in a QStringList
-    QStringList allUserEmailData = checkUser.getColData("userEmail", dbName);
-
-    // Searching allUserEmailData in database for specified username
-    // if username is found, store the row it was found in rowIndex
-    // rowIndex will return -1 if username is not found
-    int rowIndex = -1;
-
-    rowIndex = checkUser.rowIndexOfCellMatchingSearch(allUserEmailData,usrn);
-    qDebug() << "Row Index for username " << usrn << " is " << rowIndex;
-    if (rowIndex >=0)
+    else
     {
-        // If username is found, check if password matches username
-        // Getting the password for found username
-        QString retrievedPass = checkUser.getCellValue(dbName,passHeaderIndex,rowIndex);
-        qDebug() << "The retrievedPassword from the db for woo@kie.com is " << retrievedPass;
-        if (retrievedPass == pass)
+        // Getting the headerIndex for different headers
+        int passHeaderIndex = checkUser.returnHeaderIndex(dbName,"userPassword");
+        int uidHeaderIndex = checkUser.returnHeaderIndex(dbName,"userIDNumber");
+        qDebug() << "The pass header index is : " << passHeaderIndex;
+        qDebug() << "The uid header index is : " << uidHeaderIndex;
+
+        // Getting all values in the "userEmail" column and storing it in a QStringList
+        QStringList allUserEmailData = checkUser.getColData("userEmail", dbName);
+
+        // Searching allUserEmailData in database for specified username
+        // if username is found, store the row it was found in rowIndex
+        // rowIndex will return -1 if username is not found
+        int rowIndex = -1;
+
+        rowIndex = checkUser.rowIndexOfCellMatchingSearch(allUserEmailData,usrn);
+        qDebug() << "Row Index for username " << usrn << " is " << rowIndex;
+        if (rowIndex >=0)
         {
-            // if the retrieved password for that username matches the password entered
-            // Find the UID for that user who signed in
-            // Return that UID
-            int uid = checkUser.getCellValue(dbName,uidHeaderIndex,rowIndex).toInt();
-            qDebug() << "The uid returned is " << uid;
-//            grabbedUser = checkUser.getUserAccount(uid); // *****Change to UID after overloading and testing
-//            qDebug() << "Using getter gets firstName: " << grabbedUser.getUserFirstName();
-            return uid;
+            // If username is found, check if password matches username
+            // Getting the password for found username
+            QString retrievedPass = checkUser.getCellValue(dbName,passHeaderIndex,rowIndex);
+            qDebug() << "The retrievedPassword from the db for woo@kie.com is " << retrievedPass;
+            if (retrievedPass == pass)
+            {
+                // if the retrieved password for that username matches the password entered
+                // Find the UID for that user who signed in
+                // Return that UID
+                int uid = checkUser.getCellValue(dbName,uidHeaderIndex,rowIndex).toInt();
+                qDebug() << "The uid returned is " << uid;
+    //            grabbedUser = checkUser.getUserAccount(uid); // *****Change to UID after overloading and testing
+    //            qDebug() << "Using getter gets firstName: " << grabbedUser.getUserFirstName();
+                return uid;
+            }
         }
     }
+
 
     // returns UID = 42 if admin, the rand UID assigne if auth pass & eu logged in,
     // and -1 if auth fail
@@ -100,6 +105,11 @@ void AuthDialog::on_btn_login_clicked()
         // Return userID 42 (reserved for admin)
         // userID 42 will SETWINDOW TO ADMIN PANEL *******
         // i.e. ui->invisibleLabelOnAdminPanel->setText("userID")
+        HandleCSV checkAdmin;
+        grabbedUser = checkAdmin.getUserAccount(loginSuccessUID);
+        setLoggedInUserID(grabbedUser.getUserIDNumber());
+
+        qDebug() << loggedInUserID << " is an ADMIN";
         openMainAdminWindow();
     }
     else if (loginSuccessUID > 0 && loginSuccessUID != 42)     // End User recognised and authenticated
@@ -125,11 +135,11 @@ void AuthDialog::on_btn_login_clicked()
 
 }
 
-void AuthDialog::openMainEUWindow()
-{
-    mainEUWindow = new MainWindow();
-    mainEUWindow->show();
-}
+//void AuthDialog::openMainEUWindow()
+//{
+//    mainEUWindow = new MainWindow();
+//    mainEUWindow->show();
+//}
 
 void AuthDialog::openMainAdminWindow()
 {
