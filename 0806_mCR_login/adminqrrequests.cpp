@@ -33,7 +33,6 @@ void AdminQRRequests::assignmentButtonClicked(int button)
     QStringList allRequestingUsers = readUsers.getColData("userIDNumber", "dbQRRequests");
     qDebug() << "button found list" << allRequestingUsers;
     UserAccount assignedUser = readUsers.getUserAccount(allRequestingUsers.at(userIndex).toInt());
-    //BUILD THIS open a dialog to selectd a QR code, then save it in the assigned QR codes folder and remove it from the unassigned QR codes and pass its address to the next line
     //User finds image
     QString fileName = QFileDialog::getOpenFileName(this,
         tr("Select QR Code"), "./database/UnassignedQRCodes", tr("Image Files (*.png)"));
@@ -53,8 +52,8 @@ void AdminQRRequests::assignmentButtonClicked(int button)
             readUsers.removeQRRequest(allRequestingUsers);
             if(button == 1 && allRequestingUsers.size() < userIndex){
                 setPageNumber(getPageNumber()-1);
-                updatePageNumberDisplay();
             }
+            updatePageNumberDisplay();
             setDisplayedUsers(getPageNumber());
             //Delete original image from unassigned folder
             QFile deletee = fileName;
