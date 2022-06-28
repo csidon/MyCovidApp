@@ -43,3 +43,13 @@
 240	4161	6780971350338196	CMakeFiles/0806_mCR_login.dir/authdialog.cpp.obj	e9d33baed48792c1
 247	4430	6780971353006344	CMakeFiles/0806_mCR_login.dir/covidtestforms.cpp.obj	6074057f6612a3ce
 4430	5173	6780971360418888	0806_mCR_login.exe	eedecf87e5923764
+10	215	6780981946963850	0806_mCR_login_autogen/timestamp	8b73c35f101a3870
+10	215	6780981946963850	0806_mCR_login_autogen/mocs_compilation.cpp	8b73c35f101a3870
+10	215	6780981946963850	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/timestamp	8b73c35f101a3870
+10	215	6780981946963850	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/mocs_compilation.cpp	8b73c35f101a3870
+225	3239	6780981977192602	CMakeFiles/0806_mCR_login.dir/adminhome.cpp.obj	e80ba2b4fd1e149b
+223	3324	6780981978050306	CMakeFiles/0806_mCR_login.dir/adminqrrequests.cpp.obj	efbfe64fa22e6f9d
+219	3491	6780981979715847	CMakeFiles/0806_mCR_login.dir/mainwindow.cpp.obj	f004c7e18ee8d7fb
+221	3913	6780981983944804	CMakeFiles/0806_mCR_login.dir/authdialog.cpp.obj	e9d33baed48792c1
+228	4246	6780981987265678	CMakeFiles/0806_mCR_login.dir/covidtestforms.cpp.obj	6074057f6612a3ce
+4247	5019	6780981994959951	0806_mCR_login.exe	eedecf87e5923764
