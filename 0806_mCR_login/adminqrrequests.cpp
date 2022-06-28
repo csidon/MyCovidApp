@@ -128,7 +128,6 @@ void AdminQRRequests::setDisplayedUsers(int currentPage)
     int printUser = ((currentPage - 1) * 6) + 1;
     HandleCSV readQRRequests;//Access reading functions
     QStringList requestingUsers = readQRRequests.getColData("userIDNumber", "dbQRRequests");
-    //This next part could be a loop if not for the need to change object name for the labels - maybe I make an array of pointers to them?
     int i=0;
     UserAccount dataSource;
     QString toPrint = "";

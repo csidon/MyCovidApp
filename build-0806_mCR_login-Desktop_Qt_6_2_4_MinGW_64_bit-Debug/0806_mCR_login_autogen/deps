@@ -1,5 +1,7 @@
 0806_mCR_login_autogen/timestamp: \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/CMakeLists.txt \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.cpp \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.cpp \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.cpp \
@@ -142,6 +144,7 @@
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h \
+	D:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qpolygon.h \
@@ -149,6 +152,7 @@
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qstandarditemmodel.h \
+	D:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
@@ -156,11 +160,14 @@
 	D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -508,6 +515,7 @@
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
+	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.ui \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.ui \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.ui \
 	C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.ui \
