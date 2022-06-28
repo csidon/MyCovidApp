@@ -77,6 +77,9 @@ void AdminQRRequests::updatePageNumberDisplay()
     }
     //Send to label
     ui->lbl_currentPage->setText(QString::number(getPageNumber())+" of " + QString::number(getNoOfPages()));
+    if(getPageNumber() == getNoOfPages()){
+        ui->btn_pageRight->setEnabled(false);
+    }
 }
 
 QString AdminQRRequests::formatNameForDisplay(UserAccount dataSource)
@@ -215,6 +218,6 @@ void AdminQRRequests::on_btn_assign_5_clicked()
 void AdminQRRequests::on_btn_assign_6_clicked()
 {
     qDebug()<< "clicked button";
-    assignmentButtonClicked(1);
+    assignmentButtonClicked(6);
 }
 
