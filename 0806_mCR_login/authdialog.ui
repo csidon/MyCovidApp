@@ -228,6 +228,12 @@ background-color: rgba(255, 255, 255, 0);</string>
          </item>
          <item>
           <widget class="QPushButton" name="btn_login">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>45</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Arial</family>
@@ -564,6 +570,12 @@ background-color: rgba(255, 255, 255, 0);</string>
          </item>
          <item>
           <widget class="QPushButton" name="btn_createAccount">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>45</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Arial</family>
@@ -725,7 +737,590 @@ background-color: rgba(255, 255, 255, 0);</string>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="page_2"/>
+     <widget class="QWidget" name="page_2">
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>411</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/images/signUp1.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBox_agreeTerms">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>160</y>
+         <width>241</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string> Please agree to continue</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>180</y>
+         <width>260</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/signUpTerms.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_nextTerms1">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>500</y>
+         <width>86</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>NEXT &gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <widget class="QPushButton" name="btn_nextTerms2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>550</y>
+         <width>86</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>NEXT &gt;</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBox_agreeTerms2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>224</y>
+         <width>241</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string> Please agree to continue</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>226</y>
+         <width>260</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/signUpTerms.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>411</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/images/signUp1.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>-30</x>
+         <y>140</y>
+         <width>391</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/signUpTermsHighlight.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_5</zorder>
+      <zorder>label_3</zorder>
+      <zorder>btn_nextTerms2</zorder>
+      <zorder>checkBox_agreeTerms2</zorder>
+      <zorder>label_4</zorder>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>411</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/images/signUp2.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_nextDetails">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>477</y>
+         <width>86</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>NEXT &gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>170</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Enter your details</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails_2">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>210</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>First name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_fname">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>230</y>
+         <width>261</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails_3">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>290</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Last name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_lname">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>310</y>
+         <width>261</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails_4">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>380</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Preferred name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_prefName">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>400</y>
+         <width>261</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_5">
+      <widget class="QLabel" name="label_enterDetails_5">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>350</y>
+         <width>281</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/signUpPhoneRec.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_nextDetails_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>477</y>
+         <width>86</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>NEXT &gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails_6">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>290</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Phone (recommended)</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails_7">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>210</y>
+         <width>171</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>NHI number (optional)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_phone">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>310</y>
+         <width>261</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_enterDetails_8">
+       <property name="geometry">
+        <rect>
+         <x>51</x>
+         <y>170</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Enter your details</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>30</y>
+         <width>411</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/images/signUp3.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_nhi">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>230</y>
+         <width>261</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_6">
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>100</y>
+         <width>371</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/accountCreationIP.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_accountCreatedMsg">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>100</y>
+         <width>371</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/accountCreationComplete.png);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>490</y>
+         <width>211</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </item>
   </layout>
@@ -750,6 +1345,17 @@ background-color: rgba(255, 255, 255, 0);</string>
   <tabstop>btn_createAccount</tabstop>
   <tabstop>btn_regForgotPass</tabstop>
   <tabstop>btn_switchToLogin</tabstop>
+  <tabstop>checkBox_agreeTerms</tabstop>
+  <tabstop>btn_nextTerms1</tabstop>
+  <tabstop>checkBox_agreeTerms2</tabstop>
+  <tabstop>btn_nextTerms2</tabstop>
+  <tabstop>lineEdit_fname</tabstop>
+  <tabstop>lineEdit_lname</tabstop>
+  <tabstop>lineEdit_prefName</tabstop>
+  <tabstop>btn_nextDetails</tabstop>
+  <tabstop>lineEdit_nhi</tabstop>
+  <tabstop>lineEdit_phone</tabstop>
+  <tabstop>btn_nextDetails_2</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>

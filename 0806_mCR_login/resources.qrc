@@ -54,5 +54,13 @@
         <file>images/radioBtns/spinUpHover.png</file>
         <file>images/radioBtns/spinUpPressed.png</file>
         <file>images/newMarker.png</file>
+        <file>images/signUp1.png</file>
+        <file>images/signUp2.png</file>
+        <file>images/signUp3.png</file>
+        <file>images/signUpTerms.png</file>
+        <file>images/signUpTermsHighlight.png</file>
+        <file>images/signUpPhoneRec.png</file>
+        <file>images/accountCreationComplete.png</file>
+        <file>images/accountCreationIP.png</file>
     </qresource>
 </RCC>
