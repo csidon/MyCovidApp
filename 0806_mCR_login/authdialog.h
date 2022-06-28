@@ -27,7 +27,7 @@ class AuthDialog : public QDialog
 private:
     int loggedInUserID = 0;
     Ui::AuthDialog *ui;
-    MainWindow *mainEUWindow;
+//    MainWindow *mainEUWindow;
     AdminHome *mainAdminWindow;
 
 
@@ -54,7 +54,7 @@ public:
 
 public slots:
     void on_btn_login_clicked();
-    void openMainEUWindow();
+//    void openMainEUWindow();
     void openMainAdminWindow();
 
 private slots:

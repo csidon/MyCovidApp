@@ -215,6 +215,6 @@ void AdminQRRequests::on_btn_assign_5_clicked()
 void AdminQRRequests::on_btn_assign_6_clicked()
 {
     qDebug()<< "clicked button";
-    assignmentButtonClicked(1);
+    assignmentButtonClicked(6);
 }
 

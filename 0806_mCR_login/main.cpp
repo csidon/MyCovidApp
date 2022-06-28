@@ -76,16 +76,23 @@ int main(int argc, char *argv[])
 //    testUser.addDose(testDose);
 
 
-//    AuthDialog authdialog;
-//    authdialog.setModal(true);
-//    authdialog.exec();
-//    loggedInUserID = authdialog.getLoggedInUserID();
-//    qDebug() << loggedInUserID;
-//
-//    MainWindow w = MainWindow(nullptr, loggedInUserID);
-//    //w.setLoggedInUserID(loggedInUserID);
-//    w.show();
-//    qDebug() << "The loggedInUserID that is being set is: " << loggedInUserID;
+    AuthDialog authdialog;
+    authdialog.setModal(true);
+    authdialog.exec();
+    loggedInUserID = authdialog.getLoggedInUserID();
+    qDebug() << loggedInUserID;
+
+    MainWindow w = MainWindow(nullptr, loggedInUserID);
+    w.setLoggedInUserID(loggedInUserID);
+    qDebug() << "The loggedInUserID that is being set is: " << loggedInUserID;
+
+    if (loggedInUserID !=42)
+    {
+        qDebug() << "You Are NOT an ADMIN";
+        w.show();
+
+    }
+
 
 
 //
@@ -99,8 +106,8 @@ int main(int argc, char *argv[])
 
 
 
-    AdminQRRequests adminQRRequests;
-    adminQRRequests.show();
+//    AdminQRRequests adminQRRequests;
+//    adminQRRequests.show();
     //adminQRRequests.assignmentButtonClicked(1);
 
 
