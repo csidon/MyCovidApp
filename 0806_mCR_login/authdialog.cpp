@@ -13,6 +13,77 @@ void AuthDialog::setLoggedInUserID(int newLoggedInUserID)
     loggedInUserID = newLoggedInUserID;
 }
 
+QString AuthDialog::getLoggedInUserEmail()
+{
+    return email;
+}
+
+void AuthDialog::setLoggedInUserEmail(QString email)
+{
+    this->email = email;
+}
+
+QString AuthDialog::getLoggedInUserPass()
+{
+    return pass;
+}
+
+void AuthDialog::setLoggedInUserPass(QString pass)
+{
+    this->pass = pass;
+}
+
+QString AuthDialog::getLoggedInUserfName()
+{
+    return fname;
+}
+
+void AuthDialog::setLoggedInUserfName(QString fname)
+{
+    this->fname = fname;
+}
+
+QString AuthDialog::getLoggedInUserlName()
+{
+    return lname;
+}
+
+void AuthDialog::setLoggedInUserlName(QString lname)
+{
+    this->lname = lname;
+}
+
+QString AuthDialog::getLoggedInUserpName()
+{
+    return pname;
+}
+
+void AuthDialog::setLoggedInUserpName(QString pname)
+{
+    this->pname = pname;
+}
+
+QString AuthDialog::getLoggedInUserNHI()
+{
+    return nhi;
+}
+
+void AuthDialog::setLoggedInUserNHI(QString nhi)
+{
+    this->nhi = nhi;
+}
+
+int AuthDialog::getLoggedInUserPhone()
+{
+    return ph;
+}
+
+void AuthDialog::setLoggedInUserPhone(int phone)
+{
+    this->ph = phone;
+}
+
+
 AuthDialog::AuthDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AuthDialog)
@@ -211,18 +282,31 @@ void AuthDialog::on_btn_createAccount_clicked()
         // User has met all criteria. Assign user a random userID
         int newID = assignID();
         qDebug() << newID << " is your new ID";
+        setLoggedInUserID(newID);
+        setLoggedInUserEmail(inputEmail);
+        setLoggedInUserPass(inputPass);
 
-        // Setup a new UserAccount object and set variables using constructor
+        // Redirect user to Step 1 of sign up
+        ui->stackedWidget->setCurrentIndex(2);
 
-        UserAccount newUser;
-        newUser = UserAccount(newID,inputEmail,inputPass,"","","","",0,0,0,"" );
 
-        // Open db and write new user into db
-        HandleCSV CSVfile;
-        CSVfile.writeToPIDCSV(newUser);
 
-        // Redirect user to Login Page
-        ui->stackedWidget->setCurrentIndex(0);
+//        // If all fields are filled, carry on
+//        if (ui->progressBar->value() == 100)
+//        {
+//            // Setup a new UserAccount object and set variables using constructor
+//            UserAccount newUser;
+//            newUser = UserAccount(newID,inputEmail,inputPass,getLoggedInUserfName(),
+//                                  getLoggedInUserlName(),getLoggedInUserpName(),
+//                                  getLoggedInUserNHI(),getLoggedInUserPhone(),0,0,"" );
+
+//            // Open db and write new user into db
+//            HandleCSV CSVfile;
+//            CSVfile.writeToPIDCSV(newUser);
+
+//            // Redirect user to Login Page
+//            ui->stackedWidget->setCurrentIndex(0);
+//        }
     }
     else
     {
@@ -429,4 +513,120 @@ void AuthDialog::showPassCriteria()
     ui->lbl_passCheck_UppLowIcon->show();
 }
 
+//------------------------------------------
+// Button/UI activated functions
+//------------------------------------------
 
+void AuthDialog::on_btn_nextTerms1_clicked()
+{
+    if (ui->checkBox_agreeTerms->isChecked() != true)
+    {
+        ui->stackedWidget->setCurrentIndex(3);
+        ui->btn_nextTerms2->setDisabled(true);
+    }
+    else
+    {
+        ui->stackedWidget->setCurrentIndex(4);
+    }
+}
+
+
+void AuthDialog::on_checkBox_agreeTerms2_stateChanged(int arg1)
+{
+    if (arg1 == 2)
+    {
+        ui->btn_nextTerms2->setDisabled(false);
+    }
+
+}
+
+
+void AuthDialog::on_btn_nextTerms2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+
+void AuthDialog::on_btn_nextDetails_clicked()
+{
+    if(ui->lineEdit_fname->text() == "" || ui->lineEdit_fname->text() == "Please enter your first name")
+    {
+        ui->lineEdit_fname->setFocus();
+        ui->lineEdit_fname->setText("Please enter your first name");
+    }
+    else if (ui->lineEdit_lname->text() == "" || ui->lineEdit_lname->text() == "Please enter your last name")
+    {
+        ui->lineEdit_lname->setFocus();
+        ui->lineEdit_lname->setText("Please enter your last name");
+    }
+    else
+    {
+        setLoggedInUserfName(ui->lineEdit_fname->text());
+        setLoggedInUserlName(ui->lineEdit_lname->text());
+        setLoggedInUserpName(ui->lineEdit_prefName->text());
+        ui->stackedWidget->setCurrentIndex(5);
+    }
+}
+
+
+void AuthDialog::on_btn_nextDetails_2_clicked()
+{
+    setLoggedInUserNHI(ui->lineEdit_nhi->text());
+    setLoggedInUserPhone(ui->lineEdit_phone->text().toInt());
+    ui->stackedWidget->setCurrentIndex(6);
+    ui->label_accountCreatedMsg->hide();
+    ui->progressBar->setValue(0);
+    QTimer *timer = new QTimer(this);
+    connect(timer,&QTimer::timeout,this, &AuthDialog::setValueProgress);
+    timer->start(500);
+
+
+
+    // Setup a new UserAccount object and set variables using constructor
+    UserAccount newUser;
+    newUser = UserAccount(getLoggedInUserID(),getLoggedInUserEmail(),
+                          getLoggedInUserPass(),getLoggedInUserfName(),
+                          getLoggedInUserlName(),getLoggedInUserpName(),
+                          getLoggedInUserNHI(),getLoggedInUserPhone(),0,0,"notYetSet");
+
+    // Open db and write new user into db
+    HandleCSV CSVfile;
+    CSVfile.writeToPIDCSV(newUser);
+
+    // After 6 seconds, show "account created"
+    QTimer::singleShot(6000,this,&AuthDialog::showAccountCreated);
+
+
+    // After 8 seconds, redirect user to Login Page
+    QTimer::singleShot(8000,this,&AuthDialog::redirectToLogin);
+
+    int timerInterval = timer->interval();
+    qDebug() << "The timer interval is " << timerInterval;
+    int timerID = timer->timerId();
+    qDebug() << "The timer ID is " << timerID;
+
+}
+
+
+
+void AuthDialog::setValueProgress()
+{
+    ui->progressBar->setValue(ui->progressBar->value()+10);
+
+    qDebug() << "Progress bar value is " << ui->progressBar->value();
+    // Comment this out if you get annoyed with qDebug reports.
+    // Leave so we remember to fix bug
+
+
+
+}
+
+void AuthDialog::showAccountCreated()
+{
+    ui->label_accountCreatedMsg->show();
+}
+
+void AuthDialog::redirectToLogin()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
