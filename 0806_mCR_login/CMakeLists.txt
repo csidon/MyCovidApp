@@ -46,6 +46,9 @@ set(PROJECT_SOURCES
         covidtestforms.cpp
         covidtestforms.h
         covidtestforms.ui
+        adminerrorreports.h
+        adminerrorreports.cpp
+        adminerrorreports.ui
 
 
 )
