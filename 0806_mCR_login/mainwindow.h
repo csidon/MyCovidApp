@@ -5,6 +5,7 @@
 #include "useraccount.h"
 #include <QMessageBox>
 #include "covidtestforms.h"
+#include "euhistory.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -17,6 +18,7 @@ class MainWindow : public QMainWindow
 private:
     int loggedInUserID;
     CovidTestForms *covidTestWindow;
+    EUHistory *euHistoryWindow;
     Ui::MainWindow *ui;
 public:
     MainWindow(QWidget *parent = nullptr, int loggedInUserID = 0);
@@ -27,6 +29,7 @@ public:
 
 public slots:
     void openCovidTestWindow();
+    void openEUHistoryWindow();
 
 private slots:
     void on_btn_requestQR_clicked();
@@ -34,5 +37,6 @@ private slots:
 
 
 
+    void on_btn_vaxHistory_clicked();
 };
 #endif // MAINWINDOW_H

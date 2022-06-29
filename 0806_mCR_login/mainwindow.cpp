@@ -5,6 +5,7 @@
 
 
 
+
 MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -67,6 +68,16 @@ void MainWindow::openCovidTestWindow()
     covidTestWindow->show();
 }
 
+void MainWindow::openEUHistoryWindow()
+{
+    int uid = getLoggedInUserID();
+    qDebug() << "You have clicked the EU History button and want to pass uid " << uid;
+    euHistoryWindow = new EUHistory(nullptr, uid);
+    euHistoryWindow->show();
+
+
+}
+
 
 MainWindow::~MainWindow()
 {
@@ -125,5 +136,11 @@ void MainWindow::on_btn_reportRat_clicked()
 {
     openCovidTestWindow();
 
+}
+
+
+void MainWindow::on_btn_vaxHistory_clicked()
+{
+    openEUHistoryWindow();
 }
 
