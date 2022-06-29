@@ -1,12 +1,13 @@
 #include "covidtestforms.h"
 #include "ui_covidtestforms.h"
 
-CovidTestForms::CovidTestForms(QWidget *parent) :
+CovidTestForms::CovidTestForms(QWidget *parent, int loggedInUserID) :
     QWidget(parent),
     ui(new Ui::CovidTestForms)
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    setLoggedInUserID(loggedInUserID);
 
     // This section retrieves the current date
     // and sets this as the QSpinBox default
@@ -51,85 +52,85 @@ void CovidTestForms::setLoggedInUserID(int newLoggedInUserID)
     loggedInUserID = newLoggedInUserID;
 }
 
-void CovidTestForms::updatePID(int uid, UserAccount updateUser)
-{
-    //Open dbPID for reading and search for UID
-    HandleCSV grabpath;
-    QStandardItemModel *model = new QStandardItemModel;
+//void CovidTestForms::updatePID(int uid, UserAccount updateUser)
+//{
+//    //Open dbPID for reading and search for UID
+//    HandleCSV grabpath;
+//    QStandardItemModel *model = new QStandardItemModel;
 
-    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
-    QDir d{path};
-    QString filepath = grabpath.returnCSVFilePath("dbPID");
-    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
-    {
-        qDebug() << "Writing to " << QDir::currentPath();
-        QFile f{filepath};
-        qDebug() << "Filepath is " << filepath;
-        if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
-        {
-            qDebug() << "Is the file open? " << f.isOpen();
-            qDebug() << "File error: " << f.error();
-            qDebug() << "Error string: " << f.errorString();
-        }
-        else
-        {
-             // First find the row with the UID
-            QStringList allUserIDs = grabpath.getColData("userIDNumber","dbPID");
-            qDebug() << "Checking this list:" << allUserIDs;
+//    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+//    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+//    QDir d{path};
+//    QString filepath = grabpath.returnCSVFilePath("dbPID");
+//    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+//    {
+//        qDebug() << "Writing to " << QDir::currentPath();
+//        QFile f{filepath};
+//        qDebug() << "Filepath is " << filepath;
+//        if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+//        {
+//            qDebug() << "Is the file open? " << f.isOpen();
+//            qDebug() << "File error: " << f.error();
+//            qDebug() << "Error string: " << f.errorString();
+//        }
+//        else
+//        {
+//             // First find the row with the UID
+//            QStringList allUserIDs = grabpath.getColData("userIDNumber","dbPID");
+//            qDebug() << "Checking this list:" << allUserIDs;
 
-            // Searching all uids in retrieved QStringList for target uid
-            int userFoundInRowIndex = grabpath.rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
-            if (userFoundInRowIndex <0)
-            {
-                qDebug() << "User with uid " << uid << " not found";
-            }
-            else        // UID found
-            {
-                qDebug() << "User " << uid << " has been found in rowIndex: " << userFoundInRowIndex;
-                // Copy database to QTableView for manipulation
-                int lineindex = 0;
-                QTextStream in(&f);     // Read to text stream
-                while (!in.atEnd())
-                {
-                    qDebug() << "The file is open. Starting to read...";
-                    QString fileLine = in.readLine().trimmed();
-                    QStringList lineToken = fileLine.split(",");
-                    for (int j = 0; j < lineToken.size(); j++)
-                    {
-                        QString value = lineToken.at(j);
-                        QStandardItem *item = new QStandardItem(value);
-                        model->setItem(lineindex, j, item);
-                    }
-                    lineindex++;
-                }
-                f.close();
-            }
-            ui->tableView_test->setModel(model);
+//            // Searching all uids in retrieved QStringList for target uid
+//            int userFoundInRowIndex = grabpath.rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
+//            if (userFoundInRowIndex <0)
+//            {
+//                qDebug() << "User with uid " << uid << " not found";
+//            }
+//            else        // UID found
+//            {
+//                qDebug() << "User " << uid << " has been found in rowIndex: " << userFoundInRowIndex;
+//                // Copy database to QTableView for manipulation
+//                int lineindex = 0;
+//                QTextStream in(&f);     // Read to text stream
+//                while (!in.atEnd())
+//                {
+//                    qDebug() << "The file is open. Starting to read...";
+//                    QString fileLine = in.readLine().trimmed();
+//                    QStringList lineToken = fileLine.split(",");
+//                    for (int j = 0; j < lineToken.size(); j++)
+//                    {
+//                        QString value = lineToken.at(j);
+//                        QStandardItem *item = new QStandardItem(value);
+//                        model->setItem(lineindex, j, item);
+//                    }
+//                    lineindex++;
+//                }
+//                f.close();
+//            }
+//            ui->tableView_test->setModel(model);
 
-            // Copy out the user's data
-            UserAccount copiedOldUser = grabpath.getUserAccount(uid);
+//            // Copy out the user's data
+//            UserAccount copiedOldUser = grabpath.getUserAccount(uid);
 
-            // Delete line in QTableView
-            model->removeRow(userFoundInRowIndex);
-            copiedOldUser.setUserQRStatus(5);
-//            QStringList data;
-//            QList <auto> list;
-//            list.append(copiedOldUser.getUserPreferredName());
-//            list.append(copiedOldUser.getUserEmail());
-//            list.append(copiedOldUser.getUserLastName());
-//            data << /*copiedOldUser.getUserPreferredName() << copiedOldUser.getUserEmail() << copiedOldUser.getUserFirstName()*/;
-            model->appendRow(new QStandardItem("Name, yada, yada"));
-            qDebug() << "If this works, the gui should reflect the new user info appended to the end of the QTableView";
-            // Figure out how to write information as a QList and appendRow
-            // Then figure out how to overwrite everything back to the file
+//            // Delete line in QTableView
+//            model->removeRow(userFoundInRowIndex);
+//            copiedOldUser.setUserQRStatus(5);
+////            QStringList data;
+////            QList <auto> list;
+////            list.append(copiedOldUser.getUserPreferredName());
+////            list.append(copiedOldUser.getUserEmail());
+////            list.append(copiedOldUser.getUserLastName());
+////            data << /*copiedOldUser.getUserPreferredName() << copiedOldUser.getUserEmail() << copiedOldUser.getUserFirstName()*/;
+//            model->appendRow(new QStandardItem("Name, yada, yada"));
+//            qDebug() << "If this works, the gui should reflect the new user info appended to the end of the QTableView";
+//            // Figure out how to write information as a QList and appendRow
+//            // Then figure out how to overwrite everything back to the file
 
 
-        }
+//        }
 
-    }
+//    }
 
-}
+//}
 
 
 void CovidTestForms::on_pushButton_clicked()

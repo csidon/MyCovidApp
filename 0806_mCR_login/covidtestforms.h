@@ -18,14 +18,15 @@ class CovidTestForms;
 class CovidTestForms : public QWidget
 {
     Q_OBJECT
-
+private:
+    int loggedInUserID;
+    Ui::CovidTestForms *ui;
 public:
-    explicit CovidTestForms(QWidget *parent = nullptr);
+    explicit CovidTestForms(QWidget *parent = nullptr, int loggedInUserID = 0);
     ~CovidTestForms();
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
-//    void writeToTestCSV(int uid, QString testDate, bool testRes, QString testRecDate);
-    void updatePID(int uid, UserAccount updateUser);
+//    void updatePID(int uid, UserAccount updateUser);
 
 private slots:
     void on_pushButton_clicked();
@@ -34,9 +35,7 @@ private slots:
 
     void on_btn_backToAdminHome_clicked();
 
-private:
-    int loggedInUserID;
-    Ui::CovidTestForms *ui;
+
 };
 
 #endif // COVIDTESTFORMS_H

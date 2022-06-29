@@ -271,22 +271,23 @@ void UserAccount::assignQR()
 
 void UserAccount::addTest(Test testToStore)
 {
-    testToStore.setTestUserID(this->getUserIDNumber());
     qDebug() << "You have started adding a test with uid " << testToStore.getTestUserID();
 
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
-    QString filepath = "database/UserTests/" + QString::number(this->getUserIDNumber()) + ".csv";
+    QString filepath = "database/UserTests/" + QString::number(testToStore.getTestUserID()) + ".csv";
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
         qDebug() << "Reading from " << QDir::currentPath();
+        qDebug() << "Writing to filepath: " << filepath;
         QFile testFile{filepath};
 
         if(testFile.open(QIODevice::ReadWrite| QIODevice::Append))
         {
             QTextStream stream(&testFile);
+            qDebug() << "Is there a QFile error? " << testFile.errorString();
             stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate() << "\n";
             qDebug() << "You should have created a new file and added test data to it";
         }
@@ -294,18 +295,18 @@ void UserAccount::addTest(Test testToStore)
 
     }
 
-        // Storing in MasterTests db
-        HandleCSV grabPath;
-        QString switchFilePath = grabPath.returnCSVFilePath("dbTest");
-        qDebug() << "File path used is " <<  switchFilePath;
+    // Storing in MasterTests db
+    HandleCSV grabPath;
+    QString switchFilePath = grabPath.returnCSVFilePath("dbTest");
+    qDebug() << "File path used is " <<  switchFilePath;
 
-        QFile masterTests(switchFilePath);
-        if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append))
-        {
-            QTextStream stream(&masterTests);
-            stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
-        }
-        masterTests.close();
+    QFile masterTests(switchFilePath);
+    if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append))
+    {
+        QTextStream stream(&masterTests);
+        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
+    }
+    masterTests.close();
 }
 
 void UserAccount::addDose (Dose doseToStore)

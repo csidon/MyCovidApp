@@ -61,7 +61,9 @@ void MainWindow::setLoggedInUserID(int newLoggedInUserID)
 
 void MainWindow::openCovidTestWindow()
 {
-    covidTestWindow = new CovidTestForms();
+    int uid = getLoggedInUserID();
+    qDebug() << "You have cliecked the reportRAT button and want to pass uid " << uid;
+    covidTestWindow = new CovidTestForms(nullptr, uid);
     covidTestWindow->show();
 }
 
