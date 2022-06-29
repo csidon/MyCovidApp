@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 private:
     int loggedInUserID;
     CovidTestForms *covidTestWindow;
+    Ui::MainWindow *ui;
 public:
     MainWindow(QWidget *parent = nullptr, int loggedInUserID = 0);
     ~MainWindow();
@@ -31,7 +32,7 @@ private slots:
     void on_btn_requestQR_clicked();
     void on_btn_reportRat_clicked();
 
-private:
-    Ui::MainWindow *ui;
+
+
 };
 #endif // MAINWINDOW_H
