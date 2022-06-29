@@ -42,7 +42,6 @@ public:
     QPushButton *btn_assign_4;
     QPushButton *btn_assign_5;
     QPushButton *btn_assign_6;
-    QWidget *page_2;
 
     void setupUi(QWidget *adminQRRequests)
     {
@@ -173,9 +172,6 @@ public:
         btn_assign_5->raise();
         btn_assign_6->raise();
         btn_assign_1->raise();
-        page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
-        stackedWidget->addWidget(page_2);
 
         retranslateUi(adminQRRequests);
 

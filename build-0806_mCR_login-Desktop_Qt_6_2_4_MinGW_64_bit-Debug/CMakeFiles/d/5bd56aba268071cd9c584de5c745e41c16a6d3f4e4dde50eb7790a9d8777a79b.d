@@ -39,6 +39,7 @@
   D:/Qt/6.2.4/mingw_64/include/QtCore/QString \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QTimer \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QVector \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h \
@@ -49,6 +50,7 @@
   D:/Qt/6.2.4/mingw_64/include/QtCore/qatomic.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qatomic_cxx11.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbasicatomic.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qbasictimer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbindingstorage.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearray.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayalgorithms.h \
@@ -122,6 +124,7 @@
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtaggedpointer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtcore-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtextstream.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qtimer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtmetamacros.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qtypeinfo.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qurl.h \

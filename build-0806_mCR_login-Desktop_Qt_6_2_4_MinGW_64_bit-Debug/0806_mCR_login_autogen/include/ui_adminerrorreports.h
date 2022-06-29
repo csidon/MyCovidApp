@@ -39,7 +39,7 @@ public:
     QPushButton *btn_backToAdminHome;
     QLabel *lbl_report_6;
     QPushButton *btn_view_6;
-    QLabel *lbl_QRRequests;
+    QLabel *lbl_reportedIssues;
     QPushButton *btn_view_3;
     QPushButton *btn_view_1;
     QLabel *lbl_name_1;
@@ -61,6 +61,19 @@ public:
     QLabel *lbl_new_5;
     QLabel *lbl_new_6;
     QWidget *page_2;
+    QLabel *lbl_background;
+    QLabel *lbl_viewReport;
+    QLabel *lbl_topBar_2;
+    QPushButton *btn_backToReportList;
+    QLabel *lbl_reportTitle;
+    QLabel *lbl_sender;
+    QPushButton *btn_previousReport;
+    QPushButton *btn_nextReport;
+    QLabel *lbl_currentReport;
+    QLabel *lbl_date;
+    QLabel *lbl_errorText;
+    QPushButton *btn_markAsRead;
+    QLabel *lbl_newMarker;
 
     void setupUi(QWidget *AdminErrorReports)
     {
@@ -155,10 +168,10 @@ public:
         btn_view_6->setGeometry(QRect(-10, 470, 381, 81));
         btn_view_6->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
 ""));
-        lbl_QRRequests = new QLabel(page);
-        lbl_QRRequests->setObjectName(QString::fromUtf8("lbl_QRRequests"));
-        lbl_QRRequests->setGeometry(QRect(70, 0, 301, 61));
-        lbl_QRRequests->setStyleSheet(QString::fromUtf8("color:black;\n"
+        lbl_reportedIssues = new QLabel(page);
+        lbl_reportedIssues->setObjectName(QString::fromUtf8("lbl_reportedIssues"));
+        lbl_reportedIssues->setGeometry(QRect(70, 0, 301, 61));
+        lbl_reportedIssues->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font-size:28px;\n"
 "font-family:arial;"));
         btn_view_3 = new QPushButton(page);
@@ -275,12 +288,6 @@ public:
         lbl_new_6->setStyleSheet(QString::fromUtf8("background-image:url(:/images/newMarker.png);"));
         stackedWidget->addWidget(page);
         lbl_stripedBackground->raise();
-        btn_view_6->raise();
-        btn_view_2->raise();
-        btn_view_1->raise();
-        btn_view_5->raise();
-        btn_view_3->raise();
-        btn_view_4->raise();
         lbl_report_2->raise();
         btn_pageLeft->raise();
         lbl_report_1->raise();
@@ -292,7 +299,7 @@ public:
         lbl_topBar->raise();
         btn_backToAdminHome->raise();
         lbl_report_6->raise();
-        lbl_QRRequests->raise();
+        lbl_reportedIssues->raise();
         lbl_name_1->raise();
         lbl_name_2->raise();
         lbl_name_3->raise();
@@ -311,11 +318,102 @@ public:
         lbl_new_4->raise();
         lbl_new_5->raise();
         lbl_new_6->raise();
+        btn_view_5->raise();
+        btn_view_6->raise();
+        btn_view_3->raise();
+        btn_view_2->raise();
+        btn_view_1->raise();
+        btn_view_4->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
+        page_2->setStyleSheet(QString::fromUtf8(""));
+        lbl_background = new QLabel(page_2);
+        lbl_background->setObjectName(QString::fromUtf8("lbl_background"));
+        lbl_background->setGeometry(QRect(0, 0, 381, 671));
+        lbl_background->setStyleSheet(QString::fromUtf8("background-color:white;"));
+        lbl_viewReport = new QLabel(page_2);
+        lbl_viewReport->setObjectName(QString::fromUtf8("lbl_viewReport"));
+        lbl_viewReport->setGeometry(QRect(72, -5, 301, 61));
+        lbl_viewReport->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font-size:28px;\n"
+"font-family:arial;"));
+        lbl_topBar_2 = new QLabel(page_2);
+        lbl_topBar_2->setObjectName(QString::fromUtf8("lbl_topBar_2"));
+        lbl_topBar_2->setGeometry(QRect(0, -20, 381, 91));
+        lbl_topBar_2->setPixmap(QPixmap(QString::fromUtf8(":/images/topBar.png")));
+        btn_backToReportList = new QPushButton(page_2);
+        btn_backToReportList->setObjectName(QString::fromUtf8("btn_backToReportList"));
+        btn_backToReportList->setGeometry(QRect(2, -5, 71, 61));
+        btn_backToReportList->setStyleSheet(QString::fromUtf8("image: url(:/images/backArrow2.png);\n"
+"background-color: rgba(255, 255, 255, 0);"));
+        lbl_reportTitle = new QLabel(page_2);
+        lbl_reportTitle->setObjectName(QString::fromUtf8("lbl_reportTitle"));
+        lbl_reportTitle->setGeometry(QRect(10, 60, 201, 81));
+        lbl_reportTitle->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
+"font-size:18px;\n"
+"color: black;"));
+        lbl_sender = new QLabel(page_2);
+        lbl_sender->setObjectName(QString::fromUtf8("lbl_sender"));
+        lbl_sender->setGeometry(QRect(10, 130, 241, 41));
+        lbl_sender->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
+"font-size:14px;\n"
+"color: black;"));
+        btn_previousReport = new QPushButton(page_2);
+        btn_previousReport->setObjectName(QString::fromUtf8("btn_previousReport"));
+        btn_previousReport->setGeometry(QRect(250, 80, 41, 41));
+        btn_previousReport->setStyleSheet(QString::fromUtf8("image:url(:/images/pageLeft.png);"));
+        btn_nextReport = new QPushButton(page_2);
+        btn_nextReport->setObjectName(QString::fromUtf8("btn_nextReport"));
+        btn_nextReport->setGeometry(QRect(310, 80, 41, 41));
+        btn_nextReport->setStyleSheet(QString::fromUtf8("image: url(:/images/pageRight.png);"));
+        lbl_currentReport = new QLabel(page_2);
+        lbl_currentReport->setObjectName(QString::fromUtf8("lbl_currentReport"));
+        lbl_currentReport->setGeometry(QRect(260, 130, 81, 31));
+        lbl_currentReport->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
+"font-size:14px;\n"
+"color:black;"));
+        lbl_currentReport->setAlignment(Qt::AlignCenter);
+        lbl_date = new QLabel(page_2);
+        lbl_date->setObjectName(QString::fromUtf8("lbl_date"));
+        lbl_date->setGeometry(QRect(10, 170, 81, 31));
+        lbl_date->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
+"font-size:14px;\n"
+"color: black;"));
+        lbl_errorText = new QLabel(page_2);
+        lbl_errorText->setObjectName(QString::fromUtf8("lbl_errorText"));
+        lbl_errorText->setGeometry(QRect(40, 240, 281, 351));
+        lbl_errorText->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
+"color:gray;\n"
+"font-size:18px;"));
+        lbl_errorText->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        lbl_errorText->setWordWrap(true);
+        btn_markAsRead = new QPushButton(page_2);
+        btn_markAsRead->setObjectName(QString::fromUtf8("btn_markAsRead"));
+        btn_markAsRead->setGeometry(QRect(100, 620, 171, 31));
+        btn_markAsRead->setStyleSheet(QString::fromUtf8("font-family:arial;"));
+        lbl_newMarker = new QLabel(page_2);
+        lbl_newMarker->setObjectName(QString::fromUtf8("lbl_newMarker"));
+        lbl_newMarker->setGeometry(QRect(270, 170, 61, 31));
+        lbl_newMarker->setStyleSheet(QString::fromUtf8("background-image:url(:/images/newMarker.png);"));
         stackedWidget->addWidget(page_2);
+        lbl_background->raise();
+        lbl_topBar_2->raise();
+        btn_backToReportList->raise();
+        lbl_viewReport->raise();
+        lbl_reportTitle->raise();
+        lbl_sender->raise();
+        btn_previousReport->raise();
+        btn_nextReport->raise();
+        lbl_currentReport->raise();
+        lbl_date->raise();
+        lbl_errorText->raise();
+        btn_markAsRead->raise();
+        lbl_newMarker->raise();
 
         retranslateUi(AdminErrorReports);
+
+        stackedWidget->setCurrentIndex(1);
+
 
         QMetaObject::connectSlotsByName(AdminErrorReports);
     } // setupUi
@@ -339,7 +437,7 @@ public:
         btn_backToAdminHome->setText(QString());
         lbl_report_6->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
         btn_view_6->setText(QString());
-        lbl_QRRequests->setText(QCoreApplication::translate("AdminErrorReports", "    Reported Issues", nullptr));
+        lbl_reportedIssues->setText(QCoreApplication::translate("AdminErrorReports", "    Reported Issues", nullptr));
         btn_view_3->setText(QString());
         btn_view_1->setText(QString());
         lbl_name_1->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
@@ -360,6 +458,19 @@ public:
         lbl_new_4->setText(QString());
         lbl_new_5->setText(QString());
         lbl_new_6->setText(QString());
+        lbl_background->setText(QString());
+        lbl_viewReport->setText(QCoreApplication::translate("AdminErrorReports", "    View Report", nullptr));
+        lbl_topBar_2->setText(QString());
+        btn_backToReportList->setText(QString());
+        lbl_reportTitle->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
+        lbl_sender->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
+        btn_previousReport->setText(QString());
+        btn_nextReport->setText(QString());
+        lbl_currentReport->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
+        lbl_date->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
+        lbl_errorText->setText(QCoreApplication::translate("AdminErrorReports", "TextLabel", nullptr));
+        btn_markAsRead->setText(QCoreApplication::translate("AdminErrorReports", "Mark As Read", nullptr));
+        lbl_newMarker->setText(QString());
     } // retranslateUi
 
 };
