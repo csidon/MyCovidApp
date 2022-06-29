@@ -49,6 +49,13 @@ set(PROJECT_SOURCES
         adminerrorreports.h
         adminerrorreports.cpp
         adminerrorreports.ui
+        euhistory.cpp
+        euhistory.ui
+        euhistory.h
+        toolitem.cpp
+        toolitem.h
+        expandingtoolbox.cpp
+        expandingtoolbox.h
 
 
 )
