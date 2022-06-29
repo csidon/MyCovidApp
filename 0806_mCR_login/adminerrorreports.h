@@ -32,6 +32,7 @@ public:
     void updatePageNumberDisplay();
     void viewButtonClicked(int button);
     QString formatNameForDisplay(UserAccount user);
+    void setSingleErrorReportDisplay(int report);
 
 private slots:
     void on_btn_backToAdminHome_clicked();
@@ -51,6 +52,14 @@ private slots:
     void on_btn_view_5_clicked();
 
     void on_btn_view_6_clicked();
+
+    void on_btn_previousReport_clicked();
+
+    void on_btn_nextReport_clicked();
+
+    void on_btn_markAsRead_clicked();
+
+    void on_btn_backToReportList_clicked();
 
 private:
     Ui::AdminErrorReports *ui;

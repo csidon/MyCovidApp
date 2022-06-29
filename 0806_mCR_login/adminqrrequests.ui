@@ -370,7 +370,6 @@ font-size:18px;</string>
     <zorder>btn_assign_6</zorder>
     <zorder>btn_assign_1</zorder>
    </widget>
-   <widget class="QWidget" name="page_2"/>
   </widget>
  </widget>
  <resources>

@@ -81,7 +81,6 @@ int main(int argc, char *argv[])
     EUHistory historyTest;
     historyTest.show();
 
-
 //    AuthDialog authdialog;
 //    authdialog.setModal(true);
 //    authdialog.exec();
@@ -115,8 +114,8 @@ int main(int argc, char *argv[])
 //    adminQRRequests.show();
 
 
-//    AdminErrorReports adminReports;
-//    adminReports.show();
+    AdminErrorReports adminReports;
+    adminReports.show();
 
     //AdminHome adminHome;
     //adminHome.show();

@@ -330,6 +330,33 @@ UserAccount HandleCSV::getUserAccount(int uid)
     return grabbedUser;
 }
 
+ErrorReport HandleCSV::getErrorReport(int index)
+{
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QStringList title = getColData("Title", "dbReports");
+    QStringList text = getColData("Text", "dbReports");
+    QStringList date = getColData("Date", "dbReports");
+    QStringList sender = getColData("Sender", "dbReports");
+    QStringList isNew = getColData("isNew", "dbReports");
+    ErrorReport report;
+    report.setTitle(title.at(index));
+    report.setText(text.at(index));
+    report.setDate(date.at(index).toInt());
+    report.setSender(sender.at(index).toInt());
+    if(isNew.at(index) == "TRUE"){
+        report.setIsNew(true);
+    }
+    else if(isNew.at(index) == "FALSE"){
+        report.setIsNew(false);
+    }
+    else{
+        qDebug() << "Error reading bool from file: " << isNew.at(index);
+    }
+    return report;
+}
+
 void HandleCSV::writeToPIDCSV(UserAccount newUser)
 {
     // Mapping info in userConstructor to cells
@@ -442,7 +469,7 @@ void HandleCSV::updatePID(UserAccount modifiedUser)
 
 void HandleCSV::writeToNewPID(UserAccount userBeingWritten)
 {
-    // Mapping info in userConstructor to cells
+    // Mapping info in userBeingWritten to cells
     QString email, pass, fn, ln, pn, nhi, qrAdd;
     int uid, ph, vaxstat,qrstat;
     uid = userBeingWritten.getUserIDNumber();
@@ -518,6 +545,54 @@ void HandleCSV::removeQRRequest(QStringList newListOfRequestingUsers)
 
     //Change the name of the new file
     rename("./database/newQRCodeRequests.csv", "./database/QRCodeRequests.csv");
+}
+
+void HandleCSV::updateIsNewOfReport(int updateeIndex)
+{
+    //Set up column headers in new file
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
+    QString filepath = returnCSVFilePath("./database/newErrorReports.csv");
+    HandleCSV readReports;
+    //It may seem like a vector of Reports is better here than 5 QStringLists, but that would use more memory and code as we would have to convert the strings to ints/bools and back
+    QStringList reportTitles = getColData("Title", "dbReports");
+    QStringList reportTexts = getColData("Text", "dbReports");
+    QStringList reportDates = getColData("Date", "dbReports");
+    QStringList reportSenders = getColData("Sender", "dbReports");
+    QStringList reportIsNews = getColData("isNew", "dbReports");
+    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
+    {
+        qDebug() << "Writing to " << QDir::currentPath();
+        QFile f{filepath};
+        qDebug() << "Filepath is " << filepath;
+        if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
+        {
+            qDebug() << "Is the file open? " << f.isOpen();
+            qDebug() << "File error: " << f.error();
+            qDebug() << "Error string: " << f.errorString();
+        }
+        else
+        {
+            QTextStream stream(&f);
+            stream << "Title" << "," << "Text" << "," << "Date" << "," << "Sender" << "," "isNew" << "\n";
+            qDebug() << "I have theoretically streamed data.";
+            //Write all positions before the user from the old file into the new file
+            for(int i = 1; i < updateeIndex; i++){
+                stream << reportTitles.at(i) << "," << reportTexts.at(i) << "," << reportDates.at(i) << "," << reportSenders.at(i) << "," << reportIsNews.at(i) << "\n";
+            }
+            //Write the modified report with the new FALSE isNew value
+            stream << reportTitles.at(updateeIndex) << "," << reportTexts.at(updateeIndex) << "," << reportDates.at(updateeIndex) << "," << reportSenders.at(updateeIndex) << "," << "FALSE" << "\n";;
+            //Wrtite all the following positions from the old file
+            for( int i = updateeIndex+1; i < reportTitles.size(); i++){
+                stream << reportTitles.at(i) << "," << reportTexts.at(i) << "," << reportDates.at(i) << "," << reportSenders.at(i) << "," << reportIsNews.at(i) << "\n";
+            }
+        }
+    }
+        //Delete the old file
+        remove("./database/ErrorReports.csv");// NOTE this funtion wouldn't accpet a QString so I couldn't use the filepath function - we have to upadte this wil the final PID name
+        //Change the name of the new file
+        rename("./database/newErrorReports.csv", "./database/ErrorReports.csv");
 }
 
 //void HandleCSV::updatePID(int uid, UserAccount updatedUser)

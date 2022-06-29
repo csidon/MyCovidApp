@@ -134,7 +134,10 @@ void AdminQRRequests::setDisplayedUsers(int currentPage)
     while(printUser < requestingUsers.size() && i < 6){//display user names
        dataSource = readQRRequests.getUserAccount(requestingUsers.at(printUser++).toInt());
        toPrint = formatNameForDisplay(dataSource);
-       nameLabels[i]->setText(toPrint);
+       //elide long name
+       QFontMetrics metricsName(nameLabels[i]->font());
+       QString elidedName = metricsName.elidedText(toPrint, Qt::ElideRight, nameLabels[i]->width());
+       nameLabels[i]->setText(elidedName);
        i++;
     }
     toPrint = "";

@@ -8,6 +8,7 @@ AdminErrorReports::AdminErrorReports(QWidget *parent) :
     ui(new Ui::AdminErrorReports)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
     ui->btn_pageLeft->setEnabled(false);//start on page one; there's no page zero, so left button goes nowhere
     //populate arrays with pointers to facilitate looping
     reportLabels[0] = ui->lbl_report_1;
@@ -41,6 +42,8 @@ AdminErrorReports::AdminErrorReports(QWidget *parent) :
     }
     setDisplayedReports();
     updatePageNumberDisplay();
+    ui->lbl_errorText->setWordWrap(true);
+    ui->lbl_sender->setWordWrap(true);
 }
 
 AdminErrorReports::~AdminErrorReports()
@@ -89,16 +92,29 @@ void AdminErrorReports::setDisplayedReports()
     UserAccount user;
     QString toPrint = "";
     while(printReport < reports.size() && i < 6){//display user names
-       reportLabels[i]->setText(reports.at(printReport));
-       toPrint = dates.at(printReport)[0];
-       toPrint += dates.at(printReport)[1];
+       //Elide long titles
+       QFontMetrics metricsTitle(reportLabels[i]->font());
+       QString elidedTitle = metricsTitle.elidedText(reports.at(printReport), Qt::ElideRight, reportLabels[i]->width());
+       reportLabels[i]->setText(elidedTitle);
+       //Get DD/MM for display
+       QString dateToPrint = dates.at(printReport);
+       if(dateToPrint.size() == 7){
+           dateToPrint = "0" + dateToPrint;
+       }
+       toPrint = dateToPrint[0];
+       toPrint += dateToPrint[1];
        toPrint += "/";
-       toPrint += dates.at(printReport)[2];
-       toPrint += dates.at(printReport)[3];
+       toPrint += dateToPrint[2];
+       toPrint += dateToPrint[3];
        dateLabels[i]->setText(toPrint);
+       //Get name
        user = readReports.getUserAccount(names.at(printReport).toInt());
        toPrint = formatNameForDisplay(user);
-       nameLabels[i]->setText(toPrint);
+       //Elide long names
+       QFontMetrics metricsName(nameLabels[i]->font());
+       QString elidedName = metricsName.elidedText(toPrint, Qt::ElideRight, nameLabels[i]->width());
+       nameLabels[i]->setText(elidedName);
+       //Check if new
        if(news.at(printReport) == "TRUE"){
            newLabels[i]->show();
        }
@@ -119,6 +135,7 @@ void AdminErrorReports::setDisplayedReports()
        newLabels[i]->hide();
        i++;
     }
+
 }
 
 void AdminErrorReports::updatePageNumberDisplay()
@@ -151,7 +168,9 @@ void AdminErrorReports::updatePageNumberDisplay()
 
 void AdminErrorReports::viewButtonClicked(int button)
 {
-
+    ui->stackedWidget->setCurrentIndex(1);
+    setSingleErrorReportDisplay(((getPageNumber()-1)*6)+button);
+    updatePageNumberDisplay();
 }
 
 QString AdminErrorReports::formatNameForDisplay(UserAccount user)
@@ -166,6 +185,47 @@ QString AdminErrorReports::formatNameForDisplay(UserAccount user)
        }
     }
     return toPrint;
+}
+
+void AdminErrorReports::setSingleErrorReportDisplay(int report)
+{
+    HandleCSV readForReport;
+    ErrorReport reportForDisplay = readForReport.getErrorReport(report);
+    QStringList reportIDs = readForReport.getColData("Sender", "dbReports");
+    UserAccount reporter = readForReport.getUserAccount(reportIDs.at(report).toInt());
+    ui->lbl_sender->setText(formatNameForDisplay(reporter));
+    if(!reportForDisplay.getIsNew()){
+        ui->lbl_newMarker->hide();
+    }
+    else{
+         ui->lbl_newMarker->show();
+    }
+    QString toPrint = "";
+    QString date = QString::number(reportForDisplay.getDate());
+    if(date.size() == 7){
+        date = "0" + date;
+    }
+    toPrint = date[0];
+    toPrint += date[1];
+    toPrint += "/";
+    toPrint += date[2];
+    toPrint += date[3];
+    ui->lbl_date->setText(toPrint);
+    ui->lbl_errorText->setText(reportForDisplay.getText());
+    ui->lbl_reportTitle->setText(reportForDisplay.getTitle());
+    ui->lbl_currentReport->setText(QString::number(report) + " of " + QString::number(reportIDs.size()-1));
+    if(report == reportIDs.size()-1){
+        ui->btn_nextReport->setEnabled(false);
+    }
+    else{
+        ui->btn_nextReport->setEnabled(true);
+    }
+    if(report == 1){
+        ui->btn_previousReport->setEnabled(false);
+    }
+    else{
+        ui->btn_previousReport->setEnabled(true);
+    }
 }
 
 void AdminErrorReports::on_btn_pageLeft_clicked()
@@ -198,36 +258,96 @@ void AdminErrorReports::on_btn_pageRight_clicked()
 
 void AdminErrorReports::on_btn_view_1_clicked()
 {
-
+    viewButtonClicked(1);
 }
 
 
 void AdminErrorReports::on_btn_view_2_clicked()
 {
-
+    viewButtonClicked(2);
 }
 
 
 void AdminErrorReports::on_btn_view_3_clicked()
 {
-
+    viewButtonClicked(3);
 }
 
 
 void AdminErrorReports::on_btn_view_4_clicked()
 {
-
+    viewButtonClicked(4);
 }
 
 
 void AdminErrorReports::on_btn_view_5_clicked()
 {
-
+    viewButtonClicked(5);
 }
 
 
 void AdminErrorReports::on_btn_view_6_clicked()
 {
+    viewButtonClicked(6);
+}
 
+
+void AdminErrorReports::on_btn_previousReport_clicked()
+{
+    QString pageInfo = ui->lbl_currentReport->text();
+    QChar check = 'a';
+    QString current = "";
+    int i = 0;
+    while(check != ' ') {
+        check = pageInfo[i];
+        if(check != ' '){
+         current += check;
+        }
+        i++;
+    }
+    setSingleErrorReportDisplay(current.toInt() - 1);
+}
+
+
+void AdminErrorReports::on_btn_nextReport_clicked()
+{
+    QString pageInfo = ui->lbl_currentReport->text();
+    QChar check = 'a';
+    QString current = "";
+    int i = 0;
+    while(check != ' ') {
+        check = pageInfo[i];
+        if(check != ' '){
+         current = current + check;
+        }
+        i++;
+    }
+    setSingleErrorReportDisplay(current.toInt() + 1);
+}
+
+
+void AdminErrorReports::on_btn_markAsRead_clicked()
+{
+    QString pageInfo = ui->lbl_currentReport->text();
+    QChar check = 'a';
+    QString current = "";
+    int i = 0;
+    while(check != ' ') {
+        check = pageInfo[i];
+        if(check != ' '){
+         current = current + check;
+        }
+        i++;
+    }
+    HandleCSV updateIsNew;
+    updateIsNew.updateIsNewOfReport(current.toInt());
+    setSingleErrorReportDisplay(current.toInt());
+}
+
+
+void AdminErrorReports::on_btn_backToReportList_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    setDisplayedReports();
 }
 

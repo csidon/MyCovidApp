@@ -12,11 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
@@ -77,6 +79,39 @@ public:
     QLineEdit *lineEdit_inputRegEmail;
     QLabel *lbl_emailExistsErr;
     QWidget *page_2;
+    QLabel *label;
+    QCheckBox *checkBox_agreeTerms;
+    QLabel *label_2;
+    QPushButton *btn_nextTerms1;
+    QWidget *page_3;
+    QPushButton *btn_nextTerms2;
+    QCheckBox *checkBox_agreeTerms2;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_5;
+    QWidget *page_4;
+    QLabel *label_6;
+    QPushButton *btn_nextDetails;
+    QLabel *label_enterDetails;
+    QLabel *label_enterDetails_2;
+    QLineEdit *lineEdit_fname;
+    QLabel *label_enterDetails_3;
+    QLineEdit *lineEdit_lname;
+    QLabel *label_enterDetails_4;
+    QLineEdit *lineEdit_prefName;
+    QWidget *page_5;
+    QLabel *label_enterDetails_5;
+    QPushButton *btn_nextDetails_2;
+    QLabel *label_enterDetails_6;
+    QLabel *label_enterDetails_7;
+    QLineEdit *lineEdit_phone;
+    QLabel *label_enterDetails_8;
+    QLabel *label_7;
+    QLineEdit *lineEdit_nhi;
+    QWidget *page_6;
+    QLabel *label_8;
+    QLabel *label_accountCreatedMsg;
+    QProgressBar *progressBar;
 
     void setupUi(QDialog *AuthDialog)
     {
@@ -207,6 +242,7 @@ public:
 
         btn_login = new QPushButton(page);
         btn_login->setObjectName(QString::fromUtf8("btn_login"));
+        btn_login->setMinimumSize(QSize(0, 45));
         QFont font6;
         font6.setFamilies({QString::fromUtf8("Arial")});
         font6.setPointSize(14);
@@ -364,6 +400,7 @@ public:
 
         btn_createAccount = new QPushButton(page_reg);
         btn_createAccount->setObjectName(QString::fromUtf8("btn_createAccount"));
+        btn_createAccount->setMinimumSize(QSize(0, 45));
         btn_createAccount->setFont(font6);
 
         verticalLayout_7->addWidget(btn_createAccount);
@@ -430,7 +467,151 @@ public:
         stackedWidget->addWidget(page_reg);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
+        label = new QLabel(page_2);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(-10, 30, 411, 111));
+        label->setStyleSheet(QString::fromUtf8("background-image: url(:/images/signUp1.png);"));
+        checkBox_agreeTerms = new QCheckBox(page_2);
+        checkBox_agreeTerms->setObjectName(QString::fromUtf8("checkBox_agreeTerms"));
+        checkBox_agreeTerms->setGeometry(QRect(47, 160, 241, 26));
+        checkBox_agreeTerms->setFont(font2);
+        label_2 = new QLabel(page_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(40, 180, 260, 311));
+        label_2->setStyleSheet(QString::fromUtf8("image: url(:/images/signUpTerms.png);"));
+        btn_nextTerms1 = new QPushButton(page_2);
+        btn_nextTerms1->setObjectName(QString::fromUtf8("btn_nextTerms1"));
+        btn_nextTerms1->setGeometry(QRect(220, 500, 86, 45));
+        btn_nextTerms1->setMinimumSize(QSize(0, 45));
+        btn_nextTerms1->setFont(font7);
         stackedWidget->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName(QString::fromUtf8("page_3"));
+        btn_nextTerms2 = new QPushButton(page_3);
+        btn_nextTerms2->setObjectName(QString::fromUtf8("btn_nextTerms2"));
+        btn_nextTerms2->setGeometry(QRect(220, 550, 86, 45));
+        btn_nextTerms2->setMinimumSize(QSize(0, 45));
+        btn_nextTerms2->setFont(font7);
+        checkBox_agreeTerms2 = new QCheckBox(page_3);
+        checkBox_agreeTerms2->setObjectName(QString::fromUtf8("checkBox_agreeTerms2"));
+        checkBox_agreeTerms2->setGeometry(QRect(50, 224, 241, 26));
+        checkBox_agreeTerms2->setFont(font2);
+        label_3 = new QLabel(page_3);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(40, 226, 260, 311));
+        label_3->setStyleSheet(QString::fromUtf8("image: url(:/images/signUpTerms.png);"));
+        label_4 = new QLabel(page_3);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(-10, 30, 411, 111));
+        label_4->setStyleSheet(QString::fromUtf8("background-image: url(:/images/signUp1.png);"));
+        label_5 = new QLabel(page_3);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(-30, 140, 391, 391));
+        label_5->setStyleSheet(QString::fromUtf8("image: url(:/images/signUpTermsHighlight.png);"));
+        stackedWidget->addWidget(page_3);
+        label_5->raise();
+        label_3->raise();
+        btn_nextTerms2->raise();
+        checkBox_agreeTerms2->raise();
+        label_4->raise();
+        page_4 = new QWidget();
+        page_4->setObjectName(QString::fromUtf8("page_4"));
+        label_6 = new QLabel(page_4);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(-10, 30, 411, 111));
+        label_6->setStyleSheet(QString::fromUtf8("background-image: url(:/images/signUp2.png);"));
+        btn_nextDetails = new QPushButton(page_4);
+        btn_nextDetails->setObjectName(QString::fromUtf8("btn_nextDetails"));
+        btn_nextDetails->setGeometry(QRect(220, 477, 86, 45));
+        btn_nextDetails->setMinimumSize(QSize(0, 45));
+        btn_nextDetails->setFont(font7);
+        label_enterDetails = new QLabel(page_4);
+        label_enterDetails->setObjectName(QString::fromUtf8("label_enterDetails"));
+        label_enterDetails->setGeometry(QRect(51, 170, 151, 20));
+        label_enterDetails->setFont(font2);
+        label_enterDetails_2 = new QLabel(page_4);
+        label_enterDetails_2->setObjectName(QString::fromUtf8("label_enterDetails_2"));
+        label_enterDetails_2->setGeometry(QRect(51, 210, 151, 20));
+        label_enterDetails_2->setFont(font3);
+        lineEdit_fname = new QLineEdit(page_4);
+        lineEdit_fname->setObjectName(QString::fromUtf8("lineEdit_fname"));
+        lineEdit_fname->setGeometry(QRect(50, 230, 261, 40));
+        lineEdit_fname->setMinimumSize(QSize(0, 40));
+        lineEdit_fname->setMaximumSize(QSize(16777215, 40));
+        label_enterDetails_3 = new QLabel(page_4);
+        label_enterDetails_3->setObjectName(QString::fromUtf8("label_enterDetails_3"));
+        label_enterDetails_3->setGeometry(QRect(51, 290, 151, 20));
+        label_enterDetails_3->setFont(font3);
+        lineEdit_lname = new QLineEdit(page_4);
+        lineEdit_lname->setObjectName(QString::fromUtf8("lineEdit_lname"));
+        lineEdit_lname->setGeometry(QRect(50, 310, 261, 40));
+        lineEdit_lname->setMinimumSize(QSize(0, 40));
+        lineEdit_lname->setMaximumSize(QSize(16777215, 40));
+        label_enterDetails_4 = new QLabel(page_4);
+        label_enterDetails_4->setObjectName(QString::fromUtf8("label_enterDetails_4"));
+        label_enterDetails_4->setGeometry(QRect(51, 380, 151, 20));
+        label_enterDetails_4->setFont(font3);
+        lineEdit_prefName = new QLineEdit(page_4);
+        lineEdit_prefName->setObjectName(QString::fromUtf8("lineEdit_prefName"));
+        lineEdit_prefName->setGeometry(QRect(50, 400, 261, 40));
+        lineEdit_prefName->setMinimumSize(QSize(0, 40));
+        lineEdit_prefName->setMaximumSize(QSize(16777215, 40));
+        stackedWidget->addWidget(page_4);
+        page_5 = new QWidget();
+        page_5->setObjectName(QString::fromUtf8("page_5"));
+        label_enterDetails_5 = new QLabel(page_5);
+        label_enterDetails_5->setObjectName(QString::fromUtf8("label_enterDetails_5"));
+        label_enterDetails_5->setGeometry(QRect(47, 350, 281, 81));
+        label_enterDetails_5->setFont(font3);
+        label_enterDetails_5->setStyleSheet(QString::fromUtf8("image: url(:/images/signUpPhoneRec.png);"));
+        btn_nextDetails_2 = new QPushButton(page_5);
+        btn_nextDetails_2->setObjectName(QString::fromUtf8("btn_nextDetails_2"));
+        btn_nextDetails_2->setGeometry(QRect(220, 477, 86, 45));
+        btn_nextDetails_2->setMinimumSize(QSize(0, 45));
+        btn_nextDetails_2->setFont(font7);
+        label_enterDetails_6 = new QLabel(page_5);
+        label_enterDetails_6->setObjectName(QString::fromUtf8("label_enterDetails_6"));
+        label_enterDetails_6->setGeometry(QRect(51, 290, 161, 20));
+        label_enterDetails_6->setFont(font3);
+        label_enterDetails_7 = new QLabel(page_5);
+        label_enterDetails_7->setObjectName(QString::fromUtf8("label_enterDetails_7"));
+        label_enterDetails_7->setGeometry(QRect(51, 210, 171, 20));
+        label_enterDetails_7->setFont(font3);
+        lineEdit_phone = new QLineEdit(page_5);
+        lineEdit_phone->setObjectName(QString::fromUtf8("lineEdit_phone"));
+        lineEdit_phone->setGeometry(QRect(50, 310, 261, 40));
+        lineEdit_phone->setMinimumSize(QSize(0, 40));
+        lineEdit_phone->setMaximumSize(QSize(16777215, 40));
+        label_enterDetails_8 = new QLabel(page_5);
+        label_enterDetails_8->setObjectName(QString::fromUtf8("label_enterDetails_8"));
+        label_enterDetails_8->setGeometry(QRect(51, 170, 151, 20));
+        label_enterDetails_8->setFont(font2);
+        label_7 = new QLabel(page_5);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(-10, 30, 411, 111));
+        label_7->setStyleSheet(QString::fromUtf8("background-image: url(:/images/signUp3.png);"));
+        lineEdit_nhi = new QLineEdit(page_5);
+        lineEdit_nhi->setObjectName(QString::fromUtf8("lineEdit_nhi"));
+        lineEdit_nhi->setGeometry(QRect(50, 230, 261, 40));
+        lineEdit_nhi->setMinimumSize(QSize(0, 40));
+        lineEdit_nhi->setMaximumSize(QSize(16777215, 40));
+        stackedWidget->addWidget(page_5);
+        page_6 = new QWidget();
+        page_6->setObjectName(QString::fromUtf8("page_6"));
+        label_8 = new QLabel(page_6);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(-10, 100, 371, 391));
+        label_8->setStyleSheet(QString::fromUtf8("image: url(:/images/accountCreationIP.png);"));
+        label_accountCreatedMsg = new QLabel(page_6);
+        label_accountCreatedMsg->setObjectName(QString::fromUtf8("label_accountCreatedMsg"));
+        label_accountCreatedMsg->setGeometry(QRect(-10, 100, 371, 391));
+        label_accountCreatedMsg->setStyleSheet(QString::fromUtf8("image: url(:/images/accountCreationComplete.png);"));
+        progressBar = new QProgressBar(page_6);
+        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar->setGeometry(QRect(70, 490, 211, 35));
+        progressBar->setValue(0);
+        progressBar->setTextVisible(false);
+        stackedWidget->addWidget(page_6);
 
         gridLayout_2->addWidget(stackedWidget, 0, 0, 1, 1);
 
@@ -443,6 +624,17 @@ public:
         QWidget::setTabOrder(lineEdit_inputRegPass, btn_createAccount);
         QWidget::setTabOrder(btn_createAccount, btn_regForgotPass);
         QWidget::setTabOrder(btn_regForgotPass, btn_switchToLogin);
+        QWidget::setTabOrder(btn_switchToLogin, checkBox_agreeTerms);
+        QWidget::setTabOrder(checkBox_agreeTerms, btn_nextTerms1);
+        QWidget::setTabOrder(btn_nextTerms1, checkBox_agreeTerms2);
+        QWidget::setTabOrder(checkBox_agreeTerms2, btn_nextTerms2);
+        QWidget::setTabOrder(btn_nextTerms2, lineEdit_fname);
+        QWidget::setTabOrder(lineEdit_fname, lineEdit_lname);
+        QWidget::setTabOrder(lineEdit_lname, lineEdit_prefName);
+        QWidget::setTabOrder(lineEdit_prefName, btn_nextDetails);
+        QWidget::setTabOrder(btn_nextDetails, lineEdit_nhi);
+        QWidget::setTabOrder(lineEdit_nhi, lineEdit_phone);
+        QWidget::setTabOrder(lineEdit_phone, btn_nextDetails_2);
 
         retranslateUi(AuthDialog);
 
@@ -501,6 +693,29 @@ public:
         lineEdit_inputRegEmail->setText(QString());
         lineEdit_inputRegEmail->setPlaceholderText(QString());
         lbl_emailExistsErr->setText(QCoreApplication::translate("AuthDialog", "Email exists. Please enter a different email.", nullptr));
+        label->setText(QString());
+        checkBox_agreeTerms->setText(QCoreApplication::translate("AuthDialog", " Please agree to continue", nullptr));
+        label_2->setText(QString());
+        btn_nextTerms1->setText(QCoreApplication::translate("AuthDialog", "NEXT >", nullptr));
+        btn_nextTerms2->setText(QCoreApplication::translate("AuthDialog", "NEXT >", nullptr));
+        checkBox_agreeTerms2->setText(QCoreApplication::translate("AuthDialog", " Please agree to continue", nullptr));
+        label_3->setText(QString());
+        label_4->setText(QString());
+        label_5->setText(QString());
+        label_6->setText(QString());
+        btn_nextDetails->setText(QCoreApplication::translate("AuthDialog", "NEXT >", nullptr));
+        label_enterDetails->setText(QCoreApplication::translate("AuthDialog", "Enter your details", nullptr));
+        label_enterDetails_2->setText(QCoreApplication::translate("AuthDialog", "First name", nullptr));
+        label_enterDetails_3->setText(QCoreApplication::translate("AuthDialog", "Last name", nullptr));
+        label_enterDetails_4->setText(QCoreApplication::translate("AuthDialog", "Preferred name", nullptr));
+        label_enterDetails_5->setText(QString());
+        btn_nextDetails_2->setText(QCoreApplication::translate("AuthDialog", "NEXT >", nullptr));
+        label_enterDetails_6->setText(QCoreApplication::translate("AuthDialog", "Phone (recommended)", nullptr));
+        label_enterDetails_7->setText(QCoreApplication::translate("AuthDialog", "NHI number (optional)", nullptr));
+        label_enterDetails_8->setText(QCoreApplication::translate("AuthDialog", "Enter your details", nullptr));
+        label_7->setText(QString());
+        label_8->setText(QString());
+        label_accountCreatedMsg->setText(QString());
     } // retranslateUi
 
 };
