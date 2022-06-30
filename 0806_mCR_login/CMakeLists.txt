@@ -56,6 +56,8 @@ set(PROJECT_SOURCES
         toolitem.h
         expandingtoolbox.cpp
         expandingtoolbox.h
+        customlistwidget.cpp
+        customlistwidget.h
 
 
 )

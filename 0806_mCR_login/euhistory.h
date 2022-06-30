@@ -5,6 +5,7 @@
 #include "toolitem.h"
 #include "expandingtoolbox.h"
 #include <QListWidget>
+#include <QDateTime>
 
 namespace Ui {
 class EUHistory;
@@ -19,9 +20,12 @@ public:
     ~EUHistory();
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
+    QString getTestDate();
+    void setTestDate(QString tDate);
 
 private:
     int userID;
+    QString testDate;
     Ui::EUHistory *ui;
 };
 

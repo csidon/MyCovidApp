@@ -11,6 +11,7 @@ class ExpandingToolBox : public QWidget
 public:
     ExpandingToolBox();
     void addItem(ToolItem *item);
+//    void addItems(ToolItem *item);
 private:
     QVBoxLayout *layout;
 };
