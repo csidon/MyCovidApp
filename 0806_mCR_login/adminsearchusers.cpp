@@ -13,15 +13,14 @@ void AdminSearchUsers::setSearchResultIDs( QStringList newSearchResultIDs)
     searchResultIDs = newSearchResultIDs;
 }
 
-void AdminSearchUsers::setDisplayedResults(QStringList foundUserIDs, int pageNumber)
+void AdminSearchUsers::setDisplayedResults()
 {
     int firstResult = ((pageNumber-1)*6)+1;
     int i = 0;
     HandleCSV getUser;
     UserAccount gotUser;
-    qDebug() << "going into loop with" << foundUserIDs;
-    while( i < 6 && firstResult <= foundUserIDs.size()){
-        gotUser = getUser.getUserAccount(foundUserIDs.at(firstResult-1).toInt());
+    while( i < 6 && firstResult <= searchResultIDs.size()){
+        gotUser = getUser.getUserAccount(searchResultIDs.at(firstResult-1).toInt());
         labels[i]->setText(formatNameForDisplay(gotUser));
         i++;
         firstResult++;
@@ -35,8 +34,8 @@ void AdminSearchUsers::setDisplayedResults(QStringList foundUserIDs, int pageNum
     else {
         ui->btn_pageLeft->setEnabled(true);
     }
-    int noOfPages = foundUserIDs.size()/6;
-    if(foundUserIDs.size()%6 !=0){
+    int noOfPages = searchResultIDs.size()/6;
+    if(searchResultIDs.size()%6 !=0){
         noOfPages++;
     }
     if(pageNumber >= noOfPages){
@@ -60,6 +59,16 @@ QString AdminSearchUsers::formatNameForDisplay(UserAccount user)
        }
     }
     return toPrint;
+}
+
+int AdminSearchUsers::getPageNumber()
+{
+    return pageNumber;
+}
+
+void AdminSearchUsers::setPageNumber(int newPageNumber)
+{
+    pageNumber = newPageNumber;
 }
 
 AdminSearchUsers::AdminSearchUsers(QWidget *parent) :
@@ -162,19 +171,22 @@ void AdminSearchUsers::on_btn_search_clicked()
             combinedUserIDList.append(foundPNames.at(i));
         }
     }
-    qDebug() << "about to output" << combinedUserIDList;
-    setDisplayedResults(combinedUserIDList, 1);
+    setPageNumber(1);
+    setSearchResultIDs(combinedUserIDList);
+    setDisplayedResults();
 }
 
 
 void AdminSearchUsers::on_btn_pageLeft_clicked()
 {
-
+    setPageNumber(getPageNumber()-1);
+    setDisplayedResults();
 }
 
 
 void AdminSearchUsers::on_btn_pageRight_clicked()
 {
-
+    setPageNumber(getPageNumber()+1);
+    setDisplayedResults();
 }
 
