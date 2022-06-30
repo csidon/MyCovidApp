@@ -114,8 +114,8 @@ int main(int argc, char *argv[])
 //    AdminQRRequests adminQRRequests;
 //    adminQRRequests.show();
 
-   AdminSearchUsers searchPage;
-   searchPage.show();
+//   AdminSearchUsers searchPage;
+//   searchPage.show();
 
 
   // AdminErrorReports adminReports;
