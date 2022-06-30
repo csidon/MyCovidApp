@@ -12,6 +12,8 @@
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.cpp \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.cpp \

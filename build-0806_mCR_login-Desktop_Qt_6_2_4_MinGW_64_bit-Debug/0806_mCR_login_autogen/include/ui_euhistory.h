@@ -25,6 +25,7 @@ public:
     QLabel *lbl_nhi;
     QFrame *frame;
     QWidget *widget;
+    QLabel *label;
 
     void setupUi(QWidget *EUHistory)
     {
@@ -50,12 +51,16 @@ public:
         lbl_nhi->setAlignment(Qt::AlignCenter);
         frame = new QFrame(EUHistory);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(20, 170, 331, 331));
+        frame->setGeometry(QRect(40, 170, 331, 331));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         widget = new QWidget(frame);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(0, 0, 321, 331));
+        widget->setGeometry(QRect(0, 0, 321, 71));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(30, 30, 281, 221));
+        label->setWordWrap(true);
 
         retranslateUi(EUHistory);
 
@@ -68,6 +73,7 @@ public:
         lbl_c19history->setText(QCoreApplication::translate("EUHistory", "COVID-19 History", nullptr));
         lbl_euName->setText(QCoreApplication::translate("EUHistory", "prefName fName lName", nullptr));
         lbl_nhi->setText(QCoreApplication::translate("EUHistory", "NHI: ", nullptr));
+        label->setText(QCoreApplication::translate("EUHistory", "TextLabel", nullptr));
     } // retranslateUi
 
 };

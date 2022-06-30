@@ -15,6 +15,7 @@ class AdminSearchUsers : public QWidget
     Q_OBJECT
 private:
     QStringList searchResultIDs;
+    int pageNumber;
     QLabel* labels[6];
 
 public:
@@ -27,9 +28,12 @@ public:
     QStringList getSearchResultIDs();
     void setSearchResultIDs(QStringList newSearchResultIDs);
 
-    void setDisplayedResults(QStringList foundUserIDs, int pageNumber);
+    void setDisplayedResults();
 
     QString formatNameForDisplay(UserAccount user);
+
+    int getPageNumber();
+    void setPageNumber(int newPageNumber);
 
 private slots:
     void on_btn_search_clicked();

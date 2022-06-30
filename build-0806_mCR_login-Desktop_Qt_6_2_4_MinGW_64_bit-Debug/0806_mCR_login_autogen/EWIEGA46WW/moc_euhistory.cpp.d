@@ -2,6 +2,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/expandingtoolbox.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QRect \
@@ -21,6 +22,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearraylist.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qbytearrayview.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qchar.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcompare.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcompilerdetection.h \
@@ -31,6 +33,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcontiguouscache.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcoreevent.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qdatastream.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qdebug.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qflags.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qgenericatomic.h \
