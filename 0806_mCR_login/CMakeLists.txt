@@ -59,7 +59,8 @@ set(PROJECT_SOURCES
         adminsearchusers.h
         adminsearchusers.cpp
         adminsearchusers.ui
-
+        customlistwidget.cpp
+        customlistwidget.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -162,7 +162,7 @@ QLineEdit
 QListView
 {
         background-color: #FFF8D9;
-        font-color: #707070;
+        color: #707070;
 	font-size: 14px;
 	font-weight: bold;
 	show-decoration-selected: 0;
