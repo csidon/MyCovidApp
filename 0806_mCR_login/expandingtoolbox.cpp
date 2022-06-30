@@ -2,11 +2,6 @@
 
 ExpandingToolBox::ExpandingToolBox() : layout(new QVBoxLayout)
 {
-//    QWidget *wrapper = new QWidget();
-//    wrapper->setLayout(layout);
-//    wrapper->setGeometry(0,0,300,300);
-//    wrapper->setStyleSheet("border-style: dashed;" "border-width: 1px;");
-
     setLayout(layout);
 }
 
@@ -23,3 +18,4 @@ void ExpandingToolBox::addItem(ToolItem *item)
     layout->addWidget(item);
     layout->addStretch();
 }
+

@@ -8,14 +8,16 @@
 class ToolItem : public QWidget
 {
 public:
-//    ToolItem(const QString &title, QWidget *item);
     ToolItem(QWidget *title, QWidget *item);
+//    ToolItem(QWidget *title, QStringList *itemList);
+
 
 protected:
     void mousePressEvent(QMouseEvent *event);
 
 private:
     QWidget *item;
+//    QStringList *itemList;
 };
 
 #endif // TOOLITEM_H

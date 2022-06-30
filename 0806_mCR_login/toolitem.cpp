@@ -14,7 +14,7 @@
 //}
 
 ToolItem::ToolItem(QWidget *title, QWidget *item) : item(item)
-//ToolItem::ToolItem(const QString &title, QWidget *item) : item(item)
+//ToolItem::ToolItem(QWidget *title, QStringList *itemList) : item(itemList)
 {
 //    QFrame *titleWrapper = new QFrame;
 //    titleWrapper->setContentsMargins(0,0,0,0);
@@ -24,19 +24,18 @@ ToolItem::ToolItem(QWidget *title, QWidget *item) : item(item)
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(title);
     layout->addWidget(item);
+    item->setGeometry(0,0,320,200);
     item->setStyleSheet("margin: 0px;"
-                        "border-style: dashed;"
+                        "border-style: none;"
                         "border-width: 1px;");
 
-    title->setStyleSheet("font: bold 12px;"
-                         "background-color: #FFCC00;"
+    title->setStyleSheet("background-color: #FFCC00;"
                          "padding: 6px;"
                          "margin: 0px;"
-                         "border-top-right-radius: 5px;"
-                         "border-top-left-radius: 1px;"
+                         "border-top-right-radius: 10px;"
+                         "border-top-left-radius: 3px;"
                          "border-bottom-right-radius: 0px;"
                          "border-bottom-left-radius: 0px;"
-                         "border-style: outset;"
                          "border-width: 1px;");
     setLayout(layout);
 
