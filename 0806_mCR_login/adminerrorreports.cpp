@@ -98,14 +98,15 @@ void AdminErrorReports::setDisplayedReports()
        reportLabels[i]->setText(elidedTitle);
        //Get DD/MM for display
        QString dateToPrint = dates.at(printReport);
-       if(dateToPrint.size() == 7){
-           dateToPrint = "0" + dateToPrint;
-       }
-       toPrint = dateToPrint[0];
-       toPrint += dateToPrint[1];
+       //add 0 to dates in dmmyyyy format
+//       if(dateToPrint.size() == 7){
+//           dateToPrint = "0" + dateToPrint;
+//       }
+       toPrint = dateToPrint[6];
+       toPrint += dateToPrint[7];
        toPrint += "/";
-       toPrint += dateToPrint[2];
-       toPrint += dateToPrint[3];
+       toPrint += dateToPrint[4];
+       toPrint += dateToPrint[5];
        dateLabels[i]->setText(toPrint);
        //Get name
        user = readReports.getUserAccount(names.at(printReport).toInt());
@@ -202,14 +203,15 @@ void AdminErrorReports::setSingleErrorReportDisplay(int report)
     }
     QString toPrint = "";
     QString date = QString::number(reportForDisplay.getDate());
-    if(date.size() == 7){
-        date = "0" + date;
-    }
-    toPrint = date[0];
-    toPrint += date[1];
+    //add 0 to dmmyyyy
+//    if(date.size() == 7){
+//        date = "0" + date;
+//    }
+    toPrint = date[6];
+    toPrint += date[7];
     toPrint += "/";
-    toPrint += date[2];
-    toPrint += date[3];
+    toPrint += date[4];
+    toPrint += date[5];
     ui->lbl_date->setText(toPrint);
     ui->lbl_errorText->setText(reportForDisplay.getText());
     ui->lbl_reportTitle->setText(reportForDisplay.getTitle());
