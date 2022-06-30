@@ -278,6 +278,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h",
+			"MU",
+			"EWIEGA46WW/moc_adminsearchusers.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h",
 			"MU",
 			"EWIEGA46WW/moc_authdialog.cpp",
@@ -302,6 +308,18 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h",
+			"MU",
+			"EWIEGA46WW/moc_euhistory.cpp",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/expandingtoolbox.h",
+			"MU",
+			"EWIEGA46WW/moc_expandingtoolbox.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h",
 			"MU",
 			"EWIEGA46WW/moc_handlecsv.cpp",
@@ -317,6 +335,12 @@
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h",
 			"MU",
 			"EWIEGA46WW/moc_test.cpp",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h",
+			"MU",
+			"EWIEGA46WW/moc_toolitem.cpp",
 			null
 		],
 		[
@@ -406,6 +430,11 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.cpp",
 			"MU",
 			null
@@ -426,6 +455,16 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/expandingtoolbox.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.cpp",
 			"MU",
 			null
@@ -442,6 +481,11 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.cpp",
 			"MU",
 			null
 		],

@@ -1,6 +1,7 @@
 #include "adminerrorreports.h"
 #include "adminhome.h"
 #include "adminqrrequests.h"
+#include "adminsearchusers.h"
 #include "mainwindow.h"
 #include "authdialog.h"
 #include "useraccount.h"
@@ -78,8 +79,8 @@ int main(int argc, char *argv[])
 //    testUser.setUserIDNumber(4842);
 //    testUser.addDose(testDose);
 
-    EUHistory historyTest;
-    historyTest.show();
+//    EUHistory historyTest;
+//    historyTest.show();
 
     AuthDialog authdialog;
     authdialog.setModal(true);
@@ -113,9 +114,12 @@ int main(int argc, char *argv[])
 //    AdminQRRequests adminQRRequests;
 //    adminQRRequests.show();
 
+   AdminSearchUsers searchPage;
+   searchPage.show();
 
-    AdminErrorReports adminReports;
-    adminReports.show();
+
+  // AdminErrorReports adminReports;
+  // adminReports.show();
 
     //AdminHome adminHome;
     //adminHome.show();

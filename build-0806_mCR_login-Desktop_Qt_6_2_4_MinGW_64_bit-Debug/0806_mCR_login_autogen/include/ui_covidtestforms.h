@@ -354,7 +354,7 @@ public:
 
         retranslateUi(CovidTestForms);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(CovidTestForms);
