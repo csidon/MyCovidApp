@@ -1,6 +1,7 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "authdialog.h"
+#include "displaymyqrcode.h"
 #include <QObject>
 
 
@@ -142,5 +143,14 @@ void MainWindow::on_btn_reportRat_clicked()
 void MainWindow::on_btn_vaxHistory_clicked()
 {
     openEUHistoryWindow();
+}
+
+
+void MainWindow::on_btn_displayQR_clicked()
+{
+    int uid = getLoggedInUserID();
+    qDebug() << "You have clicked the EU History button and want to pass uid " << uid;
+    displayQRWindow = new DisplayMyQRCode(nullptr, uid);
+    displayQRWindow->show();
 }
 

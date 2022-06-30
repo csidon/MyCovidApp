@@ -61,6 +61,9 @@ set(PROJECT_SOURCES
         adminsearchusers.ui
         customlistwidget.cpp
         customlistwidget.h
+        displaymyqrcode.h
+        displaymyqrcode.cpp
+        displaymyqrcode.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -63,5 +63,6 @@
         <file>images/accountCreationComplete.png</file>
         <file>images/accountCreationIP.png</file>
         <file>images/searchIcon.png</file>
+        <file>images/displayQRCode.png</file>
     </qresource>
 </RCC>

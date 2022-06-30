@@ -1,6 +1,7 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h \

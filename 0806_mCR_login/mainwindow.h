@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "displaymyqrcode.h"
 #include "useraccount.h"
 #include <QMessageBox>
 #include "covidtestforms.h"
@@ -19,6 +20,7 @@ private:
     int loggedInUserID;
     CovidTestForms *covidTestWindow;
     EUHistory *euHistoryWindow;
+    DisplayMyQRCode *displayQRWindow;
     Ui::MainWindow *ui;
 public:
     MainWindow(QWidget *parent = nullptr, int loggedInUserID = 0);
@@ -38,5 +40,6 @@ private slots:
 
 
     void on_btn_vaxHistory_clicked();
+    void on_btn_displayQR_clicked();
 };
 #endif // MAINWINDOW_H

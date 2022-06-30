@@ -302,6 +302,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.h",
+			"MU",
+			"EWIEGA46WW/moc_displaymyqrcode.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h",
 			"MU",
 			"EWIEGA46WW/moc_dose.cpp",
@@ -452,6 +458,11 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.cpp",
 			"MU",
 			null
 		],
