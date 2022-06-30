@@ -62,5 +62,6 @@
         <file>images/signUpPhoneRec.png</file>
         <file>images/accountCreationComplete.png</file>
         <file>images/accountCreationIP.png</file>
+        <file>images/searchIcon.png</file>
     </qresource>
 </RCC>

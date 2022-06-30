@@ -56,7 +56,9 @@ set(PROJECT_SOURCES
         toolitem.h
         expandingtoolbox.cpp
         expandingtoolbox.h
-
+        adminsearchusers.h
+        adminsearchusers.cpp
+        adminsearchusers.ui
 
 )
 

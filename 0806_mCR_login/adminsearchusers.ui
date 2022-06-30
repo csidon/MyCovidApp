@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminSearchUsers</class>
+ <widget class="QWidget" name="AdminSearchUsers">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>375</width>
+    <height>667</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>381</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="lbl_stripedBackground">
+     <property name="geometry">
+      <rect>
+       <x>-150</x>
+       <y>-70</y>
+       <width>671</width>
+       <height>841</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image:url(:/images/stripedBackground.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_pageLeft">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>580</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image:url(:/images/pageLeft.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_topBar">
+     <property name="geometry">
+      <rect>
+       <x>-2</x>
+       <y>-15</y>
+       <width>381</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/images/topBar.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_pageRight">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>580</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/pageRight.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_backToAdminHome">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>71</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/backArrow2.png);
+background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_currentPage">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>590</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:black;
+font-family:arial;
+font-size:18px;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="textEdit_searchBar">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:18px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter Client Name...</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_search">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>0</y>
+       <width>61</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image:url(:/images/searchIcon.png);
+background-color:rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_foundName_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>351</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:18px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_foundName_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>351</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:18px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_foundName_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>351</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:18px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_foundName_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>351</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:18px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_foundName_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>400</y>
+       <width>351</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:18px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_foundName_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>351</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family:arial;
+font-size:18px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <zorder>lbl_stripedBackground</zorder>
+    <zorder>btn_pageLeft</zorder>
+    <zorder>lbl_topBar</zorder>
+    <zorder>btn_pageRight</zorder>
+    <zorder>lbl_currentPage</zorder>
+    <zorder>btn_backToAdminHome</zorder>
+    <zorder>textEdit_searchBar</zorder>
+    <zorder>btn_search</zorder>
+    <zorder>lbl_foundName_1</zorder>
+    <zorder>lbl_foundName_2</zorder>
+    <zorder>lbl_foundName_3</zorder>
+    <zorder>lbl_foundName_4</zorder>
+    <zorder>lbl_foundName_5</zorder>
+    <zorder>lbl_foundName_6</zorder>
+   </widget>
+   <widget class="QWidget" name="page_2"/>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
