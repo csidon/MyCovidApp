@@ -64,5 +64,6 @@
         <file>images/accountCreationIP.png</file>
         <file>images/searchIcon.png</file>
         <file>images/displayQRCode.png</file>
+        <file>images/reportAnIssueBackground.png</file>
     </qresource>
 </RCC>

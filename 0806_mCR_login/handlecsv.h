@@ -57,6 +57,7 @@ public:
     //Remove user ID from QR requests file
     void removeQRRequest(QStringList newListofRequestingUsers);
 
+    //Mark report read
     void updateIsNewOfReport(int updateeIndex);
 
 };

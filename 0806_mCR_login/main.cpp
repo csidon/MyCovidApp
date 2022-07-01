@@ -118,8 +118,8 @@ int main(int argc, char *argv[])
 //   searchPage.show();
 
 
-  // AdminErrorReports adminReports;
-  // adminReports.show();
+// AdminErrorReports adminReports;
+// adminReports.show();
 
     //AdminHome adminHome;
     //adminHome.show();

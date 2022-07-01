@@ -2,21 +2,21 @@
 #include "./ui_mainwindow.h"
 #include "authdialog.h"
 #include "displaymyqrcode.h"
+#include "submiterrorreport.h"
 #include <QObject>
-
-
-
 
 MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     HandleCSV accountReader;
     ui->setupUi(this);
     qDebug() << "OI! MainWindow received uid: " << loggedInUserID;
     UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
     ui->lbl_welcomeMsg->setText("Kia Ora " + loggedInUser.getUserPreferredName());
     this->setLoggedInUserID(loggedInUserID);
+    submitErrorReport.setLoggedInUser(loggedInUserID);
     if(loggedInUser.getUserQRStatus()==0)
     {
         qDebug() << "The logged In user QR status is 0";
@@ -152,5 +152,12 @@ void MainWindow::on_btn_displayQR_clicked()
     qDebug() << "You have clicked the EU History button and want to pass uid " << uid;
     displayQRWindow = new DisplayMyQRCode(nullptr, uid);
     displayQRWindow->show();
+}
+
+
+void MainWindow::on_btn_accountDetails_clicked()
+{
+   // SubmitErrorReport submitErrorReport = SubmitErrorReport(nullptr, loggedInUserID);
+    submitErrorReport.show();
 }
 

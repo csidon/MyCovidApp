@@ -344,6 +344,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/submiterrorreport.h",
+			"MU",
+			"EWIEGA46WW/moc_submiterrorreport.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h",
 			"MU",
 			"EWIEGA46WW/moc_test.cpp",
@@ -498,6 +504,11 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/submiterrorreport.cpp",
 			"MU",
 			null
 		],

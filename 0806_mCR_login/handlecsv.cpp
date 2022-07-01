@@ -146,8 +146,30 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
         while(!file.atEnd())
         {
             // Read the line and store it
+
             QString row = file.readLine().trimmed();
             QStringList rowValues = row.split(',');
+            //handle commas, which are stored as tildes (~)
+            if( headerName == "Text" || headerName == "Title"){//add a header here if you want to turn tildes in the csv under that header into commas
+                for(int i=0; i < rowValues.size(); i++){
+                    for(int j = 0; j < rowValues.at(i).size(); j++){
+                        if(rowValues.at(i)[j] == '~'){
+                            QString recomma = "";
+                            for(int k = 0; k < j; k++){
+                            recomma = recomma + rowValues.at(i)[k];
+                            }
+                            recomma = recomma + ',';
+                            for(int k = j+1; k < rowValues.at(i).size(); k++){
+                            recomma = recomma + rowValues.at(i)[k];
+                            }
+                            qDebug() << rowValues.at(i) << " replaced with " << recomma;
+                            rowValues.remove(i);
+                            rowValues.insert(i, recomma);
+                            qDebug() << "that's " << rowValues;
+                        }
+                    }
+                }
+            }
             data << rowValues.at(headerIndex);
         }
         file.close();
@@ -557,7 +579,43 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
     HandleCSV readReports;
     //It may seem like a vector of Reports is better here than 5 QStringLists, but that would use more memory and code as we would have to convert the strings to ints/bools and back
     QStringList reportTitles = getColData("Title", "dbReports");
+    for(int i=0; i < reportTitles.size(); i++){
+        for(int j = 0; j < reportTitles.at(i).size(); j++){
+            if(reportTitles.at(i)[j] == ','){
+                QString retilde = "";
+                for(int k = 0; k < j; k++){
+                retilde = retilde + reportTitles.at(i)[k];
+                }
+                retilde = retilde + '~';
+                for(int k = j+1; k < reportTitles.at(i).size(); k++){
+                retilde = retilde + reportTitles.at(i)[k];
+                }
+                qDebug() << reportTitles.at(i) << " replaced with " << retilde;
+                reportTitles.remove(i);
+                reportTitles.insert(i, retilde);
+                qDebug() << "that's " << reportTitles;
+            }
+        }
+    }
     QStringList reportTexts = getColData("Text", "dbReports");
+    for(int i=0; i < reportTexts.size(); i++){
+        for(int j = 0; j < reportTexts.at(i).size(); j++){
+            if(reportTexts.at(i)[j] == ','){
+                QString retilde = "";
+                for(int k = 0; k < j; k++){
+                retilde = retilde + reportTexts.at(i)[k];
+                }
+                retilde = retilde + '~';
+                for(int k = j+1; k < reportTexts.at(i).size(); k++){
+                retilde = retilde + reportTexts.at(i)[k];
+                }
+                qDebug() << reportTexts.at(i) << " replaced with " << retilde;
+                reportTexts.remove(i);
+                reportTexts.insert(i, retilde);
+                qDebug() << "that's " << reportTexts;
+            }
+        }
+    }
     QStringList reportDates = getColData("Date", "dbReports");
     QStringList reportSenders = getColData("Sender", "dbReports");
     QStringList reportIsNews = getColData("isNew", "dbReports");
@@ -584,13 +642,13 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
             //Write the modified report with the new FALSE isNew value
             stream << reportTitles.at(updateeIndex) << "," << reportTexts.at(updateeIndex) << "," << reportDates.at(updateeIndex) << "," << reportSenders.at(updateeIndex) << "," << "FALSE" << "\n";;
             //Wrtite all the following positions from the old file
-            for( int i = updateeIndex+1; i < reportTitles.size(); i++){
+            for( int i = updateeIndex+1; i < reportIsNews.size(); i++){
                 stream << reportTitles.at(i) << "," << reportTexts.at(i) << "," << reportDates.at(i) << "," << reportSenders.at(i) << "," << reportIsNews.at(i) << "\n";
             }
         }
     }
         //Delete the old file
-        remove("./database/ErrorReports.csv");// NOTE this funtion wouldn't accpet a QString so I couldn't use the filepath function - we have to upadte this wil the final PID name
+        remove("./database/ErrorReports.csv");
         //Change the name of the new file
         rename("./database/newErrorReports.csv", "./database/ErrorReports.csv");
 }

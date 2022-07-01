@@ -8,3 +8,4 @@
 #include "EWIEGA46WW/moc_displaymyqrcode.cpp"
 #include "EWIEGA46WW/moc_euhistory.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
+#include "EWIEGA46WW/moc_submiterrorreport.cpp"
