@@ -137,7 +137,6 @@ bool UserAccount::validateEmailIsEmail(QString email)
     bool atMarker = false;
     for(int i = 1; i < sizeof(email)-2; i++){//start at 1 because valid email addresses have at least one character, ignore last 2 characters
         if(email[i] == '@'){
-            atMarker = true;
             atCount = i;
             //Check for .
             for(int j = atCount + 2; j < sizeof(email) - 1; j++){//start after the char after the @, ignore the last char
