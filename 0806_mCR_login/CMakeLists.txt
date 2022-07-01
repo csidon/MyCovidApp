@@ -64,6 +64,9 @@ set(PROJECT_SOURCES
         displaymyqrcode.h
         displaymyqrcode.cpp
         displaymyqrcode.ui
+        submiterrorreport.h
+        submiterrorreport.cpp
+        submiterrorreport.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
