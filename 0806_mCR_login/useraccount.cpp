@@ -181,15 +181,6 @@ bool UserAccount::validatePasswordIsSecure(QString password)
     return false;
 }
 
-UserAccount UserAccount::initialAccountSetup()
-{
-   UserAccount newAccount;
-   //BUILD THIS store values in new account, then append the account to the account files
-   //Probably this should be a void with a UserAccount as an argument; will rebuild once the communication with frontend is clear
-   return newAccount;
-}
-
-
 
 // Assigns a new user a unique random UID
 void UserAccount::assignID()
@@ -198,6 +189,7 @@ void UserAccount::assignID()
     bool freshID = false;
     while(freshID == false){
         ID = rand();
+        //In use already?
         freshID = true;
         HandleCSV checkID;
         QStringList allIDs = checkID.getColData("userIDNumber", "dbPID");
@@ -212,6 +204,7 @@ void UserAccount::assignID()
 
 void UserAccount::requestQR()
 {
+    //adds User's ID to a file of users with outstanding QR Requests and updates the variable that controls which QR button they see
     HandleCSV grabPath;
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
@@ -239,8 +232,8 @@ void UserAccount::addTest(Test testToStore)
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
+    //Store in personal file
     QString filepath = "database/UserTests/" + QString::number(testToStore.getTestUserID()) + ".csv";
-
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
         qDebug() << "Reading from " << QDir::currentPath();
@@ -274,6 +267,7 @@ void UserAccount::addTest(Test testToStore)
 
 void UserAccount::addDose (Dose doseToStore)
 {
+    //Stores dose with user id in user's file and master file
     doseToStore.setDoseUserID(this->getUserIDNumber());
 
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
@@ -304,48 +298,13 @@ void UserAccount::addDose (Dose doseToStore)
     }
 }
 
-void UserAccount::reportError(ErrorReport reportToStore)
-{
-    reportToStore.setSender(this->getUserIDNumber());
-
-    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
-    QDir d{path};
-    HandleCSV grabPath;
-    QString filepath = grabPath.returnCSVFilePath("dbReports");
-
-    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
-    {
-        qDebug() << "Reading from " << QDir::currentPath();
-        QFile reports{filepath};
-        if(!reports.open(QIODevice::ReadWrite| QIODevice::Append)){
-            QTextStream stream(&reports);
-            stream << "\n" << reportToStore.getTitle() << "," << reportToStore.getText() << "," << reportToStore.getDate() << "," << reportToStore.getSender() << "," << reportToStore.getIsNew();
-        };
-        reports.close();
-    }
-}
-
 
 //###############################################
 // Constructors
 //----------------------------------------------
-UserAccount::UserAccount()
-{
-    userIDNumber = 0;
-    userEmail = "";
-    userPassword = "";
-    userFirstName = "";
-    userLastName = "";
-    userPreferredName = "";
-    userNHINumber = "";
-    userPhoneNumber = 0;
-    userVaccinationStatus = 0;
-    userQRStatus = 0;
-    userQRCodeAddress = "";
-}
 
-UserAccount::UserAccount(int uid = 0, QString email = "", QString pswd = "",
+
+UserAccount::UserAccount(int uid, QString email = "", QString pswd = "",
                          QString fn = "", QString ln = "", QString pn = "",
                          QString nhi ="", int phone = 0, int vaxstat = 0, int qrstat = 0, QString qraddress = "")
 {
@@ -360,4 +319,19 @@ UserAccount::UserAccount(int uid = 0, QString email = "", QString pswd = "",
     userVaccinationStatus = vaxstat;
     userQRStatus = qrstat;
     userQRCodeAddress = qraddress;
+}
+
+UserAccount::UserAccount()
+{
+    userIDNumber = 0;
+    userEmail = "";
+    userPassword = "";
+    userFirstName = "";
+    userLastName = "";
+    userPreferredName = "";
+    userNHINumber = "";
+    userPhoneNumber = 0;
+    userVaccinationStatus = 0;
+    userQRStatus = 0;
+    userQRCodeAddress = "";
 }

@@ -14,23 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_menu">
-    <property name="geometry">
-     <rect>
-      <x>7</x>
-      <y>6</y>
-      <width>61</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(:/images/hompageIcons/menu_normal.png);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -124,7 +107,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/images/hompageIcons/accountDeetsBtn.png);
+      <string notr="true">image:url(:/images/hompageIcons/reportAnIssueBtn.png);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -270,13 +253,6 @@ font: 8pt &quot;Arial&quot;;</string>
      <string>UID:</string>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>btn_menu</zorder>
-   <zorder>groupBox</zorder>
-   <zorder>lbl_welcomeMsg</zorder>
-   <zorder>lbl_reminderMsgLn1</zorder>
-   <zorder>lbl_reminderMsgLn1_2</zorder>
-   <zorder>lbl_UID_toHide</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

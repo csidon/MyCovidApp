@@ -20,7 +20,6 @@ QT_BEGIN_NAMESPACE
 class Ui_AdminHome
 {
 public:
-    QPushButton *btn_menu;
     QLabel *lbl_headerBar;
     QPushButton *btn_issuesReported;
     QPushButton *btn_QRCodeRequests;
@@ -39,11 +38,6 @@ public:
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
         AdminHome->setFont(font);
-        btn_menu = new QPushButton(AdminHome);
-        btn_menu->setObjectName(QString::fromUtf8("btn_menu"));
-        btn_menu->setGeometry(QRect(7, 6, 61, 51));
-        btn_menu->setStyleSheet(QString::fromUtf8("image: url(:/images/hompageIcons/menu_normal.png);\n"
-"background-color: rgba(255, 255, 255, 0);"));
         lbl_headerBar = new QLabel(AdminHome);
         lbl_headerBar->setObjectName(QString::fromUtf8("lbl_headerBar"));
         lbl_headerBar->setGeometry(QRect(0, 0, 375, 63));
@@ -96,15 +90,6 @@ public:
         lbl_adminName->setGeometry(QRect(150, 90, 201, 61));
         lbl_adminName->setFont(font);
         lbl_adminName->setStyleSheet(QString::fromUtf8("color: black; font-size: 32px"));
-        lbl_headerBar->raise();
-        btn_menu->raise();
-        btn_issuesReported->raise();
-        btn_QRCodeRequests->raise();
-        btn_searchAndManageUsers->raise();
-        lbl_numberOfQRCodeRequests->raise();
-        lbl_numberOfIssuesReported->raise();
-        lbl_kiaOra->raise();
-        lbl_adminName->raise();
 
         retranslateUi(AdminHome);
 
@@ -114,7 +99,6 @@ public:
     void retranslateUi(QWidget *AdminHome)
     {
         AdminHome->setWindowTitle(QCoreApplication::translate("AdminHome", "Form", nullptr));
-        btn_menu->setText(QString());
         lbl_headerBar->setText(QString());
         btn_issuesReported->setText(QString());
         btn_QRCodeRequests->setText(QString());

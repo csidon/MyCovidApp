@@ -21,23 +21,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="btn_menu">
-   <property name="geometry">
-    <rect>
-     <x>7</x>
-     <y>6</y>
-     <width>61</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/images/hompageIcons/menu_normal.png);
-background-color: rgba(255, 255, 255, 0);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_headerBar">
    <property name="geometry">
     <rect>
@@ -217,15 +200,6 @@ background-color: rgba(255, 255, 255, 0);</string>
     <string>Darth Vader</string>
    </property>
   </widget>
-  <zorder>lbl_headerBar</zorder>
-  <zorder>btn_menu</zorder>
-  <zorder>btn_issuesReported</zorder>
-  <zorder>btn_QRCodeRequests</zorder>
-  <zorder>btn_searchAndManageUsers</zorder>
-  <zorder>lbl_numberOfQRCodeRequests</zorder>
-  <zorder>lbl_numberOfIssuesReported</zorder>
-  <zorder>lbl_kiaOra</zorder>
-  <zorder>lbl_adminName</zorder>
  </widget>
  <resources/>
  <connections/>

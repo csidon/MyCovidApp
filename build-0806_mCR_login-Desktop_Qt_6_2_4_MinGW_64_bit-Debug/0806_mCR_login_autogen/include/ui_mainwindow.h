@@ -25,7 +25,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *btn_menu;
     QLabel *label;
     QGroupBox *groupBox;
     QPushButton *btn_requestQR;
@@ -48,11 +47,6 @@ public:
         MainWindow->resize(375, 667);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        btn_menu = new QPushButton(centralwidget);
-        btn_menu->setObjectName(QString::fromUtf8("btn_menu"));
-        btn_menu->setGeometry(QRect(7, 6, 61, 51));
-        btn_menu->setStyleSheet(QString::fromUtf8("image: url(:/images/hompageIcons/menu_normal.png);\n"
-"background-color: rgba(255, 255, 255, 0);"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(0, 0, 375, 63));
@@ -86,7 +80,7 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(btn_accountDetails->sizePolicy().hasHeightForWidth());
         btn_accountDetails->setSizePolicy(sizePolicy1);
-        btn_accountDetails->setStyleSheet(QString::fromUtf8("image: url(:/images/hompageIcons/accountDeetsBtn.png);\n"
+        btn_accountDetails->setStyleSheet(QString::fromUtf8("image:url(:/images/hompageIcons/reportAnIssueBtn.png);\n"
 "background-color: rgba(255, 255, 255, 0);"));
         btn_vaxHistory = new QPushButton(groupBox);
         btn_vaxHistory->setObjectName(QString::fromUtf8("btn_vaxHistory"));
@@ -133,13 +127,6 @@ public:
         lbl_UID_toHide->setObjectName(QString::fromUtf8("lbl_UID_toHide"));
         lbl_UID_toHide->setGeometry(QRect(300, 70, 62, 20));
         MainWindow->setCentralWidget(centralwidget);
-        label->raise();
-        btn_menu->raise();
-        groupBox->raise();
-        lbl_welcomeMsg->raise();
-        lbl_reminderMsgLn1->raise();
-        lbl_reminderMsgLn1_2->raise();
-        lbl_UID_toHide->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 375, 21));
@@ -156,7 +143,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        btn_menu->setText(QString());
         label->setText(QString());
         groupBox->setTitle(QString());
         btn_requestQR->setText(QString());

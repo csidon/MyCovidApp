@@ -19,7 +19,6 @@
         <file>images/hompageIcons/menu_collapsed.png</file>
         <file>images/hompageIcons/menu_normal.png</file>
         <file>images/hompageIcons/reportRat-02.png</file>
-        <file>images/hompageIcons/accountDeetsBtn.png</file>
         <file>images/hompageIcons/requestQR.png</file>
         <file>images/hompageIcons/vaxHistoryBtn.png</file>
         <file>images/check.png</file>
@@ -65,5 +64,6 @@
         <file>images/searchIcon.png</file>
         <file>images/displayQRCode.png</file>
         <file>images/reportAnIssueBackground.png</file>
+        <file>images/hompageIcons/reportAnIssueBtn.png</file>
     </qresource>
 </RCC>
