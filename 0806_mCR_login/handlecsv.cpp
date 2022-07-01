@@ -88,35 +88,6 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
         }
     }
     return headerIndex;
-//    int headerIndex = -1;
-
-//    QString filePath = returnCSVFilePath(dbName);
-//    qDebug() << "File path is " <<  filePath;
-
-//    // Open CSV filepath retrieved from associated dbName
-//    QFile file(filePath);
-//    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-//    {
-//        qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
-//                 << "Filepath for getUserAccount = " << filePath;
-//        return headerIndex;
-//    }
-
-//    // Read the header line and get the value of each cell
-//    QString headers = file.readLine().trimmed();
-//    QStringList headerRowValues = headers.split(',');
-
-//    // Compare that cell value to the colHeader search value
-//    // and grab the column index that we are retrieving
-//    for(int i = 0; i < headerRowValues.size(); i++)
-//    {
-//        qDebug() << "Comparing colHeaders...";
-//        if(headerRowValues.at(i) == headerName)
-//        {
-//            return i;
-//        }
-//    }
-//    return headerIndex;
 }
 
 //-----------------------------------------------------------
@@ -156,16 +127,26 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
                         if(rowValues.at(i)[j] == '~'){
                             QString recomma = "";
                             for(int k = 0; k < j; k++){
-                            recomma = recomma + rowValues.at(i)[k];
+                                recomma = recomma + rowValues.at(i)[k];
                             }
                             recomma = recomma + ',';
                             for(int k = j+1; k < rowValues.at(i).size(); k++){
-                            recomma = recomma + rowValues.at(i)[k];
+                                recomma = recomma + rowValues.at(i)[k];
                             }
-                            qDebug() << rowValues.at(i) << " replaced with " << recomma;
                             rowValues.remove(i);
                             rowValues.insert(i, recomma);
-                            qDebug() << "that's " << rowValues;
+                        }
+                        if(rowValues.at(i)[j] == '`'){
+                            QString reslash = "";
+                            for(int k = 0; k < j; k++){
+                                reslash = reslash + rowValues.at(i)[k];
+                            }
+                            reslash = reslash + '\n';
+                            for(int k = j+1; k < rowValues.at(i).size(); k++){
+                                reslash = reslash + rowValues.at(i)[k];
+                            }
+                            rowValues.remove(i);
+                            rowValues.insert(i, reslash);
                         }
                     }
                 }
@@ -354,6 +335,7 @@ UserAccount HandleCSV::getUserAccount(int uid)
 
 ErrorReport HandleCSV::getErrorReport(int index)
 {
+    //Reads document into lists and returns values at argument index as single object
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
@@ -509,7 +491,7 @@ void HandleCSV::writeToNewPID(UserAccount userBeingWritten)
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
-    QString filepath = returnCSVFilePath("./database/newPID.csv");
+    QString filepath = returnCSVFilePath("./database/newPID.csv");//creates new file
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
@@ -540,7 +522,7 @@ void HandleCSV::removeQRRequest(QStringList newListOfRequestingUsers)
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
-    QString filepath = returnCSVFilePath("./database/newQRCodeRequests.csv");
+    QString filepath = returnCSVFilePath("./database/newQRCodeRequests.csv");//creates new file
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
@@ -575,10 +557,11 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
-    QString filepath = returnCSVFilePath("./database/newErrorReports.csv");
+    QString filepath = returnCSVFilePath("./database/newErrorReports.csv");//creates new file
     HandleCSV readReports;
     //It may seem like a vector of Reports is better here than 5 QStringLists, but that would use more memory and code as we would have to convert the strings to ints/bools and back
     QStringList reportTitles = getColData("Title", "dbReports");
+    //Handling commas in title
     for(int i=0; i < reportTitles.size(); i++){
         for(int j = 0; j < reportTitles.at(i).size(); j++){
             if(reportTitles.at(i)[j] == ','){
@@ -590,14 +573,13 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
                 for(int k = j+1; k < reportTitles.at(i).size(); k++){
                 retilde = retilde + reportTitles.at(i)[k];
                 }
-                qDebug() << reportTitles.at(i) << " replaced with " << retilde;
                 reportTitles.remove(i);
                 reportTitles.insert(i, retilde);
-                qDebug() << "that's " << reportTitles;
             }
         }
     }
     QStringList reportTexts = getColData("Text", "dbReports");
+    //Handling commas and line breaks in text - using uncommon characters ~ and ` as substitutes
     for(int i=0; i < reportTexts.size(); i++){
         for(int j = 0; j < reportTexts.at(i).size(); j++){
             if(reportTexts.at(i)[j] == ','){
@@ -609,10 +591,20 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
                 for(int k = j+1; k < reportTexts.at(i).size(); k++){
                 retilde = retilde + reportTexts.at(i)[k];
                 }
-                qDebug() << reportTexts.at(i) << " replaced with " << retilde;
                 reportTexts.remove(i);
                 reportTexts.insert(i, retilde);
-                qDebug() << "that's " << reportTexts;
+            }
+            if(reportTexts.at(i)[j] == '\n'){
+                QString regrave = "";
+                for(int k = 0; k < j; k++){
+                regrave = regrave + reportTexts.at(i)[k];
+                }
+                regrave = regrave + '`';
+                for(int k = j+1; k < reportTexts.at(i).size(); k++){
+                regrave = regrave + reportTexts.at(i)[k];
+                }
+                reportTexts.remove(i);
+                reportTexts.insert(i, regrave);
             }
         }
     }
@@ -652,85 +644,3 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
         //Change the name of the new file
         rename("./database/newErrorReports.csv", "./database/ErrorReports.csv");
 }
-
-//void HandleCSV::updatePID(int uid, UserAccount updatedUser)
-//{
-//    //Open dbPID for reading and search for UID
-//    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-//    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
-//    QDir d{path};
-//    QString filepath = returnCSVFilePath("dbPID");
-
-//    if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
-//    {
-//        qDebug() << "Writing to " << QDir::currentPath();
-//        QFile f{filepath};
-//        qDebug() << "Filepath is " << filepath;
-//        if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
-//        {
-//            qDebug() << "Is the file open? " << f.isOpen();
-//            qDebug() << "File error: " << f.error();
-//            qDebug() << "Error string: " << f.errorString();
-//        }
-//        else
-//        {
-//            // Find the row with the UID
-//            QStringList allUserIDs = getColData("userIDNumber","dbPID");
-//            qDebug() << "Checking this list:" << allUserIDs;
-
-//            // Searching all uids in retrieved QStringList for target uid
-//            int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
-//            if (userFoundInRowIndex <0)
-//            {
-//                qDebug() << "User with uid " << uid << " not found";
-//            }
-//            else
-//            {
-////                qDebug() << "User " << uid << " has been found in rowIndex: " << userFoundInRowIndex;
-////                // Copy all of the lines in the db until the row that has been identified
-////                for (int i = 0; i < userFoundInRowIndex; i++)
-////                {
-////                    QString row(i) = f.readline();
-////                }
-////                qDebug()<< "Testing what row1 values are: " << row1;
-
-////                // Meanwhile create a temporary file to write to
-//////                QString tempfilepath = "database/tempfile.csv";
-//////                QFile tempFile{tempfilepath};}
-////                QTemporaryFile tempfile;
-////                if (!tempfile.open(QIODevice::ReadWrite | QIODevice::Append))
-////                {
-////                    qDebug() << "Is the file open? " << tempfile.isOpen();
-////                    qDebug() << "File error: " << tempfile.error();
-////                    qDebug() << "Error string: " << tempfile.errorString();
-////                }
-////                else
-////                {
-////                    QTextStream stream(&tempfile);
-////                    stream <<
-
-//                // Copy all the data from csv file to QTableView
-//                QStandardItemModel *model = new QStandardItemModel;
-//                int lineindex = 0;
-//                QTextStream in(&f);     // Read to text stream
-//                while (!in.atEnd())
-//                {
-//                    QString fileLine = in.readLine();
-//                    QStringList lineToken = fileLine.split(",", QString::SkipEmptyParts);
-//                    for (int j = 0; j < lineToken.size(); j++)
-//                    {
-//                        QString value = lineToken.at(j);
-//                        QStandardItem *item = new QStandardItem(value);
-//                        model->setItem(lineindex, j, item);
-//                    }
-//                    lineindex++;
-//                }
-//                file.close();
-//            }
-
-
-
-//        }
-//    }
-
-//}

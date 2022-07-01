@@ -1,8 +1,11 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_authdialog.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
@@ -172,8 +175,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -191,7 +197,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qscrollarea.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h \

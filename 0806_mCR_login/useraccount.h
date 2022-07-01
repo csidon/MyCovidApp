@@ -63,11 +63,9 @@ public:
 
     //Functions
     UserAccount initialAccountSetup();
-    UserAccount getUserData(int row);
 
     void assignID();
     void requestQR();
-    void assignQR();
     void addTest(Test testToStore);
     void addDose(Dose doseToStore);
     void reportError(ErrorReport reportToStore);

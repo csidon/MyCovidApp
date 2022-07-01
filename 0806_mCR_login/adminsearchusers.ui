@@ -135,7 +135,7 @@ font-size:18px;</string>
       <string notr="true">font-size:18px;</string>
      </property>
      <property name="placeholderText">
-      <string>Enter Client Name...</string>
+      <string>Enter first or last name...</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_search">
