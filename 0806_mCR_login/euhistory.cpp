@@ -7,9 +7,9 @@
 #include "useraccount.h"
 #include "handlecsv.h"
 #include <QListWidgetItem>
-#include "customlistwidget.h"
 #include "handlecsv.h"
 #include "useraccount.h"
+#include <QCommonStyle>
 
 EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     QWidget(parent),
@@ -30,8 +30,11 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     // Shows user information at the top
     //-----------------------
     QLabel *pageHeader = new QLabel;
-    pageHeader->setText("Vaccination Record & Reported Test Results");
+    pageHeader->setText("Vaccination Record \n& Reported Test Results");
     pageHeader->setWordWrap(true);
+    pageHeader->setStyleSheet("font-size: 22px;"
+                            "font-weight: bold;"
+                            "padding-top: 10px;");
     QString displayUserName = loggedInUser.getUserPreferredName() + " " + loggedInUser.getUserFirstName()
             + " " + loggedInUser.getUserLastName();
     QString displayNHI;
@@ -45,7 +48,11 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     }
 
     QLabel *dispUserName = new QLabel;
+    dispUserName->setStyleSheet("font-size: 18px;"
+                                "font-weight: normal;");
     QLabel *dispNHI = new QLabel;
+    dispNHI->setStyleSheet("font-size: 18px;"
+                                "font-weight: normal;");
     dispUserName->setText(displayUserName);
     dispNHI->setText(displayNHI);
     pageHeader->setAlignment(Qt::AlignHCenter);
@@ -55,6 +62,7 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     pageIntro->addWidget(pageHeader);
     pageIntro->addWidget(dispUserName);
     pageIntro->addWidget(dispNHI);
+
 
 
 
@@ -75,52 +83,160 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
         qDebug() << "Searching for " << getLoggedInUserID() << ".csv" << "...";
         QFile searchFile{filepath};
         CustomListWidget *c19TestList = new CustomListWidget;
+//        CustomListWidget *c19TestList = new CustomListWidget;
         if (searchFile.open(QIODevice::ReadOnly| QIODevice::Text))
         {
             qDebug() << "The file has been found and opened. ";
+//            // First count the number of rows so we know what to expect
+//            HandleCSV countTotalTests;
+//            QStringList totalTests = countTotalTests.getColData("userIDNumber", "dbQRRequests");
+//            QRRequests.takeFirst();//drops the header
+
+//            //How many pages do we need?
+//            setNoOfPages(QRRequests.size()/6);
+//            if(QRRequests.size()%6!=0){
+//                setNoOfPages(getNoOfPages()+1);
+//            }
+
             // File found. Now extract data for display
             int numRows = 0;
             QStringList testDates;
             QString row;
             QStringList rowValues;
-
+            //Creating a vector to store each row of data (we only really care about test dates and test results)
+            std::vector<QString> allTestDateValues;
+            std::vector<QString> allTestResultValues;
 
             while(!searchFile.atEnd())
             {
                 // Read and split the rows
                 row = searchFile.readLine().trimmed();
                 rowValues = row.split(',');
+                //Grabbing the rows' values
                 testDates << rowValues.at(0);
                 qDebug() << "Full row values are: " << rowValues;
-                qDebug() << "Storing the test date for this row " << numRows;
-                QString rowTestDate = rowValues.at(0);
-                QString rowTestResult;
+                qDebug() << "Storing the test date for ROW " << numRows << " into vector";
+                QString testDateRow = rowValues.at(0);
+                allTestDateValues.push_back(testDateRow);
+
+                QString testResultRow;
                 if (rowValues.at(1).toInt() == 1)
                 {
-                    rowTestResult = "Positive";
+                    testResultRow = "Positive";
+
                 }
                 else
                 {
-                    rowTestResult = "Negative";
+                    testResultRow = "Negative";
                 }
-
-                QLabel *testTypeUL = new QLabel;
-                testTypeUL->setText("Rapid Antigen Test");
-//                dateLabelUR->setWordWrap(true);
-                QLabel *dateLabelUR = new QLabel;
-                dateLabelUR->setText(rowTestDate);
-                QLabel *reportTypeBL = new QLabel;
-                reportTypeBL->setText("Self-reported");
-                QLabel *testResultBR = new QLabel;
-                testResultBR->setText(rowTestResult);
-
-                c19TestList->addLabelItem(testTypeUL, dateLabelUR, reportTypeBL, testResultBR);
-                qDebug() << "Test dates recorded are " << testDates;
+                allTestResultValues.push_back(testResultRow);
+                qDebug() << "The value of testResult at row " << numRows << " is " << allTestDateValues.at(numRows);
                 numRows++;
             }
-            toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
-            qDebug() << "The number of entries (rows) are: " << numRows;
+            qDebug() << "Total number of tests (rows) = " << numRows;
+
+//            QLabel *testTypeUL = new QLabel;
+//            testTypeUL->setText("Rapid Antigen Test");
+//            testTypeUL->setStyleSheet("font-size: 14px;"
+//                                      "font-weight: normal;");
+//            QLabel *dateLabelUR = new QLabel;
+
+//            dateLabelUR->setStyleSheet("font-size: 14px;"
+//                                       "font-weight: normal;");
+//            QLabel *reportTypeBL = new QLabel;
+//            reportTypeBL->setText("Self-reported");
+//            reportTypeBL->setStyleSheet("font-size: 10px;"
+//                                        "font-weight: normal;"
+//                                        "margin-bottom: 10px;");
+//            QLabel *testResultBR = new QLabel;
+
+//            testResultBR->setStyleSheet("font-size: 10px;"
+//                                        "font-weight: normal;"
+//                                        "margin-bottom: 10px;");
+
+
+            // Deriving the number of pages needed to display tests
+            // Actual rows = numRows +1 because numRows starts at 0
+            int actualRows = numRows;
+            int totalNoOfPages = actualRows / 5; // Rounds up and gives the total number of pages
+            if (actualRows % 5 != 0)
+            {
+                totalNoOfPages++;   // Increase the total number of pages if % is 0
+            }
+
+            qDebug() << "Actual Rows: " << actualRows;
+            qDebug() << "Total pages: " << totalNoOfPages;
+
+            if (totalNoOfPages == 1)
+            {
+                for (int i = 0; i < numRows; i++)
+                {
+                    //--------------------
+                    QLabel *testTypeUL = new QLabel;
+                    testTypeUL->setText("Rapid Antigen Test");
+                    testTypeUL->setStyleSheet("font-size: 14px;"
+                                              "font-weight: normal;");
+                    QLabel *dateLabelUR = new QLabel;
+
+                    dateLabelUR->setStyleSheet("font-size: 14px;"
+                                               "font-weight: normal;");
+                    QLabel *reportTypeBL = new QLabel;
+                    reportTypeBL->setText("Self-reported");
+                    reportTypeBL->setStyleSheet("font-size: 10px;"
+                                                "font-weight: normal;"
+                                                "margin-bottom: 10px;");
+                    QLabel *testResultBR = new QLabel;
+
+                    testResultBR->setStyleSheet("font-size: 10px;"
+                                                "font-weight: normal;"
+                                                "margin-bottom: 10px;");
+                    //-------------------
+                    QString dateToSet = allTestDateValues.at(i);
+                    QString resultToSet = allTestResultValues.at(i);
+                    dateLabelUR->setText(dateToSet);
+                    testResultBR->setText(resultToSet);
+                    c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
+                    qDebug() << "Iteration " << i;
+                }
+                toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
+            }
+            else    // print 5 test summaries and add a page button
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    //-----------------------
+                    QLabel *testTypeUL = new QLabel;
+                    testTypeUL->setStyleSheet("font-size: 14px;"
+                                              "font-weight: normal;");
+                    testTypeUL->setText("Rapid Antigen Test");
+
+                    QLabel *dateLabelUR = new QLabel;
+                    dateLabelUR->setStyleSheet("font-size: 14px;"
+                                               "font-weight: normal;");
+                    QLabel *reportTypeBL = new QLabel;
+                    reportTypeBL->setStyleSheet("font-size: 10px;"
+                                                "font-weight: normal;"
+                                                "margin-bottom: 10px;");
+                    reportTypeBL->setText("Self-reported");
+
+                    QLabel *testResultBR = new QLabel;
+
+                    testResultBR->setStyleSheet("font-size: 10px;"
+                                                "font-weight: normal;"
+                                                "margin-bottom: 10px;");
+                    //--------------------------------
+                    QString dateToSet = allTestDateValues.at(i);
+                    QString resultToSet = allTestResultValues.at(i);
+                    dateLabelUR->setText(dateToSet);
+                    testResultBR->setText(resultToSet);
+                    c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
+                }
+                toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
+                c19TestList->addArrows();   // Code behaviour of arrows below
+                c19TestList->addPageNumDisplay(1,totalNoOfPages);
+            }
         }
+
         else
         {
             // Check if file can't be found, or file has difficulty opening
@@ -197,6 +313,7 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
                 manufBR->setText(doseManuf);
 
                 c19VacHistory->addLabelItem(numDosesUL, emptyUR, vaxDateBL, manufBR);
+//                c19VacHistory->addItem();
                 qDebug() << "Vaccination dates recorded are " << vaxDates;
                 numRows++;
             }
@@ -241,14 +358,12 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     QVBoxLayout *overarchingLayout = new QVBoxLayout;
     overarchingLayout->addWidget(toolBox);
 
+
 //    setLayout(overarchingLayout);
 
     overallWrapper->addLayout(pageIntro);
     overallWrapper->addLayout(overarchingLayout);
     setLayout(overallWrapper);
-
-
-
 
 
 }
@@ -278,4 +393,44 @@ void EUHistory::setTestDate(QString tDate)
     this->testDate = tDate;
 }
 
+//CustomListWidget EUHistory::printTestSummary(int pageNum, std::vector<QString> allTestDateValues, std::vector<QString> allTestResultValues)
+//{
+//    CustomListWidget eachTestSummary;
+
+////    allTestDateValues[i]      //########### IMPLEMENT THIS AFTER TKD!!
+//    QLabel *testTypeUL = new QLabel;
+////                testTypeUL->setFixedHeight(25);
+//    testTypeUL->setText("Rapid Antigen Test");
+//    testTypeUL->setStyleSheet("font-size: 14px;"
+//                              "font-weight: normal;"
+//                              );
+////                dateLabelUR->setWordWrap(true);
+//    QLabel *dateLabelUR = new QLabel;
+////                testTypeUL->setFixedHeight(25);
+//    dateLabelUR->setText(testDateRow);
+//    dateLabelUR->setStyleSheet("font-size: 14px;"
+//                               "font-weight: normal;");
+//    QLabel *reportTypeBL = new QLabel;
+////                testTypeUL->setFixedHeight(25);
+//    reportTypeBL->setText("Self-reported");
+//    reportTypeBL->setStyleSheet("font-size: 10px;"
+//                                "font-weight: normal;"
+//                                "margin-bottom: 10px;");
+//    QLabel *testResultBR = new QLabel;
+////                testTypeUL->setFixedHeight(25);
+//    testResultBR->setText(testResultRow);
+//    testResultBR->setStyleSheet("font-size: 10px;"
+//                                "font-weight: normal;"
+//                                "margin-bottom: 10px;");
+
+//    eachTestSummary->addLabelItem(testTypeUL, dateLabelUR, reportTypeBL, testResultBR);
+//    return eachTestSummary;
+//}
+
+
+
+void EUHistory::on_btn_backToAdminHome_clicked()
+{
+    this->close();
+}
 
