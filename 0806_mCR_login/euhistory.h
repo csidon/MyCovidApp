@@ -6,6 +6,7 @@
 #include "expandingtoolbox.h"
 #include <QListWidget>
 #include <QDateTime>
+#include "customlistwidget.h"
 
 namespace Ui {
 class EUHistory;
@@ -22,10 +23,17 @@ public:
     void setLoggedInUserID(int newLoggedInUserID);
     QString getTestDate();
     void setTestDate(QString tDate);
+//    CustomListWidget printTestSummary(int pageNum, std::vector<QString>, std::vector<QString>);
+
+private slots:
+    void on_btn_backToAdminHome_clicked();
 
 private:
     int userID;
     QString testDate;
+//    std::vector<QString> allTestDateValues;
+//    std::vector<QString> allTestResultValues;
+
     Ui::EUHistory *ui;
 };
 
