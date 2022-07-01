@@ -215,6 +215,8 @@ public:
         lineEdit_inputPass->setSizePolicy(sizePolicy);
         lineEdit_inputPass->setMaximumSize(QSize(16777215, 40));
         lineEdit_inputPass->setFont(font4);
+        lineEdit_inputPass->setInputMethodHints(Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData);
+        lineEdit_inputPass->setEchoMode(QLineEdit::Password);
 
         verticalLayout->addWidget(lineEdit_inputPass);
 

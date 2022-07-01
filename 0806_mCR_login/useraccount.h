@@ -62,13 +62,10 @@ public:
     bool validatePasswordIsSecure(QString password);
 
     //Functions
-    UserAccount initialAccountSetup();
-
     void assignID();
     void requestQR();
     void addTest(Test testToStore);
     void addDose(Dose doseToStore);
-    void reportError(ErrorReport reportToStore);
 
 
     //Constructor

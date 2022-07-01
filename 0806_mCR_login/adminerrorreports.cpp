@@ -1,4 +1,5 @@
 #include "adminerrorreports.h"
+#include "adminhome.h"
 #include "handlecsv.h"
 #include "ui_adminerrorreports.h"
 #include "useraccount.h"
