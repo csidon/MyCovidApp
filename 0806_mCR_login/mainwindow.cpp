@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
 
     HandleCSV accountReader;
     ui->setupUi(this);
-    qDebug() << "OI! MainWindow received uid: " << loggedInUserID;
     UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
     ui->lbl_welcomeMsg->setText("Kia Ora " + loggedInUser.getUserPreferredName());
     this->setLoggedInUserID(loggedInUserID);
@@ -84,15 +83,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-//void MainWindow::receiveUID(int uid)
-//{
-//    qDebug() << "receiveUID has been triggered";
-//    ui->lbl_UID_toHide->setNum(uid);
-//
-//}
-
-
 
 void MainWindow::on_btn_requestQR_clicked()
 {

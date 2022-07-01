@@ -4,7 +4,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h
  mmc:Q_OBJECT
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h
@@ -122,22 +124,27 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qpolygon.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h
@@ -379,6 +386,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h
  mmc:Q_OBJECT
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/expandingtoolbox.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime
@@ -513,8 +521,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h
@@ -528,7 +539,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qscrollarea.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h
@@ -1128,9 +1141,12 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mmc:Q_OBJECT
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h
@@ -1300,8 +1316,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h
@@ -1319,7 +1338,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qscrollarea.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h
@@ -1930,6 +1951,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h
+ mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h
  mdp:C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h
@@ -2092,8 +2114,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h
@@ -2110,7 +2135,9 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h
+ mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qscrollarea.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h
  mdp:D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h

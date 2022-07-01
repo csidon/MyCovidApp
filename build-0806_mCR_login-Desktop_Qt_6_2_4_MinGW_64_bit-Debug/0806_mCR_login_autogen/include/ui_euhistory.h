@@ -11,8 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,47 +19,18 @@ QT_BEGIN_NAMESPACE
 class Ui_EUHistory
 {
 public:
-    QLabel *lbl_c19history;
-    QLabel *lbl_euName;
-    QLabel *lbl_nhi;
-    QFrame *frame;
-    QWidget *widget;
-    QLabel *label;
+    QPushButton *btn_backToAdminHome;
 
     void setupUi(QWidget *EUHistory)
     {
         if (EUHistory->objectName().isEmpty())
             EUHistory->setObjectName(QString::fromUtf8("EUHistory"));
         EUHistory->resize(375, 667);
-        lbl_c19history = new QLabel(EUHistory);
-        lbl_c19history->setObjectName(QString::fromUtf8("lbl_c19history"));
-        lbl_c19history->setGeometry(QRect(60, 50, 211, 20));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Arial")});
-        font.setPointSize(10);
-        font.setBold(true);
-        lbl_c19history->setFont(font);
-        lbl_c19history->setAlignment(Qt::AlignCenter);
-        lbl_euName = new QLabel(EUHistory);
-        lbl_euName->setObjectName(QString::fromUtf8("lbl_euName"));
-        lbl_euName->setGeometry(QRect(10, 90, 341, 20));
-        lbl_euName->setAlignment(Qt::AlignCenter);
-        lbl_nhi = new QLabel(EUHistory);
-        lbl_nhi->setObjectName(QString::fromUtf8("lbl_nhi"));
-        lbl_nhi->setGeometry(QRect(20, 130, 341, 20));
-        lbl_nhi->setAlignment(Qt::AlignCenter);
-        frame = new QFrame(EUHistory);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(40, 170, 331, 331));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        widget = new QWidget(frame);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(0, 0, 321, 71));
-        label = new QLabel(widget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 30, 281, 221));
-        label->setWordWrap(true);
+        btn_backToAdminHome = new QPushButton(EUHistory);
+        btn_backToAdminHome->setObjectName(QString::fromUtf8("btn_backToAdminHome"));
+        btn_backToAdminHome->setGeometry(QRect(0, 0, 71, 61));
+        btn_backToAdminHome->setStyleSheet(QString::fromUtf8("image: url(:/images/backArrow2.png);\n"
+"background-color: rgba(255, 255, 255, 0);"));
 
         retranslateUi(EUHistory);
 
@@ -70,10 +40,7 @@ public:
     void retranslateUi(QWidget *EUHistory)
     {
         EUHistory->setWindowTitle(QCoreApplication::translate("EUHistory", "Form", nullptr));
-        lbl_c19history->setText(QCoreApplication::translate("EUHistory", "COVID-19 History", nullptr));
-        lbl_euName->setText(QCoreApplication::translate("EUHistory", "prefName fName lName", nullptr));
-        lbl_nhi->setText(QCoreApplication::translate("EUHistory", "NHI: ", nullptr));
-        label->setText(QCoreApplication::translate("EUHistory", "TextLabel", nullptr));
+        btn_backToAdminHome->setText(QString());
     } // retranslateUi
 
 };

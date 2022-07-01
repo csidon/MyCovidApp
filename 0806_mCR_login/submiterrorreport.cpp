@@ -3,11 +3,13 @@
 #include "qdir.h"
 #include "ui_submiterrorreport.h"
 
+//Getter
 int SubmitErrorReport::getLoggedInUser()
 {
     return loggedInUser;
 }
 
+//Setter
 void SubmitErrorReport::setLoggedInUser(int newLoggedInUser)
 {
     loggedInUser = newLoggedInUser;
@@ -18,7 +20,6 @@ SubmitErrorReport::SubmitErrorReport(QWidget *parent, int userID) :
     ui(new Ui::SubmitErrorReport)
 {
     loggedInUser = userID;
-    qDebug() << "Error report page uid is " << loggedInUser;
     ui->setupUi(this);
 }
 
@@ -34,6 +35,7 @@ void SubmitErrorReport::on_btn_backToHome_clicked()
 
 void SubmitErrorReport::on_btn_submit_clicked()
 {
+    //Append report details to csv
     HandleCSV getFilePath;
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
@@ -53,12 +55,10 @@ void SubmitErrorReport::on_btn_submit_clicked()
         }
         else
         {
-            qDebug() << "date is" << ui->dateEdit->date();
+            //format date
             QString date = ui->dateEdit->date().toString("yyyy-MM-dd");
-            qDebug() << "date is" << date;
             date.remove('-');
-            int formattedDate = date.toInt();
-            qDebug() << "date is" << date << ", formattedDate is" << formattedDate;
+            //substitute commas and line breaks with rarely used characters ` and ~ to presever them through csv storage
             QString escapedTitle = ui->lineEdit_title->text();
             for(int i=0; i < escapedTitle.size(); i++){
                 if(escapedTitle[i] == ','){
@@ -70,7 +70,12 @@ void SubmitErrorReport::on_btn_submit_clicked()
                 if(escapedText[i] == ','){
                     escapedText[i] = '~';
                 }
+                if(escapedText[i] == '\n'){
+                    escapedText[i] = '`';
+                }
             }
+            qDebug() << "escapedText = " << escapedText;
+            //output to file
             QTextStream stream(&f);
             stream << escapedTitle << "," << escapedText << "," << date << "," << loggedInUser << "," << "TRUE" << "\n";
             qDebug() << "I have theoretically streamed data.";

@@ -13,6 +13,7 @@ DisplayMyQRCode::DisplayMyQRCode(QWidget *parent, int userID) :
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
+    //set image based on user's stored address
     QPixmap QRCode(loggedInUser.getUserQRCodeAddress(), nullptr, Qt::AutoColor);
     ui->lbl_QR->setPixmap(QRCode);
 }

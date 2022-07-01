@@ -1,6 +1,8 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_adminhome.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h \
@@ -118,22 +120,27 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \

@@ -155,7 +155,7 @@ public:
         btn_pageRight->setText(QString());
         btn_backToAdminHome->setText(QString());
         lbl_currentPage->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
-        textEdit_searchBar->setPlaceholderText(QCoreApplication::translate("AdminSearchUsers", "Enter Client Name...", nullptr));
+        textEdit_searchBar->setPlaceholderText(QCoreApplication::translate("AdminSearchUsers", "Enter first or last name...", nullptr));
         btn_search->setText(QString());
         lbl_foundName_1->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
         lbl_foundName_2->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));

@@ -2,7 +2,9 @@
 #define ADMINHOME_H
 
 #include <QWidget>
+#include "adminerrorreports.h"
 #include "adminqrrequests.h"
+#include "adminsearchusers.h"
 #include "handlecsv.h"
 
 namespace Ui {
@@ -17,15 +19,18 @@ public:
     explicit AdminHome(QWidget *parent = nullptr);
     ~AdminHome();
 
-public slots:
-    void openAdminQRRequestsWindow();
-
 private slots:
     void on_btn_QRCodeRequests_clicked();
 
+    void on_btn_issuesReported_clicked();
+
+    void on_btn_searchAndManageUsers_clicked();
+
 private:
     Ui::AdminHome *ui;
-    AdminQRRequests *adminQRRequestsWindow;
+    AdminErrorReports adminErrorReports;
+    AdminQRRequests adminQRRequestsWindow;
+    AdminSearchUsers adminSearchUsers;
 };
 
 #endif // ADMINHOME_H

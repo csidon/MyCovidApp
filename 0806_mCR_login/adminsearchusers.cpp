@@ -3,19 +3,34 @@
 #include "ui_adminsearchusers.h"
 #include "useraccount.h"
 
+//Getters
+int AdminSearchUsers::getPageNumber()
+{
+    return pageNumber;
+}
+
 QStringList AdminSearchUsers::getSearchResultIDs()
 {
     return searchResultIDs;
 }
 
+//Setters
 void AdminSearchUsers::setSearchResultIDs( QStringList newSearchResultIDs)
 {
     searchResultIDs = newSearchResultIDs;
 }
 
+
+void AdminSearchUsers::setPageNumber(int newPageNumber)
+{
+    pageNumber = newPageNumber;
+}
+
 void AdminSearchUsers::setDisplayedResults()
 {
+    //Calculate index in list for first user to display on current page
     int firstResult = ((pageNumber-1)*6)+1;
+    //print that user and the following five (or up to five if there are fewer)
     int i = 0;
     HandleCSV getUser;
     UserAccount gotUser;
@@ -25,9 +40,11 @@ void AdminSearchUsers::setDisplayedResults()
         i++;
         firstResult++;
     }
+    //blank out any remaining slots
     for(i = i; i < 6; i++){
         labels[i]->setText("");
     }
+    //set buttons
     if(pageNumber == 1){
         ui->btn_pageLeft->setEnabled(false);
     }
@@ -44,6 +61,7 @@ void AdminSearchUsers::setDisplayedResults()
     else {
         ui->btn_pageRight->setEnabled(true);
     }
+    //set page number display
     ui->lbl_currentPage->setText(QString::number(pageNumber) + " of " + QString::number(noOfPages));
 }
 
@@ -61,30 +79,26 @@ QString AdminSearchUsers::formatNameForDisplay(UserAccount user)
     return toPrint;
 }
 
-int AdminSearchUsers::getPageNumber()
-{
-    return pageNumber;
-}
 
-void AdminSearchUsers::setPageNumber(int newPageNumber)
-{
-    pageNumber = newPageNumber;
-}
+
 
 AdminSearchUsers::AdminSearchUsers(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::AdminSearchUsers)
 {
     ui->setupUi(this);
+    //populate array to enable looping
     labels[0] = ui->lbl_foundName_1;
     labels[1] = ui->lbl_foundName_2;
     labels[2] = ui->lbl_foundName_3;
     labels[3] = ui->lbl_foundName_4;
     labels[4] = ui->lbl_foundName_5;
     labels[5] = ui->lbl_foundName_6;
+    //blank out as no search is yet made
     for(int i = 0; i < 6; i++){
         labels[i]->setText("");
     }
+    //disable buttons for empty page
     ui->btn_pageRight->setEnabled(false);
     ui->btn_pageLeft->setEnabled(false);
     ui->lbl_currentPage->setText("");
@@ -148,6 +162,7 @@ void AdminSearchUsers::on_btn_search_clicked()
     for(int i = 0; i < foundFNames.size(); i++){
         combinedUserIDList.append(foundFNames.at(i));
     }
+    //Check for duplicates in case someone has the same name in multiple fields
     bool dupFlag = false;
     for(int i = 0; i < foundLNames.size(); i++){
         dupFlag = false;
@@ -171,6 +186,7 @@ void AdminSearchUsers::on_btn_search_clicked()
             combinedUserIDList.append(foundPNames.at(i));
         }
     }
+    //set and update display
     setPageNumber(1);
     setSearchResultIDs(combinedUserIDList);
     setDisplayedResults();

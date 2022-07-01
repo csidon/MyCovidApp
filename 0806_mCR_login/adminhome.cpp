@@ -27,15 +27,20 @@ AdminHome::~AdminHome()
     delete ui;
 }
 
-void AdminHome::openAdminQRRequestsWindow()
-{
-    adminQRRequestsWindow = new AdminQRRequests();
-    adminQRRequestsWindow->show();
-}
-
 void AdminHome::on_btn_QRCodeRequests_clicked()
 {
-    qDebug() << "You have hit the button";
-    openAdminQRRequestsWindow();
+    adminQRRequestsWindow.show();
+}
+
+
+void AdminHome::on_btn_issuesReported_clicked()
+{
+    adminErrorReports.show();
+}
+
+
+void AdminHome::on_btn_searchAndManageUsers_clicked()
+{
+    adminSearchUsers.show();
 }
 

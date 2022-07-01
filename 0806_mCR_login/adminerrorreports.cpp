@@ -56,7 +56,7 @@ void AdminErrorReports::on_btn_backToAdminHome_clicked()
     this->close();
 }
 
-//Getter
+//Getters
 int AdminErrorReports::getPageNumber()
 {
     return pageNumber;
@@ -67,7 +67,7 @@ int AdminErrorReports::getNoOfPages()
     return noOfPages;
 }
 
-//Setter
+//Setters
 void AdminErrorReports::setPageNumber(int newPageNumber)
 {
     pageNumber = newPageNumber;
@@ -82,12 +82,15 @@ void AdminErrorReports::setNoOfPages(int newNoOfPages)
 
 void AdminErrorReports::setDisplayedReports()
 {
+    //Calculate what index to start reports at for the current page
     int printReport = ((getPageNumber() - 1) * 6) + 1;
+    //read from files
     HandleCSV readReports;
     QStringList reports = readReports.getColData("Title", "dbReports");
     QStringList dates = readReports.getColData("Date", "dbReports");
     QStringList names = readReports.getColData("Sender", "dbReports");
     QStringList news = readReports.getColData("isNew", "dbReports");
+    //Display
     int i=0;
     UserAccount user;
     QString toPrint = "";
@@ -98,10 +101,6 @@ void AdminErrorReports::setDisplayedReports()
        reportLabels[i]->setText(elidedTitle);
        //Get DD/MM for display
        QString dateToPrint = dates.at(printReport);
-       //add 0 to dates in dmmyyyy format
-//       if(dateToPrint.size() == 7){
-//           dateToPrint = "0" + dateToPrint;
-//       }
        toPrint = dateToPrint[6];
        toPrint += dateToPrint[7];
        toPrint += "/";
@@ -128,8 +127,9 @@ void AdminErrorReports::setDisplayedReports()
        i++;
        printReport++;
     }
+    //blank out the spaces after the last user
     toPrint = "";
-    while(printReport >= reports.size() && i < 6){//blank out the spaces after the last user
+    while(printReport >= reports.size() && i < 6){
        reportLabels[i]->setText(toPrint);
        dateLabels[i]->setText(toPrint);
        nameLabels[i]->setText(toPrint);
@@ -169,6 +169,7 @@ void AdminErrorReports::updatePageNumberDisplay()
 
 void AdminErrorReports::viewButtonClicked(int button)
 {
+    //Show indiviual report
     ui->stackedWidget->setCurrentIndex(1);
     setSingleErrorReportDisplay(((getPageNumber()-1)*6)+button);
     updatePageNumberDisplay();
@@ -190,32 +191,33 @@ QString AdminErrorReports::formatNameForDisplay(UserAccount user)
 
 void AdminErrorReports::setSingleErrorReportDisplay(int report)
 {
+    //display sender
     HandleCSV readForReport;
     ErrorReport reportForDisplay = readForReport.getErrorReport(report);
     QStringList reportIDs = readForReport.getColData("Sender", "dbReports");
     UserAccount reporter = readForReport.getUserAccount(reportIDs.at(report).toInt());
     ui->lbl_sender->setText(formatNameForDisplay(reporter));
+    //display 'new' marker or not
     if(!reportForDisplay.getIsNew()){
         ui->lbl_newMarker->hide();
     }
     else{
          ui->lbl_newMarker->show();
     }
+    //fetch and format dd/mm date
     QString toPrint = "";
     QString date = QString::number(reportForDisplay.getDate());
-    //add 0 to dmmyyyy
-//    if(date.size() == 7){
-//        date = "0" + date;
-//    }
     toPrint = date[6];
     toPrint += date[7];
     toPrint += "/";
     toPrint += date[4];
     toPrint += date[5];
     ui->lbl_date->setText(toPrint);
+    //display other values
     ui->lbl_errorText->setText(reportForDisplay.getText());
     ui->lbl_reportTitle->setText(reportForDisplay.getTitle());
     ui->lbl_currentReport->setText(QString::number(report) + " of " + QString::number(reportIDs.size()-1));
+    //set page turning buttons
     if(report == reportIDs.size()-1){
         ui->btn_nextReport->setEnabled(false);
     }
@@ -296,6 +298,7 @@ void AdminErrorReports::on_btn_view_6_clicked()
 
 void AdminErrorReports::on_btn_previousReport_clicked()
 {
+    //fetch page number from label
     QString pageInfo = ui->lbl_currentReport->text();
     QChar check = 'a';
     QString current = "";
@@ -307,12 +310,14 @@ void AdminErrorReports::on_btn_previousReport_clicked()
         }
         i++;
     }
+    //decrement page
     setSingleErrorReportDisplay(current.toInt() - 1);
 }
 
 
 void AdminErrorReports::on_btn_nextReport_clicked()
 {
+    //fetch page number from label
     QString pageInfo = ui->lbl_currentReport->text();
     QChar check = 'a';
     QString current = "";
@@ -324,12 +329,14 @@ void AdminErrorReports::on_btn_nextReport_clicked()
         }
         i++;
     }
+    //Increment page
     setSingleErrorReportDisplay(current.toInt() + 1);
 }
 
 
 void AdminErrorReports::on_btn_markAsRead_clicked()
 {
+    //fetch page number from label
     QString pageInfo = ui->lbl_currentReport->text();
     QChar check = 'a';
     QString current = "";
@@ -341,15 +348,19 @@ void AdminErrorReports::on_btn_markAsRead_clicked()
         }
         i++;
     }
+    //Send new reort to files
     HandleCSV updateIsNew;
     updateIsNew.updateIsNewOfReport(current.toInt());
+    //update display
     setSingleErrorReportDisplay(current.toInt());
 }
 
 
 void AdminErrorReports::on_btn_backToReportList_clicked()
 {
+    //Return to list of reports
     ui->stackedWidget->setCurrentIndex(0);
+    //update list
     setDisplayedReports();
 }
 

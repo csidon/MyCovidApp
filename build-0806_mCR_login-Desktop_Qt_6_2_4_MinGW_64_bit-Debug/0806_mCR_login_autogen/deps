@@ -200,8 +200,11 @@
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -219,7 +222,9 @@
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmainwindow.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
+	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qscrollarea.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h \
 	D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h \

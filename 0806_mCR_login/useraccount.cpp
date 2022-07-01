@@ -189,35 +189,8 @@ UserAccount UserAccount::initialAccountSetup()
    return newAccount;
 }
 
-//UserAccount UserAccount::getUserData(int row)
-//{
-//    UserAccount extractedUser;
-
-//    QFile file(":/database/dummyPID.csv");
-//    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-//    {
-//        qDebug() << "File did not open";
-//        return extractedUser;
-//    }
-//    int i = 0;
-//    do
-//    {
-//        file.readLine();
-//        i++;
-//    } while (i < row);
-//    QString extractedRow = file.readLine().trimmed();
-//    QStringList rowValues = extractedRow.split(',');
 
 
-//    extractedUser = UserAccount(rowValues[0].toInt(), rowValues[1].toStdString(), rowValues[2].toStdString(), rowValues[3].toStdString(),
-//                rowValues[4].toStdString(), rowValues[5].toStdString(), rowValues[6].toStdString(), rowValues[7].toInt(), rowValues[8].toInt(),
-//                rowValues[9].toInt(), rowValues[10].toStdString());
-
-//    return extractedUser;
-//}
-
-
-// ******* MOVE TO AUTHDIALOG FILE
 // Assigns a new user a unique random UID
 void UserAccount::assignID()
 {
@@ -253,21 +226,11 @@ void UserAccount::requestQR()
         {
             QTextStream stream(&QRCodeRequests);
             stream << "\n" << this->getUserIDNumber();
-    //        stream << "\n" << this->getUserIDNumber() << "," << QDateTime::currentDateTime();
         }
         QRCodeRequests.close();
     }
 }
 
-void UserAccount::assignQR()
-{
-    //BUILD THIS - Associate a QR code with a user
-    // --- PSEUDOCODE/commenting---
-    // Function grabs a random QR code JPEG in "QR Code Generator" folder
-    // Moves JPEG from "QR Code Generator" folder to "Active User Data" folder
-    // Renames JPEG to [UID]+[YYMMDD].jpg // I think we should just use the UID; that way we can write a function to call it by uid and lose the QRAddress variable
-    // Adds new JPEG path to the respective userID's QRCodeAddress
-}
 
 void UserAccount::addTest(Test testToStore)
 {

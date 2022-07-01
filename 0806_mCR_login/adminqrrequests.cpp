@@ -4,7 +4,7 @@
 #include "useraccount.h"
 
 
-//Getter
+//Getters
 int AdminQRRequests::getPageNumber()
 {
     return pageNumber;
@@ -15,7 +15,7 @@ int AdminQRRequests::getNoOfPages()
     return noOfPages;
 }
 
-//Setter
+//Setters
 void AdminQRRequests::setPageNumber(int newPageNumber)
 {
     pageNumber = newPageNumber;
@@ -28,10 +28,11 @@ void AdminQRRequests::setNoOfPages(int newNoOfPages)
 
 void AdminQRRequests::assignmentButtonClicked(int button)
 {
+    //Calcuate user's index in an array read from the file
     int userIndex = ((getPageNumber()-1)*6)+button;
+    //read from files
     HandleCSV readUsers;
     QStringList allRequestingUsers = readUsers.getColData("userIDNumber", "dbQRRequests");
-    qDebug() << "button found list" << allRequestingUsers;
     UserAccount assignedUser = readUsers.getUserAccount(allRequestingUsers.at(userIndex).toInt());
     //User finds image
     QString fileName = QFileDialog::getOpenFileName(this,
@@ -48,7 +49,6 @@ void AdminQRRequests::assignmentButtonClicked(int button)
             readUsers.updatePID(assignedUser);
             //Page display
             allRequestingUsers.remove(userIndex);
-            qDebug() << "button list changed to" << allRequestingUsers;
             readUsers.removeQRRequest(allRequestingUsers);
             if(button == 1 && allRequestingUsers.size() < userIndex){
                 setPageNumber(getPageNumber()-1);
@@ -63,7 +63,7 @@ void AdminQRRequests::assignmentButtonClicked(int button)
 }
 
 
-//This function make the page number display correct based on pageNumber() and noOfPages
+//This function makes the page number display correct based on pageNumber() and noOfPages
 void AdminQRRequests::updatePageNumberDisplay()
 {
     HandleCSV countQRRequests;
@@ -102,7 +102,7 @@ AdminQRRequests::AdminQRRequests(QWidget *parent) :
     ui(new Ui::adminQRRequests)
 {
     ui->setupUi(this);
-    ui->btn_pageLeft->setEnabled(false);//start on page one; there's no page zero, so left button goes nowhere
+    ui->btn_pageLeft->setEnabled(false);//start on page one; there's no page zero, so left button would go nowhere
     //populating this array allows looping through the labels
     nameLabels[0] = ui->lbl_name_1;
     nameLabels[1] = ui->lbl_name_2;
@@ -125,6 +125,7 @@ AdminQRRequests::~AdminQRRequests()
 
 void AdminQRRequests::setDisplayedUsers(int currentPage)
 {
+    //calculate first user to display's index in the list read form the file
     int printUser = ((currentPage - 1) * 6) + 1;
     HandleCSV readQRRequests;//Access reading functions
     QStringList requestingUsers = readQRRequests.getColData("userIDNumber", "dbQRRequests");
@@ -184,42 +185,36 @@ void AdminQRRequests::on_btn_backToAdminHome_clicked()
 
 void AdminQRRequests::on_btn_assign_1_clicked()
 {
-    qDebug()<< "clicked button";
     assignmentButtonClicked(1);
 }
 
 
 void AdminQRRequests::on_btn_assign_2_clicked()
 {
-    qDebug()<< "clicked button";
     assignmentButtonClicked(2);
 }
 
 
 void AdminQRRequests::on_btn_assign_3_clicked()
 {
-    qDebug()<< "clicked button";
     assignmentButtonClicked(3);
 }
 
 
 void AdminQRRequests::on_btn_assign_4_clicked()
 {
-    qDebug()<< "clicked button";
     assignmentButtonClicked(4);
 }
 
 
 void AdminQRRequests::on_btn_assign_5_clicked()
 {
-    qDebug()<< "clicked button";
     assignmentButtonClicked(5);
 }
 
 
 void AdminQRRequests::on_btn_assign_6_clicked()
 {
-    qDebug()<< "clicked button";
     assignmentButtonClicked(6);
 }
 

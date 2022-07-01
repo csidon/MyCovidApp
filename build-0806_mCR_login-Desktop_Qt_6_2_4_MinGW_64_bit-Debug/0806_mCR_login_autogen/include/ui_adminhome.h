@@ -74,7 +74,7 @@ public:
 "background-color: rgba(255, 255, 255, 0);"));
         lbl_numberOfQRCodeRequests = new QLabel(AdminHome);
         lbl_numberOfQRCodeRequests->setObjectName(QString::fromUtf8("lbl_numberOfQRCodeRequests"));
-        lbl_numberOfQRCodeRequests->setGeometry(QRect(72, 200, 61, 111));
+        lbl_numberOfQRCodeRequests->setGeometry(QRect(70, 220, 61, 81));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("arial")});
         lbl_numberOfQRCodeRequests->setFont(font1);
@@ -82,7 +82,7 @@ public:
         lbl_numberOfQRCodeRequests->setAlignment(Qt::AlignCenter);
         lbl_numberOfIssuesReported = new QLabel(AdminHome);
         lbl_numberOfIssuesReported->setObjectName(QString::fromUtf8("lbl_numberOfIssuesReported"));
-        lbl_numberOfIssuesReported->setGeometry(QRect(210, 190, 141, 131));
+        lbl_numberOfIssuesReported->setGeometry(QRect(250, 220, 61, 81));
         lbl_numberOfIssuesReported->setFont(font1);
         lbl_numberOfIssuesReported->setStyleSheet(QString::fromUtf8("color: black;font-size: 100px;font-family: arial;"));
         lbl_numberOfIssuesReported->setAlignment(Qt::AlignCenter);
