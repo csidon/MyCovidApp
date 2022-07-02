@@ -169,14 +169,19 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qvectornd.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QCommonStyle \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFrame \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLayout \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidgetItem \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QToolBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -186,6 +191,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qcommonstyle.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
@@ -206,6 +212,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtoolbox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qwidget.h \

@@ -95,7 +95,7 @@ private:
 
     QStringList allVaxDates;
     QStringList allVaxManufs;
-
+public:
     Ui::EUHistory *ui;
 };
 

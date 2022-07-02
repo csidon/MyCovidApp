@@ -5,6 +5,7 @@ CustomListWidget::CustomListWidget(QListWidget*) : layout(new QVBoxLayout)
 {
     setLayout(layout);
     dispPageNum = new QLabel;
+
 //    connect(nextArrow, &QPushButton::clicked,this,&nextPage);
 //    connect(nextArrow, SIGNAL(clicked()),this, SLOT(nextPage(int, int)));
 //    connect(backArrow, SIGNAL(clicked()),this, SLOT(backPage(int, int)));

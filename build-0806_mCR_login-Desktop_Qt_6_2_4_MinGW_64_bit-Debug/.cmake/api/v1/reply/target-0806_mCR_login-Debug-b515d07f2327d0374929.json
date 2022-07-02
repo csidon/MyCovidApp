@@ -32,7 +32,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 73,
+				"line" : 87,
 				"parent" : 0
 			},
 			{
@@ -56,7 +56,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 95,
+				"line" : 109,
 				"parent" : 0
 			},
 			{
@@ -196,7 +196,12 @@
 				42,
 				45,
 				48,
-				61
+				50,
+				53,
+				56,
+				59,
+				62,
+				79
 			]
 		}
 	],
@@ -309,7 +314,12 @@
 				42,
 				45,
 				48,
-				61
+				50,
+				53,
+				56,
+				59,
+				62,
+				79
 			]
 		},
 		{
@@ -334,16 +344,25 @@
 				43,
 				44,
 				47,
-				50,
 				51,
 				52,
-				53,
-				54,
 				55,
-				56,
-				57,
 				58,
-				59
+				61,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77
 			]
 		},
 		{
@@ -362,15 +381,19 @@
 				41,
 				46,
 				49,
-				60
+				54,
+				57,
+				60,
+				63,
+				78
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				62,
-				63
+				80,
+				81
 			]
 		}
 	],
@@ -648,9 +671,90 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "handlepagemoves.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "handlepagemoves.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "whichhistory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "whichhistory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "whichhistory.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "vaccinehistory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "vaccinehistory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "vaccinehistory.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "testhistory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "testhistory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "testhistory.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "accountdetails.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "accountdetails.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "accountdetails.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_mainwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_accountdetails.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -705,6 +809,24 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_submiterrorreport.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_testhistory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_vaccinehistory.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_whichhistory.h",
 			"sourceGroupIndex" : 1
 		},
 		{

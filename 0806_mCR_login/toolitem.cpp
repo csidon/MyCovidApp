@@ -1,4 +1,5 @@
 #include "toolitem.h"
+#include "euhistory.h"
 #include <QFrame>
 
 //ToolItem::ToolItem(const QString &title, QWidget *item) : item(item)
@@ -24,7 +25,6 @@ ToolItem::ToolItem(QWidget *title, QWidget *item) : item(item)
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(title);
     layout->addWidget(item);
-
 //    item->setGeometry(0,0,320,800);
     item->setStyleSheet("border-style: none;"
                         "border-width: 1px;");
