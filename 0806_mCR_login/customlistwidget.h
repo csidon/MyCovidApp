@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QListWidget>
 #include <QPushButton>
+#include <QLayout>
 
 
 class CustomListWidget : public QListWidget
@@ -21,20 +22,24 @@ public:
 
     // Functions
     void addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *botLeft, QLabel *botRight);
+//    QVBoxLayout getLabelItem();
     void addArrows();
     void addPageNumDisplay(int page, int totalPages);
+
+    QPushButton *backArrow;
+    QPushButton *nextArrow;
 
 private:
     int currentPage;
     int totalPages;
     QVBoxLayout *layout;
-    QPushButton *backArrow;
-    QPushButton *nextArrow;
     QLabel *dispPageNum;
 private slots:
     void nextPage();
     void backPage();
 //    void on_nextArrow_clicked();
+
+
 
 };
 

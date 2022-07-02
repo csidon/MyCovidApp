@@ -1,4 +1,5 @@
 #include "customlistwidget.h"
+#include "handlepagemoves.h"
 
 CustomListWidget::CustomListWidget(QListWidget*) : layout(new QVBoxLayout)
 {
@@ -35,22 +36,33 @@ void CustomListWidget::addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *b
     QHBoxLayout *topLabel = new QHBoxLayout;
     topLabel->addWidget(uppLeft);
     topLabel->addWidget(uppRight);
+    qDebug() << "Created top Label layout ";
     QHBoxLayout *bottomLabel = new QHBoxLayout;
     bottomLabel->addWidget(botLeft);
     bottomLabel->addWidget(botRight);
+    qDebug() << "Created bottom Label layout";
 
     // Combining the layouts
     layout->addLayout(topLabel);
+    qDebug() << "Added top Label ";
     layout->addLayout(bottomLabel);
+    qDebug() << "Added bottom Label ";
     layout->addStretch();
+    qDebug() << "Stretch added ";
 //    QLabel *testLab = new QLabel;
 //    testLab->setText("Please do something");
 //    layout->addWidget(testLab);
 
-//    // Wrap it all with a QVBoxLayout -- Not working?
-//    QVBoxLayout *wrapper = new QVBoxLayout;
-//    wrapper->addLayout(layout);
+    // Wrap it all with a QVBoxLayout -- Not working?
+    QVBoxLayout *wrapper = new QVBoxLayout;
+    wrapper->addLayout(layout);
+    qDebug() << "Are we wrapping? ";
 }
+
+//QVBoxLayout CustomListWidget::getLabelItem()
+//{
+//    return layout;
+//}
 
 void CustomListWidget::addArrows()
 {
@@ -71,6 +83,12 @@ void CustomListWidget::addArrows()
     layout->addLayout(arrowContainer);
     connect(backArrow, &QPushButton::clicked,this,backPage);
     layout->addLayout(arrowContainer);
+//    connect(nextArrow, &QPushButton::clicked,&handlePageMoves,&handlePageMoves::goToNextPage);
+//    connect(this->nextArrow,&QPushButton::clicked, std::bind(EUHistory::goToNextPage,this));
+//    connect(nextArrow,&QPushButton::clicked,
+//            [](){&EUHistory::goToNextPage};);
+
+//            [EUHistorytestObj](){EUHistory::goToNextPage();});
 
 }
 
@@ -94,11 +112,6 @@ void CustomListWidget::addPageNumDisplay(int page, int totalPages)
         // Update pageNums
         qDebug() << "GETTEXT inside loop " << dispPageNum->text();
         dispPageNum->setText(pageOfPage);
-
-//        pageNumContainer->addWidget(dispPageNum);
-//        pageNumContainer->addWidget(dispPageNum);
-//        pageNumContainer->addWidget(dispPageNum->update(););
-//        pageNumContainer->update();
         qDebug() << "You are updating the page num display";
     }
     else        // Add pageNums

@@ -3,6 +3,8 @@
 #include "authdialog.h"
 #include "displaymyqrcode.h"
 #include "submiterrorreport.h"
+#include "euhistory.h"
+#include "customlistwidget.h"
 #include <QObject>
 
 MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
@@ -12,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
 
     HandleCSV accountReader;
     ui->setupUi(this);
+//    connect(&CustomListWidget::nextArrow, &QPushButton::clicked,
+//            )
     UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
     ui->lbl_welcomeMsg->setText("Kia Ora " + loggedInUser.getUserPreferredName());
     this->setLoggedInUserID(loggedInUserID);

@@ -67,6 +67,8 @@ set(PROJECT_SOURCES
         submiterrorreport.h
         submiterrorreport.cpp
         submiterrorreport.ui
+        handlepagemoves.cpp
+        handlepagemoves.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
