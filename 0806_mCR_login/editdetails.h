@@ -24,6 +24,8 @@ public:
 private slots:
     void on_btn_submit_clicked();
 
+    void on_btn_backToHome_clicked();
+
 private:
     Ui::editDetails *ui;
 };

@@ -1,7 +1,5 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_authdialog.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminaddvaccination.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h \
@@ -19,10 +17,8 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/submiterrorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDate \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \

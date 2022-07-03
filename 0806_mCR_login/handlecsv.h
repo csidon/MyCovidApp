@@ -60,9 +60,6 @@ public:
     //Mark report read
     void updateIsNewOfReport(int updateeIndex);
 
-    //Create dose and test files for a new user with the right headers
-    void initialAccountUserDBs(int uid);
-
 };
 
 #endif // HANDLECSV_H
