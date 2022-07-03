@@ -1,5 +1,4 @@
 #include "customlistwidget.h"
-#include "handlepagemoves.h"
 
 CustomListWidget::CustomListWidget(QListWidget*) : layout(new QVBoxLayout)
 {
