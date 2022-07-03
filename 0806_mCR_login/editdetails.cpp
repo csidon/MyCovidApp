@@ -48,5 +48,13 @@ void editDetails::on_btn_submit_clicked()
     updatedUser.setUserNHINumber(ui->lineEdit_NHI->text());
     updatedUser.setUserPhoneNumber(ui->lineEdit_phone->text().toInt());
     updateUser.updatePID(updatedUser);
+    QMessageBox::information(this, "User updated", "New info saved to server");
+    close();
+}
+
+
+void editDetails::on_btn_backToHome_clicked()
+{
+    close();
 }
 

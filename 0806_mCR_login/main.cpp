@@ -10,8 +10,6 @@
 #include "handlecsv.h"
 #include "covidtestforms.h"
 #include "euhistory.h"
-#include "vaccinehistory.h"
-#include "whichhistory.h"
 
 #include <QDebug>
 #include <QApplication>

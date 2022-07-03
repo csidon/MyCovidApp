@@ -29,43 +29,17 @@
     <pixmap resource="resources.qrc">:/images/topBar.png</pixmap>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_vaxHistoryView">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>280</y>
-     <width>281</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>View Vaccination History</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_accountDetailsView">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>460</y>
+     <y>130</y>
      <width>281</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>View Account Details</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_testHistoryView">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>100</y>
-     <width>281</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>View Past COVID-19 Tests</string>
+    <string>View Account, Tests, and Vaccinations</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_usersName">
@@ -107,7 +81,7 @@ background-color: rgba(255, 255, 255, 0);</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>190</y>
+     <y>400</y>
      <width>281</width>
      <height>61</height>
     </rect>
@@ -120,7 +94,7 @@ background-color: rgba(255, 255, 255, 0);</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>370</y>
+     <y>310</y>
      <width>281</width>
      <height>61</height>
     </rect>
@@ -133,7 +107,7 @@ background-color: rgba(255, 255, 255, 0);</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>550</y>
+     <y>220</y>
      <width>281</width>
      <height>61</height>
     </rect>
@@ -142,6 +116,13 @@ background-color: rgba(255, 255, 255, 0);</string>
     <string>Edit Account Details</string>
    </property>
   </widget>
+  <zorder>lbl_topBar</zorder>
+  <zorder>btn_accountDetailsView</zorder>
+  <zorder>lbl_usersName</zorder>
+  <zorder>btn_testAdd</zorder>
+  <zorder>btn_vaxAdd</zorder>
+  <zorder>btn_accountDetailsEdit</zorder>
+  <zorder>btn_backToSearch</zorder>
  </widget>
  <resources>
   <include location="resources.qrc"/>

@@ -1,9 +1,7 @@
 0806_mCR_login_autogen/timestamp: \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/CMakeLists.txt \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.cpp \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminaddvaccination.cpp \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminaddvaccination.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/addvaccination.cpp \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/addvaccination.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.cpp \
@@ -34,8 +32,6 @@
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/expandingtoolbox.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlepagemoves.cpp \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlepagemoves.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/main.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
@@ -44,16 +40,10 @@
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/submiterrorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.cpp \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.cpp \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.cpp \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/whichhistory.cpp \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/whichhistory.h \
   0806_mCR_login_autogen/moc_predefs.h \
   CMakeFiles/3.21.1/CMakeCXXCompiler.cmake \
   CMakeFiles/3.21.1/CMakeRCCompiler.cmake \
@@ -597,8 +587,7 @@
   D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.ui \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminaddvaccination.ui \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/addvaccination.ui \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.ui \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.ui \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.ui \
@@ -611,7 +600,4 @@
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.ui \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.ui \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/submiterrorreport.ui \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.ui \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.ui \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/whichhistory.ui \
   D:/Qt/Tools/CMake_64/bin/cmake.exe

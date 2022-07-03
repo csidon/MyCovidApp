@@ -21,9 +21,7 @@ class Ui_AdminUserSelected
 {
 public:
     QLabel *lbl_topBar;
-    QPushButton *btn_vaxHistoryView;
     QPushButton *btn_accountDetailsView;
-    QPushButton *btn_testHistoryView;
     QLabel *lbl_usersName;
     QPushButton *btn_backToSearch;
     QPushButton *btn_testAdd;
@@ -39,15 +37,9 @@ public:
         lbl_topBar->setObjectName(QString::fromUtf8("lbl_topBar"));
         lbl_topBar->setGeometry(QRect(-2, -15, 381, 91));
         lbl_topBar->setPixmap(QPixmap(QString::fromUtf8(":/images/topBar.png")));
-        btn_vaxHistoryView = new QPushButton(AdminUserSelected);
-        btn_vaxHistoryView->setObjectName(QString::fromUtf8("btn_vaxHistoryView"));
-        btn_vaxHistoryView->setGeometry(QRect(50, 280, 281, 61));
         btn_accountDetailsView = new QPushButton(AdminUserSelected);
         btn_accountDetailsView->setObjectName(QString::fromUtf8("btn_accountDetailsView"));
-        btn_accountDetailsView->setGeometry(QRect(50, 460, 281, 61));
-        btn_testHistoryView = new QPushButton(AdminUserSelected);
-        btn_testHistoryView->setObjectName(QString::fromUtf8("btn_testHistoryView"));
-        btn_testHistoryView->setGeometry(QRect(50, 100, 281, 61));
+        btn_accountDetailsView->setGeometry(QRect(50, 130, 281, 61));
         lbl_usersName = new QLabel(AdminUserSelected);
         lbl_usersName->setObjectName(QString::fromUtf8("lbl_usersName"));
         lbl_usersName->setGeometry(QRect(70, 0, 301, 61));
@@ -61,13 +53,20 @@ public:
 "background-color: rgba(255, 255, 255, 0);"));
         btn_testAdd = new QPushButton(AdminUserSelected);
         btn_testAdd->setObjectName(QString::fromUtf8("btn_testAdd"));
-        btn_testAdd->setGeometry(QRect(50, 190, 281, 61));
+        btn_testAdd->setGeometry(QRect(50, 400, 281, 61));
         btn_vaxAdd = new QPushButton(AdminUserSelected);
         btn_vaxAdd->setObjectName(QString::fromUtf8("btn_vaxAdd"));
-        btn_vaxAdd->setGeometry(QRect(50, 370, 281, 61));
+        btn_vaxAdd->setGeometry(QRect(50, 310, 281, 61));
         btn_accountDetailsEdit = new QPushButton(AdminUserSelected);
         btn_accountDetailsEdit->setObjectName(QString::fromUtf8("btn_accountDetailsEdit"));
-        btn_accountDetailsEdit->setGeometry(QRect(50, 550, 281, 61));
+        btn_accountDetailsEdit->setGeometry(QRect(50, 220, 281, 61));
+        lbl_topBar->raise();
+        btn_accountDetailsView->raise();
+        lbl_usersName->raise();
+        btn_testAdd->raise();
+        btn_vaxAdd->raise();
+        btn_accountDetailsEdit->raise();
+        btn_backToSearch->raise();
 
         retranslateUi(AdminUserSelected);
 
@@ -78,9 +77,7 @@ public:
     {
         AdminUserSelected->setWindowTitle(QCoreApplication::translate("AdminUserSelected", "Form", nullptr));
         lbl_topBar->setText(QString());
-        btn_vaxHistoryView->setText(QCoreApplication::translate("AdminUserSelected", "View Vaccination History", nullptr));
-        btn_accountDetailsView->setText(QCoreApplication::translate("AdminUserSelected", "View Account Details", nullptr));
-        btn_testHistoryView->setText(QCoreApplication::translate("AdminUserSelected", "View Past COVID-19 Tests", nullptr));
+        btn_accountDetailsView->setText(QCoreApplication::translate("AdminUserSelected", "View Account, Tests, and Vaccinations", nullptr));
         lbl_usersName->setText(QCoreApplication::translate("AdminUserSelected", "    Choose an Option", nullptr));
         btn_backToSearch->setText(QString());
         btn_testAdd->setText(QCoreApplication::translate("AdminUserSelected", "Add a COVID-19 Test", nullptr));
