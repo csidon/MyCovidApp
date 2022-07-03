@@ -40,9 +40,6 @@ set(PROJECT_SOURCES
         adminqrrequests.h
         adminqrrequests.cpp
         adminqrrequests.ui
-#        covidtestform.cpp
-#        covidtestform.h
-#        covidtestform.ui
         covidtestforms.cpp
         covidtestforms.h
         covidtestforms.ui
@@ -67,8 +64,9 @@ set(PROJECT_SOURCES
         submiterrorreport.h
         submiterrorreport.cpp
         submiterrorreport.ui
-        handlepagemoves.cpp
-        handlepagemoves.h
+        addvaccination.cpp
+        addvaccination.h
+        addvaccination.ui
         whichhistory.h
         whichhistory.cpp
         whichhistory.ui
@@ -84,6 +82,7 @@ set(PROJECT_SOURCES
         adminuserselected.h
         adminuserselected.cpp
         adminuserselected.ui
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
