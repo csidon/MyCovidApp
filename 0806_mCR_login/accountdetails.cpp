@@ -39,6 +39,6 @@ AccountDetails::~AccountDetails()
 
 void AccountDetails::on_btn_backToHome_clicked()
 {
-    close();
+    this->close();
 }
 
