@@ -38,26 +38,25 @@ void AdminUserSelected::on_btn_backToSearch_clicked()
 }
 
 
-void AdminUserSelected::on_btn_testHistoryView_clicked()
-{
-    testHistoryWindow.setLoggedInUser(selectedUserID);
-    testHistoryWindow.setDisplayedTests();
-    testHistoryWindow.show();
-}
-
-
-void AdminUserSelected::on_btn_vaxHistoryView_clicked()
-{
-    vaxHistoryWindow.setLoggedInUser(selectedUserID);
-    vaxHistoryWindow.setDisplayedDoses();
-    vaxHistoryWindow.show();
-}
-
 
 void AdminUserSelected::on_btn_accountDetailsView_clicked()
 {
-    detailsWindow.setLoggedInUserID(selectedUserID);
-    detailsWindow.setDisplay();
-    detailsWindow.show();
+    euHistoryWindow = new EUHistory(nullptr, selectedUserID);
+    euHistoryWindow->show();
+}
+
+
+void AdminUserSelected::on_btn_accountDetailsEdit_clicked()
+{
+    editDetailsWindow.setSelectedUserID(selectedUserID);
+    editDetailsWindow.displayCurrentDetails();
+    editDetailsWindow.show();
+}
+
+
+void AdminUserSelected::on_btn_testAdd_clicked()
+{
+    covidTestWindow = new CovidTestForms(nullptr, selectedUserID);
+    covidTestWindow->show();
 }
 

@@ -1,25 +1,34 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_adminsearchusers.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminuserselected.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/editdetails.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/euhistory.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/expandingtoolbox.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h \
-  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDate \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDir \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QFile \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QMap \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QRect \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QSize \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QSizeF \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/QStandardPaths \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QString \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QTextStream \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QVector \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qanystringview.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qarraydata.h \
@@ -42,6 +51,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcontainerinfo.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcontainertools_impl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qcontiguouscache.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qcoreevent.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qdatastream.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qdebug.h \
@@ -57,6 +67,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qhashfunctions.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qiodevice.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qiodevicebase.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qiterator.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qline.h \
@@ -69,6 +80,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qmetacontainer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qmetatype.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qnamespace.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qnativeinterface.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qnumeric.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qobject.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qobject_impl.h \
@@ -76,9 +88,11 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qobjectdefs_impl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qpair.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qpoint.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qpointer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qprocessordetection.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qrect.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qrefcount.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qscopedpointer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qscopeguard.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qset.h \
@@ -87,6 +101,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsharedpointer_impl.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qsize.h \
+  D:/Qt/6.2.4/mingw_64/include/QtCore/qstandardpaths.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstring.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstringalgorithms.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h \
@@ -108,37 +123,82 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvarlengtharray.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/qversiontagging.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/QMouseEvent \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/QStandardItemModel \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qcolor.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qcursor.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qevent.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qeventpoint.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qfont.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qfontinfo.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qfontmetrics.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qicon.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qimage.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qinputdevice.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpalette.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpixmap.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qpointingdevice.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qscreen.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qstandarditemmodel.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qtransform.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qvalidator.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qvector2d.h \
+  D:/Qt/6.2.4/mingw_64/include/QtGui/qvectornd.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QCommonStyle \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFrame \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLayout \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidgetItem \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QToolBox \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qcommonstyle.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayout.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistview.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qscrollarea.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qslider.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtoolbox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qwidget.h \

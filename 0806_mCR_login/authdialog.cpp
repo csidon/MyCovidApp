@@ -593,9 +593,6 @@ void AuthDialog::on_btn_nextDetails_2_clicked()
     HandleCSV CSVfile;
     CSVfile.writeToPIDCSV(newUser);
 
-    //Write new user dose and test databases
-    CSVfile.initialAccountUserDBs(getLoggedInUserID());
-
     // After 6 seconds, show "account created"
     QTimer::singleShot(6000,this,&AuthDialog::showAccountCreated);
 

@@ -67,22 +67,12 @@ set(PROJECT_SOURCES
         addvaccination.cpp
         addvaccination.h
         addvaccination.ui
-        whichhistory.h
-        whichhistory.cpp
-        whichhistory.ui
-        vaccinehistory.h
-        vaccinehistory.cpp
-        vaccinehistory.ui
-        testhistory.h
-        testhistory.cpp
-        testhistory.ui
-        accountdetails.h
-        accountdetails.cpp
-        accountdetails.ui
         adminuserselected.h
         adminuserselected.cpp
         adminuserselected.ui
-
+        editdetails.h
+        editdetails.cpp
+        editdetails.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

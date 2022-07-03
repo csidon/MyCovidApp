@@ -287,13 +287,6 @@ background-color: rgba(255, 255, 255, 0);</string>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="lbl_uidToPass">
-           <property name="text">
-            <string>000</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <spacer name="verticalSpacer">
            <property name="orientation">
             <enum>Qt::Vertical</enum>

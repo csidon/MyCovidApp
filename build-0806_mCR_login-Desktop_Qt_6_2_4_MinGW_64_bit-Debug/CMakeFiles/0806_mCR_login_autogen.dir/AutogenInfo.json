@@ -260,9 +260,9 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.h",
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/addvaccination.h",
 			"MU",
-			"EWIEGA46WW/moc_accountdetails.cpp",
+			"EWIEGA46WW/moc_addvaccination.cpp",
 			null
 		],
 		[
@@ -326,6 +326,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/editdetails.h",
+			"MU",
+			"EWIEGA46WW/moc_editdetails.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.h",
 			"MU",
 			"EWIEGA46WW/moc_errorreport.cpp",
@@ -350,12 +356,6 @@
 			null
 		],
 		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlepagemoves.h",
-			"MU",
-			"EWIEGA46WW/moc_handlepagemoves.cpp",
-			null
-		],
-		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -374,12 +374,6 @@
 			null
 		],
 		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.h",
-			"MU",
-			"EWIEGA46WW/moc_testhistory.cpp",
-			null
-		],
-		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h",
 			"MU",
 			"EWIEGA46WW/moc_toolitem.cpp",
@@ -389,18 +383,6 @@
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h",
 			"MU",
 			"EWIEGA46WW/moc_useraccount.cpp",
-			null
-		],
-		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.h",
-			"MU",
-			"EWIEGA46WW/moc_vaccinehistory.cpp",
-			null
-		],
-		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/whichhistory.h",
-			"MU",
-			"EWIEGA46WW/moc_whichhistory.cpp",
 			null
 		]
 	],
@@ -469,7 +451,7 @@
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.cpp",
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/addvaccination.cpp",
 			"MU",
 			null
 		],
@@ -524,6 +506,11 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/editdetails.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/errorreport.cpp",
 			"MU",
 			null
@@ -540,11 +527,6 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlecsv.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/handlepagemoves.cpp",
 			"MU",
 			null
 		],
@@ -569,27 +551,12 @@
 			null
 		],
 		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.cpp",
-			"MU",
-			null
-		],
-		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.cpp",
 			"MU",
 			null
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/whichhistory.cpp",
 			"MU",
 			null
 		]

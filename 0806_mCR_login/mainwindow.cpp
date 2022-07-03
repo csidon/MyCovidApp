@@ -46,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
 //    hiddenUIDlabel->setGeometry(300,70,62,20);
 //    hiddenUIDlabel->setNum(uid);
     ui->lbl_UID_toHide->setNum(loggedInUserID);
+    ui->lbl_UID_toHide->hide();
     if(loggedInUserID == 0){
         this->hide();
         qDebug() << "shoulda closed";

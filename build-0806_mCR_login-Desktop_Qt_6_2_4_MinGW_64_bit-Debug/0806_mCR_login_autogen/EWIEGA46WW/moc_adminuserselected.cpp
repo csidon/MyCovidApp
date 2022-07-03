@@ -24,7 +24,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AdminUserSelected_t {
     const uint offsetsAndSize[12];
-    char stringdata0[142];
+    char stringdata0[138];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_AdminUserSelected_t, stringdata0) + ofs), len 
@@ -33,15 +33,15 @@ static const qt_meta_stringdata_AdminUserSelected_t qt_meta_stringdata_AdminUser
 QT_MOC_LITERAL(0, 17), // "AdminUserSelected"
 QT_MOC_LITERAL(18, 27), // "on_btn_backToSearch_clicked"
 QT_MOC_LITERAL(46, 0), // ""
-QT_MOC_LITERAL(47, 30), // "on_btn_testHistoryView_clicked"
-QT_MOC_LITERAL(78, 29), // "on_btn_vaxHistoryView_clicked"
-QT_MOC_LITERAL(108, 33) // "on_btn_accountDetailsView_cli..."
+QT_MOC_LITERAL(47, 33), // "on_btn_accountDetailsView_cli..."
+QT_MOC_LITERAL(81, 33), // "on_btn_accountDetailsEdit_cli..."
+QT_MOC_LITERAL(115, 22) // "on_btn_testAdd_clicked"
 
     },
     "AdminUserSelected\0on_btn_backToSearch_clicked\0"
-    "\0on_btn_testHistoryView_clicked\0"
-    "on_btn_vaxHistoryView_clicked\0"
-    "on_btn_accountDetailsView_clicked"
+    "\0on_btn_accountDetailsView_clicked\0"
+    "on_btn_accountDetailsEdit_clicked\0"
+    "on_btn_testAdd_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -80,9 +80,9 @@ void AdminUserSelected::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         (void)_t;
         switch (_id) {
         case 0: _t->on_btn_backToSearch_clicked(); break;
-        case 1: _t->on_btn_testHistoryView_clicked(); break;
-        case 2: _t->on_btn_vaxHistoryView_clicked(); break;
-        case 3: _t->on_btn_accountDetailsView_clicked(); break;
+        case 1: _t->on_btn_accountDetailsView_clicked(); break;
+        case 2: _t->on_btn_accountDetailsEdit_clicked(); break;
+        case 3: _t->on_btn_testAdd_clicked(); break;
         default: ;
         }
     }

@@ -32,7 +32,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 87,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
@@ -56,7 +56,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 109,
+				"line" : 101,
 				"parent" : 0
 			},
 			{
@@ -197,11 +197,9 @@
 				45,
 				48,
 				50,
-				53,
-				56,
-				59,
-				62,
-				79
+				54,
+				57,
+				73
 			]
 		}
 	],
@@ -315,11 +313,9 @@
 				45,
 				48,
 				50,
-				53,
-				56,
-				59,
-				62,
-				79
+				54,
+				57,
+				73
 			]
 		},
 		{
@@ -345,10 +341,13 @@
 				44,
 				47,
 				51,
-				52,
-				55,
-				58,
+				53,
+				56,
+				59,
+				60,
 				61,
+				62,
+				63,
 				64,
 				65,
 				66,
@@ -356,13 +355,7 @@
 				68,
 				69,
 				70,
-				71,
-				72,
-				73,
-				74,
-				75,
-				76,
-				77
+				71
 			]
 		},
 		{
@@ -381,19 +374,18 @@
 				41,
 				46,
 				49,
-				54,
-				57,
-				60,
-				63,
-				78
+				52,
+				55,
+				58,
+				72
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				80,
-				81
+				74,
+				75
 			]
 		}
 	],
@@ -673,76 +665,49 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "handlepagemoves.cpp",
+			"path" : "addvaccination.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "handlepagemoves.h",
+			"path" : "addvaccination.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
-			"path" : "whichhistory.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 4,
-			"compileGroupIndex" : 0,
-			"path" : "whichhistory.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 4,
-			"path" : "whichhistory.ui",
+			"path" : "addvaccination.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
-			"path" : "vaccinehistory.h",
+			"path" : "adminuserselected.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "vaccinehistory.cpp",
+			"path" : "adminuserselected.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "vaccinehistory.ui",
+			"path" : "adminuserselected.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
-			"path" : "testhistory.h",
+			"path" : "editdetails.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "testhistory.cpp",
+			"path" : "editdetails.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "testhistory.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 4,
-			"path" : "accountdetails.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 4,
-			"compileGroupIndex" : 0,
-			"path" : "accountdetails.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 4,
-			"path" : "accountdetails.ui",
+			"path" : "editdetails.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -754,7 +719,7 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_accountdetails.h",
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_addvaccination.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -784,6 +749,12 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_adminuserselected.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_authdialog.h",
 			"sourceGroupIndex" : 1
 		},
@@ -802,6 +773,12 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_editdetails.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_euhistory.h",
 			"sourceGroupIndex" : 1
 		},
@@ -809,24 +786,6 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_submiterrorreport.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_testhistory.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_vaccinehistory.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_whichhistory.h",
 			"sourceGroupIndex" : 1
 		},
 		{

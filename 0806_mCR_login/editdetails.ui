@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AccountDetails</class>
- <widget class="QWidget" name="AccountDetails">
+ <class>editDetails</class>
+ <widget class="QWidget" name="editDetails">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,24 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="lbl_chooseAnOption">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>0</y>
-     <width>301</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:black;
-font-size:28px;
-font-family:arial;</string>
-   </property>
-   <property name="text">
-    <string> Your Account Details</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_backToHome">
    <property name="geometry">
     <rect>
@@ -46,22 +28,6 @@ background-color: rgba(255, 255, 255, 0);</string>
    </property>
    <property name="text">
     <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_topBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>-20</y>
-     <width>381</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="resources.qrc">:/images/topBar.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_fName">
@@ -82,12 +48,12 @@ color:#444444;</string>
     <string>First Name:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_lName">
+  <widget class="QLabel" name="lbl_phone">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>150</y>
-     <width>101</width>
+     <y>390</y>
+     <width>161</width>
      <height>41</height>
     </rect>
    </property>
@@ -97,7 +63,7 @@ font-size:18px;
 color:#444444;</string>
    </property>
    <property name="text">
-    <string>Last Name:</string>
+    <string>Phone Number:</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_pName">
@@ -118,6 +84,22 @@ color:#444444;</string>
     <string>Preferred Name:</string>
    </property>
   </widget>
+  <widget class="QLabel" name="lbl_topBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-20</y>
+     <width>381</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources.qrc">:/images/topBar.png</pixmap>
+   </property>
+  </widget>
   <widget class="QLabel" name="lbl_Email">
    <property name="geometry">
     <rect>
@@ -134,24 +116,6 @@ color:#444444;</string>
    </property>
    <property name="text">
     <string>Email:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_phone">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>390</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:18px;
-color:#444444;</string>
-   </property>
-   <property name="text">
-    <string>Phone Number:</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_NHI">
@@ -172,154 +136,131 @@ color:#444444;</string>
     <string>NHI Number:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_NHI_2">
+  <widget class="QLabel" name="lbl_lName">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>580</y>
-     <width>231</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:16px;
-color:#666666;</string>
-   </property>
-   <property name="text">
-    <string>If you need to change any of these details, plesae contact one of our administrators via Healthline (0800 611 116)</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_userFName">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>110</y>
-     <width>271</width>
+     <x>50</x>
+     <y>150</y>
+     <width>101</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">font-family:arial;
-font-size:22px;
-color:black;</string>
-   </property>
-   <property name="text">
-    <string>First Name:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_userLName">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>190</y>
-     <width>271</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:22px;
-color:black;</string>
+font-size:18px;
+color:#444444;</string>
    </property>
    <property name="text">
     <string>Last Name:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_userPName">
+  <widget class="QLabel" name="lbl_editDetails">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>70</x>
+     <y>0</y>
+     <width>301</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-size:28px;
+font-family:arial;</string>
+   </property>
+   <property name="text">
+    <string> Edit Account Details</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_firstName">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>110</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_lastName">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>190</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_preferredName">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
      <y>270</y>
-     <width>271</width>
-     <height>41</height>
+     <width>281</width>
+     <height>31</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:22px;
-color:black;</string>
-   </property>
-   <property name="text">
-    <string>Preferred Name:</string>
-   </property>
   </widget>
-  <widget class="QLabel" name="lbl_userEmail">
+  <widget class="QLineEdit" name="lineEdit_email">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>50</x>
      <y>350</y>
-     <width>271</width>
-     <height>41</height>
+     <width>281</width>
+     <height>31</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:22px;
-color:black;</string>
-   </property>
-   <property name="text">
-    <string>Email</string>
-   </property>
   </widget>
-  <widget class="QLabel" name="lbl_userPhone">
+  <widget class="QLineEdit" name="lineEdit_phone">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>50</x>
      <y>430</y>
-     <width>271</width>
-     <height>41</height>
+     <width>281</width>
+     <height>31</height>
     </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:22px;
-color:black;</string>
-   </property>
-   <property name="text">
-    <string>Phone Number</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_userNHI">
+  <widget class="QLineEdit" name="lineEdit_NHI">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>50</x>
      <y>510</y>
-     <width>271</width>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_submit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>580</y>
+     <width>171</width>
      <height>41</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">font-family:arial;
-font-size:22px;
-color:black;</string>
-   </property>
    <property name="text">
-    <string>NHI</string>
+    <string>Update Records</string>
    </property>
   </widget>
   <zorder>lbl_topBar</zorder>
-  <zorder>lbl_chooseAnOption</zorder>
   <zorder>btn_backToHome</zorder>
   <zorder>lbl_fName</zorder>
-  <zorder>lbl_lName</zorder>
+  <zorder>lbl_phone</zorder>
   <zorder>lbl_pName</zorder>
   <zorder>lbl_Email</zorder>
-  <zorder>lbl_phone</zorder>
   <zorder>lbl_NHI</zorder>
-  <zorder>lbl_NHI_2</zorder>
-  <zorder>lbl_userFName</zorder>
-  <zorder>lbl_userLName</zorder>
-  <zorder>lbl_userPName</zorder>
-  <zorder>lbl_userEmail</zorder>
-  <zorder>lbl_userPhone</zorder>
-  <zorder>lbl_userNHI</zorder>
+  <zorder>lbl_lName</zorder>
+  <zorder>lbl_editDetails</zorder>
+  <zorder>lineEdit_firstName</zorder>
+  <zorder>lineEdit_lastName</zorder>
+  <zorder>lineEdit_preferredName</zorder>
+  <zorder>lineEdit_email</zorder>
+  <zorder>lineEdit_phone</zorder>
+  <zorder>lineEdit_NHI</zorder>
+  <zorder>btn_submit</zorder>
  </widget>
  <resources>
   <include location="resources.qrc"/>
