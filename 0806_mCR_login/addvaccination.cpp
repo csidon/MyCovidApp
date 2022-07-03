@@ -37,6 +37,7 @@ void AddVaccination::on_pushButton_clicked()
 {
     // Used to capture dose information
     Dose collectDoseInfo;
+    collectDoseInfo.setDoseUserID(getLoggedInUserID());
 
     // Collecting date that user has entered in QSpinBox
     int yy = (ui->spinBox_YY->value() + 2000) * 10000;

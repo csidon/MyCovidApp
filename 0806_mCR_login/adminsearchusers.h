@@ -59,6 +59,10 @@ private slots:
 
     void on_btn_user_6_clicked();
 
+    void on_btn_backToAdminHome_clicked();
+
+    void on_lineEdit_searchBar_returnPressed();
+
 private:
     Ui::AdminSearchUsers *ui;
 };

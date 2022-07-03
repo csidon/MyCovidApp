@@ -44,7 +44,8 @@ QLabel
 	background-color: transparent;
 	color: #454544;
 	font-weight: bold;
-	font-size: 13px;
+        font-size: 13px;
+        font-family: Arial;
 
 }
 
@@ -506,15 +507,13 @@ QRadioButton::indicator::checked {
     image: url(:/images/radioBtns/cRadioChecked.png);
 }
 
-
-
 /*-----QTextEdit box outlines--------*/
-QTextEdit QLineEdit {
+QTextEdit {
 
     selection-color: yellow;
     selection-background-color: yellow;
-    box-shadow: 0 0 10px #ffcc01;
- border: 1px solid #ffcc01;
+    /*-- box-shadow: 0 0 10px #ffcc01;--*/
+    border: 1px solid #ffcc01;
 }
 
 
@@ -560,3 +559,35 @@ QSpinBox::down-arrow:disabled,
 QSpinBox::down-arrow:off { /* off state when value in min */
    image: url(:/images/radioBtns/spinDownDisabled.png);
 }
+
+/*-----QComboBox outlines--------*/
+QComboBox {
+
+    selection-color: #000;
+    background-color: #FFF1D1;
+    selection-background-color: #FFDE80;
+    border: 1px solid #ffcc01;
+    padding-left: 10px;
+}
+
+QComboBox::down-arrow {
+    border-image: url(:/images/downArrow.png);
+    width: 12px;
+    height: 12px;
+    margin-right: 15px;
+}
+
+QComboBox::on {
+    border: 2px solid #ffcc01;
+}
+
+
+QComboBox::QPushButton:disabled,
+QComboBox::QPushButton:off { /* off state when value in min */
+   image: url(:/images/radioBtns/spinDownDisabled.png);
+}
+QComboBox::drop-down
+{
+    border: 0px;
+}
+

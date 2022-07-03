@@ -10,12 +10,8 @@
 #include "handlecsv.h"
 #include "covidtestforms.h"
 #include "euhistory.h"
-<<<<<<< HEAD
-#include "vaccinehistory.h"
-#include "whichhistory.h"
 #include "addvaccination.h"
-=======
->>>>>>> 14f1bbcf0b1af5246485ed338ea063fc2c307001
+
 
 #include <QDebug>
 #include <QApplication>
@@ -94,10 +90,7 @@ int main(int argc, char *argv[])
     authdialog.exec();
     loggedInUserID = authdialog.getLoggedInUserID();
 
-//    WhichHistory w = WhichHistory(nullptr, 1089);
-//    w.show();
 
-//
     MainWindow w = MainWindow(nullptr, loggedInUserID);
     w.setLoggedInUserID(loggedInUserID);
 
@@ -106,14 +99,12 @@ int main(int argc, char *argv[])
         qDebug() << "You Are NOT an ADMIN";
         w.show();
     }
-<<<<<<< HEAD
 
-    AddVaccination testVax;
-    testVax.setLoggedInUserID(loggedInUserID);
-    testVax.show();
 
-=======
->>>>>>> 14f1bbcf0b1af5246485ed338ea063fc2c307001
+//    AddVaccination testVax;
+//    testVax.setLoggedInUserID(loggedInUserID);
+//    testVax.show();
+
      return a.exec();
 }
 

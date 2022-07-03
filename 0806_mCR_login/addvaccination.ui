@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="lbl_dateOfTest">
@@ -417,7 +417,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Back to homepage</string>
+          <string>BACK TO HOMEPAGE</string>
          </property>
         </widget>
        </item>
@@ -456,7 +456,7 @@
     <rect>
      <x>70</x>
      <y>-2</y>
-     <width>301</width>
+     <width>251</width>
      <height>61</height>
     </rect>
    </property>

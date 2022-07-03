@@ -157,15 +157,15 @@ color:#444444;</string>
   <widget class="QLabel" name="lbl_editDetails">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>80</x>
      <y>0</y>
-     <width>301</width>
+     <width>221</width>
      <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">color:black;
-font-size:28px;
+font-size:20px;
 font-family:arial;</string>
    </property>
    <property name="text">

@@ -4,6 +4,7 @@
 #include "covidtestforms.h"
 #include "editdetails.h"
 #include "euhistory.h"
+#include "addvaccination.h"
 #include <QWidget>
 
 namespace Ui {
@@ -18,6 +19,8 @@ private:
     editDetails editDetailsWindow;
     EUHistory *euHistoryWindow;
     CovidTestForms *covidTestWindow;
+    AddVaccination *addVaxWindow;
+
 
 public:
     explicit AdminUserSelected(QWidget *parent = nullptr);
@@ -35,6 +38,8 @@ private slots:
     void on_btn_accountDetailsEdit_clicked();
 
     void on_btn_testAdd_clicked();
+
+    void on_btn_vaxAdd_clicked();
 
 private:
     Ui::AdminUserSelected *ui;
