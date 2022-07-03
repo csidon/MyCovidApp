@@ -4,7 +4,6 @@ CustomListWidget::CustomListWidget(QListWidget*) : layout(new QVBoxLayout)
 {
     setLayout(layout);
     dispPageNum = new QLabel;
-
 }
 
 int CustomListWidget::getPage()

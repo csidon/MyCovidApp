@@ -64,10 +64,30 @@ set(PROJECT_SOURCES
         submiterrorreport.h
         submiterrorreport.cpp
         submiterrorreport.ui
+<<<<<<< HEAD
         addvaccination.cpp
         addvaccination.h
         addvaccination.ui
 
+=======
+        handlepagemoves.cpp
+        handlepagemoves.h
+        whichhistory.h
+        whichhistory.cpp
+        whichhistory.ui
+        vaccinehistory.h
+        vaccinehistory.cpp
+        vaccinehistory.ui
+        testhistory.h
+        testhistory.cpp
+        testhistory.ui
+        accountdetails.h
+        accountdetails.cpp
+        accountdetails.ui
+        adminuserselected.h
+        adminuserselected.cpp
+        adminuserselected.ui
+>>>>>>> 593a2347f80967ac6bb641ee61d6c1f8b2790c1c
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

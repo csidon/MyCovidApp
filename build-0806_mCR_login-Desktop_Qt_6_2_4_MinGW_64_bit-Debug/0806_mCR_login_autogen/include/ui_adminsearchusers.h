@@ -38,6 +38,12 @@ public:
     QLabel *lbl_foundName_4;
     QLabel *lbl_foundName_5;
     QLabel *lbl_foundName_6;
+    QPushButton *btn_user_2;
+    QPushButton *btn_user_1;
+    QPushButton *btn_user_6;
+    QPushButton *btn_user_4;
+    QPushButton *btn_user_3;
+    QPushButton *btn_user_5;
     QWidget *page_2;
 
     void setupUi(QWidget *AdminSearchUsers)
@@ -122,6 +128,36 @@ public:
         lbl_foundName_6->setStyleSheet(QString::fromUtf8("font-family:arial;\n"
 "font-size:18px;\n"
 "color:black;"));
+        btn_user_2 = new QPushButton(page);
+        btn_user_2->setObjectName(QString::fromUtf8("btn_user_2"));
+        btn_user_2->setGeometry(QRect(0, 140, 381, 81));
+        btn_user_2->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_user_1 = new QPushButton(page);
+        btn_user_1->setObjectName(QString::fromUtf8("btn_user_1"));
+        btn_user_1->setGeometry(QRect(0, 60, 381, 81));
+        btn_user_1->setStyleSheet(QString::fromUtf8("background-color:  rgba(255,255,255,0.1);\n"
+""));
+        btn_user_6 = new QPushButton(page);
+        btn_user_6->setObjectName(QString::fromUtf8("btn_user_6"));
+        btn_user_6->setGeometry(QRect(0, 470, 381, 81));
+        btn_user_6->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_user_4 = new QPushButton(page);
+        btn_user_4->setObjectName(QString::fromUtf8("btn_user_4"));
+        btn_user_4->setGeometry(QRect(0, 300, 381, 81));
+        btn_user_4->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_user_3 = new QPushButton(page);
+        btn_user_3->setObjectName(QString::fromUtf8("btn_user_3"));
+        btn_user_3->setGeometry(QRect(0, 220, 381, 81));
+        btn_user_3->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
+        btn_user_5 = new QPushButton(page);
+        btn_user_5->setObjectName(QString::fromUtf8("btn_user_5"));
+        btn_user_5->setGeometry(QRect(0, 390, 381, 81));
+        btn_user_5->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
+""));
         stackedWidget->addWidget(page);
         lbl_stripedBackground->raise();
         btn_pageLeft->raise();
@@ -137,6 +173,12 @@ public:
         lbl_foundName_4->raise();
         lbl_foundName_5->raise();
         lbl_foundName_6->raise();
+        btn_user_2->raise();
+        btn_user_3->raise();
+        btn_user_1->raise();
+        btn_user_4->raise();
+        btn_user_5->raise();
+        btn_user_6->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
         stackedWidget->addWidget(page_2);
@@ -163,6 +205,12 @@ public:
         lbl_foundName_4->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
         lbl_foundName_5->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
         lbl_foundName_6->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
+        btn_user_2->setText(QString());
+        btn_user_1->setText(QString());
+        btn_user_6->setText(QString());
+        btn_user_4->setText(QString());
+        btn_user_3->setText(QString());
+        btn_user_5->setText(QString());
     } // retranslateUi
 
 };

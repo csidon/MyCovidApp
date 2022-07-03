@@ -15,11 +15,10 @@ QStringList AdminSearchUsers::getSearchResultIDs()
 }
 
 //Setters
-void AdminSearchUsers::setSearchResultIDs( QStringList newSearchResultIDs)
+void AdminSearchUsers::setSearchResultIDs(QStringList newSearchResultIDs)
 {
     searchResultIDs = newSearchResultIDs;
 }
-
 
 void AdminSearchUsers::setPageNumber(int newPageNumber)
 {
@@ -34,11 +33,16 @@ void AdminSearchUsers::setDisplayedResults()
     int i = 0;
     HandleCSV getUser;
     UserAccount gotUser;
+    //disable buttons
+    for(int i = 0; i < 6; i++){
+        buttons[i]->setEnabled(false);
+    }
     while( i < 6 && firstResult <= searchResultIDs.size()){
         gotUser = getUser.getUserAccount(searchResultIDs.at(firstResult-1).toInt());
         labels[i]->setText(formatNameForDisplay(gotUser));
+        buttons[i]->setEnabled(true);
         i++;
-        firstResult++;
+        firstResult++;       
     }
     //blank out any remaining slots
     for(i = i; i < 6; i++){
@@ -79,6 +83,16 @@ QString AdminSearchUsers::formatNameForDisplay(UserAccount user)
     return toPrint;
 }
 
+void AdminSearchUsers::button(int btnNumber)
+{
+    QStringList results = getSearchResultIDs();
+    int result = ((pageNumber-1)*6)+btnNumber -1;
+    qDebug() << "Error is regarding results" <<result << " " << results;
+    userSelectedWindow.setSelectedUserID(results.at(result).toInt());
+    userSelectedWindow.show();
+    userSelectedWindow.setTitleText();
+}
+
 
 
 
@@ -87,13 +101,23 @@ AdminSearchUsers::AdminSearchUsers(QWidget *parent) :
     ui(new Ui::AdminSearchUsers)
 {
     ui->setupUi(this);
-    //populate array to enable looping
+    //populate arrays to enable looping
     labels[0] = ui->lbl_foundName_1;
     labels[1] = ui->lbl_foundName_2;
     labels[2] = ui->lbl_foundName_3;
     labels[3] = ui->lbl_foundName_4;
     labels[4] = ui->lbl_foundName_5;
     labels[5] = ui->lbl_foundName_6;
+    buttons[0] = ui->btn_user_1;
+    buttons[1] = ui->btn_user_2;
+    buttons[2] = ui->btn_user_3;
+    buttons[3] = ui->btn_user_4;
+    buttons[4] = ui->btn_user_5;
+    buttons[5] = ui->btn_user_6;
+    //disable buttons
+    for(int i = 0; i < 6; i++){
+        buttons[i]->setEnabled(false);
+    }
     //blank out as no search is yet made
     for(int i = 0; i < 6; i++){
         labels[i]->setText("");
@@ -204,5 +228,41 @@ void AdminSearchUsers::on_btn_pageRight_clicked()
 {
     setPageNumber(getPageNumber()+1);
     setDisplayedResults();
+}
+
+
+void AdminSearchUsers::on_btn_user_1_clicked()
+{
+    button(1);
+}
+
+
+void AdminSearchUsers::on_btn_user_2_clicked()
+{
+     button(2);
+}
+
+
+void AdminSearchUsers::on_btn_user_3_clicked()
+{
+     button(3);
+}
+
+
+void AdminSearchUsers::on_btn_user_4_clicked()
+{
+     button(4);
+}
+
+
+void AdminSearchUsers::on_btn_user_5_clicked()
+{
+     button(5);
+}
+
+
+void AdminSearchUsers::on_btn_user_6_clicked()
+{
+     button(6);
 }
 

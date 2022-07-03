@@ -10,6 +10,8 @@
 #include "handlecsv.h"
 #include "covidtestforms.h"
 #include "euhistory.h"
+#include "vaccinehistory.h"
+#include "whichhistory.h"
 
 #include <QDebug>
 #include <QApplication>
@@ -82,20 +84,25 @@ int main(int argc, char *argv[])
 //    EUHistory historyTest;
 //    historyTest.show();
 
+
     AuthDialog authdialog;
     authdialog.setModal(true);
     authdialog.exec();
     loggedInUserID = authdialog.getLoggedInUserID();
 
-    MainWindow w = MainWindow(nullptr, loggedInUserID);
-    w.setLoggedInUserID(loggedInUserID);
+    WhichHistory w = WhichHistory(nullptr, 1089);
+    w.show();
 
-    if (loggedInUserID !=42)
-    {
-        qDebug() << "You Are NOT an ADMIN";
-        w.show();
-    }
-
-    return a.exec();
+//
+//    MainWindow w = MainWindow(nullptr, loggedInUserID);
+//    w.setLoggedInUserID(loggedInUserID);
+//
+//    if (loggedInUserID !=42)
+//    {
+//        qDebug() << "You Are NOT an ADMIN";
+//        w.show();
+//    }
+//
+     return a.exec();
 }
 

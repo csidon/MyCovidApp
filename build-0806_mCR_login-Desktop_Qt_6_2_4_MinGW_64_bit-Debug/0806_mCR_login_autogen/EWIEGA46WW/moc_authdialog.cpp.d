@@ -1,9 +1,11 @@
 C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/EWIEGA46WW/moc_authdialog.cpp: C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/moc_predefs.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/accountdetails.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminhome.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminqrrequests.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminuserselected.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/covidtestforms.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/customlistwidget.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/displaymyqrcode.h \
@@ -15,8 +17,10 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/mainwindow.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/submiterrorreport.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/test.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/testhistory.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/toolitem.h \
   C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/useraccount.h \
+  C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/vaccinehistory.h \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDate \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.2.4/mingw_64/include/QtCore/QDebug \
@@ -169,14 +173,19 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtGui/qvectornd.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.2.4/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QCommonStyle \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QDialog \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QFrame \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLabel \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QLayout \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidget \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QListWidgetItem \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QScrollArea \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/QToolBox \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -186,6 +195,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qcommonstyle.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qframe.h \
@@ -206,6 +216,7 @@ C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Deskto
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
+  D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtoolbox.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/Qt/6.2.4/mingw_64/include/QtWidgets/qwidget.h \
