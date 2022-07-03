@@ -170,9 +170,9 @@ public:
 ""));
         lbl_reportedIssues = new QLabel(page);
         lbl_reportedIssues->setObjectName(QString::fromUtf8("lbl_reportedIssues"));
-        lbl_reportedIssues->setGeometry(QRect(70, 0, 301, 61));
+        lbl_reportedIssues->setGeometry(QRect(70, 0, 251, 61));
         lbl_reportedIssues->setStyleSheet(QString::fromUtf8("color:black;\n"
-"font-size:28px;\n"
+"font-size:20px;\n"
 "font-family:arial;"));
         btn_view_3 = new QPushButton(page);
         btn_view_3->setObjectName(QString::fromUtf8("btn_view_3"));
@@ -333,9 +333,9 @@ public:
         lbl_background->setStyleSheet(QString::fromUtf8("background-color:white;"));
         lbl_viewReport = new QLabel(page_2);
         lbl_viewReport->setObjectName(QString::fromUtf8("lbl_viewReport"));
-        lbl_viewReport->setGeometry(QRect(72, -5, 301, 61));
+        lbl_viewReport->setGeometry(QRect(72, 1, 221, 50));
         lbl_viewReport->setStyleSheet(QString::fromUtf8("color:black;\n"
-"font-size:28px;\n"
+"font-size:20px;\n"
 "font-family:arial;"));
         lbl_topBar_2 = new QLabel(page_2);
         lbl_topBar_2->setObjectName(QString::fromUtf8("lbl_topBar_2"));
@@ -412,7 +412,7 @@ public:
 
         retranslateUi(AdminErrorReports);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(AdminErrorReports);

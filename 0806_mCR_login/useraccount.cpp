@@ -187,7 +187,7 @@ void UserAccount::assignID()
     int ID = 0;
     bool freshID = false;
     while(freshID == false){
-        ID = rand();
+        ID = rand()+1;
         //In use already?
         freshID = true;
         HandleCSV checkID;

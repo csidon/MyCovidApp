@@ -90,9 +90,9 @@ public:
 "color:#444444;"));
         lbl_editDetails = new QLabel(editDetails);
         lbl_editDetails->setObjectName(QString::fromUtf8("lbl_editDetails"));
-        lbl_editDetails->setGeometry(QRect(70, 0, 301, 61));
+        lbl_editDetails->setGeometry(QRect(80, 0, 221, 61));
         lbl_editDetails->setStyleSheet(QString::fromUtf8("color:black;\n"
-"font-size:28px;\n"
+"font-size:20px;\n"
 "font-family:arial;"));
         lineEdit_firstName = new QLineEdit(editDetails);
         lineEdit_firstName->setObjectName(QString::fromUtf8("lineEdit_firstName"));

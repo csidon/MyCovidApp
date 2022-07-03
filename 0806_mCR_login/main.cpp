@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     MainWindow w = MainWindow(nullptr, loggedInUserID);
     w.setLoggedInUserID(loggedInUserID);
 
-    if (loggedInUserID !=42)
+    if (loggedInUserID !=42 && loggedInUserID > 0)
     {
         qDebug() << "You Are NOT an ADMIN";
         w.show();

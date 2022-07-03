@@ -2,17 +2,18 @@
 #include "handlecsv.h"
 #include "ui_editdetails.h"
 #include "useraccount.h"
-
+//Getter
 int editDetails::getSelectedUserID()
 {
     return selectedUserID;
 }
-
+//Setter
 void editDetails::setSelectedUserID(int newSelectedUserID)
 {
     selectedUserID = newSelectedUserID;
 }
 
+//Display details
 void editDetails::displayCurrentDetails()
 {
     HandleCSV getDetails;
@@ -37,6 +38,7 @@ editDetails::~editDetails()
     delete ui;
 }
 
+//Taks current text and saves it to PID
 void editDetails::on_btn_submit_clicked()
 {
     HandleCSV updateUser;
@@ -48,8 +50,9 @@ void editDetails::on_btn_submit_clicked()
     updatedUser.setUserNHINumber(ui->lineEdit_NHI->text());
     updatedUser.setUserPhoneNumber(ui->lineEdit_phone->text().toInt());
     updateUser.updatePID(updatedUser);
+    //Notify success
     QMessageBox::information(this, "User updated", "New info saved to server");
-    close();
+    close();//Return to menu
 }
 
 

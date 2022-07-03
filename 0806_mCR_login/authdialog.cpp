@@ -105,7 +105,7 @@ int AuthDialog::authUser(QString usrn, QString pass, QString dbName)    // Note 
 {
     HandleCSV checkUser;
     UserAccount grabbedUser; // To store user data if checkUser authenticates
-    if (usrn == "darth.vader@betrayal.com" && pass == "I'm Your Father")
+    if (usrn == "darth.vader@betrayal.com" && pass == "I'm Your Fath3r")
     {
         qDebug() << "You an ADMIN";
         return 42;      // User is immediately authenticated as admin
