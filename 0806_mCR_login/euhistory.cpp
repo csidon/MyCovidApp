@@ -15,17 +15,17 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     // These objects will not be deleted when the user hits next/back arrows
     overallWrapper = new QVBoxLayout;
     pageIntro = new QVBoxLayout;
-    userProfile = new QVBoxLayout;
+//    userProfile = new QVBoxLayout;
     overarchingLayout = new QVBoxLayout;
-    toolBox = new ExpandingToolBox;
-    profileToolBox = new ExpandingToolBox;
+//    toolBox = new ExpandingToolBox;
+//    profileToolBox = new ExpandingToolBox;
     pageHeader = new QLabel;
     dispUserName = new QLabel;
     dispNHI = new QLabel;
 
 
     printPageIntro();
-    printEUprofile();
+//    printEUprofile();
     collectAllTestInfo();
     collectAllVaxInfo();
     printEUHistory(1);   // Prints the overarchingLayout
@@ -93,67 +93,18 @@ void EUHistory::printPageIntro()
 
 void EUHistory::printEUprofile()
 {
-    // Create a single toolbox for EU Profile
-    profileToolBox = new ExpandingToolBox;
+//    // Create a single toolbox for EU Profile
+////    profileToolBox = new ExpandingToolBox;
 
-    //---------------------------------------------
-    // Retrieving user information
-    //--------
-    HandleCSV accountReader;
-    UserAccount loggedInUser = accountReader.getUserAccount(getLoggedInUserID());
-    // Create title labels
-    QLabel *prefNamelab = new QLabel;
-    QLabel *fNamelab = new QLabel;
-    QLabel *lNamelab = new QLabel;
-    QLabel *dispNHIlab = new QLabel;
-    QLabel *emaillab = new QLabel;
-    QLabel *phonelab = new QLabel;
-    prefNamelab->setText("Preferred Name");
-    fNamelab->setText("First Name");
-    lNamelab->setText("Last Name");
-    dispNHIlab->setText("NHI Number");
-    emaillab->setText("Email Address");
-    phonelab->setText("Phone Number");
 
-    //---------------------------------------------
-    // Shows user information at the top
-    //-----------------------
-    QLabel *prefName = new QLabel;
-    QLabel *fName = new QLabel;
-    QLabel *lName = new QLabel;
-    QLabel *dispNHI = new QLabel;
-    QLabel *email = new QLabel;
-    QLabel *phone = new QLabel;
 
-    prefName->setText(" " + loggedInUser.getUserPreferredName());
-    fName->setText(" " + loggedInUser.getUserFirstName());
-    lName->setText(" " + loggedInUser.getUserLastName());
-    email->setText(" " + loggedInUser.getUserEmail());
-    phone->setText(" " + QString::number(loggedInUser.getUserPhoneNumber()));
+//    // Add this to the single collapsible toolbox
+//    CustomListWidget *userProfileList = new CustomListWidget;
 
-    QString displayNHI;
-    if (loggedInUser.getUserNHINumber() == "")
-    {
-        displayNHI = " NHI Not Entered";
-    }
-    else
-    {
-        displayNHI = " " + loggedInUser.getUserNHINumber();
-    }
-    dispNHI->setText(displayNHI);
 
-    // Add this to the single collapsible toolbox
-    CustomListWidget *userProfileList = new CustomListWidget;
-    userProfileList->addProfileItem(prefNamelab,prefName);
-    userProfileList->addProfileItem(fNamelab,fName);
-    userProfileList->addProfileItem(lNamelab,lName);
-    userProfileList->addProfileItem(dispNHIlab,dispNHI);
-    userProfileList->addProfileItem(emaillab,email);
-    userProfileList->addProfileItem(phonelab,phone);
-
-    profileToolBox->addItem(new ToolItem(new QLabel("USER DETAILS"), userProfileList));
-    userProfile->addWidget(profileToolBox);
-    overallWrapper->addLayout(userProfile);
+//    profileToolBox->addItem(new ToolItem(new QLabel("USER DETAILS"), userProfileList));
+//    userProfile->addWidget(profileToolBox);
+//    overallWrapper->addLayout(userProfile);
 }
 
 
@@ -321,6 +272,7 @@ void EUHistory::collectAllVaxInfo()
 void EUHistory::printEUHistory(int page)
 {
     toolBox = new ExpandingToolBox;
+    userProfile = new CustomListWidget;
     c19VaxHistory = new CustomListWidget;
     c19TestList = new CustomListWidget;
     //------
@@ -328,6 +280,65 @@ void EUHistory::printEUHistory(int page)
     qDebug() << "Printing the pages' toolbox with content";
     qDebug() << "for totalPages = " << totalPages << " currentPage =  " <<
                 currentPage << " moving to page = " << movingToPage;
+    //##########################################
+    // First printing user profile information
+    //-------------------------------
+
+    //---- Retrieving user information ----
+    HandleCSV accountReader;
+    UserAccount loggedInUser = accountReader.getUserAccount(getLoggedInUserID());
+
+    //---- Create title labels ----
+    QLabel *prefNamelab = new QLabel;
+    QLabel *fNamelab = new QLabel;
+    QLabel *lNamelab = new QLabel;
+    QLabel *dispNHIlab = new QLabel;
+    QLabel *emaillab = new QLabel;
+    QLabel *phonelab = new QLabel;
+    prefNamelab->setText("Preferred Name");
+    fNamelab->setText("First Name");
+    lNamelab->setText("Last Name");
+    dispNHIlab->setText("NHI Number");
+    emaillab->setText("Email Address");
+    phonelab->setText("Phone Number");
+
+    //---- Create and retrieve data labels ----
+    QLabel *prefName = new QLabel;
+    QLabel *fName = new QLabel;
+    QLabel *lName = new QLabel;
+    QLabel *dispNHI = new QLabel;
+    QLabel *email = new QLabel;
+    QLabel *phone = new QLabel;
+
+    prefName->setText(" " + loggedInUser.getUserPreferredName());
+    fName->setText(" " + loggedInUser.getUserFirstName());
+    lName->setText(" " + loggedInUser.getUserLastName());
+    email->setText(" " + loggedInUser.getUserEmail());
+    phone->setText(" " + QString::number(loggedInUser.getUserPhoneNumber()));
+
+    QString displayNHI;
+    if (loggedInUser.getUserNHINumber() == "")
+    {
+        displayNHI = " NHI Not Entered";
+    }
+    else
+    {
+        displayNHI = " " + loggedInUser.getUserNHINumber();
+    }
+    dispNHI->setText(displayNHI);
+
+    //---- Adding to userProfile CustomListWidget ----
+
+    userProfile->addProfileItem(prefNamelab,prefName);
+    userProfile->addProfileItem(fNamelab,fName);
+    userProfile->addProfileItem(lNamelab,lName);
+    userProfile->addProfileItem(dispNHIlab,dispNHI);
+    userProfile->addProfileItem(emaillab,email);
+    userProfile->addProfileItem(phonelab,phone);
+    // ---- Adding to toolbox -----
+    toolBox->addItem(new ToolItem(new QLabel("USER DETAILS"), userProfile));
+
+
     //##################################
     // Printing Vaccination Data
     //---------------------------

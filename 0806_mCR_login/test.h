@@ -10,21 +10,21 @@ class Test
 {
 private:
     int testUserID;
-    QString testDate;
+    int testDate;
     bool testResult;
-    QString testRecDate;
+    int testRecDate;
 public:
     //Getters
     int getTestUserID();
-    QString getTestDate();
+    int getTestDate();
     bool getTestResult();
-    QString getTestRecDate();
+    int getTestRecDate();
 
     //Setters
     void setTestUserID(int userID);
-    void setTestDate(QString date);
+    void setTestDate(int date);
     void setTestResult(bool result);
-    void setTestRecDate(QString recDate);
+    void setTestRecDate(int recDate);
 
     //Constructor
     Test();

@@ -81,9 +81,10 @@ private:
     ExpandingToolBox *toolBox;
     CustomListWidget *c19VaxHistory;
     CustomListWidget *c19TestList;
+    CustomListWidget *userProfile;
     QVBoxLayout *overallWrapper;
     QVBoxLayout *pageIntro;
-    QVBoxLayout *userProfile;
+//    QVBoxLayout *userProfile;
     QVBoxLayout *overarchingLayout;
 
 

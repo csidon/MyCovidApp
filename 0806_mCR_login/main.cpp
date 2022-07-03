@@ -96,13 +96,12 @@ int main(int argc, char *argv[])
 //
     MainWindow w = MainWindow(nullptr, loggedInUserID);
     w.setLoggedInUserID(loggedInUserID);
-//
-   if (loggedInUserID !=42)
-   {
-       qDebug() << "You Are NOT an ADMIN";
-       w.show();
-   }
-//
+
+    if (loggedInUserID !=42)
+    {
+        qDebug() << "You Are NOT an ADMIN";
+        w.show();
+    }
      return a.exec();
 }
 
