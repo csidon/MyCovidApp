@@ -39,6 +39,7 @@ ToolItem::ToolItem(QWidget *title, QWidget *item) : item(item)
                          "border-bottom-right-radius: 0px;"
                          "border-bottom-left-radius: 0px;"
                          "border-width: 1px;");
+    title->setMinimumHeight(0);
     setLayout(layout);
 
     item->setVisible(false);
@@ -47,4 +48,6 @@ ToolItem::ToolItem(QWidget *title, QWidget *item) : item(item)
 void ToolItem::mousePressEvent(QMouseEvent *event)
 {
     item->setVisible(!item->isVisible());
+//    item->setMinimumHeight(350);
+
 }
