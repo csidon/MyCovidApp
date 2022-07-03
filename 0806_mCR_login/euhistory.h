@@ -48,7 +48,10 @@ public:
     int getNumRows() const;
     void setNumRows(int newNumRows);
 
-    void printHistoryPage();
+    void printPageIntro();
+    void collectAllTestInfo();
+    void collectAllVaxInfo();
+    void printEUHistory(int page);
 
     void clearPage();
 //                        int numRows,int totalPages, int movingToPage,
@@ -57,6 +60,7 @@ public:
 //                          vaxRows, allVaxDates, allVaxManufs);
 public slots:
     void goToNextPage();
+    void goToPrevPage();
 
 private slots:
     void on_btn_backToAdminHome_clicked();
@@ -64,37 +68,42 @@ private slots:
 private:
     int userID;
     QString testDate;
-    int numRows;            // These pages/rows all refer to the Test pages
-    int totalPages;         // since they are the only ones that have
-    int movingToPage;       // a list that will keep growing
-    int currentPage;
+    int numRows = 0;            // These pages/rows all refer to the Test pages
+    int totalPages = 0;         // since they are the only ones that have
+    int movingToPage = 0;       // a list that will keep growing
+    int currentPage = 0;
     int vaxRows = 0;
-    QLabel *pageHeader;
-    QLabel *dispUserName;
+    QLabel *pageHeader;      // These labels are constant
+    QLabel *dispUserName;    // So pointers are initialised right at the top
     QLabel *dispNHI;
     ExpandingToolBox *toolBox;
     CustomListWidget *c19VaxHistory;
     CustomListWidget *c19TestList;
-    QVector<CustomListWidget> *allTestLabelValues;
-    QVBoxLayout *overarchingLayout;
     QVBoxLayout *overallWrapper;
+    QVBoxLayout *pageIntro;
+    QVBoxLayout *overarchingLayout;
+
 
     // Labels/vars used for displaying test results
     // ReportType and TestType are hardcoded to Self-reported and RAT
     // for this version
-
+    // New objs have to be created for each label (They are temporary objects)
     QLabel *testTypeUL;
     QLabel *dateLabelUR;
     QLabel *reportTypeBL;
     QLabel *testResultBR;
 
-    //Creating a vector to store each row of data -- **Can use a QStringList
+    //--------------------------------------------
+    //Creating QStringLists to store each row of test/vaxdata
     //(we only really care about test dates and test results)
-    QVector<QString> allTestDateValues;     // **Create getters/setters!
-    QVector<QString> allTestResultValues;
-
-    QStringList allVaxDates;
-    QStringList allVaxManufs;
+    // THESE ARE NOT POINTERS!
+    //--- Test Data ---
+    QStringList allTestDateValues = {};
+    QStringList allTestResultValues = {};
+    //---Vax Data ---
+    QStringList allVaxDates = {};
+    QStringList allVaxManufs = {};
+    //--------------------------------------------
 
     Ui::EUHistory *ui;
 };

@@ -23,7 +23,7 @@ public:
     // Functions
     void addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *botLeft, QLabel *botRight);
 //    QVBoxLayout getLabelItem();
-    void addArrows();
+    void addArrows(int printingPage, int totalPages);
     void addPageNumDisplay(int page, int totalPages);
 
     QPushButton *backArrow;

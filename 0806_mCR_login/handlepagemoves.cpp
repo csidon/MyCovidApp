@@ -11,5 +11,5 @@ void handlePageMoves::goToNextPage()
     int pageNow = historyPage.getCurrentPage();
     int pageTo = pageNow + 1;
     historyPage.setMovingToPage(pageTo);
-    historyPage.printHistoryPage();
+    historyPage.printEUHistory(1);
 }
