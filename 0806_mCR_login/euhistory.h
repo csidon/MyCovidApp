@@ -99,6 +99,7 @@ private:
     //--------------------------------------------
     //Creating QStringLists to store each row of test/vaxdata
     //(we only really care about test dates and test results)
+
     // THESE ARE NOT POINTERS!
     //--- Test Data ---
     QStringList allTestDateValues = {};

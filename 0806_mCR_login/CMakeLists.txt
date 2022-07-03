@@ -69,6 +69,21 @@ set(PROJECT_SOURCES
         submiterrorreport.ui
         handlepagemoves.cpp
         handlepagemoves.h
+        whichhistory.h
+        whichhistory.cpp
+        whichhistory.ui
+        vaccinehistory.h
+        vaccinehistory.cpp
+        vaccinehistory.ui
+        testhistory.h
+        testhistory.cpp
+        testhistory.ui
+        accountdetails.h
+        accountdetails.cpp
+        accountdetails.ui
+        adminuserselected.h
+        adminuserselected.cpp
+        adminuserselected.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

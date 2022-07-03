@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminUserSelected</class>
+ <widget class="QWidget" name="AdminUserSelected">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>375</width>
+    <height>667</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="lbl_topBar">
+   <property name="geometry">
+    <rect>
+     <x>-2</x>
+     <y>-15</y>
+     <width>381</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources.qrc">:/images/topBar.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_vaxHistoryView">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>280</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Vaccination History</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_accountDetailsView">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>460</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Account Details</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_testHistoryView">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>100</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Past COVID-19 Tests</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_usersName">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>0</y>
+     <width>301</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-size:28px;
+font-family:arial;</string>
+   </property>
+   <property name="text">
+    <string>    Choose an Option</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_backToSearch">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>71</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/images/backArrow2.png);
+background-color: rgba(255, 255, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_testAdd">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>190</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add a COVID-19 Test</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_vaxAdd">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>370</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add a Vaccination</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_accountDetailsEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>550</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit Account Details</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
