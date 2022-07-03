@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="lbl_stripedBackground">
@@ -306,13 +306,13 @@ color: black;</string>
       <rect>
        <x>70</x>
        <y>0</y>
-       <width>301</width>
+       <width>251</width>
        <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">color:black;
-font-size:28px;
+font-size:20px;
 font-family:arial;</string>
      </property>
      <property name="text">
@@ -733,14 +733,14 @@ text-align: right;</string>
      <property name="geometry">
       <rect>
        <x>72</x>
-       <y>-5</y>
-       <width>301</width>
-       <height>61</height>
+       <y>1</y>
+       <width>221</width>
+       <height>50</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">color:black;
-font-size:28px;
+font-size:20px;
 font-family:arial;</string>
      </property>
      <property name="text">

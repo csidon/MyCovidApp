@@ -12,24 +12,23 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     setLoggedInUserID(loggedInUserID);
 
 
+
     // These objects will not be deleted when the user hits next/back arrows
     overallWrapper = new QVBoxLayout;
     pageIntro = new QVBoxLayout;
-//    userProfile = new QVBoxLayout;
     overarchingLayout = new QVBoxLayout;
-//    toolBox = new ExpandingToolBox;
-//    profileToolBox = new ExpandingToolBox;
     pageHeader = new QLabel;
     dispUserName = new QLabel;
     dispNHI = new QLabel;
 
-
     printPageIntro();
-//    printEUprofile();
     collectAllTestInfo();
     collectAllVaxInfo();
     printEUHistory(1);   // Prints the overarchingLayout
-    setLayout(overallWrapper);  // Can I set this here?
+//    setLayout(overallWrapper);  // Can I set this here?
+//    overallWrapper->addStretch(0);
+
+    ui->overallWidget->setLayout(overallWrapper);
 
 }
 
@@ -377,7 +376,10 @@ void EUHistory::printEUHistory(int page)
             QString doseNum = "Dose " + QString::number(i + 1);
             numDosesUL->setText(doseNum);
             emptyUR->setText(" ");          // Empty label (no data to fill)
-            vaxDateBL->setText(allVaxDates.at(i));
+            // CSV dates were converted during storage
+            QString dateToSet = allVaxDates.at(i);
+
+            vaxDateBL->setText(dateToSet);
             manufBR->setText(allVaxManufs.at(i));
 
 
@@ -398,6 +400,7 @@ void EUHistory::printEUHistory(int page)
         emptyTestList->addItem("You have no recorded COVID-19 tests");
         toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), emptyTestList));
     }
+    QString retrievedDate = "";
     QString dateToSet = "";
     QString resultToSet = "";
     // Otherwise prints data stored in allTestDateValues & allTestResultValues
@@ -432,10 +435,16 @@ void EUHistory::printEUHistory(int page)
             //--------------------------------
             testTypeUL->setText("Rapid Antigen Test");
             reportTypeBL->setText("Self-reported");
-            dateToSet = allTestDateValues.at(i);
-            resultToSet = allTestResultValues.at(i);
+
+            retrievedDate = allTestDateValues.at(i);        // Date is retrieved in a YYYYMMDD QString format
+            // Converting retrieved date to QDate, then to pretty QString output
+            QDate convertedQDate = QDate::fromString(retrievedDate, "yyyyMMdd");
+            qDebug() << "Converted test date is " << convertedQDate;
+            dateToSet = convertedQDate.toString("dd MMM yyyy");
             qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
             dateLabelUR->setText(dateToSet);
+
+            resultToSet = allTestResultValues.at(i);
             testResultBR->setText(resultToSet);
             c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
         }
@@ -486,10 +495,16 @@ void EUHistory::printEUHistory(int page)
             //--------------------------------
             testTypeUL->setText("Rapid Antigen Test");
             reportTypeBL->setText("Self-reported");
-            dateToSet = allTestDateValues.at(i);
-            resultToSet = allTestResultValues.at(i);
+
+            retrievedDate = allTestDateValues.at(i);        // Date is retrieved in a YYYYMMDD QString format
+            // Converting retrieved date to QDate, then to pretty QString output
+            QDate convertedQDate = QDate::fromString(retrievedDate, "yyyyMMdd");
+            qDebug() << "Converted test date is " << convertedQDate;
+            dateToSet = convertedQDate.toString("dd MMM yyyy");
             qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
             dateLabelUR->setText(dateToSet);
+
+            resultToSet = allTestResultValues.at(i);
             testResultBR->setText(resultToSet);
             c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
         }
@@ -506,6 +521,8 @@ void EUHistory::printEUHistory(int page)
     overarchingLayout->addWidget(toolBox);
     // Then add my overarchingLayout to the overallWrapper
     overallWrapper->addLayout(overarchingLayout);
+//    overallWrapper->setSpacing(0);
+//    overallWrapper->addStretch();
 
 }
 

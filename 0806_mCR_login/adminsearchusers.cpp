@@ -94,8 +94,6 @@ void AdminSearchUsers::button(int btnNumber)
 }
 
 
-
-
 AdminSearchUsers::AdminSearchUsers(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::AdminSearchUsers)
@@ -140,7 +138,7 @@ QStringList AdminSearchUsers::searchFNames(QString search)
     QStringList userIDs = readNames.getColData("userIDNumber", "dbPID");
     QStringList matchingIDs;
     for(int i = 0; i < fNames.size(); i++){
-        if(fNames.at(i) == search){
+        if(fNames.at(i).toLower() == search.toLower()){
             matchingIDs.append(userIDs.at(i));
         }
     }
@@ -154,7 +152,7 @@ QStringList AdminSearchUsers::searchLNames(QString search)
     QStringList userIDs = readNames.getColData("userIDNumber", "dbPID");
     QStringList matchingIDs;
     for(int i = 0; i < lNames.size(); i++){
-        if(lNames.at(i) == search){
+        if(lNames.at(i).toLower() == search.toLower()){
             matchingIDs.append(userIDs.at(i));
         }
     }
@@ -168,7 +166,7 @@ QStringList AdminSearchUsers::searchPNames(QString search)
     QStringList userIDs = readNames.getColData("userIDNumber", "dbPID");
     QStringList matchingIDs;
     for(int i = 0; i < pNames.size(); i++){
-        if(pNames.at(i) == search){
+        if(pNames.at(i).toLower() == search.toLower()){
             matchingIDs.append(userIDs.at(i));
         }
     }
@@ -178,7 +176,8 @@ QStringList AdminSearchUsers::searchPNames(QString search)
 void AdminSearchUsers::on_btn_search_clicked()
 {
     //Search all 3 names, get uids and store in a single QStringList removign any duplicates if someone has the same name in two variables
-    QString searchTerms = ui->textEdit_searchBar->toPlainText();
+    qDebug() << "Enter or search icon is working";
+    QString searchTerms = ui->lineEdit_searchBar->text();
     QStringList foundFNames = searchFNames(searchTerms);
     QStringList foundLNames = searchLNames(searchTerms);
     QStringList foundPNames = searchPNames(searchTerms);
@@ -264,5 +263,54 @@ void AdminSearchUsers::on_btn_user_5_clicked()
 void AdminSearchUsers::on_btn_user_6_clicked()
 {
      button(6);
+}
+
+
+void AdminSearchUsers::on_btn_backToAdminHome_clicked()
+{
+    this->close();
+}
+
+
+void AdminSearchUsers::on_lineEdit_searchBar_returnPressed()
+{
+    //Search all 3 names, get uids and store in a single QStringList removign any duplicates if someone has the same name in two variables
+    qDebug() << "Enter or search icon is working";
+    QString searchTerms = ui->lineEdit_searchBar->text();
+    QStringList foundFNames = searchFNames(searchTerms);
+    QStringList foundLNames = searchLNames(searchTerms);
+    QStringList foundPNames = searchPNames(searchTerms);
+    QStringList combinedUserIDList;
+    for(int i = 0; i < foundFNames.size(); i++){
+        combinedUserIDList.append(foundFNames.at(i));
+    }
+    //Check for duplicates in case someone has the same name in multiple fields
+    bool dupFlag = false;
+    for(int i = 0; i < foundLNames.size(); i++){
+        dupFlag = false;
+        for(int j = 0; j < combinedUserIDList.size(); j++){
+            if(foundLNames.at(i) == combinedUserIDList.at(j)){
+                dupFlag = true;
+            }
+        }
+        if(dupFlag == false){
+            combinedUserIDList.append(foundLNames.at(i));
+        }
+    }
+    for(int i = 0; i < foundPNames.size(); i++){
+        dupFlag = false;
+        for(int j = 0; j < combinedUserIDList.size(); j++){
+            if(foundPNames.at(i) == combinedUserIDList.at(j)){
+                dupFlag = true;
+            }
+        }
+        if(dupFlag == false){
+            combinedUserIDList.append(foundPNames.at(i));
+        }
+    }
+    //set and update display
+    setPageNumber(1);
+    setSearchResultIDs(combinedUserIDList);
+    setDisplayedResults();
 }
 

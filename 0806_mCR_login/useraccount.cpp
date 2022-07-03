@@ -267,12 +267,13 @@ void UserAccount::addTest(Test testToStore)
 void UserAccount::addDose (Dose doseToStore)
 {
     //Stores dose with user id in user's file and master file
-    doseToStore.setDoseUserID(this->getUserIDNumber());
+    doseToStore.setDoseUserID(doseToStore.getDoseUserID());
+    qDebug() << "You have started adding a vaccination for uid " << doseToStore.getDoseUserID();
 
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
-    QString filepath = "database/UserDoses/" + QString::number(this->getUserIDNumber()) + ".csv";
+    QString filepath = "database/UserDoses/" + QString::number(doseToStore.getDoseUserID()) + ".csv";
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
@@ -281,7 +282,8 @@ void UserAccount::addDose (Dose doseToStore)
 
         if(doseFile.open(QIODevice::ReadWrite| QIODevice::Append)){
             QTextStream stream(&doseFile);
-            stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+            stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+            qDebug() << "You should have created a new file and added dose data to it";
         }
         doseFile.close();
 
@@ -291,7 +293,9 @@ void UserAccount::addDose (Dose doseToStore)
         QFile masterDoses{switchFilePath};
         if(masterDoses.open(QIODevice::ReadWrite| QIODevice::Append)){
             QTextStream stream(&masterDoses);
-            stream << "\n" << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+            stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+            qDebug() << "You should have added a line in MasterDoses file";
+
         }
         masterDoses.close();
     }

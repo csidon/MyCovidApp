@@ -60,3 +60,10 @@ void AdminUserSelected::on_btn_testAdd_clicked()
     covidTestWindow->show();
 }
 
+
+void AdminUserSelected::on_btn_vaxAdd_clicked()
+{
+    addVaxWindow = new AddVaccination(nullptr, selectedUserID);
+    addVaxWindow->show();
+}
+

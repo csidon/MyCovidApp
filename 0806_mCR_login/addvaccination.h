@@ -12,13 +12,21 @@ class AddVaccination : public QWidget
     Q_OBJECT
 
 public:
-    explicit AddVaccination(QWidget *parent = nullptr);
+    explicit AddVaccination(QWidget *parent = nullptr, int loggedInUserID = 0);
     ~AddVaccination();
+
+    int getLoggedInUserID() const;
+    void setLoggedInUserID(int newLoggedInUserID);
 
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_btn_backToAdminHome_clicked();
+
 private:
+    int loggedInUserID;
     Ui::AddVaccination *ui;
 };
 
