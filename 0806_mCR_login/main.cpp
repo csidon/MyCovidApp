@@ -12,6 +12,7 @@
 #include "euhistory.h"
 #include "vaccinehistory.h"
 #include "whichhistory.h"
+#include "addvaccination.h"
 
 #include <QDebug>
 #include <QApplication>
@@ -102,6 +103,10 @@ int main(int argc, char *argv[])
         qDebug() << "You Are NOT an ADMIN";
         w.show();
     }
+
+    AddVaccination testVax;
+    testVax.setLoggedInUserID(loggedInUserID);
+    testVax.show();
 
      return a.exec();
 }

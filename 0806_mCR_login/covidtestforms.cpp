@@ -11,15 +11,6 @@ CovidTestForms::CovidTestForms(QWidget *parent, int loggedInUserID) :
 
     // This section retrieves the current date
     // and sets this as the QSpinBox default
-
-    //*testing
-//    QString yy = QString::number(ui->spinBox_YY->value() + 2000);
-//    QString mm = QString::number(ui->spinBox_MM->value());
-//    qDebug() << "Is this a string? " << yy + "-" + mm;
-    //*testing
-
-
-    // Setting the date on the spinbox to today's date as a default
     QDate date;
     auto thisDate = date.currentDate();
     int year = date.currentDate().year() - 2000;
@@ -67,7 +58,7 @@ void CovidTestForms::on_pushButton_clicked()
     qDebug() << "thisDate is an INTEGER registered as " << thisDate;
 
     int yy = (ui->spinBox_YY->value() + 2000) * 10000;
-    int mm = ui->spinBox_MM->value() * 1000;
+    int mm = ui->spinBox_MM->value() * 100;
     int dd = ui->spinBox_DD->value();
     int retrievedTestDate = yy + mm + dd;
     collectTestInfo.setTestDate(retrievedTestDate);
@@ -142,27 +133,19 @@ void CovidTestForms::on_pushButton_clicked()
         qDebug() << "CSV Results are: " << collectTestInfo.getTestResult();
         qDebug() << "CSV user ID  is: " << collectTestInfo.getTestUserID();
 
-//        // Retrieving the user's input test date from ui
-//        QString yy = QString::number(ui->spinBox_YY->value()+2000);
-//        QString mm = QString::number(ui->spinBox_MM->value());
-//        QString dd = QString::number(ui->spinBox_DD->value());
-//        QString retrievedTestDate = yy + "-" + mm+ "-" + dd;
-//        collectTestInfo.setTestDate(retrievedTestDate);
-//        int yy = ui->spinBox_YY->value() * 100000;
-//        int mm = ui->spinBox_MM->value() * 1000;
-//        int dd = ui->spinBox_DD->value();
-//        int retrievedTestDate = yy + mm + dd;
-
-
-        // Stored in YYYYMMDD for future sorting ease
-//        qDebug() << "Is this a string? " << yy + "-" + mm+ "-" + dd;
-
 
         UserAccount newTest;
         newTest.addTest(collectTestInfo);
         ui->stackedWidget->setCurrentIndex(1);
-        // #******* you need to set this to display the right collected date later!!****
-//        ui->lbl_displayTestDate->setText(collectTestInfo.getTestDate());
+        // Converting int testDates in file to QStrings, then converting to QDate
+        // (QDate does not allow direct conversion from int to QDate)
+        QString dateInFile = QString::number(collectTestInfo.getTestDate());
+        qDebug() << "Testing to see what the dateInFile is " << dateInFile;
+        QDate convertedQDate = QDate::fromString(dateInFile, "yyyyMMdd");
+        qDebug() << "Testing to see what the displayReadyQDate is " << convertedQDate;
+        // Finally translating it to a QString for display
+        QString dispReadyDate = convertedQDate.toString("dd MMM yyyy");
+        ui->lbl_displayTestDate->setText(dispReadyDate);
         if (collectTestInfo.getTestResult() == true)
         {
             ui->lbl_displayTestRes->setText("Positive");

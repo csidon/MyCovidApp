@@ -74,6 +74,7 @@ private:
     int movingToPage = 0;       // a list that will keep growing
     int currentPage = 0;
     int vaxRows = 0;
+    QLabel *backArrow;
     QLabel *pageHeader;      // These labels are constant
     QLabel *dispUserName;    // So pointers are initialised right at the top
     QLabel *dispNHI;
@@ -82,6 +83,7 @@ private:
     CustomListWidget *c19VaxHistory;
     CustomListWidget *c19TestList;
     CustomListWidget *userProfile;
+    QVBoxLayout *backHome;
     QVBoxLayout *overallWrapper;
     QVBoxLayout *pageIntro;
 //    QVBoxLayout *userProfile;
