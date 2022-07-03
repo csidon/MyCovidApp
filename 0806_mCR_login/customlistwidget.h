@@ -22,6 +22,7 @@ public:
 
     // Functions
     void addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *botLeft, QLabel *botRight);
+    void addProfileItem(QLabel *title, QLabel *data);
 //    QVBoxLayout getLabelItem();
     void addArrows(int printingPage, int totalPages);
     void addPageNumDisplay(int page, int totalPages);

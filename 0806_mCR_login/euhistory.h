@@ -52,6 +52,7 @@ public:
     void collectAllTestInfo();
     void collectAllVaxInfo();
     void printEUHistory(int page);
+    void printEUprofile();
 
     void clearPage();
 //                        int numRows,int totalPages, int movingToPage,
@@ -76,11 +77,13 @@ private:
     QLabel *pageHeader;      // These labels are constant
     QLabel *dispUserName;    // So pointers are initialised right at the top
     QLabel *dispNHI;
+    ExpandingToolBox *profileToolBox;
     ExpandingToolBox *toolBox;
     CustomListWidget *c19VaxHistory;
     CustomListWidget *c19TestList;
     QVBoxLayout *overallWrapper;
     QVBoxLayout *pageIntro;
+    QVBoxLayout *userProfile;
     QVBoxLayout *overarchingLayout;
 
 

@@ -43,12 +43,24 @@ void CustomListWidget::addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *b
     layout->addLayout(bottomLabel);
     layout->addStretch();
     qDebug() << "Stretch added ";
+}
 
-
-//    // Wrap it all with a QVBoxLayout -- Not working?
-//    QVBoxLayout *wrapper = new QVBoxLayout;
-//    wrapper->addLayout(layout);
-//    qDebug() << "Are we wrapping? ";
+void CustomListWidget::addProfileItem(QLabel *title, QLabel *data)
+{
+    title->setStyleSheet("font-size: 12px;"
+                         "font-weight: bold;"
+                         "padding-top: 5px;"
+                         "padding-bottom: 0px;");
+    data->setStyleSheet("font-size: 16px;"
+                         "font-weight: normal;"
+                         "padding-top: 0px;");
+    // Grouping the labels and putting them into layouts
+    QVBoxLayout *oneLabel = new QVBoxLayout;
+    oneLabel->addWidget(title);
+    oneLabel->addWidget(data);
+    // Combining the layouts
+    layout->addLayout(oneLabel);
+    layout->addStretch();
 }
 
 
