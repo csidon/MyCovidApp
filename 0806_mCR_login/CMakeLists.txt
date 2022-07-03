@@ -81,6 +81,9 @@ set(PROJECT_SOURCES
         accountdetails.h
         accountdetails.cpp
         accountdetails.ui
+        adminuserselected.h
+        adminuserselected.cpp
+        adminuserselected.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

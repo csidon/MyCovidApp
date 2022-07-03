@@ -14,7 +14,6 @@ class AdminHome;
 class AdminHome : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit AdminHome(QWidget *parent = nullptr);
     ~AdminHome();

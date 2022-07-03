@@ -290,6 +290,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminuserselected.h",
+			"MU",
+			"EWIEGA46WW/moc_adminuserselected.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/authdialog.h",
 			"MU",
 			"EWIEGA46WW/moc_authdialog.cpp",
@@ -484,6 +490,11 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminsearchusers.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminuserselected.cpp",
 			"MU",
 			null
 		],

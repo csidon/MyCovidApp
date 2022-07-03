@@ -4,6 +4,7 @@
 #include "EWIEGA46WW/moc_adminhome.cpp"
 #include "EWIEGA46WW/moc_adminqrrequests.cpp"
 #include "EWIEGA46WW/moc_adminsearchusers.cpp"
+#include "EWIEGA46WW/moc_adminuserselected.cpp"
 #include "EWIEGA46WW/moc_authdialog.cpp"
 #include "EWIEGA46WW/moc_covidtestforms.cpp"
 #include "EWIEGA46WW/moc_displaymyqrcode.cpp"
