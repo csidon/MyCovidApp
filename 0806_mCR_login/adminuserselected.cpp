@@ -61,3 +61,11 @@ void AdminUserSelected::on_btn_accountDetailsView_clicked()
     detailsWindow.show();
 }
 
+
+void AdminUserSelected::on_btn_accountDetailsEdit_clicked()
+{
+    editDetailsWindow.setSelectedUserID(selectedUserID);
+    editDetailsWindow.displayCurrentDetails();
+    editDetailsWindow.show();
+}
+

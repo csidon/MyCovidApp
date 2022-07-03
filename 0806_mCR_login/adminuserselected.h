@@ -2,6 +2,8 @@
 #define ADMINUSERSELECTED_H
 
 #include "accountdetails.h"
+#include "adminaddvaccination.h"
+#include "editdetails.h"
 #include "testhistory.h"
 #include "vaccinehistory.h"
 #include <QWidget>
@@ -18,6 +20,8 @@ private:
     VaccineHistory vaxHistoryWindow;
     TestHistory testHistoryWindow;
     AccountDetails detailsWindow;
+    editDetails editDetailsWindow;
+    AdminAddVaccination addVaxWindow;
 
 public:
     explicit AdminUserSelected(QWidget *parent = nullptr);
@@ -35,6 +39,8 @@ private slots:
     void on_btn_vaxHistoryView_clicked();
 
     void on_btn_accountDetailsView_clicked();
+
+    void on_btn_accountDetailsEdit_clicked();
 
 private:
     Ui::AdminUserSelected *ui;

@@ -266,6 +266,12 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminaddvaccination.h",
+			"MU",
+			"EWIEGA46WW/moc_adminaddvaccination.cpp",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.h",
 			"MU",
 			"EWIEGA46WW/moc_adminerrorreports.cpp",
@@ -323,6 +329,12 @@
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.h",
 			"MU",
 			"EWIEGA46WW/moc_dose.cpp",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/editdetails.h",
+			"MU",
+			"EWIEGA46WW/moc_editdetails.cpp",
 			null
 		],
 		[
@@ -474,6 +486,11 @@
 			null
 		],
 		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminaddvaccination.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/adminerrorreports.cpp",
 			"MU",
 			null
@@ -520,6 +537,11 @@
 		],
 		[
 			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/dose.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/0806_mCR_login/editdetails.cpp",
 			"MU",
 			null
 		],

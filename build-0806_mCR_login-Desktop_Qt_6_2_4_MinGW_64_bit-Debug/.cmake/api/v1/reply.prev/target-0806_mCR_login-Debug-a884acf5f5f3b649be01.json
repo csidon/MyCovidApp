@@ -32,7 +32,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 87,
+				"line" : 93,
 				"parent" : 0
 			},
 			{
@@ -56,7 +56,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 109,
+				"line" : 115,
 				"parent" : 0
 			},
 			{
@@ -201,7 +201,9 @@
 				56,
 				59,
 				62,
-				79
+				65,
+				68,
+				87
 			]
 		}
 	],
@@ -319,7 +321,9 @@
 				56,
 				59,
 				62,
-				79
+				65,
+				68,
+				87
 			]
 		},
 		{
@@ -350,11 +354,7 @@
 				58,
 				61,
 				64,
-				65,
-				66,
 				67,
-				68,
-				69,
 				70,
 				71,
 				72,
@@ -362,7 +362,15 @@
 				74,
 				75,
 				76,
-				77
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85
 			]
 		},
 		{
@@ -385,15 +393,17 @@
 				57,
 				60,
 				63,
-				78
+				66,
+				69,
+				86
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				80,
-				81
+				88,
+				89
 			]
 		}
 	],
@@ -746,6 +756,38 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "adminuserselected.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "adminuserselected.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "adminuserselected.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "editdetails.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "editdetails.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "editdetails.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_mainwindow.h",
@@ -784,6 +826,12 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_adminuserselected.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_authdialog.h",
 			"sourceGroupIndex" : 1
 		},
@@ -797,6 +845,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_displaymyqrcode.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/jedda/Documents/CS106Assignment2/MyCovidApp/build-0806_mCR_login-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/0806_mCR_login_autogen/include/ui_editdetails.h",
 			"sourceGroupIndex" : 1
 		},
 		{

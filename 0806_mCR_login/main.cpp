@@ -102,7 +102,6 @@ int main(int argc, char *argv[])
         qDebug() << "You Are NOT an ADMIN";
         w.show();
     }
-
      return a.exec();
 }
 

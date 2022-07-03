@@ -82,6 +82,12 @@ set(PROJECT_SOURCES
         adminuserselected.h
         adminuserselected.cpp
         adminuserselected.ui
+        editdetails.h
+        editdetails.cpp
+        editdetails.ui
+        adminaddvaccination.h
+        adminaddvaccination.cpp
+        adminaddvaccination.ui
 
 )
 
