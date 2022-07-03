@@ -42,25 +42,18 @@ public:
     QWidget *page_2;
     QFormLayout *formLayout;
     QSpacerItem *verticalSpacer_3;
-    QHBoxLayout *horizontalLayout;
-    QLabel *lbl_DoT;
-    QLabel *lbl_displayTestDate;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *lbl_tr;
-    QLabel *lbl_displayTestRes;
-    QSpacerItem *verticalSpacer_4;
     QLabel *label;
     QSpacerItem *verticalSpacer_5;
     QVBoxLayout *verticalLayout;
-    QLabel *label_2;
-    QSpacerItem *verticalSpacer_2;
-    QLabel *label_3;
-    QLabel *label_4;
+    QHBoxLayout *horizontalLayout;
+    QLabel *lbl_DoV;
+    QLabel *lbl_displayVaxDate;
     QSpacerItem *verticalSpacer;
-    QLabel *label_5;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *lbl_dM;
+    QLabel *lbl_displayVaxManuf;
     QSpacerItem *verticalSpacer_7;
     QPushButton *pushButton_2;
-    QSpacerItem *verticalSpacer_6;
     QWidget *page_3;
     QTableView *tableView_test;
     QLabel *label_visualisingUserPID;
@@ -78,7 +71,7 @@ public:
         lbl_topBar->setPixmap(QPixmap(QString::fromUtf8(":/images/topBar.png")));
         stackedWidget = new QStackedWidget(AddVaccination);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(0, 60, 470, 476));
+        stackedWidget->setGeometry(QRect(0, 60, 375, 476));
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         lbl_dateOfTest = new QLabel(page);
@@ -124,7 +117,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(21, 170, 330, 50));
+        comboBox->setGeometry(QRect(21, 170, 330, 41));
         comboBox->setMinimumSize(QSize(330, 41));
         comboBox->setFont(font1);
         label_6 = new QLabel(page);
@@ -135,124 +128,90 @@ public:
         page_2->setObjectName(QString::fromUtf8("page_2"));
         formLayout = new QFormLayout(page_2);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        verticalSpacer_3 = new QSpacerItem(320, 30, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer_3 = new QSpacerItem(320, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         formLayout->setItem(0, QFormLayout::FieldRole, verticalSpacer_3);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        lbl_DoT = new QLabel(page_2);
-        lbl_DoT->setObjectName(QString::fromUtf8("lbl_DoT"));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("Arial")});
-        font3.setPointSize(10);
-        font3.setBold(true);
-        font3.setItalic(false);
-        lbl_DoT->setFont(font3);
-        lbl_DoT->setStyleSheet(QString::fromUtf8("font: 700 10pt \"Arial\";"));
-        lbl_DoT->setInputMethodHints(Qt::ImhNone);
-
-        horizontalLayout->addWidget(lbl_DoT);
-
-        lbl_displayTestDate = new QLabel(page_2);
-        lbl_displayTestDate->setObjectName(QString::fromUtf8("lbl_displayTestDate"));
-        lbl_displayTestDate->setFont(font3);
-        lbl_displayTestDate->setStyleSheet(QString::fromUtf8("font: 700 10pt \"Arial\";"));
-        lbl_displayTestDate->setInputMethodHints(Qt::ImhNone);
-
-        horizontalLayout->addWidget(lbl_displayTestDate);
-
-
-        formLayout->setLayout(1, QFormLayout::SpanningRole, horizontalLayout);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        lbl_tr = new QLabel(page_2);
-        lbl_tr->setObjectName(QString::fromUtf8("lbl_tr"));
-        lbl_tr->setFont(font3);
-        lbl_tr->setStyleSheet(QString::fromUtf8("font: 700 10pt \"Arial\";"));
-        lbl_tr->setInputMethodHints(Qt::ImhNone);
-
-        horizontalLayout_2->addWidget(lbl_tr);
-
-        lbl_displayTestRes = new QLabel(page_2);
-        lbl_displayTestRes->setObjectName(QString::fromUtf8("lbl_displayTestRes"));
-        lbl_displayTestRes->setFont(font3);
-        lbl_displayTestRes->setStyleSheet(QString::fromUtf8("font: 700 10pt \"Arial\";"));
-        lbl_displayTestRes->setInputMethodHints(Qt::ImhNone);
-
-        horizontalLayout_2->addWidget(lbl_displayTestRes);
-
-
-        formLayout->setLayout(2, QFormLayout::SpanningRole, horizontalLayout_2);
-
-        verticalSpacer_4 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        formLayout->setItem(3, QFormLayout::LabelRole, verticalSpacer_4);
-
         label = new QLabel(page_2);
         label->setObjectName(QString::fromUtf8("label"));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("Arial")});
-        font4.setPointSize(12);
-        font4.setBold(false);
-        font4.setItalic(false);
-        label->setFont(font4);
-        label->setStyleSheet(QString::fromUtf8("font: 12pt \"Arial\";"));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Arial")});
+        font3.setPointSize(14);
+        font3.setBold(false);
+        font3.setItalic(false);
+        label->setFont(font3);
+        label->setStyleSheet(QString::fromUtf8("font: 14pt \"Arial\";"));
+        label->setAlignment(Qt::AlignCenter);
 
-        formLayout->setWidget(4, QFormLayout::SpanningRole, label);
+        formLayout->setWidget(2, QFormLayout::FieldRole, label);
 
-        verticalSpacer_5 = new QSpacerItem(20, 30, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        verticalSpacer_5 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        formLayout->setItem(5, QFormLayout::LabelRole, verticalSpacer_5);
+        formLayout->setItem(3, QFormLayout::FieldRole, verticalSpacer_5);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label_2 = new QLabel(page_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        lbl_DoV = new QLabel(page_2);
+        lbl_DoV->setObjectName(QString::fromUtf8("lbl_DoV"));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Arial")});
+        font4.setPointSize(10);
+        font4.setBold(false);
+        font4.setItalic(false);
+        lbl_DoV->setFont(font4);
+        lbl_DoV->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
+        lbl_DoV->setInputMethodHints(Qt::ImhNone);
+        lbl_DoV->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout->addWidget(lbl_DoV);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        lbl_displayVaxDate = new QLabel(page_2);
+        lbl_displayVaxDate->setObjectName(QString::fromUtf8("lbl_displayVaxDate"));
         QFont font5;
         font5.setFamilies({QString::fromUtf8("Arial")});
-        font5.setPointSize(18);
-        font5.setBold(false);
+        font5.setPointSize(12);
+        font5.setBold(true);
         font5.setItalic(false);
-        label_2->setFont(font5);
-        label_2->setStyleSheet(QString::fromUtf8("font: 18pt \"Arial\";"));
+        lbl_displayVaxDate->setFont(font5);
+        lbl_displayVaxDate->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Arial\";"));
+        lbl_displayVaxDate->setInputMethodHints(Qt::ImhNone);
+        lbl_displayVaxDate->setAlignment(Qt::AlignCenter);
+        lbl_displayVaxDate->setWordWrap(true);
 
-        verticalLayout->addWidget(label_2);
+        verticalLayout->addWidget(lbl_displayVaxDate);
 
-        verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
-        label_3 = new QLabel(page_2);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        QFont font6;
-        font6.setFamilies({QString::fromUtf8("Arial")});
-        font6.setPointSize(10);
-        font6.setBold(false);
-        font6.setItalic(false);
-        label_3->setFont(font6);
-        label_3->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
-
-        verticalLayout->addWidget(label_3);
-
-        label_4 = new QLabel(page_2);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setFont(font6);
-        label_4->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
-
-        verticalLayout->addWidget(label_4);
-
-        verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         verticalLayout->addItem(verticalSpacer);
 
-        label_5 = new QLabel(page_2);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setFont(font6);
-        label_5->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        lbl_dM = new QLabel(page_2);
+        lbl_dM->setObjectName(QString::fromUtf8("lbl_dM"));
+        lbl_dM->setFont(font4);
+        lbl_dM->setStyleSheet(QString::fromUtf8("font: 10pt \"Arial\";"));
+        lbl_dM->setInputMethodHints(Qt::ImhNone);
+        lbl_dM->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(label_5);
+        horizontalLayout_2->addWidget(lbl_dM);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        lbl_displayVaxManuf = new QLabel(page_2);
+        lbl_displayVaxManuf->setObjectName(QString::fromUtf8("lbl_displayVaxManuf"));
+        lbl_displayVaxManuf->setFont(font5);
+        lbl_displayVaxManuf->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Arial\";"));
+        lbl_displayVaxManuf->setInputMethodHints(Qt::ImhNone);
+        lbl_displayVaxManuf->setAlignment(Qt::AlignCenter);
+        lbl_displayVaxManuf->setWordWrap(true);
+
+        verticalLayout->addWidget(lbl_displayVaxManuf);
 
         verticalSpacer_7 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -265,11 +224,7 @@ public:
         verticalLayout->addWidget(pushButton_2);
 
 
-        formLayout->setLayout(6, QFormLayout::SpanningRole, verticalLayout);
-
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(8, QFormLayout::LabelRole, verticalSpacer_6);
+        formLayout->setLayout(4, QFormLayout::SpanningRole, verticalLayout);
 
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
@@ -283,7 +238,7 @@ public:
         stackedWidget->addWidget(page_3);
         lbl_QRRequests_2 = new QLabel(AddVaccination);
         lbl_QRRequests_2->setObjectName(QString::fromUtf8("lbl_QRRequests_2"));
-        lbl_QRRequests_2->setGeometry(QRect(70, -2, 301, 61));
+        lbl_QRRequests_2->setGeometry(QRect(70, -2, 251, 61));
         lbl_QRRequests_2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font-size:20px;\n"
 "font-family:arial;"));
@@ -313,16 +268,12 @@ public:
         comboBox->setItemText(2, QCoreApplication::translate("AddVaccination", "Novavax", nullptr));
 
         label_6->setText(QCoreApplication::translate("AddVaccination", "Select Manufacturer", nullptr));
-        lbl_DoT->setText(QCoreApplication::translate("AddVaccination", "Date of test: ", nullptr));
-        lbl_displayTestDate->setText(QCoreApplication::translate("AddVaccination", "[Test date]", nullptr));
-        lbl_tr->setText(QCoreApplication::translate("AddVaccination", "Result: ", nullptr));
-        lbl_displayTestRes->setText(QCoreApplication::translate("AddVaccination", "[Test result]", nullptr));
-        label->setText(QCoreApplication::translate("AddVaccination", "Thank you for reporting your test results.", nullptr));
-        label_2->setText(QCoreApplication::translate("AddVaccination", "What to do next", nullptr));
-        label_3->setText(QCoreApplication::translate("AddVaccination", " - Monitor any COVID-19 symptoms and if they get worse,", nullptr));
-        label_4->setText(QCoreApplication::translate("AddVaccination", "   call a healthcare provider or Healthline on 0800 358 5453", nullptr));
-        label_5->setText(QCoreApplication::translate("AddVaccination", " - Continue to follow current health advice.", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("AddVaccination", "Back to homepage", nullptr));
+        label->setText(QCoreApplication::translate("AddVaccination", "New vaccine data added", nullptr));
+        lbl_DoV->setText(QCoreApplication::translate("AddVaccination", "Date vaccinated:", nullptr));
+        lbl_displayVaxDate->setText(QCoreApplication::translate("AddVaccination", "[Test date]", nullptr));
+        lbl_dM->setText(QCoreApplication::translate("AddVaccination", "Manufacturer: ", nullptr));
+        lbl_displayVaxManuf->setText(QCoreApplication::translate("AddVaccination", "[Test result]", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("AddVaccination", "BACK TO HOMEPAGE", nullptr));
         label_visualisingUserPID->setText(QCoreApplication::translate("AddVaccination", "Hidden page for visualising db", nullptr));
         lbl_QRRequests_2->setText(QCoreApplication::translate("AddVaccination", "Add Vaccination", nullptr));
         btn_backToAdminHome->setText(QString());

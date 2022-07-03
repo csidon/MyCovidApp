@@ -1,0 +1,3 @@
+userIDNumber,userEmail,userPassword,userFirstName,userLastName,userPreferredName,userNHINumber,userPhoneNumber,userVaccinationStatus,userQRStatus,userQRCodeAddress
+45672,luke@sky.com,twinSUNS2!,Luke,Skywalker,Luke,LS4578,211196245,1,2,./database/AssignedQRCodes/45672.png
+13542,general.kenobi@republic.gov,MayThe4th.,Obi-Wan,Kenobi,Ben,OK1245,39652321,1,2,./database/AssignedQRCodes/13542.png

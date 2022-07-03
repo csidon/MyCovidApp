@@ -20,6 +20,7 @@ class Ui_EUHistory
 {
 public:
     QPushButton *btn_backToAdminHome;
+    QWidget *overallWidget;
 
     void setupUi(QWidget *EUHistory)
     {
@@ -31,6 +32,11 @@ public:
         btn_backToAdminHome->setGeometry(QRect(0, 0, 71, 61));
         btn_backToAdminHome->setStyleSheet(QString::fromUtf8("image: url(:/images/backArrow2.png);\n"
 "background-color: rgba(255, 255, 255, 0);"));
+        overallWidget = new QWidget(EUHistory);
+        overallWidget->setObjectName(QString::fromUtf8("overallWidget"));
+        overallWidget->setGeometry(QRect(0, 20, 375, 641));
+        overallWidget->raise();
+        btn_backToAdminHome->raise();
 
         retranslateUi(EUHistory);
 

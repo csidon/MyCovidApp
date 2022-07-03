@@ -66,7 +66,7 @@ public:
         lbl_QRRequests->setObjectName(QString::fromUtf8("lbl_QRRequests"));
         lbl_QRRequests->setGeometry(QRect(70, 0, 301, 61));
         lbl_QRRequests->setStyleSheet(QString::fromUtf8("color:black;\n"
-"font-size:28px;\n"
+"font-size:20px;\n"
 "font-family:arial;"));
         lbl_stripedBackground = new QLabel(page);
         lbl_stripedBackground->setObjectName(QString::fromUtf8("lbl_stripedBackground"));

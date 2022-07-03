@@ -42,9 +42,9 @@ public:
         btn_accountDetailsView->setGeometry(QRect(50, 130, 281, 61));
         lbl_usersName = new QLabel(AdminUserSelected);
         lbl_usersName->setObjectName(QString::fromUtf8("lbl_usersName"));
-        lbl_usersName->setGeometry(QRect(70, 0, 301, 61));
+        lbl_usersName->setGeometry(QRect(70, 0, 241, 61));
         lbl_usersName->setStyleSheet(QString::fromUtf8("color:black;\n"
-"font-size:28px;\n"
+"font-size:20px;\n"
 "font-family:arial;"));
         btn_backToSearch = new QPushButton(AdminUserSelected);
         btn_backToSearch->setObjectName(QString::fromUtf8("btn_backToSearch"));

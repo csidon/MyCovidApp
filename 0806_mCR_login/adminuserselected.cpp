@@ -2,17 +2,19 @@
 #include "handlecsv.h"
 #include "ui_adminuserselected.h"
 #include "useraccount.h"
-
+//Getter
 int AdminUserSelected::getSelectedUserID()
 {
     return selectedUserID;
 }
 
+//Setter
 void AdminUserSelected::setSelectedUserID(int newSelectedUserID)
 {
     selectedUserID = newSelectedUserID;
 }
 
+//Formats user's name as title
 void AdminUserSelected::setTitleText()
 {
     HandleCSV readUser;
@@ -37,8 +39,7 @@ void AdminUserSelected::on_btn_backToSearch_clicked()
     close();
 }
 
-
-
+//Launch pages functions
 void AdminUserSelected::on_btn_accountDetailsView_clicked()
 {
     euHistoryWindow = new EUHistory(nullptr, selectedUserID);

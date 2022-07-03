@@ -12,9 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,7 +30,6 @@ public:
     QPushButton *btn_pageRight;
     QPushButton *btn_backToAdminHome;
     QLabel *lbl_currentPage;
-    QTextEdit *textEdit_searchBar;
     QPushButton *btn_search;
     QLabel *lbl_foundName_1;
     QLabel *lbl_foundName_2;
@@ -44,6 +43,7 @@ public:
     QPushButton *btn_user_4;
     QPushButton *btn_user_3;
     QPushButton *btn_user_5;
+    QLineEdit *lineEdit_searchBar;
     QWidget *page_2;
 
     void setupUi(QWidget *AdminSearchUsers)
@@ -83,13 +83,9 @@ public:
         lbl_currentPage->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font-family:arial;\n"
 "font-size:18px;"));
-        textEdit_searchBar = new QTextEdit(page);
-        textEdit_searchBar->setObjectName(QString::fromUtf8("textEdit_searchBar"));
-        textEdit_searchBar->setGeometry(QRect(80, 10, 221, 41));
-        textEdit_searchBar->setStyleSheet(QString::fromUtf8("font-size:18px;"));
         btn_search = new QPushButton(page);
         btn_search->setObjectName(QString::fromUtf8("btn_search"));
-        btn_search->setGeometry(QRect(310, 0, 61, 61));
+        btn_search->setGeometry(QRect(309, 0, 60, 60));
         btn_search->setStyleSheet(QString::fromUtf8("image:url(:/images/searchIcon.png);\n"
 "background-color:rgba(255, 255, 255, 0);"));
         lbl_foundName_1 = new QLabel(page);
@@ -158,6 +154,13 @@ public:
         btn_user_5->setGeometry(QRect(0, 390, 381, 81));
         btn_user_5->setStyleSheet(QString::fromUtf8("background-color:  rgba(100,100,100,0);\n"
 ""));
+        lineEdit_searchBar = new QLineEdit(page);
+        lineEdit_searchBar->setObjectName(QString::fromUtf8("lineEdit_searchBar"));
+        lineEdit_searchBar->setGeometry(QRect(80, 10, 221, 41));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Arial")});
+        font.setPointSize(12);
+        lineEdit_searchBar->setFont(font);
         stackedWidget->addWidget(page);
         lbl_stripedBackground->raise();
         btn_pageLeft->raise();
@@ -165,7 +168,6 @@ public:
         btn_pageRight->raise();
         lbl_currentPage->raise();
         btn_backToAdminHome->raise();
-        textEdit_searchBar->raise();
         btn_search->raise();
         lbl_foundName_1->raise();
         lbl_foundName_2->raise();
@@ -179,6 +181,7 @@ public:
         btn_user_4->raise();
         btn_user_5->raise();
         btn_user_6->raise();
+        lineEdit_searchBar->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
         stackedWidget->addWidget(page_2);
@@ -197,7 +200,6 @@ public:
         btn_pageRight->setText(QString());
         btn_backToAdminHome->setText(QString());
         lbl_currentPage->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
-        textEdit_searchBar->setPlaceholderText(QCoreApplication::translate("AdminSearchUsers", "Enter first or last name...", nullptr));
         btn_search->setText(QString());
         lbl_foundName_1->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
         lbl_foundName_2->setText(QCoreApplication::translate("AdminSearchUsers", "TextLabel", nullptr));
@@ -211,6 +213,7 @@ public:
         btn_user_4->setText(QString());
         btn_user_3->setText(QString());
         btn_user_5->setText(QString());
+        lineEdit_searchBar->setPlaceholderText(QCoreApplication::translate("AdminSearchUsers", "Enter first or last name...", nullptr));
     } // retranslateUi
 
 };

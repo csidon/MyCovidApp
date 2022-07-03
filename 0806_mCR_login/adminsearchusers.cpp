@@ -85,6 +85,7 @@ QString AdminSearchUsers::formatNameForDisplay(UserAccount user)
 
 void AdminSearchUsers::button(int btnNumber)
 {
+    //Pass the correctUID to the next menu based on which button is clicked
     QStringList results = getSearchResultIDs();
     int result = ((pageNumber-1)*6)+btnNumber -1;
     qDebug() << "Error is regarding results" <<result << " " << results;
@@ -131,6 +132,7 @@ AdminSearchUsers::~AdminSearchUsers()
     delete ui;
 }
 
+//These next few functions search different name types for their arguments. They are individual functions so that the lifetime of their potentially 5 million long QStringLists aren't concurrent
 QStringList AdminSearchUsers::searchFNames(QString search)
 {
     HandleCSV readNames;
@@ -175,7 +177,7 @@ QStringList AdminSearchUsers::searchPNames(QString search)
 
 void AdminSearchUsers::on_btn_search_clicked()
 {
-    //Search all 3 names, get uids and store in a single QStringList removign any duplicates if someone has the same name in two variables
+    //Search all 3 names, get uids and store in a single QStringList removing any duplicates if someone has the same name in two variables
     qDebug() << "Enter or search icon is working";
     QString searchTerms = ui->lineEdit_searchBar->text();
     QStringList foundFNames = searchFNames(searchTerms);
