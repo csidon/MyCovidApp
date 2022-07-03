@@ -10,82 +10,160 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
 {
     ui->setupUi(this);
     setLoggedInUserID(loggedInUserID);
-    overarchingLayout = new QVBoxLayout;
+
+
+    // These objects will not be deleted when the user hits next/back arrows
     overallWrapper = new QVBoxLayout;
-
-    //------------------------------------------------------------------------
-    // Initialising pointer variables to be used "globally" within this class
-    // (These are not global variables, just variables that will be used
-    // across all functions within this class)
-    //------
-//    pageHeader = new QLabel;
-//    dispUserName = new QLabel;
-//    dispNHI = new QLabel;
+    pageIntro = new QVBoxLayout;
+    userProfile = new QVBoxLayout;
+    overarchingLayout = new QVBoxLayout;
     toolBox = new ExpandingToolBox;
-    c19TestList = new CustomListWidget;
-    testTypeUL = new QLabel;
-    dateLabelUR = new QLabel;
-    reportTypeBL = new QLabel;
-    testResultBR = new QLabel;
-    allTestLabelValues = new QVector<CustomListWidget>;
+    profileToolBox = new ExpandingToolBox;
+    pageHeader = new QLabel;
+    dispUserName = new QLabel;
+    dispNHI = new QLabel;
 
 
-//    //------
-//    // Setting stylesheets for labels to be displayed
-//    pageHeader->setStyleSheet("font-size: 22px;"
-//                            "font-weight: bold;"
-//                            "padding-top: 10px;");
-//    pageHeader->setWordWrap(true);
-//    dispUserName->setStyleSheet("font-size: 18px;"
-//                                "font-weight: normal;");
-//    dispNHI->setStyleSheet("font-size: 18px;"
-//                                "font-weight: normal;");
-//    pageHeader->setAlignment(Qt::AlignHCenter);
-//    dispUserName->setAlignment(Qt::AlignHCenter);
-//    dispNHI->setAlignment(Qt::AlignHCenter);
-//    QVBoxLayout *overallWrapper = new QVBoxLayout;
-//    //--- Test Stylesheets---
-////    testTypeUL->setText("Rapid Antigen Test");
+    printPageIntro();
+    printEUprofile();
+    collectAllTestInfo();
+    collectAllVaxInfo();
+    printEUHistory(1);   // Prints the overarchingLayout
+    setLayout(overallWrapper);  // Can I set this here?
 
+}
 
-//    //---------------------------------------------
-//    // Retrieving user information
-//    //--------
-//    HandleCSV accountReader;
-//    UserAccount loggedInUser = accountReader.getUserAccount(loggedInUserID);
-
-//    //---------------------------------------------
-//    // Shows user information at the top
-//    //-----------------------
-//    pageHeader->setText("Vaccination Record \n& Reported Test Results");
-//    QString displayUserName = loggedInUser.getUserPreferredName() + " " + loggedInUser.getUserFirstName()
-//            + " " + loggedInUser.getUserLastName();
-//    QString displayNHI;
-//    if (loggedInUser.getUserNHINumber() == "")
-//    {
-//        displayNHI = "NHI: Not Entered";
-//    }
-//    else
-//    {
-//        displayNHI = "NHI: " + loggedInUser.getUserNHINumber();
-//    }
-//    dispUserName->setText(displayUserName);
-//    dispNHI->setText(displayNHI);
-
-//    QVBoxLayout *pageIntro = new QVBoxLayout;
-//    pageIntro->addWidget(pageHeader);
-//    pageIntro->addWidget(dispUserName);
-//    pageIntro->addWidget(dispNHI);
+EUHistory::~EUHistory()
+{
+    delete ui;
+}
 
 
 
 
-    //----------------------------------------------
-    // List to show if user clicks on Test History
-    //-----
+void EUHistory::on_btn_backToAdminHome_clicked()
+{
+    this->close();
+}
+
+void EUHistory::printPageIntro()
+{
+    // Setting stylesheets for labels to be displayed
+    pageHeader->setStyleSheet("font-size: 22px;"
+                            "font-weight: bold;"
+                            "padding-top: 10px;");
+    pageHeader->setWordWrap(true);
+    dispUserName->setStyleSheet("font-size: 18px;"
+                                "font-weight: normal;");
+    dispNHI->setStyleSheet("font-size: 18px;"
+                                "font-weight: normal;");
+    pageHeader->setAlignment(Qt::AlignHCenter);
+    dispUserName->setAlignment(Qt::AlignHCenter);
+    dispNHI->setAlignment(Qt::AlignHCenter);
+    //---------------------------------------------
+    // Retrieving user information
+    //--------
+    HandleCSV accountReader;
+    UserAccount loggedInUser = accountReader.getUserAccount(getLoggedInUserID());
+    //---------------------------------------------
+    // Shows user information at the top
+    //-----------------------
+    pageHeader->setText("Vaccination Record \n& Reported Test Results");
+    QString displayUserName = loggedInUser.getUserPreferredName() + " " + loggedInUser.getUserFirstName()
+            + " " + loggedInUser.getUserLastName();
+    QString displayNHI;
+    if (loggedInUser.getUserNHINumber() == "")
+    {
+        displayNHI = "NHI: Not Entered";
+    }
+    else
+    {
+        displayNHI = "NHI: " + loggedInUser.getUserNHINumber();
+    }
+    dispUserName->setText(displayUserName);
+    dispNHI->setText(displayNHI);
+    // Add this to the pageIntro layout that's been
+    // initialised in EUHistory::EUHistory
+    pageIntro->addWidget(pageHeader);
+    pageIntro->addWidget(dispUserName);
+    pageIntro->addWidget(dispNHI);
+    overallWrapper->addLayout(pageIntro);
+
+}
+
+void EUHistory::printEUprofile()
+{
+    // Create a single toolbox for EU Profile
+    profileToolBox = new ExpandingToolBox;
+
+    //---------------------------------------------
+    // Retrieving user information
+    //--------
+    HandleCSV accountReader;
+    UserAccount loggedInUser = accountReader.getUserAccount(getLoggedInUserID());
+    // Create title labels
+    QLabel *prefNamelab = new QLabel;
+    QLabel *fNamelab = new QLabel;
+    QLabel *lNamelab = new QLabel;
+    QLabel *dispNHIlab = new QLabel;
+    QLabel *emaillab = new QLabel;
+    QLabel *phonelab = new QLabel;
+    prefNamelab->setText("Preferred Name");
+    fNamelab->setText("First Name");
+    lNamelab->setText("Last Name");
+    dispNHIlab->setText("NHI Number");
+    emaillab->setText("Email Address");
+    phonelab->setText("Phone Number");
+
+    //---------------------------------------------
+    // Shows user information at the top
+    //-----------------------
+    QLabel *prefName = new QLabel;
+    QLabel *fName = new QLabel;
+    QLabel *lName = new QLabel;
+    QLabel *dispNHI = new QLabel;
+    QLabel *email = new QLabel;
+    QLabel *phone = new QLabel;
+
+    prefName->setText(" " + loggedInUser.getUserPreferredName());
+    fName->setText(" " + loggedInUser.getUserFirstName());
+    lName->setText(" " + loggedInUser.getUserLastName());
+    email->setText(" " + loggedInUser.getUserEmail());
+    phone->setText(" " + QString::number(loggedInUser.getUserPhoneNumber()));
+
+    QString displayNHI;
+    if (loggedInUser.getUserNHINumber() == "")
+    {
+        displayNHI = " NHI Not Entered";
+    }
+    else
+    {
+        displayNHI = " " + loggedInUser.getUserNHINumber();
+    }
+    dispNHI->setText(displayNHI);
+
+    // Add this to the single collapsible toolbox
+    CustomListWidget *userProfileList = new CustomListWidget;
+    userProfileList->addProfileItem(prefNamelab,prefName);
+    userProfileList->addProfileItem(fNamelab,fName);
+    userProfileList->addProfileItem(lNamelab,lName);
+    userProfileList->addProfileItem(dispNHIlab,dispNHI);
+    userProfileList->addProfileItem(emaillab,email);
+    userProfileList->addProfileItem(phonelab,phone);
+
+    profileToolBox->addItem(new ToolItem(new QLabel("USER DETAILS"), userProfileList));
+    userProfile->addWidget(profileToolBox);
+    overallWrapper->addLayout(userProfile);
+}
+
+
+void EUHistory::collectAllTestInfo()
+{
     // Open UserTests folder and search for a CSV file with their UID
-//    HandleCSV checkCSV;
-    setNumRows(0);
+    // If file found: Sets the "global" QStringLists with testDate and testResult values
+    // Else: Returns an empty QStringList
+
+    setNumRows(0);      // Make sure numRows is 0
     qDebug() << "Opening UserTests folder and looking for UID >>> " << getLoggedInUserID();
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
@@ -104,7 +182,6 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
             QString row;
             QStringList rowValues;
 
-
             while(!searchFile.atEnd())
             {
                 // Read and split the rows
@@ -117,7 +194,7 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
                 QString testDateRow = rowValues.at(0);
                 // Push all users' test dates/results into a vector and (later) sets this
                 // so that it can used in any function
-                allTestDateValues.push_back(testDateRow);
+                allTestDateValues << testDateRow;
 
                 QString testResultRow;
                 if (rowValues.at(1).toInt() == 1)
@@ -128,103 +205,23 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
                 {
                     testResultRow = "Negative";
                 }
-                allTestResultValues.push_back(testResultRow);
-//                qDebug() << "The value of testResult at row " << numRows << " is " << allTestDateValues.at(numRows);
+                allTestResultValues << testResultRow;
+//                qDebug() << "The value of testResult at row " << numRows << " is " << allTestResultValues.at(numRows);
                 numRows++;
             }
             qDebug() << "Total number of tests (rows) = " << numRows;
             setNumRows(numRows);    // ***Do I need to set this?
             qDebug() << "Total pages before setter is " << totalPages;
 
-
             // Deriving the number of pages needed to display tests
             int totalNoOfPages = numRows / 5; // Rounds up and gives the total number of pages
             if (numRows % 5 != 0)
             {
-                totalNoOfPages++;   // Increase the total number of pages if % is 0
+                totalNoOfPages++;   // Increase the total number of pages by 1 if % is 0
             }
-
-            qDebug() << "Total num of Rows in UID's test file: " << numRows;
+            qDebug() << "Total num of Rows in UID's test file: " << getNumRows();
             qDebug() << "Total pages: " << totalNoOfPages;
             setTotalPages(totalNoOfPages);
-            setCurrentPage(1);
-            setMovingToPage(1);
-
-            // If there's only 1 test page, just display the tests in the
-            // expandingtoolbox "slot"
-//            if (totalNoOfPages == 1)
-//            {
-//                for (int i = 0; i < numRows; i++)
-//                {
-//                    dateToSet = allTestDateValues.at(i);
-//                    resultToSet = allTestResultValues.at(i);
-//                    dateLabelUR->setText(dateToSet);
-//                    testResultBR->setText(resultToSet);
-//                    c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
-//                    qDebug() << "Set labels for single page, row " << i;
-//                }
-//                toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
-//            }
-//            else    // print 5 test summaries and add a page button
-//            {
-//                // Figure out which page you're printing
-
-//                for (int i = 0; i < 5; i++)
-//                {
-//                    //-----------------------
-////                    QLabel *testTypeUL = new QLabel;
-////                    testTypeUL->setStyleSheet("font-size: 14px;"
-////                                              "font-weight: normal;");
-////                    testTypeUL->setText("Rapid Antigen Test");
-
-////                    QLabel *dateLabelUR = new QLabel;
-////                    dateLabelUR->setStyleSheet("font-size: 14px;"
-////                                               "font-weight: normal;");
-////                    QLabel *reportTypeBL = new QLabel;
-////                    reportTypeBL->setStyleSheet("font-size: 10px;"
-////                                                "font-weight: normal;"
-////                                                "margin-bottom: 10px;");
-////                    reportTypeBL->setText("Self-reported");
-
-////                    QLabel *testResultBR = new QLabel;
-
-////                    testResultBR->setStyleSheet("font-size: 10px;"
-////                                                "font-weight: normal;"
-////                                                "margin-bottom: 10px;");
-
-//                    // For the creation of each label, a new label has to be created
-//                    // and styled, then pushed to the customListWidget
-
-//                    testTypeUL = new QLabel;
-//                    dateLabelUR = new QLabel;
-//                    reportTypeBL = new QLabel;
-//                    testResultBR = new QLabel;
-//                    // Set stylesheets
-//                    testTypeUL->setStyleSheet("font-size: 14px;"
-//                                              "font-weight: normal;");
-//                    dateLabelUR->setStyleSheet("font-size: 14px;"
-//                                               "font-weight: normal;");
-//                    reportTypeBL->setStyleSheet("font-size: 10px;"
-//                                                "font-weight: normal;"
-//                                                "margin-bottom: 10px;");
-//                    testResultBR->setStyleSheet("font-size: 10px;"
-//                                                "font-weight: normal;"
-//                                                "margin-bottom: 10px;");
-//                    //--------------------------------
-//                    testTypeUL->setText("Rapid Antigen Test");
-//                    reportTypeBL->setText("Self-reported");
-//                    dateToSet = allTestDateValues.at(i);
-//                    resultToSet = allTestResultValues.at(i);
-//                    dateLabelUR->setText(dateToSet);
-//                    testResultBR->setText(resultToSet);
-//                    c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
-////                    allTestLabelValues->push_back(c19TestList);
-
-//                }
-//                toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
-//                c19TestList->addArrows();   // Code behaviour of arrows below
-//                c19TestList->addPageNumDisplay(1,totalNoOfPages);
-//            }
         }
 
         else
@@ -233,43 +230,38 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
             qDebug() << "What's the QFile error? " << searchFile.errorString();
             if (searchFile.errorString() == "The system cannot find the file specified.")
             {
+                qDebug() << "The user does not have a test CSV file";
                 // TotalPages remains at 0
-                printHistoryPage();
-//                QListWidget *emptyTestList = new QListWidget;
-//                emptyTestList->addItem("You have no recorded COVID-19 tests");
-//                toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), emptyTestList));
+                allTestDateValues = {};
+                allTestResultValues = {};
             }
             else
             {
-
+                // There's another error happening. Catch error.
+                qDebug() << "You have a file error when trying to find/open User Test File";
             }
         }
     }
+}
 
-    //-------------------------------------------------
-    // List to show if user clicks on Vaccination Record
-    //-----
-    // Same standardPath, different filepath
-
-//    // DUP FOR TESTING TO DELETE
-//    qDebug() << "Opening UserTests folder and looking for UID >>> " << getLoggedInUserID();
-//    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-//    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
-//    QDir d{path};
-//    QString filepath = "database/UserTests/" + QString::number(getLoggedInUserID()) + ".csv";
-//    // DUPLICATE FOR TESTING ^^ TO DELETE ^^
-
-
+void EUHistory::collectAllVaxInfo()
+{
+    // Open UserDoses folder and search for a CSV file with their UID
+    // If file found: Sets the "global" QStringLists with vsxDate and doseManuf values
+    // Else: Returns an empty QStringList
+    qDebug() << "Opening UserTests folder and looking for UID >>> " << getLoggedInUserID();
+    auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    if (path.isEmpty()) qFatal("Cannot determine settings storage location");
+    QDir d{path};
     QString doseFilepath = "database/UserDoses/" + QString::number(getLoggedInUserID()) + ".csv";
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
         qDebug() << "Searching for " << getLoggedInUserID() << ".csv" << "...";
         QFile searchFile{doseFilepath};
-        c19VaxHistory = new CustomListWidget;
         if (searchFile.open(QIODevice::ReadOnly| QIODevice::Text))
         {
             qDebug() << "The file has been found and opened. ";
-            // File found. Now extract data for display         
+            // File found. Now extract data for display
             // [LOCAL VARS] Used for splitting and reading lines
             QString row;
             QStringList rowValues;
@@ -279,11 +271,9 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
                 // Read and split the rows
                 row = searchFile.readLine().trimmed();
                 rowValues = row.split(',');
-//                vaxDates << rowValues.at(0);
                 qDebug() << "Full row values are: " << rowValues;
                 qDebug() << "Storing the vaccination dates for this row " << vaxRows;
                 QString extractedDate = rowValues.at(0);
-//                QString extractedDate = vaxDate(vaxRows);
                 QDate rowVaxQDate = QDate::fromString(extractedDate, "yyyyMMdd");
                 QString rowVaxDate = rowVaxQDate.toString("dd MMM yyyy");
                 qDebug() << "The rowVaxDate is " << rowVaxDate << " and vaxQdate is " << rowVaxQDate;
@@ -304,25 +294,8 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
                 }
                 // Storing in QStringList allVaxManufs
                 allVaxManufs << doseManuf;
-
-//                QLabel *numDosesUL = new QLabel;
-//                qDebug() << "The number of vax rows are: " << vaxRows;
-//                QString doseNum = "Dose " + QString::number(vaxRows + 1);
-//                numDosesUL->setText(doseNum);
-//                QLabel *emptyUR = new QLabel;
-//                emptyUR->setText("");
-//                QLabel *vaxDateBL = new QLabel;
-//                vaxDateBL->setText(rowVaxDate);
-//                QLabel *manufBR = new QLabel;
-//                manufBR->setText(doseManuf);
-
-//                c19VacHistory->addLabelItem(numDosesUL, emptyUR, vaxDateBL, manufBR);
-//                qDebug() << "Vaccination dates recorded are " << vaxDates;
                 vaxRows++;
             }
-//            toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), c19VaxHistory));
-//            qDebug() << "The number of vax entries (rows) are: " << vaxRows;
-
         }
         else
         {
@@ -330,54 +303,232 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
             qDebug() << "What's the QFile error? " << searchFile.errorString();
             if (searchFile.errorString() == "The system cannot find the file specified.")
             {
+                qDebug() << "The user does not have a dose CSV file";
                 QListWidget *emptyVaxList = new QListWidget;
                 emptyVaxList->addItem("You have no recorded COVID-19 vaccinations");
                 toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), emptyVaxList));
-
+            }
+            else
+            {
+                // There's another error happening. Catch error.
+                qDebug() << "You have a file error when trying to find/open User Test File";
             }
         }
-        printHistoryPage();
-
     }
-
-
-    QListWidget *list = new QListWidget;
-//    list->addItem("One");
-//    list->addItem("Two");
-//    list->addItem("Three");
-    for(int i = 0; i < 5; i++)
-    {
-        list->addItem("testText");
-    }
-
-
-
-//    ExpandingToolBox *toolBox = new ExpandingToolBox;
-
-//    toolBox->addItem(new ToolItem("Title 1\nSubTitles", new QLabel("Some text here\nDoes this work?")));
-//    toolBox->addItem(new ToolItem("Title 2", list));
-//    toolBox->addItem(new ToolItem("Fancy Title", new QLabel("Lorem Ipsum..")));
-//    toolBox->addItem(new ToolItem(new QLabel("Fancy Title"), list));
-//    toolBox->addItem(new ToolItem(new QLabel("Fancy Title"), new QLabel("Lorem Ipsum..")));
-
-//    QVBoxLayout *overarchingLayout = new QVBoxLayout;
-//    overarchingLayout->addWidget(toolBox);
-
-
-////    setLayout(overarchingLayout);
-
-//    overallWrapper->addLayout(pageIntro);
-//    overallWrapper->addLayout(overarchingLayout);
-//    setLayout(overallWrapper);
-
-
 }
 
-EUHistory::~EUHistory()
+
+void EUHistory::printEUHistory(int page)
 {
-    delete ui;
+    toolBox = new ExpandingToolBox;
+    c19VaxHistory = new CustomListWidget;
+    c19TestList = new CustomListWidget;
+    //------
+    setMovingToPage(page);
+    qDebug() << "Printing the pages' toolbox with content";
+    qDebug() << "for totalPages = " << totalPages << " currentPage =  " <<
+                currentPage << " moving to page = " << movingToPage;
+    //##################################
+    // Printing Vaccination Data
+    //---------------------------
+    // Prints empty vax list
+    if (allVaxDates.isEmpty())
+    {
+        QListWidget *emptyVaxList = new QListWidget;
+        emptyVaxList->addItem("You have no recorded COVID-19 vaccinations");
+        toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), emptyVaxList));
+    }
+    // Otherwise prints data stored in allVaxDates/Manufs QStringList
+    else
+    {
+        for (int i = 0; i < vaxRows; i++)
+        {
+            // For the printing of each label, a new label has to be created
+            // and styled, then pushed to the customListWidget
+            QLabel *numDosesUL = new QLabel;    // Header
+            QLabel *emptyUR = new QLabel;
+            QLabel *vaxDateBL = new QLabel;
+            QLabel *manufBR = new QLabel;
+            // Set stylesheets
+            numDosesUL->setStyleSheet("font-size: 10px;"
+                                      "font-weight: normal;");
+            emptyUR->setStyleSheet("font-size: 10px;"
+                                       "font-weight: normal;");
+            vaxDateBL->setStyleSheet("font-size: 14px;"
+                                        "font-weight: normal;"
+                                        "margin-bottom: 10px;");
+            manufBR->setStyleSheet("font-size: 14px;"
+                                        "font-weight: normal;"
+                                        "margin-bottom: 10px;");
+
+
+            qDebug() << "The number of vax rows are: " << vaxRows;
+            QString doseNum = "Dose " + QString::number(i + 1);
+            numDosesUL->setText(doseNum);
+            emptyUR->setText(" ");          // Empty label (no data to fill)
+            vaxDateBL->setText(allVaxDates.at(i));
+            manufBR->setText(allVaxManufs.at(i));
+
+
+            c19VaxHistory->addLabelItem(numDosesUL, emptyUR, vaxDateBL, manufBR);
+        }
+        // Does the actual printing
+        toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), c19VaxHistory));
+        qDebug() << "Vaccination Toolbox added for print";
+    }
+
+    //##################################
+    // Printing Test Data
+    //---------------------------
+    // Prints empty test list
+    if (allTestDateValues.isEmpty())
+    {
+        QListWidget *emptyTestList = new QListWidget;
+        emptyTestList->addItem("You have no recorded COVID-19 tests");
+        toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), emptyTestList));
+    }
+    QString dateToSet = "";
+    QString resultToSet = "";
+    // Otherwise prints data stored in allTestDateValues & allTestResultValues
+    // Determines which rows to print based on movingToPage
+    qDebug() << "Total rows: " << getNumRows();
+    qDebug() << "Page to print (moveToPage): " << getMovingToPage();
+    qDebug() << "Total pages: " << getTotalPages();
+    int printingPage = getMovingToPage();
+
+    // If totalPages is 1, print all the rows
+    if (totalPages == 1)
+    {
+        for (int i = 0; i < numRows; i++)
+        {
+            // For the printing of each label, a new label has to be created
+            // and styled, then pushed to the customListWidget
+            testTypeUL = new QLabel;
+            dateLabelUR = new QLabel;
+            reportTypeBL = new QLabel;
+            testResultBR = new QLabel;
+            // Set stylesheets
+            testTypeUL->setStyleSheet("font-size: 14px;"
+                                      "font-weight: normal;");
+            dateLabelUR->setStyleSheet("font-size: 14px;"
+                                       "font-weight: normal;");
+            reportTypeBL->setStyleSheet("font-size: 10px;"
+                                        "font-weight: normal;"
+                                        "margin-bottom: 10px;");
+            testResultBR->setStyleSheet("font-size: 10px;"
+                                        "font-weight: normal;"
+                                        "margin-bottom: 10px;");
+            //--------------------------------
+            testTypeUL->setText("Rapid Antigen Test");
+            reportTypeBL->setText("Self-reported");
+            dateToSet = allTestDateValues.at(i);
+            resultToSet = allTestResultValues.at(i);
+            qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
+            dateLabelUR->setText(dateToSet);
+            testResultBR->setText(resultToSet);
+            c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
+        }
+        // Then add list to layout
+        setCurrentPage(printingPage);
+        c19TestList->addPageNumDisplay(printingPage,totalPages);
+        toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
+    }
+    else
+    {
+        int startingRow, rowToPrintTo;
+        //--- Determining my starting and ending rows ---
+        if (printingPage != totalPages)
+        {
+            // You are NOT printing the last page
+            startingRow = ((printingPage - 1) * 5);  // Row starts from index 0
+            rowToPrintTo = (printingPage * 5);
+            qDebug() << "The page you're printing (moveTo) is " << printingPage;
+            qDebug() << "Total numRows is " << numRows;
+            qDebug() << "Printing rows *" << startingRow << "* to *" << rowToPrintTo;
+        }
+        else
+        {
+            // I AM printing the last page of multiple pages
+            startingRow = ((printingPage - 1) * 5);
+            rowToPrintTo = getNumRows();
+        }
+        //--- Printing labels based on starting and ending rows ---
+        for (int i = startingRow; i < rowToPrintTo; i++)
+        {
+            // For the printing of each label, a new label has to be created
+            // and styled, then pushed to the customListWidget
+            testTypeUL = new QLabel;
+            dateLabelUR = new QLabel;
+            reportTypeBL = new QLabel;
+            testResultBR = new QLabel;
+            // Set stylesheets
+            testTypeUL->setStyleSheet("font-size: 14px;"
+                                      "font-weight: normal;");
+            dateLabelUR->setStyleSheet("font-size: 14px;"
+                                       "font-weight: normal;");
+            reportTypeBL->setStyleSheet("font-size: 10px;"
+                                        "font-weight: normal;"
+                                        "margin-bottom: 10px;");
+            testResultBR->setStyleSheet("font-size: 10px;"
+                                        "font-weight: normal;"
+                                        "margin-bottom: 10px;");
+            //--------------------------------
+            testTypeUL->setText("Rapid Antigen Test");
+            reportTypeBL->setText("Self-reported");
+            dateToSet = allTestDateValues.at(i);
+            resultToSet = allTestResultValues.at(i);
+            qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
+            dateLabelUR->setText(dateToSet);
+            testResultBR->setText(resultToSet);
+            c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
+        }
+        c19TestList->addArrows(printingPage,totalPages);   // Arrows should check which page it is and enable/disable accordingly
+        connect(c19TestList->nextArrow,&QPushButton::clicked,this,goToNextPage);
+        connect(c19TestList->backArrow,&QPushButton::clicked,this,goToPrevPage);
+        c19TestList->addPageNumDisplay(printingPage,totalPages);
+        qDebug() << "You have called your pageNum display method";
+        toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
+
+    }
+    setCurrentPage(printingPage);
+    // Add whatever is in my toolBox list to overarchingLayout
+    overarchingLayout->addWidget(toolBox);
+    // Then add my overarchingLayout to the overallWrapper
+    overallWrapper->addLayout(overarchingLayout);
+
 }
 
+
+
+void EUHistory::goToNextPage()
+{
+    // Delete everything in my overarchingLayout but keep
+    // overarchingLayout to reprint details
+    qDeleteAll(overarchingLayout->findChildren<QWidget *> (QString(), Qt::FindDirectChildrenOnly));
+    delete overarchingLayout;
+    overarchingLayout = new QVBoxLayout;
+    int pageNow = getCurrentPage();
+    int pageTo = pageNow + 1;
+    setMovingToPage(pageTo);
+    printEUHistory(pageTo);
+    setCurrentPage(pageTo);
+}
+
+void EUHistory::goToPrevPage()
+{
+    qDeleteAll(overarchingLayout->findChildren<QWidget *> (QString(), Qt::FindDirectChildrenOnly));
+    delete overarchingLayout;
+    overarchingLayout = new QVBoxLayout;
+    int pageNow = getCurrentPage();
+    int pageTo = pageNow - 1;
+    setMovingToPage(pageTo);
+    printEUHistory(pageTo);
+    setCurrentPage(pageTo);
+}
+
+//################################################
+// Getters and setters collated here
+//-------------------------------------------
 int EUHistory::getLoggedInUserID()
 {
     return userID;
@@ -398,47 +549,6 @@ void EUHistory::setTestDate(QString tDate)
     this->testDate = tDate;
 }
 
-//CustomListWidget EUHistory::printTestSummary(int pageNum, std::vector<QString> allTestDateValues, std::vector<QString> allTestResultValues)
-//{
-//    CustomListWidget eachTestSummary;
-
-////    allTestDateValues[i]      //########### IMPLEMENT THIS AFTER TKD!!
-//    QLabel *testTypeUL = new QLabel;
-////                testTypeUL->setFixedHeight(25);
-//    testTypeUL->setText("Rapid Antigen Test");
-//    testTypeUL->setStyleSheet("font-size: 14px;"
-//                              "font-weight: normal;"
-//                              );
-////                dateLabelUR->setWordWrap(true);
-//    QLabel *dateLabelUR = new QLabel;
-////                testTypeUL->setFixedHeight(25);
-//    dateLabelUR->setText(testDateRow);
-//    dateLabelUR->setStyleSheet("font-size: 14px;"
-//                               "font-weight: normal;");
-//    QLabel *reportTypeBL = new QLabel;
-////                testTypeUL->setFixedHeight(25);
-//    reportTypeBL->setText("Self-reported");
-//    reportTypeBL->setStyleSheet("font-size: 10px;"
-//                                "font-weight: normal;"
-//                                "margin-bottom: 10px;");
-//    QLabel *testResultBR = new QLabel;
-////                testTypeUL->setFixedHeight(25);
-//    testResultBR->setText(testResultRow);
-//    testResultBR->setStyleSheet("font-size: 10px;"
-//                                "font-weight: normal;"
-//                                "margin-bottom: 10px;");
-
-//    eachTestSummary->addLabelItem(testTypeUL, dateLabelUR, reportTypeBL, testResultBR);
-//    return eachTestSummary;
-//}
-
-
-
-void EUHistory::on_btn_backToAdminHome_clicked()
-{
-    this->close();
-}
-
 int EUHistory::getNumRows() const
 {
     return numRows;
@@ -447,251 +557,6 @@ int EUHistory::getNumRows() const
 void EUHistory::setNumRows(int newNumRows = 0)
 {
     numRows = newNumRows;
-}
-
-void EUHistory::printHistoryPage()
-{
-    pageHeader = new QLabel;
-    dispUserName = new QLabel;
-    dispNHI = new QLabel;
-    toolBox = new ExpandingToolBox;
-    //------
-    // Setting stylesheets for labels to be displayed
-    pageHeader->setStyleSheet("font-size: 22px;"
-                            "font-weight: bold;"
-                            "padding-top: 10px;");
-    pageHeader->setWordWrap(true);
-    dispUserName->setStyleSheet("font-size: 18px;"
-                                "font-weight: normal;");
-    dispNHI->setStyleSheet("font-size: 18px;"
-                                "font-weight: normal;");
-    pageHeader->setAlignment(Qt::AlignHCenter);
-    dispUserName->setAlignment(Qt::AlignHCenter);
-    dispNHI->setAlignment(Qt::AlignHCenter);
-
-    //--- Test Stylesheets---
-//    testTypeUL->setText("Rapid Antigen Test");
-
-
-    //---------------------------------------------
-    // Retrieving user information
-    //--------
-    HandleCSV accountReader;
-    UserAccount loggedInUser = accountReader.getUserAccount(getLoggedInUserID());
-
-    //---------------------------------------------
-    // Shows user information at the top
-    //-----------------------
-    pageHeader->setText("Vaccination Record \n& Reported Test Results");
-    QString displayUserName = loggedInUser.getUserPreferredName() + " " + loggedInUser.getUserFirstName()
-            + " " + loggedInUser.getUserLastName();
-    QString displayNHI;
-    if (loggedInUser.getUserNHINumber() == "")
-    {
-        displayNHI = "NHI: Not Entered";
-    }
-    else
-    {
-        displayNHI = "NHI: " + loggedInUser.getUserNHINumber();
-    }
-    dispUserName->setText(displayUserName);
-    dispNHI->setText(displayNHI);
-
-    QVBoxLayout *pageIntro = new QVBoxLayout;
-    pageIntro->addWidget(pageHeader);
-    pageIntro->addWidget(dispUserName);
-    pageIntro->addWidget(dispNHI);
-
-
-    qDebug() << "Printing the pages' toolbox with content";
-    qDebug() << "for totalPages = " << totalPages << " currentPage =  " <<
-                currentPage << " moving to page = " << movingToPage;
-
-    QString dateToSet = "";
-    QString resultToSet = "";
-
-    // Prepare the vaccination history data (there will always only be 1 page)
-    if (vaxRows == 0)
-    {
-        QListWidget *emptyVaxList = new QListWidget;
-        emptyVaxList->addItem("You have no recorded COVID-19 vaccinations");
-        toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), emptyVaxList));
-    }
-    else
-    {
-        for (int i = 0; i < vaxRows; i++)
-        {
-            // For the printing of each label, a new label has to be created
-            // and styled, then pushed to the customListWidget
-            QLabel *numDosesUL = new QLabel;    // Header
-            qDebug() << "The number of vax rows are: " << vaxRows;
-            QString doseNum = "Dose " + QString::number(i + 1);
-            numDosesUL->setText(doseNum);
-
-            QLabel *emptyUR = new QLabel;       // Empty label (not needed)
-            emptyUR->setText(" ");
-
-            QLabel *vaxDateBL = new QLabel;
-            vaxDateBL->setText(allVaxDates.at(i));
-
-            QLabel *manufBR = new QLabel;
-            manufBR->setText(allVaxManufs.at(i));
-
-            c19VaxHistory->addLabelItem(numDosesUL, emptyUR, vaxDateBL, manufBR);
-        }
-    }
-
-    // Check if there's only one testHistory sub-page
-    if (totalPages == 0)
-    {
-        QListWidget *emptyTestList = new QListWidget;
-        emptyTestList->addItem("You have no recorded COVID-19 tests");
-        toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), emptyTestList));
-    }
-    else if (totalPages == 1)
-    {
-
-        // Print whatever is on the page for tests
-        for (int i = 0; i < numRows; i++)
-        {
-            // For the printing of each label, a new label has to be created
-            // and styled, then pushed to the customListWidget
-
-            testTypeUL = new QLabel;
-            dateLabelUR = new QLabel;
-            reportTypeBL = new QLabel;
-            testResultBR = new QLabel;
-            // Set stylesheets
-            testTypeUL->setStyleSheet("font-size: 14px;"
-                                      "font-weight: normal;");
-            dateLabelUR->setStyleSheet("font-size: 14px;"
-                                       "font-weight: normal;");
-            reportTypeBL->setStyleSheet("font-size: 10px;"
-                                        "font-weight: normal;"
-                                        "margin-bottom: 10px;");
-            testResultBR->setStyleSheet("font-size: 10px;"
-                                        "font-weight: normal;"
-                                        "margin-bottom: 10px;");
-            //--------------------------------
-            testTypeUL->setText("Rapid Antigen Test");
-            reportTypeBL->setText("Self-reported");
-            dateToSet = allTestDateValues.at(i);
-            resultToSet = allTestResultValues.at(i);
-            qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
-            dateLabelUR->setText(dateToSet);
-            testResultBR->setText(resultToSet);
-            c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
-
-        }
-        // Then add list to layout
-        toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
-    }
-    else
-    {
-        // Determine the page that you're trying to print
-        int pageToPrint = getMovingToPage();
-        int rowToPrintTo;
-        qDebug() << "The page you're going to print (moveTo) is " << pageToPrint;
-        qDebug() << "Total num of rows should be " << numRows;
-        int startingRow = ((pageToPrint - 1) * 5) + 1;  \
-
-        // If i'm not printing the last page
-        if ((pageToPrint != totalPages) || (numRows % 5 == 0))
-        {
-            rowToPrintTo = pageToPrint * 5;
-        }
-        else    // I'm printing the last page with less than 5 entries
-        {
-            rowToPrintTo = (numRows % 5) + ((pageToPrint - 1) * 5);
-        }
-        // StartingRow - 1 because vector starts at index 0woo@kie.com
-        for (int i = (startingRow - 1); i < rowToPrintTo; i++)
-        {
-            // For the printing of each label, a new label has to be created
-            // and styled, then pushed to the customListWidget
-            testTypeUL = new QLabel;
-            dateLabelUR = new QLabel;
-            reportTypeBL = new QLabel;
-            testResultBR = new QLabel;
-            // Set stylesheets
-            testTypeUL->setStyleSheet("font-size: 14px;"
-                                      "font-weight: normal;");
-            dateLabelUR->setStyleSheet("font-size: 14px;"
-                                       "font-weight: normal;");
-            reportTypeBL->setStyleSheet("font-size: 10px;"
-                                        "font-weight: normal;"
-                                        "margin-bottom: 10px;");
-            testResultBR->setStyleSheet("font-size: 10px;"
-                                        "font-weight: normal;"
-                                        "margin-bottom: 10px;");
-            //--------------------------------
-            testTypeUL->setText("Rapid Antigen Test");
-            reportTypeBL->setText("Self-reported");
-            dateToSet = allTestDateValues.at(i);
-            resultToSet = allTestResultValues.at(i);
-            qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
-            dateLabelUR->setText(dateToSet);
-            testResultBR->setText(resultToSet);
-            c19TestList->addLabelItem(testTypeUL,dateLabelUR,reportTypeBL,testResultBR);
-
-        }
-        // Then add list to layout
-        c19TestList->addArrows();
-        c19TestList->addPageNumDisplay(pageToPrint,totalPages);
-        toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
-//        connect(c19TestList->CustomListWidget::nextArrow,&QPushButton::connect,this,&EUHistory::goToNextPage);
-//        connect(&CustomListWidget::nextArrow, &QPushButton::clicked,this->goToNextPage);
-        connect(c19TestList->nextArrow,&QPushButton::clicked,this,goToNextPage);
-
-    }
-
-    // This does the actual printing
-    qDebug() << "Trying to actually print ";
-    toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), c19VaxHistory));
-//    QVBoxLayout *overarchingLayout = new QVBoxLayout;
-    overarchingLayout->addWidget(toolBox);
-    overallWrapper->addLayout(pageIntro);
-    overallWrapper->addLayout(overarchingLayout);
-    setLayout(overallWrapper);
-
-}
-
-void EUHistory::clearPage()
-{
-//    if(overallWrapper->layout() != NULL)
-//    {
-//        QLayoutItem *item;
-//        while (item = overallWrapper->layout()->takeAt(0) != NULL)
-//        {
-//            delete item->widget();
-//            delete item;
-//        }
-//        delete overallWrapper->layout();)
-//    }
-
-//    QLayoutItem *child;
-//    while ((child = delLay->takeAt(0)) != 0 )
-//    {
-//        if (child->layout() != 0)
-//        {
-//            remove(child->widget());
-//        }
-//        else if (child->widget() != 0)
-//        {
-//            delete child->widget();
-//        }
-//        delete child;
-//    }
-}
-
-void EUHistory::goToNextPage()
-{
-    this->close();
-    this->show();
-    int pageNow = getCurrentPage();
-    int pageTo = pageNow + 1;
-    setMovingToPage(pageTo);
-    printHistoryPage();
 }
 
 int EUHistory::getMovingToPage() const
@@ -723,4 +588,5 @@ void EUHistory::setCurrentPage(int newCurrentPage = 0)
 {
     currentPage = newCurrentPage;
 }
+
 
