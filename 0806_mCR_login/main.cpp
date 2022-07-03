@@ -90,19 +90,19 @@ int main(int argc, char *argv[])
     authdialog.exec();
     loggedInUserID = authdialog.getLoggedInUserID();
 
-    WhichHistory w = WhichHistory(nullptr, 1089);
-    w.show();
+//    WhichHistory w = WhichHistory(nullptr, 1089);
+//    w.show();
 
 //
-//    MainWindow w = MainWindow(nullptr, loggedInUserID);
-//    w.setLoggedInUserID(loggedInUserID);
-//
-//    if (loggedInUserID !=42)
-//    {
-//        qDebug() << "You Are NOT an ADMIN";
-//        w.show();
-//    }
-//
+    MainWindow w = MainWindow(nullptr, loggedInUserID);
+    w.setLoggedInUserID(loggedInUserID);
+
+    if (loggedInUserID !=42)
+    {
+        qDebug() << "You Are NOT an ADMIN";
+        w.show();
+    }
+
      return a.exec();
 }
 
