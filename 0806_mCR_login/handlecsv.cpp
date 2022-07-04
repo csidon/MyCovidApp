@@ -14,15 +14,9 @@ HandleCSV::HandleCSV()
 QString HandleCSV::returnCSVFilePath(QString dbName)
 {
     QString filePath;
-    qDebug() << "dbName passed is " << dbName;
     if (dbName == "dbPID")
     {
         filePath = "./database/dummyPID.csv";
-//        qDebug() << "You have found dbPID with filepath " << filePath;
-    }
-    else if (dbName == "readPID")
-    {
-
     }
     else if (dbName == "dbTest")
     {
@@ -46,7 +40,6 @@ QString HandleCSV::returnCSVFilePath(QString dbName)
         qDebug() << "Error with the file path you passed, returning entire string";
         return dbName;
     }
-    qDebug() << "about to return" << filePath;
     return filePath;
 }
 
@@ -63,7 +56,6 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Reading from " << QDir::currentPath();
         QFile f{filepath};
         if (f.open(QIODevice::ReadOnly | QIODevice::Text))
         {
@@ -75,11 +67,6 @@ int HandleCSV::returnHeaderIndex(QString dbName, QString headerName)
             // and grab the column index that we are retrieving
             for(int i = 0; i < headerRowValues.size(); i++)
             {
-//                qDebug() << "Comparing colHeaders...";
-//                qDebug() << "Value of i " << i;
-//                qDebug() << "What is the headerRowValue size? " << headerRowValues.size();
-//                qDebug() << "HeaderRowVal at i: " << headerRowValues.at(i)
-//                         << " and header name is " << headerName;
                 if(headerRowValues.at(i) == headerName)
                 {
                     return i;
@@ -104,11 +91,10 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Reading from " << QDir::currentPath();
         QFile file{filePath};
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         {
-            qDebug() << "IsOpen?: "<< file.isOpen()  << file.errorString()
+            qDebug() << "Is file open?: "<< file.isOpen()  << file.errorString()
                      << "Filepath for getUserAccount = " << filePath;
             return data;
         }
@@ -116,8 +102,7 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
         // Retrieve all of the values in that headerIndex's column
         while(!file.atEnd())
         {
-            // Read the line and store it
-
+            // Read the lines and store it
             QString row = file.readLine().trimmed();
             QStringList rowValues = row.split(',');
             //handle commas, which are stored as tildes (~)
@@ -164,7 +149,6 @@ QStringList HandleCSV::getColData(QString headerName, QString dbName)
 // and returns the row index if yes
 int HandleCSV::rowIndexOfCellMatchingSearch(QStringList colData, QString searchValue)
 {
-    qDebug() << "checking list for " << searchValue;
     for(int i = 0; i < colData.size(); i++)
     {
         if(colData.at(i) == searchValue)
@@ -182,7 +166,6 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
 {
     QString cellValue;
 
-
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
@@ -190,7 +173,6 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Reading cells from " << QDir::currentPath();
         QFile file{filePath};
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         {
@@ -206,13 +188,9 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
             {
                 file.readLine();
             }
-
-            qDebug() << "RowIndex is: " << rowIn;
             QString row = file.readLine().trimmed();
-            qDebug() << "The row val is " << row;
             QStringList rowValues = row.split(',');
             cellValue = rowValues.at(headerIn);
-    //        qDebug() << "You made it here!";
             file.close();
             return cellValue;
         }
@@ -223,7 +201,6 @@ QString HandleCSV::getCellValue(QString dbName, int headerIn, int rowIn)
 UserAccount HandleCSV::getUserAccount(QString email)
 {
     UserAccount grabbedUser;
-
     // Getting all the users from userEmail column of dbPID
     // and storing it as a QStringList
     QStringList allUserEmails = getColData("userEmail","dbPID");
@@ -245,7 +222,6 @@ UserAccount HandleCSV::getUserAccount(QString email)
 
         if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
         {
-            qDebug() << "Reading from " << QDir::currentPath();
             QFile file{filePath};
 
             if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -281,11 +257,9 @@ UserAccount HandleCSV::getUserAccount(QString email)
 UserAccount HandleCSV::getUserAccount(int uid)
 {
     UserAccount grabbedUser;
-    qDebug() << "getUserAccount received uid " << uid;
     // Getting all the users from userIDNumber column of dbPID
     // and storing it as a QStringList
     QStringList allUserIDs = getColData("userIDNumber","dbPID");
-    qDebug() << "Checking this list:" << allUserIDs;
 
     // Searching all uids in retrieved QStringList for target uid
     int userFoundInRowIndex = rowIndexOfCellMatchingSearch(allUserIDs,QString::number(uid));
@@ -303,7 +277,6 @@ UserAccount HandleCSV::getUserAccount(int uid)
 
         if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
         {
-            qDebug() << "Reading from " << QDir::currentPath();
             QFile file{filePath};
             if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
             {
@@ -327,7 +300,6 @@ UserAccount HandleCSV::getUserAccount(int uid)
                                       rowValues.at(6),rowValues.at(7).toInt(),
                                       rowValues.at(8).toInt(),rowValues.at(9).toInt(),rowValues.at(10));
             file.close();
-
         }
     }
     return grabbedUser;
@@ -387,7 +359,6 @@ void HandleCSV::writeToPIDCSV(UserAccount newUser)
     {
         qDebug() << "Writing to " << QDir::currentPath();
         QFile f{filepath};
-        qDebug() << "Filepath is " << filepath;
         if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
         {
             qDebug() << "Is the file open? " << f.isOpen();
@@ -400,9 +371,7 @@ void HandleCSV::writeToPIDCSV(UserAccount newUser)
             stream << uid << "," << email << "," << pass << "," << fn << ","
                    << ln << "," << pn << "," << nhi << "," << ph << ","
                    << vaxstat << "," << qrstat << "," << qrAdd << "\n";
-            qDebug() << "I have theoretically streamed data.";
         }
-//        f.close();
     }
 
 }
@@ -416,7 +385,6 @@ void HandleCSV::updatePID(UserAccount modifiedUser)
    for(int i = 0; i < allIDs.size(); i++){
        if(allIDs.at(i) == QString::number(modifiedUser.getUserIDNumber())){
            modifiedIndex = i;
-           qDebug() << "Modded index set to " << modifiedIndex;
            break;
        }
    }
@@ -430,7 +398,6 @@ void HandleCSV::updatePID(UserAccount modifiedUser)
    {
        qDebug() << "Writing to " << QDir::currentPath();
        QFile f{filepath};
-       qDebug() << "Filepath is " << filepath;
        if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
        {
            qDebug() << "Is the file open? " << f.isOpen();
@@ -443,9 +410,7 @@ void HandleCSV::updatePID(UserAccount modifiedUser)
            stream << "userIDNumber" << "," << "userEmail" << "," << "userPassword" << "," << "userFirstName" << ","
                   << "userLastName" << "," << "userPreferredName" << "," << "userNHINumber" << "," << "userPhoneNumber" << ","
                   << "userVaccinationStatus" << "," << "userQRStatus" << "," << "userQRCodeAddress" << "\n";
-           qDebug() << "I have theoretically streamed data.";
        }
-
    }
    //Write all positions before the user from the old file into the new file
    UserAccount writingUser;
@@ -453,7 +418,6 @@ void HandleCSV::updatePID(UserAccount modifiedUser)
        writingUser = getUserAccount(allIDs.at(i).toInt());
        writeToNewPID(writingUser);
    }
-
 
    //Write the modified user from the argument
    writeToNewPID(modifiedUser);
@@ -497,7 +461,6 @@ void HandleCSV::writeToNewPID(UserAccount userBeingWritten)
     {
         qDebug() << "Writing to " << QDir::currentPath();
         QFile f{filepath};
-        qDebug() << "Filepath is " << filepath;
         if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
         {
             qDebug() << "Is the file open? " << f.isOpen();
@@ -510,9 +473,7 @@ void HandleCSV::writeToNewPID(UserAccount userBeingWritten)
             stream << uid << "," << email << "," << pass << "," << fn << ","
                    << ln << "," << pn << "," << nhi << "," << ph << ","
                    << vaxstat << "," << qrstat << "," << qrAdd << "\n";
-            qDebug() << "I have theoretically streamed data.";
         }
-//        f.close();
     }
 }
 
@@ -528,7 +489,6 @@ void HandleCSV::removeQRRequest(QStringList newListOfRequestingUsers)
     {
         qDebug() << "Writing to " << QDir::currentPath();
         QFile f{filepath};
-        qDebug() << "Filepath is " << filepath;
         if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
         {
             qDebug() << "Is the file open? " << f.isOpen();
@@ -541,7 +501,6 @@ void HandleCSV::removeQRRequest(QStringList newListOfRequestingUsers)
             for(int i = 0; i < newListOfRequestingUsers.size(); i++){
                 stream << newListOfRequestingUsers.at(i) << "\n";
             }
-            qDebug() << "I have theoretically streamed data.";
         }
     }
     //Delete the old file
@@ -613,9 +572,7 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
     QStringList reportIsNews = getColData("isNew", "dbReports");
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Writing to " << QDir::currentPath();
         QFile f{filepath};
-        qDebug() << "Filepath is " << filepath;
         if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
         {
             qDebug() << "Is the file open? " << f.isOpen();
@@ -626,7 +583,6 @@ void HandleCSV::updateIsNewOfReport(int updateeIndex)
         {
             QTextStream stream(&f);
             stream << "Title" << "," << "Text" << "," << "Date" << "," << "Sender" << "," "isNew" << "\n";
-            qDebug() << "I have theoretically streamed data.";
             //Write all positions before the user from the old file into the new file
             for(int i = 1; i < updateeIndex; i++){
                 stream << reportTitles.at(i) << "," << reportTexts.at(i) << "," << reportDates.at(i) << "," << reportSenders.at(i) << "," << reportIsNews.at(i) << "\n";

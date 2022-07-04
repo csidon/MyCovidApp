@@ -40,7 +40,6 @@ void CustomListWidget::addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *b
     layout->addLayout(topLabel);
     layout->addLayout(bottomLabel);
     layout->addStretch();
-    qDebug() << "Stretch added ";
 }
 
 void CustomListWidget::addProfileItem(QLabel *title, QLabel *data)
@@ -90,11 +89,7 @@ void CustomListWidget::addArrows(int printingPage, int totalPages)
     arrowContainer->setAlignment(Qt::AlignRight);
     arrowContainer->addWidget(backArrow);
     arrowContainer->addWidget(nextArrow);
-//    connect(nextArrow, &QPushButton::clicked,this,nextPage);
     layout->addLayout(arrowContainer);
-//    connect(backArrow, &QPushButton::clicked,this,backPage);
-    qDebug()<< "You've added arrows. Congrats!";
-
 }
 
 // Displays the page number if there's more than one page, but also
@@ -104,42 +99,14 @@ void CustomListWidget::addPageNumDisplay(int page, int totalPages)
     QHBoxLayout *pageNumContainer = new QHBoxLayout;
     pageNumContainer->setAlignment(Qt::AlignRight);
 
-
     QString pageOfPage = QString::number(page) + " of " + QString::number(totalPages);
-
     dispPageNum->setText(pageOfPage);
 
-
-    // Regardless of what happens, add a page num because we're going to clear it
+    // Sets a page number
     pageNumContainer->addWidget(dispPageNum);
     layout->addLayout(pageNumContainer);
-    qDebug() << "You should have successfully set the page num display";
-
 
     // Set the current page and total pages for updating
     setPage(page);
     setTotalPages(totalPages);
-    qDebug() << "Your getPage() is " <<  getPage() << " and getTotalPages() is " << getTotalPages();
-
-
-}
-
-void CustomListWidget::nextPage()
-{
-    int retPage = getPage() + 1;
-    int retTotalPages = getTotalPages();
-    dispPageNum = new QLabel;
-    addPageNumDisplay(retPage, retTotalPages);
-    qDebug() << "Do you actually get to this part of the code??";
-    backArrow->setEnabled(true);
-
-}
-
-void CustomListWidget::backPage()
-{
-    int retPage = getPage() - 1;
-    int retTotalPages = getTotalPages();
-    addPageNumDisplay(retPage, retTotalPages);
-    nextArrow->setEnabled(true);
-    dispPageNum = new QLabel;
 }

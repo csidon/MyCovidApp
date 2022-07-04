@@ -33,7 +33,7 @@ AddVaccination::~AddVaccination()
     delete ui;
 }
 
-void AddVaccination::on_pushButton_clicked()
+void AddVaccination::on_btn_submit_clicked()
 {
     // Used to capture dose information
     Dose collectDoseInfo;
@@ -65,11 +65,14 @@ void AddVaccination::on_pushButton_clicked()
     {
         collectDoseInfo.setDoseManufacturer(3);
     }
-
+    // Write to ./database/MasterTests.csv and ./database/UserDoses folder
+    // Creates a csv file with the user's ID as the document name if one does not
+    // already exist, otherwise adds information to file
     UserAccount newVax;
     newVax.addDose(collectDoseInfo);
 
-    ui->stackedWidget->setCurrentIndex(1);  // Displays confirmation page
+    // Displays confirmation page and data collected
+    ui->stackedWidget->setCurrentIndex(1);
     ui->btn_backToAdminHome->hide();
     ui->lbl_displayVaxDate->setText(dispReadyDoseDate);
     ui->lbl_displayVaxManuf->setText(retrievedManf);
@@ -87,7 +90,7 @@ void AddVaccination::setLoggedInUserID(int newLoggedInUserID)
 }
 
 
-void AddVaccination::on_pushButton_2_clicked()
+void AddVaccination::on_btn_backToHome_clicked()
 {
     this->close();
 }

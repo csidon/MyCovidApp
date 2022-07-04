@@ -22,7 +22,6 @@ public:
 
 private slots:
     void on_btn_backToHome_clicked();
-
     void on_btn_submit_clicked();
 
 private:

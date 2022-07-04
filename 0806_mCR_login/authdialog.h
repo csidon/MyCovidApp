@@ -28,7 +28,6 @@ class AuthDialog : public QDialog
 private:
     int loggedInUserID = 0;
     Ui::AuthDialog *ui;
-//    MainWindow *mainEUWindow;
     AdminHome *mainAdminWindow;
     QString email = "";
     QString pass = "";
@@ -56,7 +55,7 @@ public:
     bool validatePasswordIsSecure(QString password);
     int assignID();
 
-//    QPushButton *pushLogin;
+    // Getters and setters
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
     QString getLoggedInUserEmail();
@@ -76,7 +75,6 @@ public:
 
 public slots:
     void on_btn_login_clicked();
-//    void openMainEUWindow();
     void openMainAdminWindow();
     void setValueProgress();
     void showAccountCreated();
@@ -89,15 +87,10 @@ private slots:
     void on_btn_createAccount_clicked();
     void on_lineEdit_inputRegEmail_inputRejected();
 
-
     void on_btn_nextTerms1_clicked();
-
     void on_checkBox_agreeTerms2_stateChanged(int arg1);
-
     void on_btn_nextTerms2_clicked();
-
     void on_btn_nextDetails_clicked();
-
     void on_btn_nextDetails_2_clicked();
 
 signals:

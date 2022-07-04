@@ -7,7 +7,11 @@
 #include <QPushButton>
 #include <QLayout>
 
-
+// This is a custom widget created to emulate
+// QListWidget, but with the ability to add multiple QLabels
+// With different styling results
+// Used in conjunction with ToolItem and CustomListWidget
+// Refer to documentation on layout priorities
 class CustomListWidget : public QListWidget
 {
 public:
@@ -23,7 +27,6 @@ public:
     // Functions
     void addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *botLeft, QLabel *botRight);
     void addProfileItem(QLabel *title, QLabel *data);
-//    QVBoxLayout getLabelItem();
     void addArrows(int printingPage, int totalPages);
     void addPageNumDisplay(int page, int totalPages);
 
@@ -35,10 +38,7 @@ private:
     int totalPages;
     QVBoxLayout *layout;
     QLabel *dispPageNum;
-private slots:
-    void nextPage();
-    void backPage();
-//    void on_nextArrow_clicked();
+
 
 
 
