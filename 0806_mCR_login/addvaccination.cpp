@@ -1,9 +1,6 @@
 #include "addvaccination.h"
 #include "ui_addvaccination.h"
-#include "dose.h"
-#include <QDate>
-#include "useraccount.h"
-#include <QMessageBox>
+
 
 AddVaccination::AddVaccination(QWidget *parent, int loggedInUserID) :
     QWidget(parent),
@@ -16,12 +13,10 @@ AddVaccination::AddVaccination(QWidget *parent, int loggedInUserID) :
     // This section retrieves the current date
     // and sets this as the QSpinBox default
     QDate date;
-    auto thisDate = date.currentDate();
+//    auto thisDate = date.currentDate();
     int year = date.currentDate().year() - 2000;
     int month = date.currentDate().month();
     int day = date.currentDate().day();
-    qDebug() << "The date retrieved is " << thisDate;
-    qDebug() << "What is the year printed without modification? " << date.currentDate().year();
     ui->spinBox_DD->setValue(day);
     ui->spinBox_MM->setValue(month);
     ui->spinBox_YY->setValue(year);
@@ -48,11 +43,9 @@ void AddVaccination::on_btn_submit_clicked()
     QString checkEnteredDate = QString::number(collectDoseInfo.getDoseDate());
     QDate retQDoseDate = QDate::fromString(checkEnteredDate, "yyyyMMdd");
     QString dispReadyDoseDate = retQDoseDate.toString("dd MMM yyyy");
-    qDebug() << "retrievedDoseDate is an INTEGER registered as " << retrievedDoseDate;
 
     // Collecting manufacturer that user has selected
     QString retrievedManf = ui->comboBox->currentText();
-    qDebug() << "The manufacturer retrieved from GUI is " << retrievedManf;
     if (retrievedManf == "Pfizer-BioNTech")
     {
         collectDoseInfo.setDoseManufacturer(1);

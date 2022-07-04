@@ -1,8 +1,5 @@
 #include "handlecsv.h"
-#include "useraccount.h"
-#include <QCoreApplication>
-#include <QStandardPaths>
-#include <QStandardItemModel>
+
 
 HandleCSV::HandleCSV()
 {
@@ -37,7 +34,7 @@ QString HandleCSV::returnCSVFilePath(QString dbName)
     // ** Add any other database/path here
     else
     {
-        qDebug() << "Error with the file path you passed, returning entire string";
+        qDebug() << "Not a recognised keyword. Passing custom input";
         return dbName;
     }
     return filePath;

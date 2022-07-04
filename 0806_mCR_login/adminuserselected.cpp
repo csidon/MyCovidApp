@@ -1,18 +1,6 @@
 #include "adminuserselected.h"
-#include "handlecsv.h"
 #include "ui_adminuserselected.h"
-#include "useraccount.h"
-//Getter
-int AdminUserSelected::getSelectedUserID()
-{
-    return selectedUserID;
-}
 
-//Setter
-void AdminUserSelected::setSelectedUserID(int newSelectedUserID)
-{
-    selectedUserID = newSelectedUserID;
-}
 
 //Formats user's name as title
 void AdminUserSelected::setTitleText()
@@ -68,3 +56,14 @@ void AdminUserSelected::on_btn_vaxAdd_clicked()
     addVaxWindow->show();
 }
 
+//Getter
+int AdminUserSelected::getSelectedUserID()
+{
+    return selectedUserID;
+}
+
+//Setter
+void AdminUserSelected::setSelectedUserID(int newSelectedUserID)
+{
+    selectedUserID = newSelectedUserID;
+}

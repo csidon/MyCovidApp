@@ -1,6 +1,4 @@
 #include "useraccount.h"
-#include <QStandardPaths>
-#include <QDir>
 
 //Validators
 bool UserAccount::validateEmailInUse(QString email)
@@ -37,36 +35,6 @@ bool UserAccount::validateEmailIsEmail(QString email)
     return false;
 }
 
-bool UserAccount::validatePasswordIsSecure(QString password)
-{
-    //Check password length and character inclusions
-    bool upperFlag = false;
-    bool lowerFlag = false;
-    bool numberFlag = false;
-    bool symbolFlag = false;
-    //Convert to std::string for isUpper, isAlpha etc
-    std::string stringPassword = password.toStdString();
-    if(sizeof(stringPassword) > 7){
-        for(int i = 0; i > sizeof(password); i++){
-            if(std::isupper(stringPassword[i])){
-                upperFlag = true;
-            }
-            if(std::islower(stringPassword[i])){
-                lowerFlag = true;
-            }
-            if(std::isdigit(stringPassword[i])){
-                numberFlag = true;
-            }
-            if(!std::isdigit(stringPassword[i]) && !std::isalpha(stringPassword[i])){
-                symbolFlag = true;
-            }
-        }
-        if(upperFlag == true && lowerFlag == true && numberFlag == true && symbolFlag == true){
-            return true;
-        }
-    }
-    return false;
-}
 
 
 // Assigns a new user a unique random UID
@@ -104,7 +72,7 @@ void UserAccount::requestQR()
         if(QRCodeRequests.open(QIODevice::ReadWrite| QIODevice::Append))
         {
             QTextStream stream(&QRCodeRequests);
-            stream << "\n" << this->getUserIDNumber();
+            stream << this->getUserIDNumber() << "\n";
         }
         QRCodeRequests.close();
     }
@@ -137,7 +105,7 @@ void UserAccount::addTest(Test testToStore)
     if(masterTests.open(QIODevice::ReadWrite| QIODevice::Append))
     {
         QTextStream stream(&masterTests);
-        stream << "\n" << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate();
+        stream << testToStore.getTestDate() << "," << testToStore.getTestResult() << "," << testToStore.getTestUserID() << "," << testToStore.getTestRecDate() << "\n";
     }
     masterTests.close();
 }
@@ -158,7 +126,7 @@ void UserAccount::addDose (Dose doseToStore)
 
         if(doseFile.open(QIODevice::ReadWrite| QIODevice::Append)){
             QTextStream stream(&doseFile);
-            stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+            stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew() << "\n";
         }
         doseFile.close();
 
@@ -167,7 +135,7 @@ void UserAccount::addDose (Dose doseToStore)
         QFile masterDoses{switchFilePath};
         if(masterDoses.open(QIODevice::ReadWrite| QIODevice::Append)){
             QTextStream stream(&masterDoses);
-            stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew();
+            stream << doseToStore.getDoseDate() << "," << doseToStore.getDoseManufacturer() << "," << doseToStore.getDoseUserID() << "," << doseToStore.getDoseIsNew() << "\n";
 
         }
         masterDoses.close();

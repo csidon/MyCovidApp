@@ -72,6 +72,7 @@ void AuthDialog::on_btn_login_clicked()
 
     // Verify if user exists in database and if password matches
     int loginSuccessUID = authUser(username, pswd, "dbPID"); // returns 0, 1, or 2 (admin)
+    qDebug() << "The loginSuccessUID is " << loginSuccessUID;
     // Note: dbPID is mapped to appropriate filepath in handleCSV.cpp
 
     if (loginSuccessUID == 42)      // Credentials belong to admin
@@ -86,7 +87,7 @@ void AuthDialog::on_btn_login_clicked()
         // i.e. ui->invisibleLabelOnAdminPanel->setText("userID")
         HandleCSV checkAdmin;
         grabbedUser = checkAdmin.getUserAccount(loginSuccessUID);
-        setLoggedInUserID(grabbedUser.getUserIDNumber());
+        setLoggedInUserID(42);
         openMainAdminWindow();
     }
     else if (loginSuccessUID > 0 && loginSuccessUID != 42)     // End User recognised and authenticated
@@ -192,7 +193,7 @@ bool AuthDialog::validateEmailIsEmail(QString email)
     bool atMarker = false;
     for(int i = 1; i < email.size()-2; i++){//start at 1 because valid email addresses have at least one character, ignore last 2 characters
         if(email[i] == '@'){
-            atMarker = true;
+//            atMarker = true;
             atCount = i;
             //Check for .
             for(int j = atCount + 2; j < email.size() - 1; j++){//start after the char after the @, ignore the last char
@@ -422,12 +423,11 @@ void AuthDialog::on_btn_nextDetails_2_clicked()
     // After 8 seconds, redirect user to Login Page
     QTimer::singleShot(8000,this,&AuthDialog::redirectToLogin);
 
-    int timerInterval = timer->interval();
-    qDebug() << "The timer interval is " << timerInterval;
-    int timerID = timer->timerId();
-    qDebug() << "The timer ID is " << timerID;
+//    int timerInterval = timer->interval();
+//    qDebug() << "The timer interval is " << timerInterval;
+//    int timerID = timer->timerId();
+//    qDebug() << "The timer ID is " << timerID;
 }
-
 
 
 void AuthDialog::setValueProgress()

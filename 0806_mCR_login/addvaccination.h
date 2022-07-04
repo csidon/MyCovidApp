@@ -1,7 +1,13 @@
 #ifndef ADDVACCINATION_H
 #define ADDVACCINATION_H
 
+#include <QDate>
 #include <QWidget>
+#include <QMessageBox>
+
+#include "dose.h"
+#include "useraccount.h"
+
 
 namespace Ui {
 class AddVaccination;

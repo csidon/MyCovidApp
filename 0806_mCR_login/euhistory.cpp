@@ -88,7 +88,6 @@ void EUHistory::collectAllTestInfo()
     // Else: Returns an empty QStringList
 
     setNumRows(0);      // Make sure numRows is 0
-    qDebug() << "Opening UserTests folder and looking for UID >>> " << getLoggedInUserID();
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
@@ -125,7 +124,6 @@ void EUHistory::collectAllTestInfo()
                     testResultRow = "Negative";
                 }
                 allTestResultValues << testResultRow;
-//                qDebug() << "The value of testResult at row " << numRows << " is " << allTestResultValues.at(numRows);
                 numRows++;
             }
             setNumRows(numRows);
@@ -164,7 +162,6 @@ void EUHistory::collectAllVaxInfo()
     // Open UserDoses folder and search for a CSV file with their UID
     // If file found: Sets the "global" QStringLists with vsxDate and doseManuf values
     // Else: Returns an empty QStringList
-    qDebug() << "Opening UserDose folder and looking for UID >>> " << getLoggedInUserID();
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
@@ -373,7 +370,6 @@ void EUHistory::printEUHistory(int page)
     QString resultToSet = "";
     // Otherwise prints data stored in allTestDateValues & allTestResultValues
     // Determines which rows to print based on movingToPage
-    qDebug() << "Total pages: " << getTotalPages();
     int printingPage = getMovingToPage();
 
     // If totalPages is 1, print all the rows

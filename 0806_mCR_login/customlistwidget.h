@@ -38,10 +38,6 @@ private:
     int totalPages;
     QVBoxLayout *layout;
     QLabel *dispPageNum;
-
-
-
-
 };
 
 #endif // CUSTOMLISTWIDGET_H

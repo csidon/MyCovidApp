@@ -1,7 +1,6 @@
 #include "editdetails.h"
-#include "handlecsv.h"
 #include "ui_editdetails.h"
-#include "useraccount.h"
+
 //Getter
 int editDetails::getSelectedUserID()
 {

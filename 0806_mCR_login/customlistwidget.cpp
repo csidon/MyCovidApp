@@ -6,26 +6,6 @@ CustomListWidget::CustomListWidget(QListWidget*) : layout(new QVBoxLayout)
     dispPageNum = new QLabel;
 }
 
-int CustomListWidget::getPage()
-{
-    return currentPage;
-}
-
-void CustomListWidget::setPage(int page)
-{
-    this->currentPage = page;
-}
-
-int CustomListWidget::getTotalPages()
-{
-    return totalPages;
-}
-
-void CustomListWidget::setTotalPages(int tPages)
-{
-    this->totalPages = tPages;
-}
-
 void CustomListWidget::addLabelItem(QLabel *uppLeft, QLabel *uppRight, QLabel *botLeft, QLabel *botRight)
 {
     // Grouping the labels and putting them into layouts
@@ -109,4 +89,28 @@ void CustomListWidget::addPageNumDisplay(int page, int totalPages)
     // Set the current page and total pages for updating
     setPage(page);
     setTotalPages(totalPages);
+}
+
+
+//################################################
+// Getters and setters
+//-----------------------------------------------
+int CustomListWidget::getPage()
+{
+    return currentPage;
+}
+
+void CustomListWidget::setPage(int page)
+{
+    this->currentPage = page;
+}
+
+int CustomListWidget::getTotalPages()
+{
+    return totalPages;
+}
+
+void CustomListWidget::setTotalPages(int tPages)
+{
+    this->totalPages = tPages;
 }
