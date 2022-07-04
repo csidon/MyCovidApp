@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QString>
 #include <QDateTime>
+#include <QStandardPaths>
+#include <QDir>
 
 #include "handlecsv.h"
 #include "errorreport.h"
@@ -59,7 +61,6 @@ public:
     //Validators
     bool validateEmailInUse(QString email);
     bool validateEmailIsEmail(QString email);
-    bool validatePasswordIsSecure(QString password);
 
     //Functions
     void assignID();

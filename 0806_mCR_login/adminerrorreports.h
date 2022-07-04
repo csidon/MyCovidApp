@@ -1,9 +1,11 @@
 #ifndef ADMINERRORREPORTS_H
 #define ADMINERRORREPORTS_H
 
-#include "useraccount.h"
 #include <QWidget>
 #include <QLabel>
+
+#include "useraccount.h"
+#include "handlecsv.h"
 
 namespace Ui {
 class AdminErrorReports;

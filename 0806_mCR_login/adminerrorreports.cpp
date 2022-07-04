@@ -1,8 +1,6 @@
 #include "adminerrorreports.h"
-#include "adminhome.h"
-#include "handlecsv.h"
 #include "ui_adminerrorreports.h"
-#include "useraccount.h"
+#include "adminhome.h"
 
 AdminErrorReports::AdminErrorReports(QWidget *parent) :
     QWidget(parent),
@@ -179,7 +177,6 @@ void AdminErrorReports::viewButtonClicked(int button)
 QString AdminErrorReports::formatNameForDisplay(UserAccount user)
 {
     //Format name
-    qDebug() << user.getUserFirstName() << "was first name";
     QString toPrint = "";// Should stay blank if no name found
     if(user.getUserFirstName() != ""){//Checks if name is blank
         toPrint = user.getUserFirstName() + " " + user.getUserLastName();//spaces names

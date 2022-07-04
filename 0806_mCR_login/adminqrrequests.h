@@ -1,11 +1,13 @@
 #ifndef ADMINQRREQUESTS_H
 #define ADMINQRREQUESTS_H
 
-#include "useraccount.h"
 #include <QWidget>
 #include <QObject>
 #include <QFileDialog>
 #include <QStandardPaths>
+
+#include "useraccount.h"
+#include "handlecsv.h"
 
 namespace Ui {
 class adminQRRequests;

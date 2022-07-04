@@ -4,6 +4,9 @@
 #include <QWidget>
 #include <QStandardPaths>
 
+#include "handlecsv.h"
+#include "qdir.h"
+
 namespace Ui {
 class SubmitErrorReport;
 }

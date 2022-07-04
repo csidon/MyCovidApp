@@ -9,11 +9,11 @@
 #include <QFile>
 #include <QTextStream>
 #include <QTimer>
+#include <QObject>
 
 #include "useraccount.h"
 #include "handlecsv.h"
 #include "mainwindow.h"
-#include <QObject>
 #include "adminhome.h"
 
 
@@ -44,7 +44,6 @@ public:
 
     // Authentication functions
     int authUser(QString usrn, QString pass, QString dbName);
-
 
     // Account creation & validation functions
     //-- User Error messages--

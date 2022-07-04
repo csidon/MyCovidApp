@@ -1,6 +1,4 @@
 #include "submiterrorreport.h"
-#include "handlecsv.h"
-#include "qdir.h"
 #include "ui_submiterrorreport.h"
 
 //Getter
@@ -44,9 +42,7 @@ void SubmitErrorReport::on_btn_submit_clicked()
 
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Writing to " << QDir::currentPath();
         QFile f{filepath};
-        qDebug() << "Filepath is " << filepath;
         if (!f.open(QIODevice::ReadWrite | QIODevice::Append))
         {
             qDebug() << "Is the file open? " << f.isOpen();
@@ -78,7 +74,6 @@ void SubmitErrorReport::on_btn_submit_clicked()
             //output to file
             QTextStream stream(&f);
             stream << escapedTitle << "," << escapedText << "," << date << "," << loggedInUser << "," << "TRUE" << "\n";
-            qDebug() << "I have theoretically streamed data.";
         }
         f.close();
     }

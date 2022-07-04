@@ -1,7 +1,6 @@
 #ifndef HANDLECSV_H
 #define HANDLECSV_H
 
-#include "errorreport.h"
 #include <QStringList>
 #include <QDir>
 #include <QFile>
@@ -9,8 +8,13 @@
 #include <QMessageBox>
 #include <QMap>
 #include <QTextStream>
-
+#include <QCoreApplication>
+#include <QStandardPaths>
+#include <QStandardItemModel>
 #include <QDebug>
+
+#include "errorreport.h"
+#include "useraccount.h"
 
 class UserAccount;
 

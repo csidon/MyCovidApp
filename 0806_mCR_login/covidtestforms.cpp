@@ -29,16 +29,6 @@ CovidTestForms::~CovidTestForms()
 {
     delete ui;
 }
-int CovidTestForms::getLoggedInUserID()
-{
-    return loggedInUserID;
-}
-
-void CovidTestForms::setLoggedInUserID(int newLoggedInUserID)
-{
-    loggedInUserID = newLoggedInUserID;
-}
-
 
 void CovidTestForms::on_pushButton_clicked()
 {
@@ -120,7 +110,6 @@ void CovidTestForms::on_pushButton_clicked()
     {
         collectTestInfo.setTestRecDate(thisDate);
         collectTestInfo.setTestDate(retrievedTestDate);
-        qDebug() << "LoggedInUserID is: " << getLoggedInUserID();
         collectTestInfo.setTestUserID(getLoggedInUserID());
 
         // Checks to make sure all test data is stored
@@ -161,3 +150,12 @@ void CovidTestForms::on_btn_backToAdminHome_clicked()
     this->close();
 }
 
+int CovidTestForms::getLoggedInUserID()
+{
+    return loggedInUserID;
+}
+
+void CovidTestForms::setLoggedInUserID(int newLoggedInUserID)
+{
+    loggedInUserID = newLoggedInUserID;
+}

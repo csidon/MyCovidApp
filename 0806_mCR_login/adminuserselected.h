@@ -5,6 +5,9 @@
 #include "editdetails.h"
 #include "euhistory.h"
 #include "addvaccination.h"
+#include "handlecsv.h"
+#include "useraccount.h"
+
 #include <QWidget>
 
 namespace Ui {

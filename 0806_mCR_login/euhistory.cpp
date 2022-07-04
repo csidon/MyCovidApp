@@ -88,7 +88,6 @@ void EUHistory::collectAllTestInfo()
     // Else: Returns an empty QStringList
 
     setNumRows(0);      // Make sure numRows is 0
-    qDebug() << "Opening UserTests folder and looking for UID >>> " << getLoggedInUserID();
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
@@ -125,10 +124,9 @@ void EUHistory::collectAllTestInfo()
                     testResultRow = "Negative";
                 }
                 allTestResultValues << testResultRow;
-//                qDebug() << "The value of testResult at row " << numRows << " is " << allTestResultValues.at(numRows);
                 numRows++;
             }
-            setNumRows(numRows);    // ***Do I need to set this?
+            setNumRows(numRows);
 
             // Deriving the number of pages needed to display tests
             int totalNoOfPages = numRows / 5; // Rounds up and gives the total number of pages
@@ -164,7 +162,6 @@ void EUHistory::collectAllVaxInfo()
     // Open UserDoses folder and search for a CSV file with their UID
     // If file found: Sets the "global" QStringLists with vsxDate and doseManuf values
     // Else: Returns an empty QStringList
-    qDebug() << "Opening UserDose folder and looking for UID >>> " << getLoggedInUserID();
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
@@ -214,9 +211,11 @@ void EUHistory::collectAllVaxInfo()
             if (searchFile.errorString() == "The system cannot find the file specified.")
             {
                 qDebug() << "The user does not have a dose CSV file";
-                QListWidget *emptyVaxList = new QListWidget;
-                emptyVaxList->addItem("You have no recorded COVID-19 vaccinations");
-                toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), emptyVaxList));
+                allVaxDates = {};
+                allVaxManufs = {};
+//                QListWidget *emptyVaxList = new QListWidget;
+//                emptyVaxList->addItem("You have no recorded COVID-19 vaccinations");
+//                toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), emptyVaxList));
             }
             else
             {
@@ -364,18 +363,21 @@ void EUHistory::printEUHistory(int page)
         QListWidget *emptyTestList = new QListWidget;
         emptyTestList->addItem("You have no recorded COVID-19 tests");
         toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), emptyTestList));
+        setTotalPages(0);
     }
     QString retrievedDate = "";
     QString dateToSet = "";
     QString resultToSet = "";
     // Otherwise prints data stored in allTestDateValues & allTestResultValues
     // Determines which rows to print based on movingToPage
-    qDebug() << "Total pages: " << getTotalPages();
     int printingPage = getMovingToPage();
 
     // If totalPages is 1, print all the rows
     if (totalPages == 1)
     {
+        // User message displayed if no tests exist in the csv file
+
+
         for (int i = 0; i < numRows; i++)
         {
             // For the printing of each label, a new label has to be created
@@ -414,7 +416,7 @@ void EUHistory::printEUHistory(int page)
         c19TestList->addPageNumDisplay(printingPage,totalPages);
         toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
     }
-    else
+    else if (totalPages > 0)
     {
         int startingRow, rowToPrintTo;
         //--- Determining my starting and ending rows ---

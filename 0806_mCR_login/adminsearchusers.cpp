@@ -1,7 +1,6 @@
 #include "adminsearchusers.h"
-#include "handlecsv.h"
 #include "ui_adminsearchusers.h"
-#include "useraccount.h"
+
 
 //Getters
 int AdminSearchUsers::getPageNumber()
@@ -88,7 +87,6 @@ void AdminSearchUsers::button(int btnNumber)
     //Pass the correctUID to the next menu based on which button is clicked
     QStringList results = getSearchResultIDs();
     int result = ((pageNumber-1)*6)+btnNumber -1;
-    qDebug() << "Error is regarding results" <<result << " " << results;
     userSelectedWindow.setSelectedUserID(results.at(result).toInt());
     userSelectedWindow.show();
     userSelectedWindow.setTitleText();
@@ -277,7 +275,6 @@ void AdminSearchUsers::on_btn_backToAdminHome_clicked()
 void AdminSearchUsers::on_lineEdit_searchBar_returnPressed()
 {
     //Search all 3 names, get uids and store in a single QStringList removign any duplicates if someone has the same name in two variables
-    qDebug() << "Enter or search icon is working";
     QString searchTerms = ui->lineEdit_searchBar->text();
     QStringList foundFNames = searchFNames(searchTerms);
     QStringList foundLNames = searchLNames(searchTerms);

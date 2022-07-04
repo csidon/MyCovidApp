@@ -3,6 +3,9 @@
 
 #include <QWidget>
 
+#include "useraccount.h"
+#include "handlecsv.h"
+
 namespace Ui {
 class editDetails;
 }

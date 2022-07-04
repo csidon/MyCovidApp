@@ -15,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent, int loggedInUserID)
     submitErrorReport.setLoggedInUser(loggedInUserID);
     if(loggedInUser.getUserQRStatus()==0)
     {
-        qDebug() << "The logged In user QR status is 0";
         ui->btn_requestQR->show();
         ui->btn_QRrequested->hide();
         ui->btn_displayQR->hide();

@@ -1,7 +1,7 @@
 #include "adminqrrequests.h"
-#include "handlecsv.h"
+
 #include "ui_adminqrrequests.h"
-#include "useraccount.h"
+
 
 
 //Getters
@@ -28,7 +28,7 @@ void AdminQRRequests::setNoOfPages(int newNoOfPages)
 
 void AdminQRRequests::assignmentButtonClicked(int button)
 {
-    //Calcuate user's index in an array read from the file
+    //Calculate user's index in an array read from the file
     int userIndex = ((getPageNumber()-1)*6)+button;
     //read from files
     HandleCSV readUsers;
@@ -70,6 +70,12 @@ void AdminQRRequests::updatePageNumberDisplay()
     QStringList QRRequests = countQRRequests.getColData("userIDNumber", "dbQRRequests");
     QRRequests.takeFirst();//drops the header
 
+    qDebug() << "QRRequests.size at updatePagenum " << QRRequests.size();
+
+    if(QRRequests.size() == 0)
+    {
+        this->close();
+    }
     //How many pages do we need?
     setNoOfPages(QRRequests.size()/6);
     if(QRRequests.size()%6!=0){

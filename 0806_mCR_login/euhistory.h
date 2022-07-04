@@ -11,7 +11,6 @@
 #include <QListWidgetItem>
 #include <QVector>
 
-
 #include "useraccount.h"
 #include "handlecsv.h"
 #include "useraccount.h"
