@@ -103,8 +103,8 @@ public:
         btn_issuesReported->setText(QString());
         btn_QRCodeRequests->setText(QString());
         btn_searchAndManageUsers->setText(QString());
-        lbl_numberOfQRCodeRequests->setText(QCoreApplication::translate("AdminHome", "7", nullptr));
-        lbl_numberOfIssuesReported->setText(QCoreApplication::translate("AdminHome", "2", nullptr));
+        lbl_numberOfQRCodeRequests->setText(QCoreApplication::translate("AdminHome", "0", nullptr));
+        lbl_numberOfIssuesReported->setText(QCoreApplication::translate("AdminHome", "0", nullptr));
         lbl_kiaOra->setText(QCoreApplication::translate("AdminHome", "Kia Ora", nullptr));
         lbl_adminName->setText(QCoreApplication::translate("AdminHome", "Darth Vader", nullptr));
     } // retranslateUi
