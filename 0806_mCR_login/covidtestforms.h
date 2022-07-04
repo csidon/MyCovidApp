@@ -26,7 +26,6 @@ public:
     ~CovidTestForms();
     int getLoggedInUserID();
     void setLoggedInUserID(int newLoggedInUserID);
-//    void updatePID(int uid, UserAccount updateUser);
 
 private slots:
     void on_pushButton_clicked();

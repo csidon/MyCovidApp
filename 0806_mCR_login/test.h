@@ -28,7 +28,6 @@ public:
 
     //Constructor
     Test();
-//    Test(QString testDate, bool testResult, int uid, QString testRecDate);
 };
 
 #endif // TEST_H

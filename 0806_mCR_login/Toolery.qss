@@ -151,9 +151,9 @@ QCheckBox::indicator:disabled
 /*-----QLineEdit-----*/
 QLineEdit
 {
-        background-color: #BCBDBB;
-        color: #FFCC01;
-	border: none;
+        background-color: #dadbd9;
+        color: #262626;
+        border: #BCBDBB;
 	padding: 5px;
 
 }

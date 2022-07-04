@@ -13,9 +13,8 @@ void ExpandingToolBox::addItem(ToolItem *item)
     {
       layout->removeItem(layout->itemAt(count - 1));
     }
-
     // Add item and make sure it stretches the remaining space.
-    layout->addWidget(item,0);
-    layout->addStretch(1);
+    layout->addWidget(item);
+    layout->addStretch(0);
 }
 

@@ -19,9 +19,9 @@ public:
     void setLoggedInUserID(int newLoggedInUserID);
 
 private slots:
-    void on_pushButton_clicked();
+    void on_btn_submit_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_btn_backToHome_clicked();
 
     void on_btn_backToAdminHome_clicked();
 

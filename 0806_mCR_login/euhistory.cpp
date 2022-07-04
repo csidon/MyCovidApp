@@ -1,7 +1,5 @@
-
 #include "euhistory.h"
 #include "ui_euhistory.h"
-
 #include "mainwindow.h"
 
 EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
@@ -10,8 +8,6 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
 {
     ui->setupUi(this);
     setLoggedInUserID(loggedInUserID);
-
-
 
     // These objects will not be deleted when the user hits next/back arrows
     overallWrapper = new QVBoxLayout;
@@ -25,19 +21,14 @@ EUHistory::EUHistory(QWidget *parent, int loggedInUserID) :
     collectAllTestInfo();
     collectAllVaxInfo();
     printEUHistory(1);   // Prints the overarchingLayout
-//    setLayout(overallWrapper);  // Can I set this here?
-//    overallWrapper->addStretch(0);
 
     ui->overallWidget->setLayout(overallWrapper);
-
 }
 
 EUHistory::~EUHistory()
 {
     delete ui;
 }
-
-
 
 
 void EUHistory::on_btn_backToAdminHome_clicked()
@@ -87,23 +78,6 @@ void EUHistory::printPageIntro()
     pageIntro->addWidget(dispUserName);
     pageIntro->addWidget(dispNHI);
     overallWrapper->addLayout(pageIntro);
-
-}
-
-void EUHistory::printEUprofile()
-{
-//    // Create a single toolbox for EU Profile
-////    profileToolBox = new ExpandingToolBox;
-
-
-
-//    // Add this to the single collapsible toolbox
-//    CustomListWidget *userProfileList = new CustomListWidget;
-
-
-//    profileToolBox->addItem(new ToolItem(new QLabel("USER DETAILS"), userProfileList));
-//    userProfile->addWidget(profileToolBox);
-//    overallWrapper->addLayout(userProfile);
 }
 
 
@@ -121,12 +95,9 @@ void EUHistory::collectAllTestInfo()
     QString filepath = "database/UserTests/" + QString::number(getLoggedInUserID()) + ".csv";
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Searching for " << getLoggedInUserID() << ".csv" << "...";
         QFile searchFile{filepath};
         if (searchFile.open(QIODevice::ReadOnly| QIODevice::Text))
         {
-            qDebug() << "The file has been found and opened. ";
-
             // File found. Now extract data for display
             QStringList testDates;
             QString row;
@@ -139,8 +110,6 @@ void EUHistory::collectAllTestInfo()
                 rowValues = row.split(',');
                 //Grabbing the rows' values
                 testDates << rowValues.at(0);
-                qDebug() << "Full row values are: " << rowValues;
-                qDebug() << "Storing the test date for ROW " << numRows << " into vector";
                 QString testDateRow = rowValues.at(0);
                 // Push all users' test dates/results into a vector and (later) sets this
                 // so that it can used in any function
@@ -159,9 +128,7 @@ void EUHistory::collectAllTestInfo()
 //                qDebug() << "The value of testResult at row " << numRows << " is " << allTestResultValues.at(numRows);
                 numRows++;
             }
-            qDebug() << "Total number of tests (rows) = " << numRows;
             setNumRows(numRows);    // ***Do I need to set this?
-            qDebug() << "Total pages before setter is " << totalPages;
 
             // Deriving the number of pages needed to display tests
             int totalNoOfPages = numRows / 5; // Rounds up and gives the total number of pages
@@ -169,8 +136,6 @@ void EUHistory::collectAllTestInfo()
             {
                 totalNoOfPages++;   // Increase the total number of pages by 1 if % is 0
             }
-            qDebug() << "Total num of Rows in UID's test file: " << getNumRows();
-            qDebug() << "Total pages: " << totalNoOfPages;
             setTotalPages(totalNoOfPages);
         }
 
@@ -199,18 +164,16 @@ void EUHistory::collectAllVaxInfo()
     // Open UserDoses folder and search for a CSV file with their UID
     // If file found: Sets the "global" QStringLists with vsxDate and doseManuf values
     // Else: Returns an empty QStringList
-    qDebug() << "Opening UserTests folder and looking for UID >>> " << getLoggedInUserID();
+    qDebug() << "Opening UserDose folder and looking for UID >>> " << getLoggedInUserID();
     auto path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (path.isEmpty()) qFatal("Cannot determine settings storage location");
     QDir d{path};
     QString doseFilepath = "database/UserDoses/" + QString::number(getLoggedInUserID()) + ".csv";
     if (d.mkpath(d.absolutePath()) && QDir::setCurrent(d.absolutePath()))
     {
-        qDebug() << "Searching for " << getLoggedInUserID() << ".csv" << "...";
         QFile searchFile{doseFilepath};
         if (searchFile.open(QIODevice::ReadOnly| QIODevice::Text))
         {
-            qDebug() << "The file has been found and opened. ";
             // File found. Now extract data for display
             // [LOCAL VARS] Used for splitting and reading lines
             QString row;
@@ -221,12 +184,9 @@ void EUHistory::collectAllVaxInfo()
                 // Read and split the rows
                 row = searchFile.readLine().trimmed();
                 rowValues = row.split(',');
-                qDebug() << "Full row values are: " << rowValues;
-                qDebug() << "Storing the vaccination dates for this row " << vaxRows;
                 QString extractedDate = rowValues.at(0);
                 QDate rowVaxQDate = QDate::fromString(extractedDate, "yyyyMMdd");
                 QString rowVaxDate = rowVaxQDate.toString("dd MMM yyyy");
-                qDebug() << "The rowVaxDate is " << rowVaxDate << " and vaxQdate is " << rowVaxQDate;
                 allVaxDates << rowVaxDate;
 
                 QString doseManuf;      // Translating the stored int to QString
@@ -276,9 +236,6 @@ void EUHistory::printEUHistory(int page)
     c19TestList = new CustomListWidget;
     //------
     setMovingToPage(page);
-    qDebug() << "Printing the pages' toolbox with content";
-    qDebug() << "for totalPages = " << totalPages << " currentPage =  " <<
-                currentPage << " moving to page = " << movingToPage;
     //##########################################
     // First printing user profile information
     //-------------------------------
@@ -371,8 +328,6 @@ void EUHistory::printEUHistory(int page)
                                         "font-weight: normal;"
                                         "margin-bottom: 10px;");
 
-
-            qDebug() << "The number of vax rows are: " << vaxRows;
             QString doseNum = "Dose " + QString::number(i + 1);
             numDosesUL->setText(doseNum);
             emptyUR->setText(" ");          // Empty label (no data to fill)
@@ -387,7 +342,6 @@ void EUHistory::printEUHistory(int page)
         }
         // Does the actual printing
         toolBox->addItem(new ToolItem(new QLabel("COVID-19 VACCINATION RECORD"), c19VaxHistory));
-        qDebug() << "Vaccination Toolbox added for print";
     }
 
     //##################################
@@ -405,8 +359,6 @@ void EUHistory::printEUHistory(int page)
     QString resultToSet = "";
     // Otherwise prints data stored in allTestDateValues & allTestResultValues
     // Determines which rows to print based on movingToPage
-    qDebug() << "Total rows: " << getNumRows();
-    qDebug() << "Page to print (moveToPage): " << getMovingToPage();
     qDebug() << "Total pages: " << getTotalPages();
     int printingPage = getMovingToPage();
 
@@ -439,9 +391,7 @@ void EUHistory::printEUHistory(int page)
             retrievedDate = allTestDateValues.at(i);        // Date is retrieved in a YYYYMMDD QString format
             // Converting retrieved date to QDate, then to pretty QString output
             QDate convertedQDate = QDate::fromString(retrievedDate, "yyyyMMdd");
-            qDebug() << "Converted test date is " << convertedQDate;
             dateToSet = convertedQDate.toString("dd MMM yyyy");
-            qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
             dateLabelUR->setText(dateToSet);
 
             resultToSet = allTestResultValues.at(i);
@@ -462,15 +412,14 @@ void EUHistory::printEUHistory(int page)
             // You are NOT printing the last page
             startingRow = ((printingPage - 1) * 5);  // Row starts from index 0
             rowToPrintTo = (printingPage * 5);
-            qDebug() << "The page you're printing (moveTo) is " << printingPage;
-            qDebug() << "Total numRows is " << numRows;
-            qDebug() << "Printing rows *" << startingRow << "* to *" << rowToPrintTo;
+            qDebug() << "Printing page " << printingPage;
         }
         else
         {
             // I AM printing the last page of multiple pages
             startingRow = ((printingPage - 1) * 5);
             rowToPrintTo = getNumRows();
+            qDebug() << "Printing page " << printingPage;
         }
         //--- Printing labels based on starting and ending rows ---
         for (int i = startingRow; i < rowToPrintTo; i++)
@@ -499,9 +448,7 @@ void EUHistory::printEUHistory(int page)
             retrievedDate = allTestDateValues.at(i);        // Date is retrieved in a YYYYMMDD QString format
             // Converting retrieved date to QDate, then to pretty QString output
             QDate convertedQDate = QDate::fromString(retrievedDate, "yyyyMMdd");
-            qDebug() << "Converted test date is " << convertedQDate;
             dateToSet = convertedQDate.toString("dd MMM yyyy");
-            qDebug() << "About to set date: " << dateToSet << " and result: " << resultToSet;
             dateLabelUR->setText(dateToSet);
 
             resultToSet = allTestResultValues.at(i);
@@ -512,18 +459,13 @@ void EUHistory::printEUHistory(int page)
         connect(c19TestList->nextArrow,&QPushButton::clicked,this,goToNextPage);
         connect(c19TestList->backArrow,&QPushButton::clicked,this,goToPrevPage);
         c19TestList->addPageNumDisplay(printingPage,totalPages);
-        qDebug() << "You have called your pageNum display method";
         toolBox->addItem(new ToolItem(new QLabel("YOUR COVID-19 HISTORY"), c19TestList));
-
     }
     setCurrentPage(printingPage);
     // Add whatever is in my toolBox list to overarchingLayout
     overarchingLayout->addWidget(toolBox);
     // Then add my overarchingLayout to the overallWrapper
     overallWrapper->addLayout(overarchingLayout);
-//    overallWrapper->setSpacing(0);
-//    overallWrapper->addStretch();
-
 }
 
 

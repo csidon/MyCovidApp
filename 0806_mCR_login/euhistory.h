@@ -2,7 +2,6 @@
 #define EUHISTORY_H
 
 #include <QWidget>
-
 #include <QListWidget>
 #include <QDateTime>
 #include <QCommonStyle>
@@ -11,6 +10,7 @@
 #include <QPushButton>
 #include <QListWidgetItem>
 #include <QVector>
+
 
 #include "useraccount.h"
 #include "handlecsv.h"
@@ -30,35 +30,26 @@ class EUHistory : public QWidget
 public:
     explicit EUHistory(QWidget *parent = nullptr, int loggedInUserID = 0);
     ~EUHistory();
-    int getLoggedInUserID();
-    void setLoggedInUserID(int newLoggedInUserID);
-    QString getTestDate();
-    void setTestDate(QString tDate);
-//    CustomListWidget printTestSummary(int pageNum, std::vector<QString>, std::vector<QString>);
-
-    int getCurrentPage() const;
-    void setCurrentPage(int newCurrentPage);
-
-    int getTotalPages() const;
-    void setTotalPages(int newTotalPages);
-
-    int getMovingToPage() const;
-    void setMovingToPage(int newMovingToPage);
-
-    int getNumRows() const;
-    void setNumRows(int newNumRows);
-
     void printPageIntro();
     void collectAllTestInfo();
     void collectAllVaxInfo();
     void printEUHistory(int page);
-    void printEUprofile();
-
     void clearPage();
-//                        int numRows,int totalPages, int movingToPage,
-//                          int currentPage, int vaxRows);
-//                          allTestDateValues,allTestResultValues,
-//                          vaxRows, allVaxDates, allVaxManufs);
+
+    // Getters and setters
+    int getLoggedInUserID();
+    void setLoggedInUserID(int newLoggedInUserID);
+    QString getTestDate();
+    void setTestDate(QString tDate);
+    int getCurrentPage() const;
+    void setCurrentPage(int newCurrentPage);
+    int getTotalPages() const;
+    void setTotalPages(int newTotalPages);
+    int getMovingToPage() const;
+    void setMovingToPage(int newMovingToPage);
+    int getNumRows() const;
+    void setNumRows(int newNumRows);
+
 public slots:
     void goToNextPage();
     void goToPrevPage();
@@ -86,9 +77,7 @@ private:
     QVBoxLayout *backHome;
     QVBoxLayout *overallWrapper;
     QVBoxLayout *pageIntro;
-//    QVBoxLayout *userProfile;
     QVBoxLayout *overarchingLayout;
-
 
     // Labels/vars used for displaying test results
     // ReportType and TestType are hardcoded to Self-reported and RAT
@@ -101,7 +90,6 @@ private:
 
     //--------------------------------------------
     //Creating QStringLists to store each row of test/vaxdata
-    //(we only really care about test dates and test results)
 
     // THESE ARE NOT POINTERS!
     //--- Test Data ---

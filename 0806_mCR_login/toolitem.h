@@ -6,14 +6,15 @@
 #include <QLabel>
 #include <QScrollArea>
 #include <QPushButton>
+#include <QFrame>
 
+// This custom widget allows users to add widgets within another widget
+// with specific styling. When used in conjuction with the ExpandingToolBox
+// class, it creates an expandable "window" with a title and a space for items (layouts)
 class ToolItem : public QWidget
 {
 public:
     ToolItem(QWidget *title, QWidget *item);
-//    ToolItem(QWidget *title, QStringList *itemList);
-
-
 
 protected:
     void mousePressEvent(QMouseEvent *event);
@@ -21,7 +22,6 @@ protected:
 private:
     QWidget *item;
     QScrollArea *scrollInsideItem;
-//    QStringList *itemList;
 };
 
 #endif // TOOLITEM_H

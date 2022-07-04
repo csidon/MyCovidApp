@@ -1,4 +1,13 @@
 #include "dose.h"
+//Constructor
+Dose::Dose()
+{
+doseUserID = 0;
+doseManufacturer = 0;
+doseDate = 0;
+doseIsNew = true;
+}
+
 //Getters
 int Dose::getDoseUserID()
 {
@@ -39,13 +48,4 @@ void Dose::setDoseDate(int newDoseDate)
 void Dose::setDoseIsNew(bool isNew)
 {
     this->doseIsNew = isNew;
-}
-
-//Constructor
-Dose::Dose()
-{
-doseUserID = 0;
-doseManufacturer = 0;
-doseDate = 0;
-doseIsNew = true;
 }

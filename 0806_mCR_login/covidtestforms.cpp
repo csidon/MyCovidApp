@@ -12,12 +12,10 @@ CovidTestForms::CovidTestForms(QWidget *parent, int loggedInUserID) :
     // This section retrieves the current date
     // and sets this as the QSpinBox default
     QDate date;
-    auto thisDate = date.currentDate();
+//    auto thisDate = date.currentDate();
     int year = date.currentDate().year() - 2000;
     int month = date.currentDate().month();
     int day = date.currentDate().day();
-    qDebug() << "The date retrieved is " << thisDate;
-    qDebug() << "What is the year printed without modification? " << date.currentDate().year();
     ui->spinBox_YY->setValue(year);
     ui->spinBox_MM->setValue(month);
     ui->spinBox_DD->setValue(day);
@@ -55,14 +53,12 @@ void CovidTestForms::on_pushButton_clicked()
     int month = date.currentDate().month();
     int day = date.currentDate().day();
     int thisDate = (year * 10000) + (month * 100) + day;
-    qDebug() << "thisDate is an INTEGER registered as " << thisDate;
 
     int yy = (ui->spinBox_YY->value() + 2000) * 10000;
     int mm = ui->spinBox_MM->value() * 100;
     int dd = ui->spinBox_DD->value();
     int retrievedTestDate = yy + mm + dd;
     collectTestInfo.setTestDate(retrievedTestDate);
-    qDebug() << "retrievedTestDate is an INTEGER registered as " << retrievedTestDate;
 
 
     //----------------------------------------------------------
@@ -133,16 +129,13 @@ void CovidTestForms::on_pushButton_clicked()
         qDebug() << "CSV Results are: " << collectTestInfo.getTestResult();
         qDebug() << "CSV user ID  is: " << collectTestInfo.getTestUserID();
 
-
         UserAccount newTest;
         newTest.addTest(collectTestInfo);
         ui->stackedWidget->setCurrentIndex(1);
         // Converting int testDates in file to QStrings, then converting to QDate
         // (QDate does not allow direct conversion from int to QDate)
         QString dateInFile = QString::number(collectTestInfo.getTestDate());
-        qDebug() << "Testing to see what the dateInFile is " << dateInFile;
         QDate convertedQDate = QDate::fromString(dateInFile, "yyyyMMdd");
-        qDebug() << "Testing to see what the displayReadyQDate is " << convertedQDate;
         // Finally translating it to a QString for display
         QString dispReadyDate = convertedQDate.toString("dd MMM yyyy");
         ui->lbl_displayTestDate->setText(dispReadyDate);

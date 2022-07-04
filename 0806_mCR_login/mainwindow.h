@@ -2,13 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QObject>
+
+#include "authdialog.h"
+#include "covidtestforms.h"
+#include "customlistwidget.h"
 #include "displaymyqrcode.h"
+#include "euhistory.h"
 #include "submiterrorreport.h"
 #include "useraccount.h"
-#include <QMessageBox>
-#include "covidtestforms.h"
-#include "euhistory.h"
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,8 +41,6 @@ public slots:
 private slots:
     void on_btn_requestQR_clicked();
     void on_btn_reportRat_clicked();
-
-
 
     void on_btn_vaxHistory_clicked();
     void on_btn_displayQR_clicked();
