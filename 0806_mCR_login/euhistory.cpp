@@ -251,12 +251,17 @@ void EUHistory::printEUHistory(int page)
     QLabel *dispNHIlab = new QLabel;
     QLabel *emaillab = new QLabel;
     QLabel *phonelab = new QLabel;
+    QLabel *dataIncorrect = new QLabel;
     prefNamelab->setText("Preferred Name");
     fNamelab->setText("First Name");
     lNamelab->setText("Last Name");
     dispNHIlab->setText("NHI Number");
     emaillab->setText("Email Address");
     phonelab->setText("Phone Number");
+    dataIncorrect->setText("Is your data incorrect?");
+    dataIncorrect->setAlignment(Qt::AlignHCenter);
+    userProfile->setStyleSheet("background-color: #FFCC00;");
+
 
     //---- Create and retrieve data labels ----
     QLabel *prefName = new QLabel;
@@ -265,12 +270,17 @@ void EUHistory::printEUHistory(int page)
     QLabel *dispNHI = new QLabel;
     QLabel *email = new QLabel;
     QLabel *phone = new QLabel;
+    QLabel *contactAdmin = new QLabel;
 
     prefName->setText(" " + loggedInUser.getUserPreferredName());
     fName->setText(" " + loggedInUser.getUserFirstName());
     lName->setText(" " + loggedInUser.getUserLastName());
     email->setText(" " + loggedInUser.getUserEmail());
     phone->setText(" " + QString::number(loggedInUser.getUserPhoneNumber()));
+    contactAdmin->setText("Ring 0800 COVID to update");
+    contactAdmin->setWordWrap(true);
+    contactAdmin->setAlignment(Qt::AlignHCenter);
+    contactAdmin->setStyleSheet("font: 10px;");
 
     QString displayNHI;
     if (loggedInUser.getUserNHINumber() == "")
@@ -291,6 +301,7 @@ void EUHistory::printEUHistory(int page)
     userProfile->addProfileItem(dispNHIlab,dispNHI);
     userProfile->addProfileItem(emaillab,email);
     userProfile->addProfileItem(phonelab,phone);
+    userProfile->addProfileItem(dataIncorrect,contactAdmin);
     // ---- Adding to toolbox -----
     toolBox->addItem(new ToolItem(new QLabel("USER DETAILS"), userProfile));
 

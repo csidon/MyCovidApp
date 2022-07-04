@@ -130,7 +130,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/images/hompageIcons/vaxHistoryBtn.png);
+      <string notr="true">image: url(:/images/hompageIcons/histAndProfile.png);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">

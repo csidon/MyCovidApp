@@ -67,5 +67,6 @@
         <file>images/hompageIcons/reportAnIssueBtn.png</file>
         <file>images/tinyCheck.png</file>
         <file>images/downArrow.png</file>
+        <file>images/hompageIcons/histAndProfile.png</file>
     </qresource>
 </RCC>
