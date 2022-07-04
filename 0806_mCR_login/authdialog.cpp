@@ -433,11 +433,6 @@ void AuthDialog::on_btn_nextDetails_2_clicked()
 void AuthDialog::setValueProgress()
 {
     ui->progressBar->setValue(ui->progressBar->value()+10);
-
-    qDebug() << "Progress bar value is " << ui->progressBar->value();
-    // Comment this out if you get annoyed with qDebug reports.
-    // Leave so we remember to fix bug
-
 }
 
 void AuthDialog::showAccountCreated()
